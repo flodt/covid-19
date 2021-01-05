@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>COVID-19</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+<nav class="red darken-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">COVID-19 Inzidenzen</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="https://github.com/marlon360/rki-covid-api">Quelle (RKI)</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="sidenav">
+            <li><a href="https://github.com/marlon360/rki-covid-api">Quelle (RKI)</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="section">
+        <div class="row" id="card_space">
+            <!--<div class="col s12 m6 l4">
+                <div class="card red darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Beispiel</span>
+                        <h1>203</h1>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </div>
+
+</div>
+
+<!--
+<footer class="page-footer orange">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Florian Schmidt</h5>
+        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Settings</h5>
+        <ul>
+          <li><a class="white-text" href="#!">Link 1</a></li>
+          <li><a class="white-text" href="#!">Link 2</a></li>
+          <li><a class="white-text" href="#!">Link 3</a></li>
+          <li><a class="white-text" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Connect</h5>
+        <ul>
+          <li><a class="white-text" href="#!">Link 1</a></li>
+          <li><a class="white-text" href="#!">Link 2</a></li>
+          <li><a class="white-text" href="#!">Link 3</a></li>
+          <li><a class="white-text" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+    </div>
+  </div>
+</footer>
+-->
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+
+<script>
+    window.addEventListener("load", function () {
+        /**
+         * Load and display all of the cards for the places of interest
+         * Right now, we're loading the data based on the AGSs of the districts
+         * to display. However, this can be easily expanded to browser-local
+         * storage of the districts needed by the respective user.
+         * This can also easily be transformed to pulling the data
+         * for whole Germany and not just single districts, and then
+         * extracting the incidence data from the entire set.
+         * That overhead should be lower than calling for every value.
+         */
+        let agss = ["09778", "09179", "09162", "09178"];
+
+        //do API call to determine incidence
+        agss.forEach(ags => {
+            const url = `https://v2.rki.marlon-lueckert.de/districts/${ags}`;
+            console.log("Running API call for " + ags + " via " + url + "...");
+
+            fetch(url).then(httpResponse => {
+                httpResponse.json().then(data => {
+                    //draw card for every district
+                    const name = data.data[ags].name;
+                    const incidence = data.data[ags].weekIncidence.toFixed(0);
+                    const color = (incidence >= 200) ? "red darken-1" : "orange darken-1";
+
+                    const card = "<div class=\"col s12 m6 l4\">\n" +
+                        "                <div class=\"card " + color + "\">\n" +
+                        "                    <div class=\"card-content white-text\">\n" +
+                        "                        <span class=\"card-title\">" + name + "</span>\n" +
+                        "                        <h1>" + incidence + "</h1>\n" +
+                        "                    </div>\n" +
+                        "                </div>\n" +
+                        "            </div>";
+
+                    document.getElementById("card_space").innerHTML += card;
+                });
+            }).catch(err => {
+                console.log(err);
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
