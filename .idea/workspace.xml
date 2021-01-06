@@ -10,7 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="update favicons">
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="add color-coding">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
@@ -61,6 +61,7 @@
       <updated>1609873268026</updated>
       <workItem from="1609873270071" duration="4929000" />
       <workItem from="1609928458930" duration="5597000" />
+      <workItem from="1609951174577" duration="1476000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609877935878</created>
@@ -83,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609933825836</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add color-coding">
+      <created>1609938855310</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609938855310</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,7 +113,8 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="update template card with columns for data sources" />
     <MESSAGE value="pull data from ZEIT Online as well" />
-    <option name="LAST_COMMIT_MESSAGE" value="pull data from ZEIT Online as well" />
+    <MESSAGE value="add color-coding" />
+    <option name="LAST_COMMIT_MESSAGE" value="add color-coding" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="202" width="1076" height="746" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609873681868">
@@ -116,14 +125,18 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="243" y="303" width="524" height="514" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609931940707" />
-    <state x="273" y="175" width="505" height="770" key="RollbackChangesDialog" timestamp="1609938173439">
+    <state x="64" y="122" width="1484" height="884" key="DiffContextDialog" timestamp="1609951627105">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state x="273" y="175" width="505" height="770" key="RollbackChangesDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609938173439" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1609933494780">
+    <state x="64" y="122" width="1484" height="884" key="DiffContextDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609951627105" />
+    <state x="273" y="170" width="505" height="770" key="RollbackChangesDialog" timestamp="1609951628487">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1609933494780" />
+    <state x="273" y="170" width="505" height="770" key="RollbackChangesDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609951628487" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1609952049415">
+      <screen x="64" y="27" width="1856" height="1053" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1609952049415" />
     <state x="698" y="209" width="584" height="702" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1609933808023">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>

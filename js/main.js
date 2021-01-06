@@ -9,7 +9,7 @@ window.addEventListener("load", function () {
      * extracting the incidence data from the entire set.
      * That overhead should be lower than calling for every value.
      */
-    let agss = ["09778", "09162", "09179", "09780", "09188", "09178"];
+    let agss = ["09778", "09162", "09179", "09777", "09188", "09178"];
     const URL_RKI = "https://v2.rki.marlon-lueckert.de/districts/";
     const URL_ZEIT = "https://interactive.zeit.de/cronjobs/2020/corona/germany-dashboard-v2-scraper.json";
 
@@ -27,7 +27,11 @@ window.addEventListener("load", function () {
                 })
             })
         })
-    }).catch(err => console.log(err));
+    }).catch(err => {
+        console.log(err);
+        M.toast({html: 'An error occurred while fetching data.'});
+        document.getElementById("preloader_container").style.display = "none";
+    });
 });
 
 function renderData(agss, rki, zeit) {
@@ -46,13 +50,16 @@ function renderData(agss, rki, zeit) {
         let color;
         let textColor;
 
-        if (max <= 35) {
-            color = "grey lighten-3";
-            textColor = "";
-        } else if (max > 35 && max <= 50) {
+        if (max < 35) {
+            color = "green";
+            textColor = "white-text";
+        } else if (max >= 35 && max < 50) {
             color = "amber darken-2";
             textColor = "white-text";
-        } else if (max > 50 && max < 200) {
+        } else if (max >= 50 && max < 100) {
+            color = "orange darken-1";
+            textColor = "white-text";
+        } else if (max >= 100 && max < 200) {
             color = "deep-orange darken-1";
             textColor = "white-text";
         } else {
