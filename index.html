@@ -11,7 +11,7 @@
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-<nav class="red darken-1" role="navigation">
+<nav class="grey darken-4" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">COVID-19 Inzidenzen</a>
         <ul class="right hide-on-med-and-down">
             <li><a href="https://github.com/marlon360/rki-covid-api">Quelle (RKI)</a></li>
@@ -36,6 +36,30 @@
                     </div>
                 </div>
             </div>-->
+
+            <div class="col s12 m12 l4">
+                <div class="card red darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Beispiel</span>
+                        <div class="row">
+                            <div class="col">
+                                <h3>123</h3>
+                                <b><a href="https://github.com/marlon360/rki-covid-api">RKI</a></b>
+                            </div>
+                            <div class="col">
+                                <h3>203</h3>
+                                <b><a href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">ZEIT
+                                    Online</a></b>
+                            </div>
+                            <div class="col">
+                                <h3>456</h3>
+                                <b><a href="https://www.lgl.bayern.de/gesundheit/infektionsschutz/infektionskrankheiten_a_z/coronavirus/karte_coronavirus/">LGL
+                                    Bayern</a></b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -111,7 +135,7 @@
                     const incidence = data.data[ags].weekIncidence.toFixed(0);
                     const color = (incidence >= 200) ? "red darken-1" : "orange darken-1";
 
-                    const card = "<div class=\"col s12 m6 l4\">\n" +
+                    const card = "<div class=\"col s12 m12 l4\">\n" +
                         "                <div class=\"card " + color + "\">\n" +
                         "                    <div class=\"card-content white-text\">\n" +
                         "                        <span class=\"card-title\">" + name + "</span>\n" +
@@ -130,4 +154,30 @@
 </script>
 
 </body>
+
+<style>
+    a:link {
+        color: white;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: white;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: white;
+        background-color: transparent;
+        text-decoration: underline;
+    }
+
+    a:active {
+        color: white;
+        background-color: transparent;
+        text-decoration: none;
+    }
+</style>
 </html>
