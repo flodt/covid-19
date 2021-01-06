@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "browserify": "^17.0.0",
+    "corona-lgl-bayern-scraper": "^0.4.0",
     "materialize-css": "^1.0.0-rc.2"
   }
 }
