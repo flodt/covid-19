@@ -9,7 +9,7 @@ window.addEventListener("load", function () {
      * extracting the incidence data from the entire set.
      * That overhead should be lower than calling for every value.
      */
-    let agss = ["09778", "09162", "09179", "09178"];
+    let agss = ["09778", "09162", "09179", "09780", "09188", "09178"];
     const URL_RKI = "https://v2.rki.marlon-lueckert.de/districts/";
     const URL_ZEIT = "https://interactive.zeit.de/cronjobs/2020/corona/germany-dashboard-v2-scraper.json";
 
@@ -42,11 +42,27 @@ function renderData(agss, rki, zeit) {
             .sevenDayStats.count * 100000 / population);
         console.log(name + ": " + rkiIncidence + "/" + zeitIncidence);
 
-        let color = (rkiIncidence >= 200 || zeitIncidence >= 200) ? "red darken-1" : "orange darken-1";
+        const max = (rkiIncidence >= zeitIncidence) ? rkiIncidence : zeitIncidence;
+        let color;
+        let textColor;
+
+        if (max <= 35) {
+            color = "grey lighten-3";
+            textColor = "";
+        } else if (max > 35 && max <= 50) {
+            color = "amber darken-2";
+            textColor = "white-text";
+        } else if (max > 50 && max < 200) {
+            color = "deep-orange darken-1";
+            textColor = "white-text";
+        } else {
+            color = "red darken-2";
+            textColor = "white-text";
+        }
 
         const card = `<div class="col s12 m12 l4">
                 <div class="card ${color}">
-                    <div class="card-content white-text">
+                    <div class="card-content ${textColor}">
                         <span class="card-title">${name}</span>
                         <div class="row">
                             <div class="col">
