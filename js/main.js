@@ -36,6 +36,16 @@ window.addEventListener("load", function () {
 
 function renderData(agss, rki, zeit) {
     console.log("Rendering data...");
+
+    //update the state fields
+    const rkiState = new Date(rki.meta.lastUpdate);
+    const zeitState = new Date(zeit.lastUpdate);
+    console.log("RKI: " + rkiState.toLocaleString("de-de"));
+    console.log("Zeit: " + zeitState.toLocaleString("de-de"));
+    document.getElementById("state_rki").innerText = rkiState.toLocaleString("de-de");
+    document.getElementById("state_zeit").innerText = zeitState.toLocaleString("de-de");
+
+    //show the incidences
     agss.forEach(ags => {
         const name = rki.data[ags].name;
         const population = rki.data[ags].population;
