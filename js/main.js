@@ -11,7 +11,7 @@ window.addEventListener("load", function () {
      */
     let agss = ["09778", "09162", "09179", "09777", "09188", "09178"];
     const URL_RKI = "https://v2.rki.marlon-lueckert.de/districts/";
-    const URL_ZEIT = "https://interactive.zeit.de/cronjobs/2020/corona/germany-dashboard-v2-scraper.json";
+    const URL_ZEIT = "https://interactive.zeit.de/cronjobs/2020/corona/germany-dashboard-v2.json";
 
     //show loading indicator
     document.getElementById("preloader_container").style.display = "block";
@@ -84,7 +84,7 @@ function renderData(agss, rki, zeit) {
                         <div class="row">
                             <div class="col">
                                 <h3>${rkiIncidence.toFixed(1)}</h3>
-                                <b><a href="https://github.com/marlon360/rki-covid-api">RKI</a></b>
+                                <b><a href="https://corona.rki.de">RKI</a></b>
                             </div>
                             <div class="col">
                                 <h3>${zeitIncidence.toFixed(1)}</h3>

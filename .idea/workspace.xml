@@ -10,9 +10,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="show error message on failure and switch to Ostallgäu">
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="show current data state in footer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +62,8 @@
       <workItem from="1609873270071" duration="4929000" />
       <workItem from="1609928458930" duration="5597000" />
       <workItem from="1609951174577" duration="1521000" />
-      <workItem from="1610111291212" duration="1264000" />
+      <workItem from="1610111291212" duration="1281000" />
+      <workItem from="1610271325316" duration="561000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609877935878</created>
@@ -100,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609952677111</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="show current data state in footer">
+      <created>1610112576757</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1610112576757</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,7 +131,8 @@
     <MESSAGE value="pull data from ZEIT Online as well" />
     <MESSAGE value="add color-coding" />
     <MESSAGE value="show error message on failure and switch to Ostallgäu" />
-    <option name="LAST_COMMIT_MESSAGE" value="show error message on failure and switch to Ostallgäu" />
+    <MESSAGE value="show current data state in footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="show current data state in footer" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="202" width="1076" height="746" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609873681868">
