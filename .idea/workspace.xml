@@ -10,8 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="show current data state in footer">
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="fix ZEIT online data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +64,8 @@
       <workItem from="1609928458930" duration="5597000" />
       <workItem from="1609951174577" duration="1521000" />
       <workItem from="1610111291212" duration="1281000" />
-      <workItem from="1610271325316" duration="561000" />
+      <workItem from="1610271325316" duration="740000" />
+      <workItem from="1610657915290" duration="4063000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609877935878</created>
@@ -107,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610112576757</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix ZEIT online data">
+      <created>1610272045542</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1610272045542</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,7 +141,8 @@
     <MESSAGE value="add color-coding" />
     <MESSAGE value="show error message on failure and switch to Ostallgäu" />
     <MESSAGE value="show current data state in footer" />
-    <option name="LAST_COMMIT_MESSAGE" value="show current data state in footer" />
+    <MESSAGE value="fix ZEIT online data" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix ZEIT online data" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="202" width="1076" height="746" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609873681868">

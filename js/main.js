@@ -17,63 +17,93 @@ window.addEventListener("load", function () {
     document.getElementById("preloader_container").style.display = "block";
 
     //do API calls and handle data when present
+    let rkiData, zeitData;
     fetch(URL_RKI).then(rkiResponse => {
-        rkiResponse.json().then(rkiJson => {
-            fetch(URL_ZEIT).then(zeitResponse => {
-                zeitResponse.json().then(zeitJson => {
-                    //dismiss loading indicator
-                    document.getElementById("preloader_container").style.display = "none";
-                    renderData(agss, rkiJson, zeitJson);
-                })
-            })
-        })
-    }).catch(err => {
-        console.log(err);
-        M.toast({html: 'An error occurred while fetching data.'});
+        if (rkiResponse.ok) {
+            return rkiResponse.json();
+        } else {
+            M.toast({html: 'Laden der RKI-Daten fehlgeschlagen...'});
+            document.getElementById("error_container").style.display = "block";
+            return Promise.resolve(null);
+        }
+    }).then(rkiJson => {
+        rkiData = rkiJson;
+        return fetch(URL_ZEIT);
+    }).then(zeitResponse => {
+        if (zeitResponse.ok) {
+            return zeitResponse.json();
+        } else {
+            M.toast({html: 'Laden der ZEIT-Daten fehlgeschlagen...'});
+            document.getElementById("error_container").style.display = "block";
+            return Promise.resolve(null);
+        }
+    }).then(zeitJson => {
+        zeitData = zeitJson;
+
+        //render data
         document.getElementById("preloader_container").style.display = "none";
+        if (zeitData !== null && rkiData !== null) {
+            document.getElementById("error_container").style.display = "none";
+        }
+        renderData(agss, rkiData, zeitData);
     });
 });
 
 function renderData(agss, rki, zeit) {
     console.log("Rendering data...");
+    console.log(rki);
+    console.log(zeit);
 
     //update the state fields
-    const rkiState = new Date(rki.meta.lastUpdate);
-    const zeitState = new Date(zeit.lastUpdate);
-    console.log("RKI: " + rkiState.toLocaleString("de-de"));
-    console.log("Zeit: " + zeitState.toLocaleString("de-de"));
-    document.getElementById("state_rki").innerText = rkiState.toLocaleString("de-de");
-    document.getElementById("state_zeit").innerText = zeitState.toLocaleString("de-de");
+    if (rki !== null) {
+        const rkiState = new Date(rki.meta.lastUpdate);
+        document.getElementById("state_rki").innerText = rkiState.toLocaleString("de-de");
+    } else {
+        document.getElementById("state_rki").innerText = "Nicht verfügbar";
+    }
+
+    if (zeit !== null) {
+        const zeitState = new Date(zeit.lastUpdate);
+        document.getElementById("state_zeit").innerText = zeitState.toLocaleString("de-de");
+    } else {
+        document.getElementById("state_zeit").innerText = "Nicht verfügbar";
+    }
 
     //show the incidences
     agss.forEach(ags => {
-        const name = rki.data[ags].name;
-        const population = rki.data[ags].population;
+        const name = (rki !== null) ? rki.data[ags].name : "Nicht verfügbar";
+        const population = (rki !== null) ? rki.data[ags].population : 100_000;
 
-        const rkiIncidence = rki.data[ags].weekIncidence;
-        let zeitIncidence = (zeit.kreise.items
+        const rkiIncidence = (rki !== null) ? rki.data[ags].weekIncidence : 0;
+        let zeitIncidence = (zeit !== null) ? (zeit.kreise.items
             .filter(k => k.ags === ags.replace(/^0+/, ''))[0]
-            .sevenDayStats.count * 100000 / population);
+            .sevenDayStats.count * 100000 / population) : 0;
         console.log(name + ": " + rkiIncidence + "/" + zeitIncidence);
 
         const max = (rkiIncidence >= zeitIncidence) ? rkiIncidence : zeitIncidence;
         let color;
         let textColor;
 
-        if (max < 35) {
-            color = "green";
-            textColor = "white-text";
-        } else if (max >= 35 && max < 50) {
-            color = "amber darken-2";
-            textColor = "white-text";
-        } else if (max >= 50 && max < 100) {
-            color = "orange darken-1";
-            textColor = "white-text";
-        } else if (max >= 100 && max < 200) {
-            color = "deep-orange darken-1";
-            textColor = "white-text";
+        //if rki is null, we don't have population information, so we cannot color-code
+        if (rki !== null) {
+            if (max < 35) {
+                color = "green";
+                textColor = "white-text";
+            } else if (max >= 35 && max < 50) {
+                color = "amber darken-2";
+                textColor = "white-text";
+            } else if (max >= 50 && max < 100) {
+                color = "orange darken-1";
+                textColor = "white-text";
+            } else if (max >= 100 && max < 200) {
+                color = "deep-orange darken-1";
+                textColor = "white-text";
+            } else {
+                color = "red darken-2";
+                textColor = "white-text";
+            }
         } else {
-            color = "red darken-2";
+            color = "grey";
             textColor = "white-text";
         }
 
@@ -97,5 +127,5 @@ function renderData(agss, rki, zeit) {
             </div>`;
 
         document.getElementById("card_space").innerHTML += card;
-    })
+    });
 }

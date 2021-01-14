@@ -16,7 +16,7 @@
 </head>
 <body>
 <nav class="grey darken-4" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo center">COVID-19 Inzidenzen</a>
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo center">COVID-19</a>
         <!--<ul class="right hide-on-med-and-down">
             <li><a href="https://github.com/marlon360/rki-covid-api">Quelle (RKI)</a></li>
         </ul>
@@ -40,6 +40,22 @@
                     <div style="text-align: center; font-weight: bold; display: block" id="apiProgressText">
                         Inzidenzen werden geladen...
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="error_container" style="display: none">
+            <div class="col s12 m12 l12">
+                <div class="card-panel red darken-3 white-text">
+                    <div><i class="material-icons">warning</i></div>
+                    <b>Beim Laden der Inzidenzen ist ein Fehler aufgetreten.</b>
+                    <br/>
+                    <b>Es stehen nicht alle Daten zur Verfügung.</b>
+                    <br/>
+                    <p>
+                        Ohne RKI können nur <b>absolute</b> Fallzahlen angezeigt werden.
+                        Landkreisdaten (Name/Bevölkerung) zur Normierung stehen nicht zur Verfügung.
+                    </p>
                 </div>
             </div>
         </div>
