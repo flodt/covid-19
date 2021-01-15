@@ -10,7 +10,7 @@ window.addEventListener("load", function () {
      * That overhead should be lower than calling for every value.
      */
     let agss = ["09778", "09162", "09179", "09777", "09188", "09178"];
-    const URL_RKI = "https://v2.rki.marlon-lueckert.de/districts/";
+    const URL_RKI = "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?where=1%3D1&outFields=RS,AGS,GEN,EWZ,death_rate,cases,deaths,cases_per_100k,cases_per_population,BL,county,last_update,cases7_per_100k,recovered,cases7_bl,death7_bl,cases7_lk,death7_lk,cases7_per_100k_txt&returnGeometry=false&outSR=4326&f=json";
     const URL_ZEIT = "https://interactive.zeit.de/cronjobs/2020/corona/germany-dashboard-v2.json";
 
     //show loading indicator
@@ -56,8 +56,8 @@ function renderData(agss, rki, zeit) {
 
     //update the state fields
     if (rki !== null) {
-        const rkiState = new Date(rki.meta.lastUpdate);
-        document.getElementById("state_rki").innerText = rkiState.toLocaleString("de-de");
+        document.getElementById("state_rki").innerText = rki
+            .features.filter(f => f.attributes.AGS === agss[0])[0].attributes.last_update;
     } else {
         document.getElementById("state_rki").innerText = "Nicht verfügbar";
     }
@@ -71,13 +71,22 @@ function renderData(agss, rki, zeit) {
 
     //show the incidences
     agss.forEach(ags => {
-        const name = (rki !== null) ? rki.data[ags].name : "Nicht verfügbar";
-        const population = (rki !== null) ? rki.data[ags].population : 100_000;
+        const name = (rki !== null)
+            ? rki.features.filter(f => f.attributes.AGS === ags)[0].attributes.GEN
+            : "Nicht verfügbar";
 
-        const rkiIncidence = (rki !== null) ? rki.data[ags].weekIncidence : 0;
+        const population = (rki !== null)
+            ? rki.features.filter(f => f.attributes.AGS === ags)[0].attributes.EWZ
+            : 100_000;
+
+        const rkiIncidence = (rki !== null)
+            ? rki.features.filter(f => f.attributes.AGS === ags)[0].attributes.cases7_per_100k
+            : 0;
+
         let zeitIncidence = (zeit !== null) ? (zeit.kreise.items
             .filter(k => k.ags === ags.replace(/^0+/, ''))[0]
             .sevenDayStats.count * 100000 / population) : 0;
+
         console.log(name + ": " + rkiIncidence + "/" + zeitIncidence);
 
         const max = (rkiIncidence >= zeitIncidence) ? rkiIncidence : zeitIncidence;
