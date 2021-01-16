@@ -137,4 +137,41 @@ function renderData(agss, rki, zeit) {
 
         document.getElementById("card_space").innerHTML += card;
     });
+
+    //render charts
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: [1,2,3,4,5,6,7].reverse(),
+            datasets: [{
+                label: '7-Tage-Inzidenz',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [
+                    228,
+                    297,
+                    306,
+                    269,
+                    349,
+                    328,
+                    323
+                ]
+            }]
+        },
+
+        // Configuration options go here
+        options: {
+            /*scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }*/
+        }
+    });
 }
