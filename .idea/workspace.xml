@@ -10,9 +10,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="add check for RKI error JSON">
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="add ZEIT online sparkbars as graph">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +68,8 @@
       <workItem from="1610657915290" duration="4142000" />
       <workItem from="1610723933180" duration="1217000" />
       <workItem from="1610814682804" duration="510000" />
-      <workItem from="1610901676218" duration="4877000" />
+      <workItem from="1610901676218" duration="5058000" />
+      <workItem from="1610908942664" duration="498000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609877935878</created>
@@ -148,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610901879398</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add ZEIT online sparkbars as graph">
+      <created>1610906751584</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1610906751584</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,7 +185,8 @@
     <MESSAGE value="update to pull directly from RKI" />
     <MESSAGE value="WIP: add graphs" />
     <MESSAGE value="add check for RKI error JSON" />
-    <option name="LAST_COMMIT_MESSAGE" value="add check for RKI error JSON" />
+    <MESSAGE value="add ZEIT online sparkbars as graph" />
+    <option name="LAST_COMMIT_MESSAGE" value="add ZEIT online sparkbars as graph" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="202" width="1076" height="746" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609873681868">
@@ -209,6 +217,10 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="698" y="209" width="584" height="702" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609933808023" />
+    <state x="2544" y="243" key="run.anything.popup" timestamp="1610909436945">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2544" y="243" key="run.anything.popup/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1610909436945" />
     <state x="2051" y="234" width="696" height="696" key="search.everywhere.popup" timestamp="1610902571045">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
