@@ -57,6 +57,13 @@ function renderData(agss, rki, zeit) {
     const rkiAvail = rki !== null && rki.features !== undefined;
     const zeitAvail = zeit !== null;
 
+    //show error box (need to do it here because of the error json value)
+    if (!rkiAvail) {
+        document.getElementById("error_container").style.display = "block";
+    } else {
+        document.getElementById("error_container").style.display = "none";
+    }
+
     //update the state fields
     if (rkiAvail) {
         document.getElementById("state_rki").innerText = rki
@@ -95,34 +102,42 @@ function renderData(agss, rki, zeit) {
         const max = (rkiIncidence >= zeitIncidence) ? rkiIncidence : zeitIncidence;
         let color;
         let textColor;
+        let chartColor;
 
         //if rki is null, we don't have population information, so we cannot color-code
         if (rkiAvail) {
             if (max < 35) {
                 color = "green";
+                chartColor = "rgb(76, 175, 80)";
                 textColor = "white-text";
             } else if (max >= 35 && max < 50) {
                 color = "amber darken-2";
+                chartColor = "rgb(255, 160, 0)";
                 textColor = "white-text";
             } else if (max >= 50 && max < 100) {
                 color = "orange darken-1";
+                chartColor = "rgb(251, 140, 0)";
                 textColor = "white-text";
             } else if (max >= 100 && max < 200) {
                 color = "deep-orange darken-1";
+                chartColor = "rgb(244, 81, 30)";
                 textColor = "white-text";
             } else {
                 color = "red darken-2";
+                chartColor = "rgb(211, 47, 47)";
                 textColor = "white-text";
             }
         } else {
             color = "grey";
+            chartColor = "rgb(158, 158, 158)";
             textColor = "white-text";
         }
 
         const card = `<div class="col s12 m12 l4">
                 <div class="card ${color}">
                     <div class="card-content ${textColor}">
-                        <span class="card-title">${name}</span>
+                        <span class="card-title activator ${textColor}">${name}<i
+                                class="material-icons right">show_chart</i></span>
                         <div class="row">
                             <div class="col">
                                 <h3>${rkiIncidence.toFixed(1)}</h3>
@@ -135,46 +150,76 @@ function renderData(agss, rki, zeit) {
                             </div>
                         </div>
                     </div>
+                    <div class="card-reveal" id="card_reveal_${ags}">
+                        <span class="card-title">${name}<i
+                                class="material-icons right">close</i></span>
+                        ${!zeitAvail ? "<p>Graphen sind nicht verfügbar.</p>" : ""}
+                    </div>
                 </div>
             </div>`;
 
         document.getElementById("card_space").innerHTML += card;
-    });
 
-    //render charts
-    const ctx = document.getElementById('myChart').getContext('2d');
-    const chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'line',
+        //create the canvas dynamically
+        const canvasDiv = document.createElement("div");
+        canvasDiv.setAttribute("style", "width: 250px; margin: auto;");
+        canvasDiv.classList.add("center");
+        const canvasElem = document.createElement("canvas");
+        const canvasId = `chart_${ags}`;
+        canvasElem.setAttribute("id", canvasId);
+        canvasDiv.appendChild(canvasElem);
+        document.getElementById(`card_reveal_${ags}`).appendChild(canvasDiv);
 
-        // The data for our dataset
-        data: {
-            labels: [1,2,3,4,5,6,7].reverse(),
-            datasets: [{
-                label: '7-Tage-Inzidenz',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [
-                    228,
-                    297,
-                    306,
-                    269,
-                    349,
-                    328,
-                    323
-                ]
-            }]
-        },
+        if (zeitAvail) {
+            setTimeout(function () {
+                //prepare chart labels (for the last 7 days)
+                const labels = [0, 1, 2, 3, 4, 5, 6, 7]
+                    .map(i => new Date(Date.now() - i * 24 * 60 * 60 * 1000).getDay())
+                    .map(d => ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"][d])
+                    .reverse();
 
-        // Configuration options go here
-        options: {
-            /*scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
+                //gather ZEIT sparkbars
+                const bars = zeit.kreise.items
+                    .filter(k => k.ags === ags.replace(/^0+/, ''))[0]
+                    .sparkbars
+                    .slice(-8)
+                    .map(i => i * 100000 / population)
+                    .map(i => i.toFixed(1));
+
+                console.log(labels);
+                console.log(bars);
+
+                //render charts
+                const ctx = document.getElementById(canvasId).getContext('2d');
+                const chart = new Chart(ctx, {
+                    // The type of chart we want to create
+                    type: 'line',
+
+                    // The data for our dataset
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: '7-Tage-Inzidenz',
+                            backgroundColor: chartColor,
+                            borderColor: chartColor,
+                            data: bars
+                        }]
+                    },
+
+                    // Configuration options go here
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true,
+                                    suggestedMin: 0,
+                                    suggestedMax: 300
+                                }
+                            }]
+                        }
                     }
-                }]
-            }*/
+                });
+            }, 0);
         }
     });
 }
