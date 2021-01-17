@@ -79,6 +79,67 @@ function renderData(agss, rki, zeit) {
         document.getElementById("state_zeit").innerText = "Nicht verfügbar";
     }
 
+    //show the country-wide stats and draw that graph
+    if (zeitAvail) {
+        document.getElementById("infected_yesterday").innerText = zeit.yesterdayCount;
+        document.getElementById("infected_7day").innerText = (zeit
+            .sevenDayStats
+            .count * 100_000 / 83_931_611)
+            .toFixed(1);
+        document.getElementById("row_country").style.display = "block";
+
+        setTimeout(function () {
+            //prepare chart labels (for the last 14 days)
+            const labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+                .map(i => new Date(Date.now() - i * 24 * 60 * 60 * 1000))
+                .map(d => d.getDate() + ". " + d.getMonth() + 1 + ".")
+                .map(function (val, i) {
+                    return i % 2 === 0 ? val : "";
+                })
+                .reverse();
+
+            //gather ZEIT sparkbars
+            const bars = zeit.sixWeeksStats
+                .map(s => s.newInf)
+                .slice(-15);
+
+            console.log(labels);
+            console.log(bars);
+
+            //render charts
+            const ctx = document.getElementById("chart_germany").getContext('2d');
+            const chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'line',
+
+                // The data for our dataset
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Neuinfektionen',
+                        backgroundColor: "rgb(211, 47, 47)",
+                        borderColor: "rgb(211, 47, 47)",
+                        data: bars
+                    }]
+                },
+
+                // Configuration options go here
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                                //suggestedMin: 0,
+                                //suggestedMax: 32500
+                            }
+                        }]
+                    },
+                    responsive: true
+                }
+            });
+        }, 0);
+    }
+
     //show the incidences
     agss.forEach(ags => {
         let name = rkiAvail

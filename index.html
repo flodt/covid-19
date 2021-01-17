@@ -60,6 +60,40 @@
             </div>
         </div>
 
+        <div class="row" style="display: none" id="row_country">
+            <div class="col s12 m12 l6">
+                <div class="card red darken-1" style="height: 210px">
+                    <div class="card-content white-text">
+                        <span class="card-title">Deutschland</span>
+                        <div class="row">
+                            <div class="col">
+                                <h3 id="infected_yesterday">0</h3>
+                                <b><a href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">Neuinfektionen gestern</a></b>
+                            </div>
+                            <div class="col">
+                                <h3 id="infected_7day">0</h3>
+                                <b><a href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">7-Tage-Inzidenz</a></b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m12 l6">
+                <div class="card" style="height: 210px">
+                    <div class="card-content white-text">
+                        <div style="width: 350px; margin: auto;">
+                            <canvas id="chart_germany"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="center">
+            <h5><b>Landkreise</b></h5>
+        </div>
+
         <!-- CARD TEMPLATES
         <div class="row">
             <div class="col s12 m12 l4">
