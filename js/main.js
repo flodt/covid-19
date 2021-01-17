@@ -54,15 +54,18 @@ function renderData(agss, rki, zeit) {
     console.log(rki);
     console.log(zeit);
 
+    const rkiAvail = rki !== null && rki.features !== undefined;
+    const zeitAvail = zeit !== null;
+
     //update the state fields
-    if (rki !== null) {
+    if (rkiAvail) {
         document.getElementById("state_rki").innerText = rki
             .features.filter(f => f.attributes.AGS === agss[0])[0].attributes.last_update;
     } else {
         document.getElementById("state_rki").innerText = "Nicht verfügbar";
     }
 
-    if (zeit !== null) {
+    if (zeitAvail) {
         const zeitState = new Date(zeit.lastUpdate);
         document.getElementById("state_zeit").innerText = zeitState.toLocaleString("de-de");
     } else {
@@ -71,19 +74,19 @@ function renderData(agss, rki, zeit) {
 
     //show the incidences
     agss.forEach(ags => {
-        const name = (rki !== null)
+        const name = rkiAvail
             ? rki.features.filter(f => f.attributes.AGS === ags)[0].attributes.GEN
             : "Nicht verfügbar";
 
-        const population = (rki !== null)
+        const population = rkiAvail
             ? rki.features.filter(f => f.attributes.AGS === ags)[0].attributes.EWZ
             : 100_000;
 
-        const rkiIncidence = (rki !== null)
+        const rkiIncidence = rkiAvail
             ? rki.features.filter(f => f.attributes.AGS === ags)[0].attributes.cases7_per_100k
             : 0;
 
-        let zeitIncidence = (zeit !== null) ? (zeit.kreise.items
+        let zeitIncidence = zeitAvail ? (zeit.kreise.items
             .filter(k => k.ags === ags.replace(/^0+/, ''))[0]
             .sevenDayStats.count * 100000 / population) : 0;
 
@@ -94,7 +97,7 @@ function renderData(agss, rki, zeit) {
         let textColor;
 
         //if rki is null, we don't have population information, so we cannot color-code
-        if (rki !== null) {
+        if (rkiAvail) {
             if (max < 35) {
                 color = "green";
                 textColor = "white-text";
