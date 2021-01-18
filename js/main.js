@@ -9,7 +9,7 @@ window.addEventListener("load", function () {
      * extracting the incidence data from the entire set.
      * That overhead should be lower than calling for every value.
      */
-    let agss = ["09778", "09162", "09179", "09762", "09777", "09188", "09178", "09772"];
+    let agss = ["09778", "09162", "09179", "09762", "09777", "09188", "09178", "09175", "09772"];
     const URL_RKI = "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?where=1%3D1&outFields=RS,AGS,GEN,EWZ,death_rate,cases,deaths,cases_per_100k,cases_per_population,BL,county,last_update,cases7_per_100k,recovered,cases7_bl,death7_bl,cases7_lk,death7_lk,cases7_per_100k_txt&returnGeometry=false&outSR=4326&f=json";
     const URL_ZEIT = "https://interactive.zeit.de/cronjobs/2020/corona/germany-dashboard-v2.json";
 
@@ -81,7 +81,7 @@ function renderData(agss, rki, zeit) {
 
     //show the country-wide stats and draw that graph
     if (zeitAvail) {
-        document.getElementById("infected_yesterday").innerText = zeit.yesterdayCount;
+        document.getElementById("infected_yesterday").innerText = zeit.yesterdayCount.toLocaleString("de-de");
         document.getElementById("infected_7day").innerText = (zeit
             .sevenDayStats
             .count * 100_000 / 83_931_611)
