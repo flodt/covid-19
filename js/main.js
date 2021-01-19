@@ -12,12 +12,13 @@ window.addEventListener("load", function () {
     let agss = ["09778", "09162", "09179", "09762", "09777", "09188", "09178", "09175", "09772"];
     const URL_RKI = "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?where=1%3D1&outFields=RS,AGS,GEN,EWZ,death_rate,cases,deaths,cases_per_100k,cases_per_population,BL,county,last_update,cases7_per_100k,recovered,cases7_bl,death7_bl,cases7_lk,death7_lk,cases7_per_100k_txt&returnGeometry=false&outSR=4326&f=json";
     const URL_ZEIT = "https://interactive.zeit.de/cronjobs/2020/corona/germany-dashboard-v2.json";
+    const URL_VACC = "https://interactive.zeit.de/cronjobs/2020/corona/impfzahlen.json";
 
     //show loading indicator
     document.getElementById("preloader_container").style.display = "block";
 
     //do API calls and handle data when present
-    let rkiData, zeitData;
+    let rkiData, zeitData, vaccData;
     fetch(URL_RKI).then(rkiResponse => {
         if (rkiResponse.ok) {
             return rkiResponse.json();
@@ -39,23 +40,36 @@ window.addEventListener("load", function () {
         }
     }).then(zeitJson => {
         zeitData = zeitJson;
+        return fetch(URL_VACC);
+    }).then(vaccResponse => {
+        if (vaccResponse.ok) {
+            return vaccResponse.json();
+        } else {
+            M.toast({html: 'Laden der Impfungsdaten fehlgeschlagen...'});
+            return Promise.resolve(null);
+        }
+    }).then(vaccJson => {
+        vaccData = vaccJson;
 
         //render data
         document.getElementById("preloader_container").style.display = "none";
         if (zeitData !== null && rkiData !== null) {
             document.getElementById("error_container").style.display = "none";
         }
-        renderData(agss, rkiData, zeitData);
+        renderData(agss, rkiData, zeitData, vaccData);
     });
 });
 
-function renderData(agss, rki, zeit) {
+function renderData(agss, rki, zeit, vacc) {
     console.log("Rendering data...");
     console.log(rki);
     console.log(zeit);
 
+    const POPULATION_GERMANY = 83_190_556;
+
     const rkiAvail = rki !== null && rki.features !== undefined;
     const zeitAvail = zeit !== null;
+    const vaccAvail = vacc !== null;
 
     //show error box (need to do it here because of the error json value)
     if (!rkiAvail) {
@@ -79,12 +93,19 @@ function renderData(agss, rki, zeit) {
         document.getElementById("state_zeit").innerText = "Nicht verfügbar";
     }
 
+    if (vaccAvail) {
+        const vaccState = new Date(vacc.lastUpdate);
+        document.getElementById("state_vaccine").innerText = vaccState.toLocaleString("de-de");
+    } else {
+        document.getElementById("state_vaccine").innerText = "Nicht verfügbar";
+    }
+
     //show the country-wide stats and draw that graph
     if (zeitAvail) {
         document.getElementById("infected_yesterday").innerText = zeit.yesterdayCount.toLocaleString("de-de");
         document.getElementById("infected_7day").innerText = (zeit
             .sevenDayStats
-            .count * 100_000 / 83_931_611)
+            .count * 100_000 / POPULATION_GERMANY)
             .toFixed(1);
         document.getElementById("row_country").style.display = "block";
 
@@ -293,4 +314,64 @@ function renderData(agss, rki, zeit) {
             }, 0);
         }
     });
+
+    //show the vaccine data (compute percentages and update fields)
+    if (vaccAvail) {
+        const prelim = vacc.germany.historical[0].peopleVaccinated;
+        const fully = vacc.germany.historical[0].peopleFullyVaccinated;
+
+        document.getElementById("vaccinated_preliminary").innerText =
+            (prelim / POPULATION_GERMANY * 100).toFixed(2) + " %";
+        document.getElementById("vaccinated_protected").innerText =
+            (fully / POPULATION_GERMANY * 100).toFixed(2) + " %";
+
+        //show the vaccinated pie chart
+        setTimeout(function () {
+            //prepare chart labels (for the last 14 days)
+            const labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+                .map(i => new Date(Date.now() - i * 24 * 60 * 60 * 1000))
+                .map(d => d.getDate() + ". " + d.getMonth() + 1 + ".")
+                .map(function (val, i) {
+                    return i % 2 === 0 ? val : "";
+                })
+                .reverse();
+
+            //gather ZEIT sparkbars
+            const bars = zeit.sixWeeksStats
+                .map(s => s.newInf)
+                .slice(-15);
+
+            console.log(labels);
+            console.log(bars);
+
+            //render charts
+            const ctx = document.getElementById("chart_vaccine").getContext('2d');
+            const chart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    datasets: [{
+                        data: [
+                            prelim - fully,
+                            fully,
+                            POPULATION_GERMANY - (prelim + fully)
+                        ],
+                        backgroundColor: [
+                            'rgb(76, 175, 80)',
+                            'rgb(30, 136, 229)',
+                            'rgb(189, 189, 189)'
+                        ],
+                        label: 'Impffortschritt (landesweit)'
+                    }],
+                    labels: [
+                        'Geimpfte',
+                        'mit vollem Impfschutz',
+                        'Ungeimpft'
+                    ]
+                },
+                options: {
+                    responsive: true
+                }
+            });
+        }, 0);
+    }
 }

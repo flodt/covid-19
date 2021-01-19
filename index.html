@@ -159,6 +159,44 @@
                 </div>
             </div>-->
         </div>
+
+        <div class="center">
+            <h5><b>Impfung</b></h5>
+        </div>
+
+        <div class="row" style="display: block" id="row_vaccine">
+            <div class="col s12 m12 l6">
+                <div class="card blue darken-1" style="height: 210px">
+                    <div class="card-content white-text">
+                        <span class="card-title">Impfstatistik</span>
+                        <div class="row">
+                            <div class="col">
+                                <h3 id="vaccinated_preliminary">0</h3>
+                                <b><a href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                    Geimpfte
+                                </a></b>
+                            </div>
+                            <div class="col">
+                                <h3 id="vaccinated_protected">0,00 %</h3>
+                                <b><a href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                    voller Impfschutz
+                                </a></b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m12 l6">
+                <div class="card" style="height: 210px">
+                    <div class="card-content white-text">
+                        <div style="width: 305px; margin: auto;">
+                            <canvas id="chart_vaccine"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>
@@ -167,6 +205,8 @@
     <div class="grey-text text-darken-2" style="text-align: center;">Stand (RKI): <span id="state_rki">Inzidenzen werden geladen...</span>
     </div>
     <div class="grey-text text-darken-2" style="text-align: center;">Stand (ZEIT Online): <span id="state_zeit">Inzidenzen werden geladen...</span>
+    </div>
+    <div class="grey-text text-darken-2" style="text-align: center;">Stand (ZEIT Online Impfstatistik): <span id="state_vaccine">Statistik wird geladen...</span>
     </div>
     <br/>
     <div class="grey-text text-darken-2" style="text-align: center;">Icons made by Freepik from flaticon.com.</div>
