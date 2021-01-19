@@ -140,7 +140,8 @@ function renderData(agss, rki, zeit, vacc) {
                         label: 'Neuinfektionen',
                         backgroundColor: "rgb(211, 47, 47)",
                         borderColor: "rgb(211, 47, 47)",
-                        data: bars
+                        data: bars,
+                        fill: false
                     }]
                 },
 
@@ -155,7 +156,11 @@ function renderData(agss, rki, zeit, vacc) {
                             }
                         }]
                     },
-                    responsive: true
+                    responsive: true,
+                    tooltips: {
+                        mode: 'nearest',
+                        intersect: false
+                    }
                 }
             });
         }, 0);
@@ -294,7 +299,8 @@ function renderData(agss, rki, zeit, vacc) {
                             label: '7-Tage-Inzidenz',
                             backgroundColor: chartColor,
                             borderColor: chartColor,
-                            data: bars
+                            data: bars,
+                            fill: false
                         }]
                     },
 
@@ -308,6 +314,10 @@ function renderData(agss, rki, zeit, vacc) {
                                     suggestedMax: 300
                                 }
                             }]
+                        },
+                        tooltips: {
+                            mode: 'nearest',
+                            intersect: false
                         }
                     }
                 });
