@@ -56,6 +56,7 @@ window.addEventListener("load", function () {
         if (zeitData !== null && rkiData !== null) {
             document.getElementById("error_container").style.display = "none";
         }
+        document.getElementById("header_counties").style.display = "block";
         renderData(agss, rkiData, zeitData, vaccData);
     });
 });
@@ -339,6 +340,10 @@ function renderData(agss, rki, zeit, vacc) {
             (prelim / POPULATION_GERMANY * 100).toFixed(2) + " %";
         document.getElementById("vaccinated_protected").innerText =
             (fully / POPULATION_GERMANY * 100).toFixed(2) + " %";
+
+        //display the block
+        document.getElementById("header_vaccine").style.display = "block";
+        document.getElementById("row_vaccine").style.display = "block";
 
         //show the vaccinated pie chart
         setTimeout(function () {
