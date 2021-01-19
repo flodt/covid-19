@@ -111,9 +111,14 @@ function renderData(agss, rki, zeit, vacc) {
 
         setTimeout(function () {
             //prepare chart labels (for the last 14 days)
-            const labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+            const daysPast = 5 * 7;
+            const labels = [...Array(daysPast).keys()]
+                .map(i => i + 1)
                 .map(i => new Date(Date.now() - i * 24 * 60 * 60 * 1000))
-                .map(d => d.getDate() + ". " + d.getMonth() + 1 + ".")
+                .map(d => {
+                    const str = d.toLocaleString("de-de");
+                    return str.slice(0, str.lastIndexOf(".") + 1);
+                })
                 .map(function (val, i) {
                     return i % 2 === 0 ? val : "";
                 })
@@ -122,7 +127,7 @@ function renderData(agss, rki, zeit, vacc) {
             //gather ZEIT sparkbars
             const bars = zeit.sixWeeksStats
                 .map(s => s.newInf)
-                .slice(-15);
+                .slice(-daysPast);
 
             console.log(labels);
             console.log(bars);
@@ -337,24 +342,6 @@ function renderData(agss, rki, zeit, vacc) {
 
         //show the vaccinated pie chart
         setTimeout(function () {
-            //prepare chart labels (for the last 14 days)
-            const labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-                .map(i => new Date(Date.now() - i * 24 * 60 * 60 * 1000))
-                .map(d => d.getDate() + ". " + d.getMonth() + 1 + ".")
-                .map(function (val, i) {
-                    return i % 2 === 0 ? val : "";
-                })
-                .reverse();
-
-            //gather ZEIT sparkbars
-            const bars = zeit.sixWeeksStats
-                .map(s => s.newInf)
-                .slice(-15);
-
-            console.log(labels);
-            console.log(bars);
-
-            //render charts
             const ctx = document.getElementById("chart_vaccine").getContext('2d');
             const chart = new Chart(ctx, {
                 type: 'pie',
