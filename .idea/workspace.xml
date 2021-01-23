@@ -10,9 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="expand country-wide graph to 5 weeks">
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="only show headers when data is present">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +39,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="ignore_missing_gitignore" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.20.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.19.12" />
     <property name="js.last.introduce.type" value="CONST" />
@@ -74,7 +75,8 @@
       <workItem from="1610911939146" duration="2145000" />
       <workItem from="1610914227386" duration="120000" />
       <workItem from="1610967606323" duration="291000" />
-      <workItem from="1611080305366" duration="3059000" />
+      <workItem from="1611080305366" duration="3105000" />
+      <workItem from="1611395178849" duration="145000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609877935878</created>
@@ -209,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611083232636</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="only show headers when data is present">
+      <created>1611083431409</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1611083431409</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +256,8 @@
     <MESSAGE value="add vaccination data" />
     <MESSAGE value="remove fill from graphs and fix hover issue" />
     <MESSAGE value="expand country-wide graph to 5 weeks" />
-    <option name="LAST_COMMIT_MESSAGE" value="expand country-wide graph to 5 weeks" />
+    <MESSAGE value="only show headers when data is present" />
+    <option name="LAST_COMMIT_MESSAGE" value="only show headers when data is present" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="202" width="1076" height="746" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609873681868">

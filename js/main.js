@@ -111,21 +111,17 @@ function renderData(agss, rki, zeit, vacc) {
         document.getElementById("row_country").style.display = "block";
 
         setTimeout(function () {
-            //prepare chart labels (for the last 14 days)
+            //prepare chart labels (for the last 5 weeks)
             const daysPast = 5 * 7;
             const labels = [...Array(daysPast).keys()]
-                .map(i => i + 1)
                 .map(i => new Date(Date.now() - i * 24 * 60 * 60 * 1000))
                 .map(d => {
                     const str = d.toLocaleString("de-de");
                     return str.slice(0, str.lastIndexOf(".") + 1);
                 })
-                .map(function (val, i) {
-                    return i % 2 === 0 ? val : "";
-                })
                 .reverse();
 
-            //gather ZEIT sparkbars
+            //gather ZEIT data for the last 5 weeks
             const bars = zeit.sixWeeksStats
                 .map(s => s.newInf)
                 .slice(-daysPast);
