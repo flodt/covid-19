@@ -10,7 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="fix off-by-one error in graph indexing" />
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="update the vaccination URL to the new ZEIT source">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,6 +76,9 @@
       <workItem from="1610967606323" duration="291000" />
       <workItem from="1611080305366" duration="3105000" />
       <workItem from="1611395178849" duration="256000" />
+      <workItem from="1611674996482" duration="137000" />
+      <workItem from="1611693902337" duration="623000" />
+      <workItem from="1611694629523" duration="304000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609877935878</created>
@@ -221,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611395367917</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="update the vaccination URL to the new ZEIT source">
+      <created>1611675120992</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1611675120992</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +274,8 @@
     <MESSAGE value="expand country-wide graph to 5 weeks" />
     <MESSAGE value="only show headers when data is present" />
     <MESSAGE value="fix off-by-one error in graph indexing" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix off-by-one error in graph indexing" />
+    <MESSAGE value="update the vaccination URL to the new ZEIT source" />
+    <option name="LAST_COMMIT_MESSAGE" value="update the vaccination URL to the new ZEIT source" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="202" width="1076" height="746" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609873681868">
