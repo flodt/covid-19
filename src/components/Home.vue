@@ -1,7 +1,6 @@
 <template>
     <section>
         <navigation></navigation>
-        <br/>
         <div class="container">
             <div class="section">
                 <div class="row" id="preloader_container" style="display: none">
