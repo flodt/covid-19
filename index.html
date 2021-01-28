@@ -1,290 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <link rel="shortcut icon" href="static/favicon-16x16.png" type="image/png"/>
+    <link rel="shortcut icon" href="static/favicon-32x32.png" type="image/png"/>
+    <link rel="shortcut icon" href="static/favicon-196x196.png" type="image/png"/>
     <title>COVID-19</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
 
-    <link rel="shortcut icon" href="img/favicon-16x16.png" type="image/png"/>
-    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/png"/>
-    <link rel="shortcut icon" href="img/favicon-196x196.png" type="image/png"/>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.2.3/firebase-app.js"></script>
 
-    <!-- CSS  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-</head>
-<body>
-<nav class="grey darken-4" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo center">COVID-19</a>
-        <!--<ul class="right hide-on-med-and-down">
-            <li><a href="https://github.com/marlon360/rki-covid-api">Quelle (RKI)</a></li>
-        </ul>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/8.2.3/firebase-analytics.js"></script>
 
-        <ul id="nav-mobile" class="sidenav">
-            <li><a href="https://github.com/marlon360/rki-covid-api">Quelle (RKI)</a></li>
-        </ul>
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
-    </div>
-</nav>
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
 
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  </body>
 
-<div class="container">
-    <div class="section">
-        <div class="row" id="preloader_container" style="display: none">
-            <div class="col s12 m12 l4">
-                <div class="card-panel">
-                    <div class="progress">
-                        <div class="indeterminate" id="apiProgressBar"></div>
-                    </div>
-                    <div style="text-align: center; font-weight: bold; display: block" id="apiProgressText">
-                        Inzidenzen werden geladen...
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row" id="error_container" style="display: none">
-            <div class="col s12 m12 l12">
-                <div class="card-panel red darken-3 white-text">
-                    <div><i class="material-icons">warning</i></div>
-                    <b>Beim Laden der Inzidenzen ist ein Fehler aufgetreten.</b>
-                    <br/>
-                    <b>Es stehen nicht alle Daten zur Verfügung.</b>
-                    <br/>
-                    <p>
-                        Ohne RKI können nur <b>absolute</b> Fallzahlen angezeigt werden.
-                        Landkreisdaten (Name/Bevölkerung) zur Normierung stehen nicht zur Verfügung.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row" style="display: none" id="row_country">
-            <div class="col s12 m12 l6">
-                <div class="card red darken-1" style="height: 210px">
-                    <div class="card-content white-text">
-                        <span class="card-title">Deutschland</span>
-                        <div class="row">
-                            <div class="col">
-                                <h3 id="infected_yesterday">0</h3>
-                                <b><a href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">Neuinfektionen gestern</a></b>
-                            </div>
-                            <div class="col">
-                                <h3 id="infected_7day">0</h3>
-                                <b><a href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">7-Tage-Inzidenz</a></b>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col s12 m12 l6">
-                <div class="card" style="height: 210px">
-                    <div class="card-content white-text">
-                        <div style="width: 305px; margin: auto;">
-                            <canvas id="chart_germany"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="center" id="header_counties" style="display: none;">
-            <h5><b>Landkreise</b></h5>
-        </div>
-
-        <!-- CARD TEMPLATES
-        <div class="row">
-            <div class="col s12 m12 l4">
-                <div class="card orange darken-2">
-                    <div class="card-content white-text">
-                        <span class="card-title activator white-text">Landkreisname<i
-                                class="material-icons right">show_chart</i></span>
-                        <div class="row">
-                            <div class="col">
-                                <h3>100</h3>
-                                <b><a href="https://corona.rki.de">RKI</a></b>
-                            </div>
-                            <div class="col">
-                                <h3>100</h3>
-                                <b><a href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">ZEIT
-                                    Online</a></b>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title">Landkreisname<i
-                                class="material-icons right">close</i></span>
-                        <canvas id="myChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-        -->
-
-        <div class="row" id="card_space">
-            <!--<div class="col s12 m6 l4">
-                <div class="card red darken-1">
-                    <div class="card-content white-text">
-                        <span class="card-title">Beispiel</span>
-                        <h1>203</h1>
-                    </div>
-                </div>
-            </div>-->
-            <!--
-            <div class="col">
-                                <h3>456</h3>
-                                <b><a href="https://www.lgl.bayern.de/gesundheit/infektionsschutz/infektionskrankheiten_a_z/coronavirus/karte_coronavirus/">LGL
-                                    Bayern</a></b>
-                            </div>
-            -->
-
-            <!--<div class="col s12 m12 l4">
-                <div class="card red darken-1">
-                    <div class="card-content white-text">
-                        <span class="card-title">Beispiel</span>
-                        <div class="row">
-                            <div class="col">
-                                <h3>123</h3>
-                                <b><a href="https://github.com/marlon360/rki-covid-api">RKI</a></b>
-                            </div>
-                            <div class="col">
-                                <h3>203</h3>
-                                <b><a href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">ZEIT
-                                    Online</a></b>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
-        </div>
-
-        <div class="center" id="header_vaccine" style="display: none;">
-            <h5><b>Impfung</b></h5>
-        </div>
-
-        <div class="row" style="display: none" id="row_vaccine">
-            <div class="col s12 m12 l6">
-                <div class="card blue darken-1" style="height: 210px">
-                    <div class="card-content white-text">
-                        <span class="card-title">Impfstatistik</span>
-                        <div class="row">
-                            <div class="col">
-                                <h3 id="vaccinated_preliminary">0</h3>
-                                <b><a href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
-                                    Geimpfte
-                                </a></b>
-                            </div>
-                            <div class="col">
-                                <h3 id="vaccinated_protected">0,00 %</h3>
-                                <b><a href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
-                                    voller Impfschutz
-                                </a></b>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col s12 m12 l6">
-                <div class="card" style="height: 210px">
-                    <div class="card-content white-text">
-                        <div style="width: 305px; margin: auto;">
-                            <canvas id="chart_vaccine"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-<footer>
-    <div class="grey-text text-darken-2" style="text-align: center;">Stand (RKI): <span id="state_rki">Inzidenzen werden geladen...</span>
-    </div>
-    <div class="grey-text text-darken-2" style="text-align: center;">Stand (ZEIT Online): <span id="state_zeit">Inzidenzen werden geladen...</span>
-    </div>
-    <div class="grey-text text-darken-2" style="text-align: center;">Stand (ZEIT Online Impfstatistik): <span id="state_vaccine">Statistik wird geladen...</span>
-    </div>
-    <br/>
-    <div class="grey-text text-darken-2" style="text-align: center;">Icons made by Freepik from flaticon.com.</div>
-    <br/>
-    <br/>
-</footer>
-
-<!--
-<footer class="page-footer orange">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">Florian Schmidt</h5>
-        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
-      </div>
-      <div class="col l3 s12">
-        <h5 class="white-text">Settings</h5>
-        <ul>
-          <li><a class="white-text" href="#!">Link 1</a></li>
-          <li><a class="white-text" href="#!">Link 2</a></li>
-          <li><a class="white-text" href="#!">Link 3</a></li>
-          <li><a class="white-text" href="#!">Link 4</a></li>
-        </ul>
-      </div>
-      <div class="col l3 s12">
-        <h5 class="white-text">Connect</h5>
-        <ul>
-          <li><a class="white-text" href="#!">Link 1</a></li>
-          <li><a class="white-text" href="#!">Link 2</a></li>
-          <li><a class="white-text" href="#!">Link 3</a></li>
-          <li><a class="white-text" href="#!">Link 4</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container">
-    Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-    </div>
-  </div>
-</footer>
--->
-
-
-<!--  Scripts-->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="js/materialize.js"></script>
-<script src="js/init.js"></script>
-<script src="js/main.js"></script>
-
-</body>
-
-<style>
+  <style>
     a:link {
-        color: white;
-        background-color: transparent;
-        text-decoration: none;
+      color: white;
+      background-color: transparent;
+      text-decoration: none;
     }
 
     a:visited {
-        color: white;
-        background-color: transparent;
-        text-decoration: none;
+      color: white;
+      background-color: transparent;
+      text-decoration: none;
     }
 
     a:hover {
-        color: white;
-        background-color: transparent;
-        text-decoration: underline;
+      color: white;
+      background-color: transparent;
+      text-decoration: underline;
     }
 
     a:active {
-        color: white;
-        background-color: transparent;
-        text-decoration: none;
+      color: white;
+      background-color: transparent;
+      text-decoration: none;
     }
-</style>
+  </style>
 </html>

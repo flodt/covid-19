@@ -11,8 +11,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="update the vaccination URL to the new ZEIT source">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/materialize.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/materialize.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/favicon-196x196.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/materialize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/materialize.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/dist/js/materialize.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/dist/js/materialize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/dist/js/materialize.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/dist/js/materialize.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/waves.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/waves.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_icons-material-design.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_icons-material-design.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_materialbox.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_materialbox.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_preloader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_preloader.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_slider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_slider.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_tapTarget.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_tapTarget.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_transitions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_transitions.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_waves.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_waves.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_file-input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_file-input.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_forms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_switches.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_switches.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +69,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="12.20.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.19.12" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -52,6 +79,32 @@
       <recent name="$PROJECT_DIR$/img" />
       <recent name="$PROJECT_DIR$" />
     </key>
+  </component>
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.dev" />
+      <item itemvalue="npm.build" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -79,6 +132,7 @@
       <workItem from="1611674996482" duration="137000" />
       <workItem from="1611693902337" duration="623000" />
       <workItem from="1611694629523" duration="304000" />
+      <workItem from="1611869050226" duration="173000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609877935878</created>
@@ -278,10 +332,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="update the vaccination URL to the new ZEIT source" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="454" y="202" width="1076" height="746" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609873681868">
+    <state x="454" y="192" width="1076" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611869222722">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state x="454" y="202" width="1076" height="746" key="#com.intellij.execution.impl.EditConfigurationsDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609873681868" />
+    <state x="454" y="192" width="1076" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1611869222722" />
     <state x="243" y="303" width="524" height="514" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609931940707">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
@@ -290,6 +344,22 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="64" y="122" width="1484" height="884" key="DiffContextDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609951627105" />
+    <state width="1833" height="266" key="GridCell.Tab.0.bottom" timestamp="1611869192232">
+      <screen x="64" y="27" width="1856" height="1053" />
+    </state>
+    <state width="1833" height="266" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1611869192232" />
+    <state width="1833" height="266" key="GridCell.Tab.0.center" timestamp="1611869192231">
+      <screen x="64" y="27" width="1856" height="1053" />
+    </state>
+    <state width="1833" height="266" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1611869192231" />
+    <state width="1833" height="266" key="GridCell.Tab.0.left" timestamp="1611869192231">
+      <screen x="64" y="27" width="1856" height="1053" />
+    </state>
+    <state width="1833" height="266" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1611869192231" />
+    <state width="1833" height="266" key="GridCell.Tab.0.right" timestamp="1611869192232">
+      <screen x="64" y="27" width="1856" height="1053" />
+    </state>
+    <state width="1833" height="266" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1611869192232" />
     <state x="273" y="170" width="505" height="770" key="RollbackChangesDialog" timestamp="1609951628487">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>

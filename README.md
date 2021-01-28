@@ -1,6 +1,6 @@
 <h1 align="center">COVID-19 Dashboard</h1>
 
-![App icon](img/favicon-196x196.png)
+![App icon](static/favicon-196x196.png)
 
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0-red.svg" />
