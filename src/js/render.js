@@ -1,3 +1,11 @@
+/**
+ * I am aware that this is not the VueJS "way" of displaying the data.
+ * However, this code stems from before this page was transformed and moved to a VueJs
+ * instance, so this is what remains of that legacy.
+ * I could rewrite this, but I don't really have the time right now.
+ * Have fun poking
+ */
+
 export function renderData(agss, rki, zeit, vacc) {
     console.log("Rendering data...");
     console.log(rki);
