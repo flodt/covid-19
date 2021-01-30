@@ -159,12 +159,12 @@ export function renderData(agss, rki, zeit, vacc) {
                 chartColor = "rgb(255, 160, 0)";
                 textColor = "white-text";
             } else if (max >= 50 && max < 100) {
-                color = "orange darken-1";
-                chartColor = "rgb(251, 140, 0)";
+                color = "orange darken-2";
+                chartColor = "rgb(245, 124, 0)";
                 textColor = "white-text";
             } else if (max >= 100 && max < 200) {
-                color = "deep-orange darken-1";
-                chartColor = "rgb(244, 81, 30)";
+                color = "deep-orange darken-2";
+                chartColor = "rgb(230, 74, 25)";
                 textColor = "white-text";
             } else {
                 color = "red darken-2";

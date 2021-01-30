@@ -186,8 +186,8 @@
                 id="state_vaccine">Statistik wird geladen...</span>
             </div>
             <br/>
-            <div class="grey-text text-darken-2" style="text-align: center;">Icons made by Freepik from flaticon.com.
-            </div>
+            <div class="grey-text text-darken-2" style="text-align: center;">Landkreisdaten zeigen 7-Tage-Inzidenzen pro 100.000 Einwohner.</div>
+            <div class="grey-text text-darken-2" style="text-align: center;">Icons made by Freepik from flaticon.com.</div>
             <br/>
             <br/>
         </footer>

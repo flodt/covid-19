@@ -10,8 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="add clarifying VueJs comment">
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="remove redundant newline below navbar">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/render.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +54,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.build">
     <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -104,7 +106,8 @@
       <workItem from="1611674996482" duration="137000" />
       <workItem from="1611693902337" duration="623000" />
       <workItem from="1611694629523" duration="304000" />
-      <workItem from="1611869050226" duration="493000" />
+      <workItem from="1611869050226" duration="729000" />
+      <workItem from="1612030481394" duration="644000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609877935878</created>
@@ -274,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611869527040</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="remove redundant newline below navbar">
+      <created>1611869695671</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1611869695671</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,7 +327,8 @@
     <MESSAGE value="update the vaccination URL to the new ZEIT source" />
     <MESSAGE value="update with Vue" />
     <MESSAGE value="add clarifying VueJs comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="add clarifying VueJs comment" />
+    <MESSAGE value="remove redundant newline below navbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove redundant newline below navbar" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="192" width="1076" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611869222722">
@@ -332,34 +343,34 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="64" y="122" width="1484" height="884" key="DiffContextDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609951627105" />
-    <state width="1833" height="266" key="GridCell.Tab.0.bottom" timestamp="1611869262605">
+    <state width="1833" height="266" key="GridCell.Tab.0.bottom" timestamp="1611869779250">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state width="1833" height="266" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1611869262605" />
-    <state width="1833" height="266" key="GridCell.Tab.0.center" timestamp="1611869262605">
+    <state width="1833" height="266" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1611869779250" />
+    <state width="1833" height="266" key="GridCell.Tab.0.center" timestamp="1611869779249">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state width="1833" height="266" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1611869262605" />
-    <state width="1833" height="266" key="GridCell.Tab.0.left" timestamp="1611869262604">
+    <state width="1833" height="266" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1611869779249" />
+    <state width="1833" height="266" key="GridCell.Tab.0.left" timestamp="1611869779248">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state width="1833" height="266" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1611869262604" />
-    <state width="1833" height="266" key="GridCell.Tab.0.right" timestamp="1611869262605">
+    <state width="1833" height="266" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1611869779248" />
+    <state width="1833" height="266" key="GridCell.Tab.0.right" timestamp="1611869779250">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state width="1833" height="266" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1611869262605" />
-    <state x="273" y="170" width="505" height="770" key="RollbackChangesDialog" timestamp="1609951628487">
+    <state width="1833" height="266" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1611869779250" />
+    <state x="273" y="165" width="505" height="770" key="RollbackChangesDialog" timestamp="1611869749867">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state x="273" y="170" width="505" height="770" key="RollbackChangesDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609951628487" />
+    <state x="273" y="165" width="505" height="770" key="RollbackChangesDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1611869749867" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1610112461132">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1610112461132" />
-    <state x="590" y="286" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1609952690040">
+    <state x="590" y="281" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1611869756891">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state x="590" y="286" width="800" height="548" key="Vcs.Push.Dialog.v2/64.27.1856.1053@64.27.1856.1053" timestamp="1609952690040" />
+    <state x="590" y="281" width="800" height="548" key="Vcs.Push.Dialog.v2/64.27.1856.1053@64.27.1856.1053" timestamp="1611869756891" />
     <state x="698" y="209" width="584" height="702" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1609933808023">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
@@ -368,10 +379,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2544" y="243" key="run.anything.popup/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1610909436945" />
-    <state x="2051" y="234" width="696" height="696" key="search.everywhere.popup" timestamp="1610902571045">
+    <state x="2051" y="234" width="696" height="696" key="search.everywhere.popup" timestamp="1612030646010">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2051" y="234" width="696" height="696" key="search.everywhere.popup/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1610902571045" />
+    <state x="2051" y="234" width="696" height="696" key="search.everywhere.popup/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612030646010" />
     <state x="191" y="255" width="672" height="678" key="search.everywhere.popup/64.27.1856.1053@64.27.1856.1053" timestamp="1610111915110" />
   </component>
 </project>
