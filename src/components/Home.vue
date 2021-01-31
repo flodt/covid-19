@@ -143,7 +143,7 @@
                     <div class="col s12 m12 l6">
                         <div class="card blue darken-1" style="height: 210px">
                             <div class="card-content white-text">
-                                <span class="card-title">Impfstatistik</span>
+                                <span class="card-title activator">Impfstatistik<i class="material-icons right">timer</i></span>
                                 <div class="row">
                                     <div class="col">
                                         <h3 id="vaccinated_preliminary">0</h3>
@@ -159,6 +159,14 @@
                                             voller Impfschutz
                                         </a></b>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title">Impfstatistik<i class="material-icons right">close</i></span>
+                                <b>Zeit bis zur Herdenimmunität (80 %):</b>
+                                <div style="text-align: center;">
+                                    <h4 id="herd_immunity_timer">Nicht verfügbar</h4>
+                                    bei der Geschwindigkeit der letzten 21 Tage.
                                 </div>
                             </div>
                         </div>
@@ -185,8 +193,8 @@
             <div class="grey-text text-darken-2" style="text-align: center;">Stand (ZEIT Online Impfstatistik): <span
                 id="state_vaccine">Statistik wird geladen...</span>
             </div>
+            <div class="grey-text text-darken-2" style="text-align: center;">Landkreise zeigen 7-Tage-Inzidenzen pro 100.000 Einwohner.</div>
             <br/>
-            <div class="grey-text text-darken-2" style="text-align: center;">Landkreisdaten zeigen 7-Tage-Inzidenzen pro 100.000 Einwohner.</div>
             <div class="grey-text text-darken-2" style="text-align: center;">Icons made by Freepik from flaticon.com.</div>
             <br/>
             <br/>

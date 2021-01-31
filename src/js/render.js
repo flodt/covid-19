@@ -1,3 +1,13 @@
+function formatInterval(daysToHerdImmunity) {
+    const years = Math.floor(daysToHerdImmunity / 365);
+    const months = Math.ceil((daysToHerdImmunity - (years * 365)) / 30);
+
+    let str = "";
+    if (years > 0) str += `${years} Jahre` + ((months > 0) ? ", " : "");
+    if (months > 0) str += `${months} Monate`;
+    return str;
+}
+
 /**
  * I am aware that this is not the VueJS "way" of displaying the data.
  * However, this code stems from before this page was transformed and moved to a VueJs
@@ -281,6 +291,19 @@ export function renderData(agss, rki, zeit, vacc) {
             (prelim / POPULATION_GERMANY * 100).toFixed(2) + " %";
         document.getElementById("vaccinated_protected").innerText =
             (fully / POPULATION_GERMANY * 100).toFixed(2) + " %";
+
+        //compute the herd immunity counter (set at 80 %)
+        /**
+         * This is very definitely only meant for entertainment purposes.
+         * There is no hard science behind this - I simply take the average vaccination speed
+         * over the last 21 days (in order to avoid issues with the slow vaccination start
+         * affecting the overall average), and extrapolate to compute the time to herd immunity.
+         * Do with that figure what you want.
+         */
+        const herdImmunity = 0.80 * POPULATION_GERMANY;
+        const threeWeeks = vacc.germany.historical[21].peopleFullyVaccinated;
+        const daysToHerdImmunity = herdImmunity / ((fully - threeWeeks) / 21.0);
+        document.getElementById("herd_immunity_timer").innerText = formatInterval(daysToHerdImmunity);
 
         //display the block
         document.getElementById("header_vaccine").style.display = "block";

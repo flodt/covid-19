@@ -10,7 +10,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="remove redundant newline below navbar">
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="update colors and add sources">
+      <change beforePath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/render.js" afterDir="false" />
@@ -107,7 +108,8 @@
       <workItem from="1611693902337" duration="623000" />
       <workItem from="1611694629523" duration="304000" />
       <workItem from="1611869050226" duration="729000" />
-      <workItem from="1612030481394" duration="644000" />
+      <workItem from="1612030481394" duration="844000" />
+      <workItem from="1612124282900" duration="2138000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609877935878</created>
@@ -284,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611869695671</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="update colors and add sources">
+      <created>1612031283795</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1612031283795</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,7 +312,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initial commit" />
     <MESSAGE value="update template card with columns for data sources" />
     <MESSAGE value="pull data from ZEIT Online as well" />
     <MESSAGE value="add color-coding" />
@@ -328,7 +336,8 @@
     <MESSAGE value="update with Vue" />
     <MESSAGE value="add clarifying VueJs comment" />
     <MESSAGE value="remove redundant newline below navbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove redundant newline below navbar" />
+    <MESSAGE value="update colors and add sources" />
+    <option name="LAST_COMMIT_MESSAGE" value="update colors and add sources" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="192" width="1076" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611869222722">
@@ -343,21 +352,25 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="64" y="122" width="1484" height="884" key="DiffContextDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609951627105" />
-    <state width="1833" height="266" key="GridCell.Tab.0.bottom" timestamp="1611869779250">
-      <screen x="64" y="27" width="1856" height="1053" />
+    <state width="1897" height="274" key="GridCell.Tab.0.bottom" timestamp="1612031330657">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
+    <state width="1897" height="274" key="GridCell.Tab.0.bottom/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330657" />
     <state width="1833" height="266" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1611869779250" />
-    <state width="1833" height="266" key="GridCell.Tab.0.center" timestamp="1611869779249">
-      <screen x="64" y="27" width="1856" height="1053" />
+    <state width="1897" height="274" key="GridCell.Tab.0.center" timestamp="1612031330656">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
+    <state width="1897" height="274" key="GridCell.Tab.0.center/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
     <state width="1833" height="266" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1611869779249" />
-    <state width="1833" height="266" key="GridCell.Tab.0.left" timestamp="1611869779248">
-      <screen x="64" y="27" width="1856" height="1053" />
+    <state width="1897" height="274" key="GridCell.Tab.0.left" timestamp="1612031330656">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
+    <state width="1897" height="274" key="GridCell.Tab.0.left/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
     <state width="1833" height="266" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1611869779248" />
-    <state width="1833" height="266" key="GridCell.Tab.0.right" timestamp="1611869779250">
-      <screen x="64" y="27" width="1856" height="1053" />
+    <state width="1897" height="274" key="GridCell.Tab.0.right" timestamp="1612031330656">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
+    <state width="1897" height="274" key="GridCell.Tab.0.right/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
     <state width="1833" height="266" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1611869779250" />
     <state x="273" y="165" width="505" height="770" key="RollbackChangesDialog" timestamp="1611869749867">
       <screen x="64" y="27" width="1856" height="1053" />
@@ -367,14 +380,19 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1610112461132" />
-    <state x="590" y="281" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1611869756891">
-      <screen x="64" y="27" width="1856" height="1053" />
+    <state x="2464" y="256" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1612031322887">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
+    <state x="2464" y="256" key="Vcs.Push.Dialog.v2/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031322887" />
     <state x="590" y="281" width="800" height="548" key="Vcs.Push.Dialog.v2/64.27.1856.1053@64.27.1856.1053" timestamp="1611869756891" />
     <state x="698" y="209" width="584" height="702" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1609933808023">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="698" y="209" width="584" height="702" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609933808023" />
+    <state x="310" y="467" width="431" height="186" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1612124852511">
+      <screen x="64" y="27" width="1856" height="1053" />
+    </state>
+    <state x="310" y="467" width="431" height="186" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/64.27.1856.1053@64.27.1856.1053" timestamp="1612124852511" />
     <state x="2544" y="243" key="run.anything.popup" timestamp="1610909436945">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
