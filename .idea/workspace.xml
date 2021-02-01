@@ -10,10 +10,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="add timer to herd immunity">
-      <change afterPath="$PROJECT_DIR$/static/manifest.json" afterDir="false" />
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="add manifest.json for PWA access">
+      <change afterPath="$PROJECT_DIR$/static/favicon-128x128.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/favicon-192x192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/favicon-512x512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/touch-icon-128x128.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/static/manifest.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,13 +48,14 @@
     <property name="javascript.nodejs.core.library.configured.version" value="12.20.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.19.12" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/img" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -109,7 +115,8 @@
       <workItem from="1611869050226" duration="729000" />
       <workItem from="1612030481394" duration="844000" />
       <workItem from="1612124282900" duration="2281000" />
-      <workItem from="1612132510246" duration="495000" />
+      <workItem from="1612132510246" duration="887000" />
+      <workItem from="1612209354289" duration="1215000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609877935878</created>
@@ -300,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612126568539</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="add manifest.json for PWA access">
+      <created>1612133059342</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1612133059342</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,7 +333,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="pull data from ZEIT Online as well" />
     <MESSAGE value="add color-coding" />
     <MESSAGE value="show error message on failure and switch to Ostallgäu" />
     <MESSAGE value="show current data state in footer" />
@@ -344,7 +357,8 @@
     <MESSAGE value="remove redundant newline below navbar" />
     <MESSAGE value="update colors and add sources" />
     <MESSAGE value="add timer to herd immunity" />
-    <option name="LAST_COMMIT_MESSAGE" value="add timer to herd immunity" />
+    <MESSAGE value="add manifest.json for PWA access" />
+    <option name="LAST_COMMIT_MESSAGE" value="add manifest.json for PWA access" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="192" width="1076" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611869222722">
@@ -359,39 +373,39 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="64" y="122" width="1484" height="884" key="DiffContextDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609951627105" />
-    <state width="1833" height="265" key="GridCell.Tab.0.bottom" timestamp="1612126579847">
+    <state width="1833" height="265" key="GridCell.Tab.0.bottom" timestamp="1612210185652">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.bottom/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330657" />
-    <state width="1833" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1612126579847" />
-    <state width="1833" height="265" key="GridCell.Tab.0.center" timestamp="1612126579846">
+    <state width="1833" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1612210185652" />
+    <state width="1833" height="265" key="GridCell.Tab.0.center" timestamp="1612210185652">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.center/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1612126579846" />
-    <state width="1833" height="265" key="GridCell.Tab.0.left" timestamp="1612126579845">
+    <state width="1833" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1612210185652" />
+    <state width="1833" height="265" key="GridCell.Tab.0.left" timestamp="1612210185651">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.left/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1612126579845" />
-    <state width="1833" height="265" key="GridCell.Tab.0.right" timestamp="1612126579847">
+    <state width="1833" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1612210185651" />
+    <state width="1833" height="265" key="GridCell.Tab.0.right" timestamp="1612210185652">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.right/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1612126579847" />
+    <state width="1833" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1612210185652" />
     <state x="273" y="165" width="505" height="770" key="RollbackChangesDialog" timestamp="1611869749867">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="273" y="165" width="505" height="770" key="RollbackChangesDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1611869749867" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1610112461132">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1612133017107">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1610112461132" />
-    <state x="590" y="276" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1612126571953">
+    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1612133017107" />
+    <state x="590" y="271" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1612133322703">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="2464" y="256" key="Vcs.Push.Dialog.v2/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031322887" />
-    <state x="590" y="276" width="800" height="548" key="Vcs.Push.Dialog.v2/64.27.1856.1053@64.27.1856.1053" timestamp="1612126571953" />
+    <state x="590" y="271" width="800" height="548" key="Vcs.Push.Dialog.v2/64.27.1856.1053@64.27.1856.1053" timestamp="1612133322703" />
     <state x="698" y="209" width="584" height="702" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1609933808023">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
