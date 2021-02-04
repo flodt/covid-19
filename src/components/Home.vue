@@ -34,7 +34,7 @@
 
                 <div class="row" style="display: none" id="row_country">
                     <div class="col s12 m12 l6">
-                        <div class="card red darken-1" style="height: 210px">
+                        <div class="card pink darken-3" style="height: 210px">
                             <div class="card-content white-text">
                                 <span class="card-title">Deutschland</span>
                                 <div class="row">

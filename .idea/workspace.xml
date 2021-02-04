@@ -10,15 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="add manifest.json for PWA access">
-      <change afterPath="$PROJECT_DIR$/static/favicon-128x128.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/favicon-192x192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/favicon-512x512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/touch-icon-128x128.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" afterDir="false" />
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="update favicons for PWA use on iOS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/static/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/render.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +55,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -116,7 +111,9 @@
       <workItem from="1612030481394" duration="844000" />
       <workItem from="1612124282900" duration="2281000" />
       <workItem from="1612132510246" duration="887000" />
-      <workItem from="1612209354289" duration="1215000" />
+      <workItem from="1612209354289" duration="1476000" />
+      <workItem from="1612467573395" duration="540000" />
+      <workItem from="1612470874773" duration="1746000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609877935878</created>
@@ -314,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612133059342</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="update favicons for PWA use on iOS">
+      <created>1612210813440</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1612210813440</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,7 +337,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add color-coding" />
     <MESSAGE value="show error message on failure and switch to Ostallgäu" />
     <MESSAGE value="show current data state in footer" />
     <MESSAGE value="fix ZEIT online data" />
@@ -358,7 +361,8 @@
     <MESSAGE value="update colors and add sources" />
     <MESSAGE value="add timer to herd immunity" />
     <MESSAGE value="add manifest.json for PWA access" />
-    <option name="LAST_COMMIT_MESSAGE" value="add manifest.json for PWA access" />
+    <MESSAGE value="update favicons for PWA use on iOS" />
+    <option name="LAST_COMMIT_MESSAGE" value="update favicons for PWA use on iOS" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="192" width="1076" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611869222722">
@@ -373,39 +377,39 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="64" y="122" width="1484" height="884" key="DiffContextDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609951627105" />
-    <state width="1833" height="265" key="GridCell.Tab.0.bottom" timestamp="1612210185652">
+    <state width="1833" height="265" key="GridCell.Tab.0.bottom" timestamp="1612468117675">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.bottom/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330657" />
-    <state width="1833" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1612210185652" />
-    <state width="1833" height="265" key="GridCell.Tab.0.center" timestamp="1612210185652">
+    <state width="1833" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1612468117675" />
+    <state width="1833" height="265" key="GridCell.Tab.0.center" timestamp="1612468117674">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.center/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1612210185652" />
-    <state width="1833" height="265" key="GridCell.Tab.0.left" timestamp="1612210185651">
+    <state width="1833" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1612468117674" />
+    <state width="1833" height="265" key="GridCell.Tab.0.left" timestamp="1612468117673">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.left/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1612210185651" />
-    <state width="1833" height="265" key="GridCell.Tab.0.right" timestamp="1612210185652">
+    <state width="1833" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1612468117673" />
+    <state width="1833" height="265" key="GridCell.Tab.0.right" timestamp="1612468117674">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.right/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1612210185652" />
+    <state width="1833" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1612468117674" />
     <state x="273" y="165" width="505" height="770" key="RollbackChangesDialog" timestamp="1611869749867">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="273" y="165" width="505" height="770" key="RollbackChangesDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1611869749867" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1612133017107">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1612471903075">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1612133017107" />
-    <state x="590" y="271" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1612133322703">
+    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1612471903075" />
+    <state x="590" y="266" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1612210817609">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="2464" y="256" key="Vcs.Push.Dialog.v2/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031322887" />
-    <state x="590" y="271" width="800" height="548" key="Vcs.Push.Dialog.v2/64.27.1856.1053@64.27.1856.1053" timestamp="1612133322703" />
+    <state x="590" y="266" width="800" height="548" key="Vcs.Push.Dialog.v2/64.27.1856.1053@64.27.1856.1053" timestamp="1612210817609" />
     <state x="698" y="209" width="584" height="702" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1609933808023">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>

@@ -8,6 +8,39 @@ function formatInterval(daysToHerdImmunity) {
     return str;
 }
 
+function colorsForIncidences() {
+    const max = Math.max(...arguments);
+    let color, chartColor, textColor;
+
+    if (max < 35) {
+        color = "green darken-2";
+        chartColor = "rgb(56, 142, 60)";
+        textColor = "white-text";
+    } else if (max >= 35 && max < 50) {
+        color = "amber darken-2";
+        chartColor = "rgb(255, 160, 0)";
+        textColor = "white-text";
+    } else if (max >= 50 && max < 100) {
+        color = "orange darken-2";
+        chartColor = "rgb(245, 124, 0)";
+        textColor = "white-text";
+    } else if (max >= 100 && max < 200) {
+        color = "deep-orange darken-2";
+        chartColor = "rgb(230, 74, 25)";
+        textColor = "white-text";
+    } else {
+        color = "red darken-2";
+        chartColor = "rgb(211, 47, 47)";
+        textColor = "white-text";
+    }
+
+    return {
+        color: color,
+        chartColor: chartColor,
+        textColor: textColor
+    };
+}
+
 /**
  * I am aware that this is not the VueJS "way" of displaying the data.
  * However, this code stems from before this page was transformed and moved to a VueJs
@@ -18,9 +51,6 @@ function formatInterval(daysToHerdImmunity) {
 
 export function renderData(agss, rki, zeit, vacc) {
     console.log("Rendering data...");
-    console.log(rki);
-    console.log(zeit);
-
     const POPULATION_GERMANY = 83190556;
 
     const rkiAvail = rki !== null && rki.features !== undefined;
@@ -77,12 +107,11 @@ export function renderData(agss, rki, zeit, vacc) {
                 .reverse();
 
             //gather ZEIT data for the last 5 weeks
-            const bars = zeit.sixWeeksStats
+            const newInf = zeit.sixWeeksStats
                 .map(s => s.newInf)
                 .slice(-daysPast);
 
-            console.log(labels);
-            console.log(bars);
+            const averageNewInf = zeit.sixWeeksStats.map(s => s.avg).slice(-daysPast);
 
             //render charts
             const ctx = document.getElementById("chart_germany").getContext('2d');
@@ -95,11 +124,20 @@ export function renderData(agss, rki, zeit, vacc) {
                     labels: labels,
                     datasets: [{
                         label: 'Neuinfektionen',
-                        backgroundColor: "rgb(211, 47, 47)",
-                        borderColor: "rgb(211, 47, 47)",
-                        data: bars,
+                        backgroundColor: "rgb(173, 20, 87)",
+                        borderColor: "rgb(173, 20, 87)",
+                        data: newInf,
                         fill: false
-                    }]
+                    },
+                        {
+                            label: 'Durchschnitt',
+                            backgroundColor: "rgb(158,158,158)",
+                            borderColor: "rgb(158,158,158)",
+                            borderDash: [5, 5],
+                            pointRadius: 0,
+                            data: averageNewInf,
+                            fill: false
+                        }]
                 },
 
                 // Configuration options go here
@@ -151,36 +189,16 @@ export function renderData(agss, rki, zeit, vacc) {
             .filter(k => k.ags === ags.replace(/^0+/, ''))[0]
             .sevenDayStats.count * 100000 / population) : 0;
 
-        console.log(name + ": " + rkiIncidence + "/" + zeitIncidence);
-
-        const max = (rkiIncidence >= zeitIncidence) ? rkiIncidence : zeitIncidence;
         let color;
         let textColor;
         let chartColor;
 
         //if rki is null, we don't have population information, so we cannot color-code
         if (rkiAvail) {
-            if (max < 35) {
-                color = "green";
-                chartColor = "rgb(76, 175, 80)";
-                textColor = "white-text";
-            } else if (max >= 35 && max < 50) {
-                color = "amber darken-2";
-                chartColor = "rgb(255, 160, 0)";
-                textColor = "white-text";
-            } else if (max >= 50 && max < 100) {
-                color = "orange darken-2";
-                chartColor = "rgb(245, 124, 0)";
-                textColor = "white-text";
-            } else if (max >= 100 && max < 200) {
-                color = "deep-orange darken-2";
-                chartColor = "rgb(230, 74, 25)";
-                textColor = "white-text";
-            } else {
-                color = "red darken-2";
-                chartColor = "rgb(211, 47, 47)";
-                textColor = "white-text";
-            }
+            const cfi = colorsForIncidences(rkiIncidence, zeitIncidence);
+            color = cfi.color;
+            textColor = cfi.textColor;
+            chartColor = cfi.chartColor;
         } else {
             color = "grey";
             chartColor = "rgb(158, 158, 158)";
@@ -239,9 +257,6 @@ export function renderData(agss, rki, zeit, vacc) {
                     .slice(-8)
                     .map(i => i * 100000 / population)
                     .map(i => i.toFixed(1));
-
-                console.log(labels);
-                console.log(bars);
 
                 //render charts
                 const ctx = document.getElementById(canvasId).getContext('2d');
