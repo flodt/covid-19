@@ -3,8 +3,8 @@ function formatInterval(daysToHerdImmunity) {
     const months = Math.ceil((daysToHerdImmunity - (years * 365)) / 30);
 
     let str = "";
-    if (years > 0) str += `${years} Jahre` + ((months > 0) ? ", " : "");
-    if (months > 0) str += `${months} Monate`;
+    if (years > 0) str += `${years} Jahr${years > 1 ? "e" : ""}` + ((months > 0) ? ", " : "");
+    if (months > 0) str += `${months} Monat${months > 1 ? "e" : ""}`;
     return str;
 }
 
