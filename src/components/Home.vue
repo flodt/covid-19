@@ -216,6 +216,46 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="center" id="header_hospital" style="display: none;">
+                    <h5><b>Todeszahlen</b></h5>
+                </div>
+
+                <div class="row" style="display: none;" id="row_hospital">
+                    <div class="col s12 m12 l6">
+                        <div class="card grey darken-4" style="height: 210px">
+                            <div class="card-content white-text">
+                                <span class="card-title">Klinikauslastung</span>
+                                <div class="row">
+                                    <div class="col">
+                                        <h3 id="deaths">0</h3>
+                                        <b><a
+                                            href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                            Tode seit Pandemiebeginn
+                                        </a></b>
+                                    </div>
+                                    <div class="col">
+                                        <h3 id="beds_occupied">0</h3>
+                                        <b><a
+                                            href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                            Intensivpatienten
+                                        </a></b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m12 l6">
+                        <div class="card" style="height: 210px">
+                            <div class="card-content white-text">
+                                <div style="width: 305px; margin: auto;">
+                                    <canvas id="chart_beds"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

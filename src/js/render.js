@@ -347,7 +347,7 @@ export function renderData(agss, rki, zeit, vacc) {
                         backgroundColor: [
                             'rgb(221, 0, 0)',
                             'rgb(255, 206, 0)',
-                            'rgb(0, 0, 0)'
+                            'rgb(33, 33, 33)'
                         ],
                         label: 'Impffortschritt (landesweit)'
                     }],
@@ -391,6 +391,71 @@ export function renderData(agss, rki, zeit, vacc) {
                 }
             });
         }, 0);
+    }
+
+    //show the clinic data
+    if (zeitAvail) {
+        document.getElementById("deaths").innerText = zeit.currentStats.dead.toLocaleString("de-de");
+        document.getElementById("beds_occupied").innerText = zeit.clinicStats.covid19.toLocaleString("de-de");
+
+        //draw the hospital graph
+        setTimeout(function () {
+            //prepare chart labels (for the last 5 weeks)
+            const daysPast = 5 * 7;
+            const labels = [...Array(daysPast).keys()]
+                .map(i => new Date(Date.now() - i * 24 * 60 * 60 * 1000))
+                .map(d => {
+                    const str = d.toLocaleString("de-de");
+                    return str.slice(0, str.lastIndexOf(".") + 1);
+                })
+                .reverse();
+
+            //gather ZEIT data for the last 5 weeks
+            const newInf = zeit.sixWeeksStats
+                .map(s => s.covid19Patients)
+                .slice(-daysPast);
+
+            //render charts
+            const ctx = document.getElementById("chart_beds").getContext('2d');
+            const chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'line',
+
+                // The data for our dataset
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Intensivbetten',
+                        backgroundColor: "rgb(33,33,33)",
+                        borderColor: "rgb(33,33,33)",
+                        data: newInf,
+                        fill: false
+                    }]
+                },
+
+                // Configuration options go here
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                                //suggestedMin: 0,
+                                //suggestedMax: 32500
+                            }
+                        }]
+                    },
+                    responsive: true,
+                    tooltips: {
+                        mode: 'nearest',
+                        intersect: false
+                    }
+                }
+            });
+        }, 0);
+
+        //show the fields
+        document.getElementById("row_hospital").style.display = "block";
+        document.getElementById("header_hospital").style.display = "block";
     }
 }
 
