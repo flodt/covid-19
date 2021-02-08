@@ -164,8 +164,8 @@
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title">Impfstatistik<i class="material-icons right">close</i></span>
-                                <b>Zeit bis zur Herdenimmunität (70 %):</b> <a class="modal-trigger" href="#modal-herd">(Woher
-                                kommt das?)</a>
+                                <b>Zeit bis zur Herdenimmunität (70 %):</b>
+                                <a class="modal-trigger" href="#modal-herd">(Woher kommt das?)</a>
                                 <div style="text-align: center;">
                                     <h4 id="herd_immunity_timer">Nicht verfügbar</h4>
                                     bei der Geschwindigkeit der letzten 21 Tage.
@@ -269,14 +269,14 @@
                 <p>
                     Hier wird die Impfgeschwindigkeit der letzten 21 Tage als gleitender Durchschnitt bestimmt.
                     Mit dieser wird die Zeit extrapoliert, die bei der aktuellen Geschwindigkeit vergeht, bis
-                    70 % der Bevölkerung durchgeimpft sind, und damit die Herdenimmunität erreicht ist.
+                    70&nbsp;% der Bevölkerung durchgeimpft sind, und damit die Herdenimmunität erreicht ist.
                     Die Zahl dient eher zur Unterhaltung und Beobachtung der Impfgeschwindigkeit als zu irgendetwas sinnvollem;
-                    weder ist die Herdenimmunität erst schlagartig bei 70 % erreicht (fließender Effekt), noch
-                    noch ist eine Wirkung nicht vorher bereits zu erwarten. Keine Panik :)
+                    weder ist die Herdenimmunität erst schlagartig bei 70&nbsp;% erreicht (fließender Effekt), noch
+                    ist eine Wirkung nicht vorher bereits zu erwarten. Keine Panik :)
                 </p>
             </div>
             <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-red btn-flat">Schließen</a>
+                <a href="#" class="modal-close waves-effect waves-red btn-flat">Schließen</a>
             </div>
         </div>
 
