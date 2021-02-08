@@ -214,11 +214,11 @@ export function renderData(agss, rki, zeit, vacc) {
                         <div class="row">
                             <div class="col">
                                 <h3>${rkiIncidence.toFixed(1)}</h3>
-                                <b><a href="https://corona.rki.de">RKI</a></b>
+                                <b><a class="oncard" href="https://corona.rki.de">RKI</a></b>
                             </div>
                             <div class="col">
                                 <h3>${zeitIncidence.toFixed(1)}</h3>
-                                <b><a href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">ZEIT
+                                <b><a class="oncard" href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">ZEIT
                                     Online</a></b>
                             </div>
                         </div>
@@ -314,7 +314,7 @@ export function renderData(agss, rki, zeit, vacc) {
         document.getElementById("vaccinated_protected_bavaria").innerText =
             (fullyBavaria / POPULATION_BAVARIA * 100).toFixed(2) + " %";
 
-        //compute the herd immunity counter (set at 80 %)
+        //compute the herd immunity counter (set at 70 %)
         /**
          * This is very definitely only meant for entertainment purposes.
          * There is no hard science behind this - I simply take the average vaccination speed
@@ -322,7 +322,7 @@ export function renderData(agss, rki, zeit, vacc) {
          * affecting the overall average), and extrapolate to compute the time to herd immunity.
          * Do with that figure what you want.
          */
-        const herdImmunity = 0.80 * POPULATION_GERMANY;
+        const herdImmunity = 0.70 * POPULATION_GERMANY;
         const threeWeeks = vacc.germany.historical[21].peopleFullyVaccinated;
         const daysToHerdImmunity = herdImmunity / ((fully - threeWeeks) / 21.0);
         document.getElementById("herd_immunity_timer").innerText = formatInterval(daysToHerdImmunity);

@@ -10,8 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="add vaccination data for Bavaria">
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="add clinic statistics">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/render.js" afterDir="false" />
     </list>
@@ -115,7 +117,7 @@
       <workItem from="1612467573395" duration="540000" />
       <workItem from="1612470874773" duration="1855000" />
       <workItem from="1612472758435" duration="139000" />
-      <workItem from="1612815903827" duration="1532000" />
+      <workItem from="1612815903827" duration="2362000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609877935878</created>
@@ -341,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612816741468</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="add clinic statistics">
+      <created>1612817535379</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1612817535379</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,7 +369,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="build in resilience to API issues" />
     <MESSAGE value="update to pull directly from RKI" />
     <MESSAGE value="WIP: add graphs" />
     <MESSAGE value="add check for RKI error JSON" />
@@ -385,7 +393,8 @@
     <MESSAGE value="update coloring scheme and add average new infections" />
     <MESSAGE value="fix wrong plural in timer" />
     <MESSAGE value="add vaccination data for Bavaria" />
-    <option name="LAST_COMMIT_MESSAGE" value="add vaccination data for Bavaria" />
+    <MESSAGE value="add clinic statistics" />
+    <option name="LAST_COMMIT_MESSAGE" value="add clinic statistics" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="192" width="1076" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611869222722">
@@ -424,10 +433,10 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="273" y="165" width="505" height="770" key="RollbackChangesDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1611869749867" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1612817247141">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1612817932951">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1612817247141" />
+    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1612817932951" />
     <state x="590" y="256" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1612472894961">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
@@ -441,6 +450,10 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="310" y="467" width="431" height="186" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/64.27.1856.1053@64.27.1856.1053" timestamp="1612124852511" />
+    <state x="681" y="274" width="621" height="554" key="find.popup" timestamp="1612817563750">
+      <screen x="64" y="27" width="1856" height="1053" />
+    </state>
+    <state x="681" y="274" width="621" height="554" key="find.popup/64.27.1856.1053@64.27.1856.1053" timestamp="1612817563750" />
     <state x="667" y="264" key="run.anything.popup" timestamp="1612816347864">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>

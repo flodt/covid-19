@@ -40,14 +40,14 @@
                                 <div class="row">
                                     <div class="col">
                                         <h3 id="infected_yesterday">0</h3>
-                                        <b><a
-                                            href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">Neuinfektionen
+                                        <b><a class="oncard"
+                                              href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">Neuinfektionen
                                             gestern</a></b>
                                     </div>
                                     <div class="col">
                                         <h3 id="infected_7day">0</h3>
-                                        <b><a
-                                            href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">7-Tage-Inzidenz</a></b>
+                                        <b><a class="oncard"
+                                              href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">7-Tage-Inzidenz</a></b>
                                     </div>
                                 </div>
                             </div>
@@ -143,19 +143,20 @@
                     <div class="col s12 m12 l6">
                         <div class="card light-green darken-1" style="height: 210px">
                             <div class="card-content white-text">
-                                <span class="card-title activator">Landesweit<i class="material-icons right">timer</i></span>
+                                <span class="card-title activator">Landesweit<i
+                                    class="material-icons right">timer</i></span>
                                 <div class="row">
                                     <div class="col">
                                         <h3 id="vaccinated_preliminary">0</h3>
-                                        <b><a
-                                            href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                        <b><a class="oncard"
+                                              href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
                                             Geimpfte
                                         </a></b>
                                     </div>
                                     <div class="col">
                                         <h3 id="vaccinated_protected">0,00 %</h3>
-                                        <b><a
-                                            href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                        <b><a class="oncard"
+                                              href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
                                             voller Impfschutz
                                         </a></b>
                                     </div>
@@ -163,7 +164,8 @@
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title">Impfstatistik<i class="material-icons right">close</i></span>
-                                <b>Zeit bis zur Herdenimmunität (80 %):</b>
+                                <b>Zeit bis zur Herdenimmunität (70 %):</b> <a class="modal-trigger" href="#modal-herd">(Woher
+                                kommt das?)</a>
                                 <div style="text-align: center;">
                                     <h4 id="herd_immunity_timer">Nicht verfügbar</h4>
                                     bei der Geschwindigkeit der letzten 21 Tage.
@@ -189,15 +191,15 @@
                                 <div class="row">
                                     <div class="col">
                                         <h3 id="vaccinated_preliminary_bavaria">0</h3>
-                                        <b><a
-                                            href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                        <b><a class="oncard"
+                                              href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
                                             Geimpfte
                                         </a></b>
                                     </div>
                                     <div class="col">
                                         <h3 id="vaccinated_protected_bavaria">0,00 %</h3>
-                                        <b><a
-                                            href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                        <b><a class="oncard"
+                                              href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
                                             voller Impfschutz
                                         </a></b>
                                     </div>
@@ -229,15 +231,15 @@
                                 <div class="row">
                                     <div class="col">
                                         <h3 id="deaths">0</h3>
-                                        <b><a
-                                            href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                        <b><a class="oncard"
+                                              href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
                                             Tode seit Pandemiebeginn
                                         </a></b>
                                     </div>
                                     <div class="col">
                                         <h3 id="beds_occupied">0</h3>
-                                        <b><a
-                                            href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                        <b><a class="oncard"
+                                              href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
                                             Intensivpatienten
                                         </a></b>
                                     </div>
@@ -259,6 +261,25 @@
             </div>
         </div>
 
+        <!--Modals-->
+        <div id="modal-herd" class="modal">
+            <div class="modal-content">
+                <h4>Herdenimmunitätstimer</h4>
+                <p>TL;DR: Die Zahl hat nicht wirklich viel zu sagen.</p>
+                <p>
+                    Hier wird die Impfgeschwindigkeit der letzten 21 Tage als gleitender Durchschnitt bestimmt.
+                    Mit dieser wird die Zeit extrapoliert, die bei der aktuellen Geschwindigkeit vergeht, bis
+                    70 % der Bevölkerung durchgeimpft sind, und damit die Herdenimmunität erreicht ist.
+                    Die Zahl dient eher zur Unterhaltung und Beobachtung der Impfgeschwindigkeit als zu irgendetwas sinnvollem;
+                    weder ist die Herdenimmunität erst schlagartig bei 70 % erreicht (fließender Effekt), noch
+                    noch ist eine Wirkung nicht vorher bereits zu erwarten. Keine Panik :)
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-red btn-flat">Schließen</a>
+            </div>
+        </div>
+
         <footer>
             <div class="grey-text text-darken-2" style="text-align: center;">Stand (RKI): <span id="state_rki">Inzidenzen werden geladen...</span>
             </div>
@@ -267,9 +288,12 @@
             <div class="grey-text text-darken-2" style="text-align: center;">Stand (ZEIT Online Impfstatistik): <span
                 id="state_vaccine">Statistik wird geladen...</span>
             </div>
-            <div class="grey-text text-darken-2" style="text-align: center;">Landkreise zeigen 7-Tage-Inzidenzen pro 100.000 Einwohner.</div>
+            <div class="grey-text text-darken-2" style="text-align: center;">Landkreise zeigen 7-Tage-Inzidenzen pro
+                100.000 Einwohner.
+            </div>
             <br/>
-            <div class="grey-text text-darken-2" style="text-align: center;">Icons made by Freepik from flaticon.com.</div>
+            <div class="grey-text text-darken-2" style="text-align: center;">Icons made by Freepik from flaticon.com.
+            </div>
             <br/>
             <br/>
         </footer>
@@ -280,7 +304,7 @@
 import navigation from "@/components/NavBar.vue";
 import firebase from "firebase";
 import M from 'materialize-css';
-import { requestData } from "@/js/api.js"
+import {requestData} from "@/js/api.js"
 
 export default {
     data() {

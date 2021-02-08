@@ -11,6 +11,8 @@ export default {
     name: 'App',
     mounted() {
         M.AutoInit();
+        const elems = document.querySelectorAll('.modal');
+        M.Modal.init(elems, {});
     }
 }
 </script>
