@@ -10,9 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="update coloring scheme and add average new infections">
-      <change beforePath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" afterDir="false" />
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="fix wrong plural in timer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/render.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +55,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -114,7 +114,8 @@
       <workItem from="1612209354289" duration="1476000" />
       <workItem from="1612467573395" duration="540000" />
       <workItem from="1612470874773" duration="1855000" />
-      <workItem from="1612472758435" duration="41000" />
+      <workItem from="1612472758435" duration="139000" />
+      <workItem from="1612815903827" duration="809000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609877935878</created>
@@ -326,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612472658766</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="fix wrong plural in timer">
+      <created>1612472871343</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1612472871343</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +353,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="show current data state in footer" />
     <MESSAGE value="fix ZEIT online data" />
     <MESSAGE value="build in resilience to API issues" />
     <MESSAGE value="update to pull directly from RKI" />
@@ -370,7 +377,8 @@
     <MESSAGE value="add manifest.json for PWA access" />
     <MESSAGE value="update favicons for PWA use on iOS" />
     <MESSAGE value="update coloring scheme and add average new infections" />
-    <option name="LAST_COMMIT_MESSAGE" value="update coloring scheme and add average new infections" />
+    <MESSAGE value="fix wrong plural in timer" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix wrong plural in timer" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="192" width="1076" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611869222722">
@@ -385,26 +393,26 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="64" y="122" width="1484" height="884" key="DiffContextDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609951627105" />
-    <state width="1833" height="265" key="GridCell.Tab.0.bottom" timestamp="1612472735078">
+    <state width="1833" height="265" key="GridCell.Tab.0.bottom" timestamp="1612472897052">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.bottom/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330657" />
-    <state width="1833" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1612472735078" />
-    <state width="1833" height="265" key="GridCell.Tab.0.center" timestamp="1612472735076">
+    <state width="1833" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1612472897052" />
+    <state width="1833" height="265" key="GridCell.Tab.0.center" timestamp="1612472897050">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.center/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1612472735076" />
-    <state width="1833" height="265" key="GridCell.Tab.0.left" timestamp="1612472735075">
+    <state width="1833" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1612472897050" />
+    <state width="1833" height="265" key="GridCell.Tab.0.left" timestamp="1612472897048">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.left/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1612472735075" />
-    <state width="1833" height="265" key="GridCell.Tab.0.right" timestamp="1612472735077">
+    <state width="1833" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1612472897048" />
+    <state width="1833" height="265" key="GridCell.Tab.0.right" timestamp="1612472897051">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.right/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1612472735077" />
+    <state width="1833" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1612472897051" />
     <state x="273" y="165" width="505" height="770" key="RollbackChangesDialog" timestamp="1611869749867">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
@@ -413,11 +421,11 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1612471903075" />
-    <state x="590" y="266" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1612210817609">
+    <state x="590" y="256" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1612472894961">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="2464" y="256" key="Vcs.Push.Dialog.v2/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031322887" />
-    <state x="590" y="266" width="800" height="548" key="Vcs.Push.Dialog.v2/64.27.1856.1053@64.27.1856.1053" timestamp="1612210817609" />
+    <state x="590" y="256" width="800" height="548" key="Vcs.Push.Dialog.v2/64.27.1856.1053@64.27.1856.1053" timestamp="1612472894961" />
     <state x="698" y="209" width="584" height="702" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1609933808023">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
@@ -426,10 +434,11 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="310" y="467" width="431" height="186" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/64.27.1856.1053@64.27.1856.1053" timestamp="1612124852511" />
-    <state x="2544" y="243" key="run.anything.popup" timestamp="1610909436945">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="667" y="264" key="run.anything.popup" timestamp="1612816347864">
+      <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="2544" y="243" key="run.anything.popup/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1610909436945" />
+    <state x="667" y="264" key="run.anything.popup/64.27.1856.1053@64.27.1856.1053" timestamp="1612816347864" />
     <state x="2051" y="234" width="696" height="696" key="search.everywhere.popup" timestamp="1612030646010">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

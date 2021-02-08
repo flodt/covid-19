@@ -141,9 +141,9 @@
 
                 <div class="row" style="display: none" id="row_vaccine">
                     <div class="col s12 m12 l6">
-                        <div class="card blue darken-1" style="height: 210px">
+                        <div class="card light-green darken-1" style="height: 210px">
                             <div class="card-content white-text">
-                                <span class="card-title activator">Impfstatistik<i class="material-icons right">timer</i></span>
+                                <span class="card-title activator">Landesweit<i class="material-icons right">timer</i></span>
                                 <div class="row">
                                     <div class="col">
                                         <h3 id="vaccinated_preliminary">0</h3>
@@ -177,6 +177,40 @@
                             <div class="card-content white-text">
                                 <div style="width: 305px; margin: auto;">
                                     <canvas id="chart_vaccine"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m12 l6">
+                        <div class="card blue" style="height: 210px">
+                            <div class="card-content white-text">
+                                <span class="card-title">Bayern</span>
+                                <div class="row">
+                                    <div class="col">
+                                        <h3 id="vaccinated_preliminary_bavaria">0</h3>
+                                        <b><a
+                                            href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                            Geimpfte
+                                        </a></b>
+                                    </div>
+                                    <div class="col">
+                                        <h3 id="vaccinated_protected_bavaria">0,00 %</h3>
+                                        <b><a
+                                            href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                            voller Impfschutz
+                                        </a></b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m12 l6">
+                        <div class="card" style="height: 210px">
+                            <div class="card-content white-text">
+                                <div style="width: 305px; margin: auto;">
+                                    <canvas id="chart_vaccine_bavaria"></canvas>
                                 </div>
                             </div>
                         </div>

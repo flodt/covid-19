@@ -52,6 +52,7 @@ function colorsForIncidences() {
 export function renderData(agss, rki, zeit, vacc) {
     console.log("Rendering data...");
     const POPULATION_GERMANY = 83190556;
+    const POPULATION_BAVARIA = 13124737;
 
     const rkiAvail = rki !== null && rki.features !== undefined;
     const zeitAvail = zeit !== null;
@@ -301,11 +302,17 @@ export function renderData(agss, rki, zeit, vacc) {
     if (vaccAvail) {
         const prelim = vacc.germany.historical[0].peopleVaccinated;
         const fully = vacc.germany.historical[0].peopleFullyVaccinated;
-
         document.getElementById("vaccinated_preliminary").innerText =
             (prelim / POPULATION_GERMANY * 100).toFixed(2) + " %";
         document.getElementById("vaccinated_protected").innerText =
             (fully / POPULATION_GERMANY * 100).toFixed(2) + " %";
+
+        const prelimBavaria = vacc.bundeslaender.filter(b => b.id === "Bayern")[0].historical[0].peopleVaccinated;
+        const fullyBavaria = vacc.bundeslaender.filter(b => b.id === "Bayern")[0].historical[0].peopleFullyVaccinated;
+        document.getElementById("vaccinated_preliminary_bavaria").innerText =
+            (prelimBavaria / POPULATION_BAVARIA * 100).toFixed(2) + " %";
+        document.getElementById("vaccinated_protected_bavaria").innerText =
+            (fullyBavaria / POPULATION_BAVARIA * 100).toFixed(2) + " %";
 
         //compute the herd immunity counter (set at 80 %)
         /**
@@ -326,8 +333,9 @@ export function renderData(agss, rki, zeit, vacc) {
 
         //show the vaccinated pie chart
         setTimeout(function () {
-            const ctx = document.getElementById("chart_vaccine").getContext('2d');
-            const chart = new Chart(ctx, {
+            //draw the germany graph
+            const countryWide = document.getElementById("chart_vaccine").getContext('2d');
+            new Chart(countryWide, {
                 type: 'pie',
                 data: {
                     datasets: [{
@@ -337,15 +345,44 @@ export function renderData(agss, rki, zeit, vacc) {
                             POPULATION_GERMANY - (prelim + fully)
                         ],
                         backgroundColor: [
-                            'rgb(76, 175, 80)',
-                            'rgb(30, 136, 229)',
-                            'rgb(189, 189, 189)'
+                            'rgb(221, 0, 0)',
+                            'rgb(255, 206, 0)',
+                            'rgb(0, 0, 0)'
                         ],
                         label: 'Impffortschritt (landesweit)'
                     }],
                     labels: [
-                        'Geimpfte',
-                        'mit vollem Impfschutz',
+                        'Erstimpfung',
+                        'voller Impfschutz',
+                        'Ungeimpft'
+                    ]
+                },
+                options: {
+                    responsive: true
+                }
+            });
+
+            //draw the bavaria graph
+            const bavaria = document.getElementById("chart_vaccine_bavaria").getContext('2d');
+            new Chart(bavaria, {
+                type: 'pie',
+                data: {
+                    datasets: [{
+                        data: [
+                            prelimBavaria - fullyBavaria,
+                            fullyBavaria,
+                            POPULATION_BAVARIA - (prelimBavaria + fullyBavaria)
+                        ],
+                        backgroundColor: [
+                            'rgb(76, 175, 80)',
+                            'rgb(33, 150, 243)',
+                            'rgb(189, 189, 189)'
+                        ],
+                        label: 'Impffortschritt (Bayern)'
+                    }],
+                    labels: [
+                        'Erstimpfung',
+                        'voller Impfschutz',
                         'Ungeimpft'
                     ]
                 },
