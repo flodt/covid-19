@@ -1,7 +1,7 @@
 import M from "materialize-css";
 import { renderData } from "@/js/render.js"
 
-export function requestData() {
+export function requestData(vm) {
     /**
      * Load and display all of the cards for the places of interest
      * Right now, we're loading the data based on the AGSs of the districts
@@ -18,7 +18,7 @@ export function requestData() {
     const URL_VACC = "https://interactive.zeit.de/cronjobs/2020/corona/impfzahlenAutomatisch.json";
 
     //show loading indicator
-    document.getElementById("preloader_container").style.display = "block";
+    vm.state.loading = true;
 
     //do API calls and handle data when present
     let rkiData, zeitData, vaccData;
@@ -27,7 +27,7 @@ export function requestData() {
             return rkiResponse.json();
         } else {
             M.toast({html: 'Laden der RKI-Daten fehlgeschlagen...'});
-            document.getElementById("error_container").style.display = "block";
+            vm.state.error = true;
             return Promise.resolve(null);
         }
     }).then(rkiJson => {
@@ -38,7 +38,7 @@ export function requestData() {
             return zeitResponse.json();
         } else {
             M.toast({html: 'Laden der ZEIT-Daten fehlgeschlagen...'});
-            document.getElementById("error_container").style.display = "block";
+            vm.state.error = true;
             return Promise.resolve(null);
         }
     }).then(zeitJson => {
@@ -55,11 +55,11 @@ export function requestData() {
         vaccData = vaccJson;
 
         //render data
-        document.getElementById("preloader_container").style.display = "none";
+        vm.state.loading = false;
         if (zeitData !== null && rkiData !== null) {
-            document.getElementById("error_container").style.display = "none";
+            vm.state.error = false;
         }
-        document.getElementById("header_counties").style.display = "block";
-        renderData(agss, rkiData, zeitData, vaccData);
+        vm.state.ready = true;
+        renderData(vm, agss, rkiData, zeitData, vaccData);
     });
 }

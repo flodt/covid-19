@@ -49,7 +49,7 @@ function colorsForIncidences() {
  * Have fun poking
  */
 
-export function renderData(agss, rki, zeit, vacc) {
+export function renderData(vm, agss, rki, zeit, vacc) {
     console.log("Rendering data...");
     const POPULATION_GERMANY = 83190556;
     const POPULATION_BAVARIA = 13124737;
@@ -59,42 +59,38 @@ export function renderData(agss, rki, zeit, vacc) {
     const vaccAvail = vacc !== null;
 
     //show error box (need to do it here because of the error json value)
-    if (!rkiAvail) {
-        document.getElementById("error_container").style.display = "block";
-    } else {
-        document.getElementById("error_container").style.display = "none";
-    }
+    vm.state.rkiAvail = rkiAvail;
+    vm.state.zeitAvail = zeitAvail;
+    vm.state.error = !rkiAvail || !zeitAvail;
 
     //update the state fields
     if (rkiAvail) {
-        document.getElementById("state_rki").innerText = rki
+        vm.state.rki = rki
             .features.filter(f => f.attributes.AGS === agss[0])[0].attributes.last_update;
     } else {
-        document.getElementById("state_rki").innerText = "Nicht verfügbar";
+        vm.state.rki = "Nicht verfügbar";
     }
 
     if (zeitAvail) {
         const zeitState = new Date(zeit.lastUpdate);
-        document.getElementById("state_zeit").innerText = zeitState.toLocaleString("de-de");
+        vm.state.zeit = zeitState.toLocaleString("de-de");
     } else {
-        document.getElementById("state_zeit").innerText = "Nicht verfügbar";
+        vm.state.zeit = "Nicht verfügbar";
     }
 
     if (vaccAvail) {
         const vaccState = new Date(vacc.lastUpdate);
-        document.getElementById("state_vaccine").innerText = vaccState.toLocaleString("de-de");
+        vm.state.vaccine = vaccState.toLocaleString("de-de");
     } else {
-        document.getElementById("state_vaccine").innerText = "Nicht verfügbar";
+        vm.state.vaccine = "Nicht verfügbar";
     }
 
     //show the country-wide stats and draw that graph
     if (zeitAvail) {
-        document.getElementById("infected_yesterday").innerText = zeit.yesterdayCount.toLocaleString("de-de");
-        document.getElementById("infected_7day").innerText = (zeit
+        vm.germany.yesterday = zeit.yesterdayCount;
+        vm.germany.sevenDayIncidence = zeit
             .sevenDayStats
-            .count * 100000 / POPULATION_GERMANY)
-            .toFixed(1);
-        document.getElementById("row_country").style.display = "block";
+            .count * 100000 / POPULATION_GERMANY;
 
         setTimeout(function () {
             //prepare chart labels (for the last 5 weeks)
@@ -163,10 +159,12 @@ export function renderData(agss, rki, zeit, vacc) {
     }
 
     //show the incidences
-    agss.forEach(ags => {
+    vm.districts = agss.map(ags => {
         let name = rkiAvail
             ? rki.features.filter(f => f.attributes.AGS === ags)[0].attributes.GEN
             : "Nicht verfügbar";
+
+        const canvasId = `chart_${ags}`;
 
         //unfortunately: special cases for München (Land/Stadt) and Augsburg (Land/Stadt)
         switch (ags) {
@@ -205,43 +203,6 @@ export function renderData(agss, rki, zeit, vacc) {
             chartColor = "rgb(158, 158, 158)";
             textColor = "white-text";
         }
-
-        const card = `<div class="col s12 m12 l4">
-                <div class="card ${color}">
-                    <div class="card-content ${textColor}">
-                        <span class="card-title activator ${textColor}">${name}<i
-                                class="material-icons right">show_chart</i></span>
-                        <div class="row">
-                            <div class="col">
-                                <h3>${rkiIncidence.toFixed(1)}</h3>
-                                <b><a class="oncard" href="https://corona.rki.de">RKI</a></b>
-                            </div>
-                            <div class="col">
-                                <h3>${zeitIncidence.toFixed(1)}</h3>
-                                <b><a class="oncard" href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">ZEIT
-                                    Online</a></b>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-reveal" id="card_reveal_${ags}">
-                        <span class="card-title">${name}<i
-                                class="material-icons right">close</i></span>
-                        ${!zeitAvail ? "<p>Graphen sind nicht verfügbar.</p>" : ""}
-                    </div>
-                </div>
-            </div>`;
-
-        document.getElementById("card_space").innerHTML += card;
-
-        //create the canvas dynamically
-        const canvasDiv = document.createElement("div");
-        canvasDiv.setAttribute("style", "width: 250px; margin: auto;");
-        canvasDiv.classList.add("center");
-        const canvasElem = document.createElement("canvas");
-        const canvasId = `chart_${ags}`;
-        canvasElem.setAttribute("id", canvasId);
-        canvasDiv.appendChild(canvasElem);
-        document.getElementById(`card_reveal_${ags}`).appendChild(canvasDiv);
 
         if (zeitAvail) {
             setTimeout(function () {
@@ -296,22 +257,32 @@ export function renderData(agss, rki, zeit, vacc) {
                 });
             }, 0);
         }
+
+        return {
+            name: name,
+            zeit: zeitIncidence,
+            rki: rkiIncidence,
+            chartId: canvasId,
+            cardColor: color,
+            textColor: textColor,
+            chartColor: chartColor
+        };
     });
 
     //show the vaccine data (compute percentages and update fields)
     if (vaccAvail) {
         const prelim = vacc.germany.historical[0].peopleVaccinated;
         const fully = vacc.germany.historical[0].peopleFullyVaccinated;
-        document.getElementById("vaccinated_preliminary").innerText =
+        vm.germany.vaccinated =
             (prelim / POPULATION_GERMANY * 100).toFixed(2) + " %";
-        document.getElementById("vaccinated_protected").innerText =
+        vm.germany.fullyVaccinated =
             (fully / POPULATION_GERMANY * 100).toFixed(2) + " %";
 
         const prelimBavaria = vacc.bundeslaender.filter(b => b.id === "Bayern")[0].historical[0].peopleVaccinated;
         const fullyBavaria = vacc.bundeslaender.filter(b => b.id === "Bayern")[0].historical[0].peopleFullyVaccinated;
-        document.getElementById("vaccinated_preliminary_bavaria").innerText =
+        vm.bavaria.vaccinated =
             (prelimBavaria / POPULATION_BAVARIA * 100).toFixed(2) + " %";
-        document.getElementById("vaccinated_protected_bavaria").innerText =
+        vm.bavaria.fullyVaccinated =
             (fullyBavaria / POPULATION_BAVARIA * 100).toFixed(2) + " %";
 
         //compute the herd immunity counter (set at 70 %)
@@ -325,11 +296,10 @@ export function renderData(agss, rki, zeit, vacc) {
         const herdImmunity = 0.70 * POPULATION_GERMANY;
         const threeWeeks = vacc.germany.historical[21].peopleFullyVaccinated;
         const daysToHerdImmunity = herdImmunity / ((fully - threeWeeks) / 21.0);
-        document.getElementById("herd_immunity_timer").innerText = formatInterval(daysToHerdImmunity);
+        vm.germany.herdImmunityTimer = formatInterval(daysToHerdImmunity);
 
         //display the block
-        document.getElementById("header_vaccine").style.display = "block";
-        document.getElementById("row_vaccine").style.display = "block";
+        vm.state.vaccAvail = true;
 
         //show the vaccinated pie chart
         setTimeout(function () {
@@ -395,8 +365,8 @@ export function renderData(agss, rki, zeit, vacc) {
 
     //show the clinic data
     if (zeitAvail) {
-        document.getElementById("deaths").innerText = zeit.currentStats.dead.toLocaleString("de-de");
-        document.getElementById("beds_occupied").innerText = zeit.clinicStats.covid19.toLocaleString("de-de");
+        vm.germany.deaths = zeit.currentStats.dead;
+        vm.germany.clinicPatients = zeit.clinicStats.covid19;
 
         //draw the hospital graph
         setTimeout(function () {
@@ -454,8 +424,7 @@ export function renderData(agss, rki, zeit, vacc) {
         }, 0);
 
         //show the fields
-        document.getElementById("row_hospital").style.display = "block";
-        document.getElementById("header_hospital").style.display = "block";
+        vm.state.zeitAvail = true;
     }
 }
 
