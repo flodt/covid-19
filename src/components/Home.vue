@@ -57,7 +57,7 @@
                     <div class="col s12 m12 l6">
                         <div class="card" style="height: 210px">
                             <div class="card-content white-text">
-                                <div style="width: 305px; margin: auto;">
+                                <div style="width: inherit; height: inherit; position: relative;">
                                     <canvas id="chart_germany"></canvas>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
                             <div class="card-reveal">
                         <span class="card-title">{{ card.name }}<i
                             class="material-icons right">close</i></span>
-                                <div class="center" style="width: 250px; margin: auto;">
+                                <div class="center" style="width: inherit; height: 70%; position: relative;">
                                     <canvas v-bind:id="card.chartId"></canvas>
                                 </div>
                             </div>
@@ -140,7 +140,7 @@
                     <div class="col s12 m12 l6">
                         <div class="card" style="height: 210px">
                             <div class="card-content white-text">
-                                <div style="width: 305px; margin: auto;">
+                                <div style="width: inherit; height: inherit; position: relative;">
                                     <canvas id="chart_vaccine"></canvas>
                                 </div>
                             </div>
@@ -174,7 +174,7 @@
                     <div class="col s12 m12 l6">
                         <div class="card" style="height: 210px">
                             <div class="card-content white-text">
-                                <div style="width: 305px; margin: auto;">
+                                <div style="width: inherit; height: inherit; position: relative;">
                                     <canvas id="chart_vaccine_bavaria"></canvas>
                                 </div>
                             </div>
@@ -214,7 +214,7 @@
                     <div class="col s12 m12 l6">
                         <div class="card" style="height: 210px">
                             <div class="card-content white-text">
-                                <div style="width: 305px; margin: auto;">
+                                <div style="width: inherit; height: inherit; position: relative;">
                                     <canvas id="chart_beds"></canvas>
                                 </div>
                             </div>

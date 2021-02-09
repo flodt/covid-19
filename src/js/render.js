@@ -149,6 +149,7 @@ export function renderData(vm, agss, rki, zeit, vacc) {
                         }]
                     },
                     responsive: true,
+                    maintainAspectRatio: false,
                     tooltips: {
                         mode: 'nearest',
                         intersect: false
@@ -249,6 +250,8 @@ export function renderData(vm, agss, rki, zeit, vacc) {
                                 }
                             }]
                         },
+                        responsive: true,
+                        maintainAspectRatio: false,
                         tooltips: {
                             mode: 'nearest',
                             intersect: false
@@ -328,7 +331,8 @@ export function renderData(vm, agss, rki, zeit, vacc) {
                     ]
                 },
                 options: {
-                    responsive: true
+                    responsive: true,
+                    maintainAspectRatio: false,
                 }
             });
 
@@ -357,7 +361,8 @@ export function renderData(vm, agss, rki, zeit, vacc) {
                     ]
                 },
                 options: {
-                    responsive: true
+                    responsive: true,
+                    maintainAspectRatio: false,
                 }
             });
         }, 0);
@@ -415,6 +420,7 @@ export function renderData(vm, agss, rki, zeit, vacc) {
                         }]
                     },
                     responsive: true,
+                    maintainAspectRatio: false,
                     tooltips: {
                         mode: 'nearest',
                         intersect: false
