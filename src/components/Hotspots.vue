@@ -61,9 +61,16 @@
                 </div>
 
                 <div class="row" v-if="state.ready">
-                    <h5 class="center"><b>Hotspots</b></h5>
-                    <div class="col s12 m8 l8 offset-l2 offset-m2">
+                    <div class="col l6 m12 s12">
+                        <h5 class="center"><b>Hotspots</b></h5>
                         <div class="card-panel white-text" v-for="card in hotspots" :class="card.color">
+                            <h6><big><b>{{ card.index }}. {{ card.name }}</b> ({{ card.state }})<span
+                                style="float: right;">{{ card.incidence.toFixed(1) }}</span></big></h6>
+                        </div>
+                    </div>
+                    <div class="col l6 m12 s12">
+                        <h5 class="center"><b>Coldspots</b></h5>
+                        <div class="card-panel white-text" v-for="card in coldspots" :class="card.color">
                             <h6><big><b>{{ card.index }}. {{ card.name }}</b> ({{ card.state }})<span
                                 style="float: right;">{{ card.incidence.toFixed(1) }}</span></big></h6>
                         </div>
@@ -143,6 +150,7 @@ export default {
                 loading: true
             },
             hotspots: [],
+            coldspots: [],
             overview: [],
             stat: {
                 below35: 0,

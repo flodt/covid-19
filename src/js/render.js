@@ -135,6 +135,10 @@ export function renderHotspots(vm, agss, rki, zeit, vacc) {
         });
 
     vm.hotspots = hotspots.slice(0,5);
+    vm.coldspots = hotspots.slice(-5).reverse().map((d, idx) => {
+        d.index = idx + 1;
+        return d;
+    })
     vm.stat.below35 = hotspots.filter(h => h.incidence < 35).length;
     vm.stat.at3550 = hotspots.filter(h => h.incidence >= 35 && h.incidence < 50).length;
     vm.stat.at50100 = hotspots.filter(h => h.incidence >= 50 && h.incidence < 100).length;
