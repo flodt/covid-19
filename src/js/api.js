@@ -1,7 +1,7 @@
 import M from "materialize-css";
 import { renderData } from "@/js/render.js"
 
-export function requestData(vm) {
+export function requestData(vm, callback) {
     /**
      * Load and display all of the cards for the places of interest
      * Right now, we're loading the data based on the AGSs of the districts
@@ -60,6 +60,6 @@ export function requestData(vm) {
             vm.state.error = false;
         }
         vm.state.ready = true;
-        renderData(vm, agss, rkiData, zeitData, vaccData);
+        callback(vm, agss, rkiData, zeitData, vaccData);
     });
 }

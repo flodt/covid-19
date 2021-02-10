@@ -41,24 +41,53 @@ function colorsForIncidences() {
     };
 }
 
-/**
- * I am aware that this is not the VueJS "way" of displaying the data.
- * However, this code stems from before this page was transformed and moved to a VueJs
- * instance, so this is what remains of that legacy.
- * I could rewrite this, but I don't really have the time right now.
- * Have fun poking
- */
+function shortState(state) {
+    switch (state) {
+        case "Bayern":
+            return "BY";
+        case "Baden-Württemberg":
+            return "BW";
+        case "Berlin":
+            return "BE";
+        case "Brandenburg":
+            return "BB";
+        case "Bremen":
+            return "HB";
+        case "Hamburg":
+            return "HH";
+        case "Hessen":
+            return "HE";
+        case "Mecklenburg-Vorpommern":
+            return "MV";
+        case "Niedersachsen":
+            return "NI";
+        case "Nordrhein-Westfalen":
+            return "NW";
+        case "Rheinland-Pfalz":
+            return "RP";
+        case "Saarland":
+            return "SL";
+        case "Sachsen":
+            return "SN";
+        case "Sachsen-Anhalt":
+            return "ST";
+        case "Schleswig-Holstein":
+            return "SH";
+        case "Thüringen":
+            return "TH";
+        default:
+            return state;
+    }
+}
 
-export function renderData(vm, agss, rki, zeit, vacc) {
-    console.log("Rendering data...");
-    const POPULATION_GERMANY = 83190556;
-    const POPULATION_BAVARIA = 13124737;
+function truncate(str, n){
+    return (str.length > n) ? str.substr(0, n-1) + '...' : str;
+}
 
+function showErrorBox(vm, agss, rki, zeit, vacc) {
     const rkiAvail = rki !== null && rki.features !== undefined;
     const zeitAvail = zeit !== null;
     const vaccAvail = vacc !== null;
-
-    //show error box (need to do it here because of the error json value)
     vm.state.rkiAvail = rkiAvail;
     vm.state.zeitAvail = zeitAvail;
     vm.state.error = !rkiAvail || !zeitAvail;
@@ -84,6 +113,63 @@ export function renderData(vm, agss, rki, zeit, vacc) {
     } else {
         vm.state.vaccine = "Nicht verfügbar";
     }
+}
+
+
+export function renderHotspots(vm, agss, rki, zeit, vacc) {
+    showErrorBox(vm, agss, rki, zeit, vacc);
+
+    //extract data from RKI
+    const hotspots = rki
+        .features
+        .map(f => f.attributes)
+        .sort((a, b) => a.cases7_per_100k > b.cases7_per_100k ? -1 : 1)
+        .map((d, idx) => {
+            return {
+                name: d.GEN,
+                incidence: d.cases7_per_100k,
+                state: shortState(d.BL),
+                color: colorsForIncidences(d.cases7_per_100k).color,
+                index: idx + 1
+            }
+        });
+
+    vm.hotspots = hotspots.slice(0,5);
+    vm.stat.below35 = hotspots.filter(h => h.incidence < 35).length;
+    vm.stat.at3550 = hotspots.filter(h => h.incidence >= 35 && h.incidence < 50).length;
+    vm.stat.at50100 = hotspots.filter(h => h.incidence >= 50 && h.incidence < 100).length;
+    vm.stat.at100200 = hotspots.filter(h => h.incidence >= 100 && h.incidence < 200).length;
+    vm.stat.above200 = hotspots.filter(h => h.incidence > 200).length;
+
+    //gather "all" data
+    const overview = rki
+        .features
+        .map(f => f.attributes)
+        .sort((a, b) => a.cases7_per_100k > b.cases7_per_100k ? -1 : 1)
+        .map((d, idx) => {
+            return {
+                name: d.GEN + " (" + shortState(d.BL) + ")",
+                incidence: d.cases7_per_100k,
+                color: colorsForIncidences(d.cases7_per_100k).color,
+                index: idx + 1,
+                casesTotal: d.cases,
+                deathsTotal: d.deaths
+            }
+        });
+
+    vm.overview = overview;
+}
+
+
+export function renderData(vm, agss, rki, zeit, vacc) {
+    console.log("Rendering data...");
+    const POPULATION_GERMANY = 83190556;
+    const POPULATION_BAVARIA = 13124737;
+
+    showErrorBox(vm, agss, rki, zeit, vacc);
+    const rkiAvail = rki !== null && rki.features !== undefined;
+    const zeitAvail = zeit !== null;
+    const vaccAvail = vacc !== null;
 
     //show the country-wide stats and draw that graph
     if (zeitAvail) {

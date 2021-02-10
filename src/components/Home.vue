@@ -269,6 +269,7 @@ import navigation from "@/components/NavBar.vue";
 import firebase from "firebase";
 import M from 'materialize-css';
 import {requestData} from "@/js/api.js"
+import {renderData} from "../js/render";
 
 export default {
     data() {
@@ -305,7 +306,7 @@ export default {
     },
     mounted() {
         //call the APIs
-        requestData(this);
+        requestData(this, renderData);
     },
     created() {
 

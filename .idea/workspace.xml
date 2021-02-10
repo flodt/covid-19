@@ -10,10 +10,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="Vue.js-ify the page">
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="enlarge charts and make responsive">
+      <change afterPath="$PROJECT_DIR$/src/components/Hotspots.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/render.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,13 +47,14 @@
     <property name="javascript.nodejs.core.library.configured.version" value="12.20.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.19.12" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/img" />
       <recent name="$PROJECT_DIR$" />
@@ -118,7 +123,9 @@
       <workItem from="1612815903827" duration="3110000" />
       <workItem from="1612897672481" duration="2546000" />
       <workItem from="1612902180581" duration="419000" />
-      <workItem from="1612913895261" duration="735000" />
+      <workItem from="1612913895261" duration="781000" />
+      <workItem from="1612959187736" duration="48000" />
+      <workItem from="1612979607853" duration="4676000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609877935878</created>
@@ -372,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612900224171</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="enlarge charts and make responsive">
+      <created>1612914680499</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1612914680499</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,7 +405,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add ZEIT online sparkbars as graph" />
     <MESSAGE value="add Augsburg (Land) and Kaufbeuren" />
     <MESSAGE value="add values for the whole country" />
     <MESSAGE value="resize chart" />
@@ -416,7 +429,8 @@
     <MESSAGE value="add info about herd immunity timer" />
     <MESSAGE value="fix duplicate word" />
     <MESSAGE value="Vue.js-ify the page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vue.js-ify the page" />
+    <MESSAGE value="enlarge charts and make responsive" />
+    <option name="LAST_COMMIT_MESSAGE" value="enlarge charts and make responsive" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="192" width="1076" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611869222722">
@@ -431,34 +445,34 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="64" y="122" width="1484" height="884" key="DiffContextDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609951627105" />
-    <state width="1833" height="265" key="GridCell.Tab.0.bottom" timestamp="1612902606512">
+    <state width="1833" height="265" key="GridCell.Tab.0.bottom" timestamp="1612983260375">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.bottom/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330657" />
-    <state width="1833" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1612902606512" />
-    <state width="1833" height="265" key="GridCell.Tab.0.center" timestamp="1612902606511">
+    <state width="1833" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1612983260375" />
+    <state width="1833" height="265" key="GridCell.Tab.0.center" timestamp="1612983260375">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.center/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1612902606511" />
-    <state width="1833" height="265" key="GridCell.Tab.0.left" timestamp="1612902606511">
+    <state width="1833" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1612983260375" />
+    <state width="1833" height="265" key="GridCell.Tab.0.left" timestamp="1612983260374">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.left/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1612902606511" />
-    <state width="1833" height="265" key="GridCell.Tab.0.right" timestamp="1612902606512">
+    <state width="1833" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1612983260374" />
+    <state width="1833" height="265" key="GridCell.Tab.0.right" timestamp="1612983260375">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.right/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1612902606512" />
+    <state width="1833" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1612983260375" />
     <state x="273" y="165" width="505" height="770" key="RollbackChangesDialog" timestamp="1611869749867">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="273" y="165" width="505" height="770" key="RollbackChangesDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1611869749867" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1612914462758">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1612987320219">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1612914462758" />
+    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1612987320219" />
     <state x="590" y="246" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1612900231032">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
@@ -481,10 +495,10 @@
     </state>
     <state x="2544" y="243" key="run.anything.popup/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1610909436945" />
     <state x="667" y="264" key="run.anything.popup/64.27.1856.1053@64.27.1856.1053" timestamp="1612816347864" />
-    <state x="2051" y="234" width="696" height="696" key="search.everywhere.popup" timestamp="1612030646010">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="191" y="255" width="672" height="678" key="search.everywhere.popup" timestamp="1612983483904">
+      <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="2051" y="234" width="696" height="696" key="search.everywhere.popup/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612030646010" />
-    <state x="191" y="255" width="672" height="678" key="search.everywhere.popup/64.27.1856.1053@64.27.1856.1053" timestamp="1610111915110" />
+    <state x="191" y="255" width="672" height="678" key="search.everywhere.popup/64.27.1856.1053@64.27.1856.1053" timestamp="1612983483904" />
   </component>
 </project>
