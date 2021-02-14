@@ -2,7 +2,7 @@
     <nav>
         <div class="nav-wrapper grey darken-4">
             <!-- <a href="#" class="brand-logo">Logo</a> -->
-            <router-link to="/" class="brand-logo center" tag="a">
+            <router-link to="/" class="brand-logo left" tag="a">
                 <i class="material-icons left">home</i>
                 COVID-19
             </router-link>
@@ -14,8 +14,26 @@
                         Hotspots
                     </router-link>
                 </li>
+                <li>
+                    <router-link to="/curfew">
+                        <i class="material-icons left">lock</i>
+                        Ausgangssperren
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/states">
+                        <i class="material-icons left">map</i>
+                        Bundesländer
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/historical">
+                        <i class="material-icons left">history</i>
+                        Verlauf
+                    </router-link>
+                </li>
             </ul>
-            <a href="#" data-target="sidenav_mobile" class="sidenav-trigger left hide-on-med-and-up"><i class="material-icons">menu</i></a>
+            <a href="#" data-target="sidenav_mobile" class="sidenav-trigger right hide-on-med-and-up"><i class="material-icons">menu</i></a>
 
             <ul class="sidenav" id="sidenav_mobile">
                 <li><div class="user-view">
@@ -31,6 +49,14 @@
                         <i class="material-icons left">home</i>
                         Startseite
                     </router-link>
+                    <router-link to="/curfew" class="sidenav-close">
+                        <i class="material-icons left">lock</i>
+                        Ausgangssperren
+                    </router-link>
+                    <router-link to="/states" class="sidenav-close">
+                        <i class="material-icons left">map</i>
+                        Bundesländer
+                    </router-link>
                 </li>
                 <li>
                     <a class="subheader">Statistik</a>
@@ -39,6 +65,10 @@
                     <router-link to="/hotspots" class="sidenav-close">
                         <i class="material-icons left">trending_up</i>
                         Hotspots
+                    </router-link>
+                    <router-link to="/historical" class="sidenav-close">
+                        <i class="material-icons left">history</i>
+                        Verlauf
                     </router-link>
                 </li>
             </ul>
