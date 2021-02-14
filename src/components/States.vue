@@ -33,7 +33,32 @@
 
                 <div class="row" v-if="state.ready">
                     <h5 class="center"><b>Bundesländer</b></h5>
-                    <p class="center">Dies ist ein Test.</p>
+
+                    <div class="col s12 m6 l3" v-for="card in states">
+                        <div class="card" :class="card.cardColor">
+                            <div class="card-content white-text">
+                                <span class="card-title truncate">{{ card.name }}</span>
+                                <div class="row">
+                                    <div class="col">
+                                        <h3>{{ card.incidence.toFixed(1) }}</h3>
+                                        <b>7-Tage-Inzidenz</b>
+                                    </div>
+                                    <div class="col">
+                                        <h3>{{ card.deathsPerWeek }}</h3>
+                                        <b>Tote pro Woche</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" v-if="state.ready && heatmap.avail">
+                    <h5 class="center"><b>Heatmap</b></h5>
+
+                    <div class="card-panel center">
+                        <img class="responsive-img" style="max-width: 60%" src="https://api.corona-zahlen.org/map/districts" alt="Logo">
+                    </div>
                 </div>
             </div>
         </div>
@@ -42,14 +67,7 @@
             <div class="grey-text text-darken-2" style="text-align: center;">Stand (RKI): <span
                 id="state_rki">{{ state.rki }}</span>
             </div>
-            <div class="grey-text text-darken-2" style="text-align: center;">Stand (ZEIT Online): <span id="state_zeit">{{
-                    state.zeit
-                }}</span>
-            </div>
-            <div class="grey-text text-darken-2" style="text-align: center;">Stand (ZEIT Online Impfstatistik): <span
-                id="state_vaccine">{{ state.vaccine }}</span>
-            </div>
-            <div class="grey-text text-darken-2" style="text-align: center;">Landkreise zeigen 7-Tage-Inzidenzen pro
+            <div class="grey-text text-darken-2" style="text-align: center;">Daten zeigen 7-Tage-Inzidenzen pro
                 100.000 Einwohner.
             </div>
             <br/>
@@ -65,20 +83,35 @@
 import navigation from "@/components/NavBar.vue";
 import firebase from "firebase";
 import M from 'materialize-css';
+import {requestSingle} from "@/js/api.js";
+import {colorsForIncidences} from "@/js/render.js";
 
 export default {
     data() {
         return {
             state: {
-                zeit: "Inzidenzen werden geladen...",
                 rki: "Inzidenzen werden geladen...",
-                vaccine: "Inzidenzen werden geladen...",
-                zeitAvail: false,
-                rkiAvail: false,
-                vaccAvail: false,
                 ready: false,
                 error: false,
                 loading: true
+            },
+            states: [
+                {
+                    name: "Bayern",
+                    cardColor: "red darken-2",
+                    incidence: 123.7,
+                    deathsPerWeek: 12
+                },
+                {
+                    name: "Thüringen",
+                    cardColor: "red darken-2",
+                    incidence: 86.2,
+                    deathsPerWeek: 8
+                }
+            ],
+            heatmap: {
+                avail: true,
+                url: ""
             }
         };
     },
@@ -86,7 +119,24 @@ export default {
         navigation
     },
     mounted() {
-        //call the APIs?
+        const URL = "https://api.corona-zahlen.org/states";
+        requestSingle(this, URL, (vm, data) => {
+            const states = [];
+
+            for (const label in data.data) {
+                const state = data.data[label];
+
+                states.push({
+                    name: state.name,
+                    cardColor: colorsForIncidences(state.weekIncidence).color,
+                    incidence: state.weekIncidence,
+                    deathsPerWeek: state.deathsPerWeek
+                });
+            }
+
+            vm.states = states.sort((a, b) => a.name > b.name ? 1 : -1);
+            vm.state.rki = new Date(data.meta.lastUpdate).toLocaleString("de-de");
+        });
     },
     created() {
 

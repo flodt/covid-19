@@ -64,9 +64,30 @@ export function requestData(vm, callback) {
     });
 }
 
-export function requestCurfew(vm, callback) {
-    let agss = ["09778", "09162", "09179", "09762", "09777", "09188", "09178", "09175", "09772"];
-    const URL = "https://api.corona-zahlen.org/districts/history/incidence";
+export function requestSingle(vm, url, callback) {
+    //show loading indicator
+    vm.state.loading = true;
+    fetch(url).then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            M.toast({html: 'Laden der Daten fehlgeschlagen...'});
+            vm.state.error = true;
+            return Promise.resolve(null);
+        }
+    }).then(json => {
+        //render data
+        vm.state.loading = false;
+        if (json !== null) {
+            vm.state.error = false;
+        }
+        vm.state.ready = true;
+        callback(vm, json);
+    });
+}
+
+export function requestStates(vm, callback) {
+    const URL = "https://api.corona-zahlen.org/states";
 
     //show loading indicator
     vm.state.loading = true;
@@ -85,6 +106,6 @@ export function requestCurfew(vm, callback) {
             vm.state.error = false;
         }
         vm.state.ready = true;
-        callback(vm, agss, json);
+        callback(vm, json);
     });
 }

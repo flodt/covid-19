@@ -8,7 +8,7 @@ function formatInterval(daysToHerdImmunity) {
     return str;
 }
 
-function colorsForIncidences() {
+export function colorsForIncidences() {
     const max = Math.max(...arguments);
     let color, chartColor, textColor;
 

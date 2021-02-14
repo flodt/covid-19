@@ -10,10 +10,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="add curfew monitor">
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="update text and fix NavBar.vue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Curfew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Curfew.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Historical.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Historical.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/States.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/States.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/render.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +126,7 @@
       <workItem from="1612959187736" duration="48000" />
       <workItem from="1612979607853" duration="4841000" />
       <workItem from="1612992541195" duration="646000" />
-      <workItem from="1613327460090" duration="2737000" />
+      <workItem from="1613327460090" duration="5265000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609877935878</created>
@@ -405,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613329834434</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="update text and fix NavBar.vue">
+      <created>1613333489512</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1613333489512</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,7 +434,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add Ebersberg" />
     <MESSAGE value="add vaccination data" />
     <MESSAGE value="remove fill from graphs and fix hover issue" />
     <MESSAGE value="expand country-wide graph to 5 weeks" />
@@ -449,7 +458,8 @@
     <MESSAGE value="add hotspot overview page" />
     <MESSAGE value="add coldspots" />
     <MESSAGE value="add curfew monitor" />
-    <option name="LAST_COMMIT_MESSAGE" value="add curfew monitor" />
+    <MESSAGE value="update text and fix NavBar.vue" />
+    <option name="LAST_COMMIT_MESSAGE" value="update text and fix NavBar.vue" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="192" width="1076" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611869222722">
@@ -464,34 +474,34 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="64" y="122" width="1484" height="884" key="DiffContextDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609951627105" />
-    <state width="940" height="265" key="GridCell.Tab.0.bottom" timestamp="1613333192662">
+    <state width="940" height="265" key="GridCell.Tab.0.bottom" timestamp="1613335164537">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.bottom/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330657" />
-    <state width="940" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1613333192662" />
-    <state width="940" height="265" key="GridCell.Tab.0.center" timestamp="1613333192661">
+    <state width="940" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1613335164537" />
+    <state width="940" height="265" key="GridCell.Tab.0.center" timestamp="1613335164536">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.center/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="940" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1613333192661" />
-    <state width="940" height="265" key="GridCell.Tab.0.left" timestamp="1613333192660">
+    <state width="940" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1613335164536" />
+    <state width="940" height="265" key="GridCell.Tab.0.left" timestamp="1613335164535">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.left/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="940" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1613333192660" />
-    <state width="940" height="265" key="GridCell.Tab.0.right" timestamp="1613333192662">
+    <state width="940" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1613335164535" />
+    <state width="940" height="265" key="GridCell.Tab.0.right" timestamp="1613335164536">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.right/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="940" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1613333192661" />
+    <state width="940" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1613335164536" />
     <state x="273" y="165" width="505" height="770" key="RollbackChangesDialog" timestamp="1611869749867">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="273" y="165" width="505" height="770" key="RollbackChangesDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1611869749867" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1613333264312">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1613337359767">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1613333264312" />
+    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1613337359767" />
     <state x="590" y="236" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1612993169069">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>

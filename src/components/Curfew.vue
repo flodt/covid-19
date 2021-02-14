@@ -35,7 +35,7 @@
                     <h5 class="center"><b>Ausgangssperren</b></h5>
 
                     <div class="col s12 m12 l4" v-for="card in districts">
-                        <div class="card" style="height: 210px"
+                        <div class="card"
                              :class="(card.hasCurfew) ? 'red darken-2' : 'green darken-2'">
                             <div class="card-content white-text">
                                 <span class="card-title">{{ card.name }}</span>
@@ -74,16 +74,13 @@
 import navigation from "@/components/NavBar.vue";
 import firebase from "firebase";
 import M from 'materialize-css';
-import {requestCurfew} from "@/js/api.js"
+import {requestSingle} from "@/js/api.js";
 
 export default {
     data() {
         return {
             state: {
                 rki: "Inzidenzen werden geladen...",
-                zeitAvail: false,
-                rkiAvail: false,
-                vaccAvail: false,
                 ready: false,
                 error: false,
                 loading: true
@@ -95,10 +92,11 @@ export default {
         navigation
     },
     mounted() {
-        //call the APIs?
         this.state.ready = true;
 
-        requestCurfew(this, (vm, agss, data) => {
+        let agss = ["09778", "09162", "09179", "09762", "09777", "09188", "09178", "09175", "09772"];
+        const URL = "https://api.corona-zahlen.org/districts/history/incidence";
+        requestSingle(this, URL, (vm, data) => {
             vm.districts = agss.map(ags => {
                 let name = data.data[ags].name;
 
@@ -121,6 +119,8 @@ export default {
                     maxIncidence: max
                 };
             });
+
+            vm.state.rki = new Date(data.meta.lastUpdate).toLocaleString("de-de");
         });
     },
     created() {
