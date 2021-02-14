@@ -579,7 +579,7 @@ export function renderHistorical(vm, rki, zeit) {
             const ctx = document.getElementById(chartId).getContext('2d');
             const chart = new Chart(ctx, {
                 // The type of chart we want to create
-                type: 'line',
+                type: 'bar',
 
                 // The data for our dataset
                 data: {

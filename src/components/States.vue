@@ -34,7 +34,7 @@
                 <div class="row" v-if="state.ready">
                     <h5 class="center"><b>Bundesländer</b></h5>
 
-                    <div class="col s12 m6 l3" v-for="card in states">
+                    <div class="col s12 m12 l4" v-for="card in states">
                         <div class="card" :class="card.cardColor">
                             <div class="card-content white-text">
                                 <span class="card-title truncate">{{ card.name }}</span>
