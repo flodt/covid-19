@@ -2,7 +2,7 @@
     <nav>
         <div class="nav-wrapper grey darken-4">
             <!-- <a href="#" class="brand-logo">Logo</a> -->
-            <router-link to="/" class="brand-logo left" tag="a">
+            <router-link to="/" class="brand-logo left" tag="a" style="padding-left: 10px">
                 <i class="material-icons left">home</i>
                 COVID-19
             </router-link>

@@ -33,7 +33,6 @@
 
                 <div class="row" v-if="state.ready">
                     <h5 class="center"><b>Ausgangssperren</b></h5>
-                    <p class="center">Dies ist ein Test.</p>
 
                     <div class="col s12 m12 l4" v-for="card in districts">
                         <div class="card" style="height: 210px"
@@ -46,7 +45,7 @@
                                 </div>
                                 <div class="center" v-if="!card.hasCurfew">
                                     <h3>unbeschränkt</h3>
-                                    <b>7-Tage-Inzidenz unter 100.</b>
+                                    <b>7-Tage-Inzidenz konstant unter 100</b>
                                 </div>
                             </div>
                         </div>
@@ -89,18 +88,7 @@ export default {
                 error: false,
                 loading: true
             },
-            districts: [
-                /*{
-                    name: "Unterallgäu",
-                    hasCurfew: true,
-                    maxIncidence: 123
-                },
-                {
-                    name: "München",
-                    hasCurfew: false,
-                    maxIncidence: 83
-                }*/
-            ]
+            districts: []
         };
     },
     components: {
@@ -112,9 +100,21 @@ export default {
 
         requestCurfew(this, (vm, agss, data) => {
             vm.districts = agss.map(ags => {
-                const name = data.data[ags].name;
-                const has = data.data[ags].history.map(h => h.weekIncidence).slice(-7).some(i => i >= 100);
-                const max = Math.max.apply(Math, data.data[ags].history.map(h => h.weekIncidence).slice(-7));
+                let name = data.data[ags].name;
+
+                //unfortunately: special cases for München (Land/Stadt) and Augsburg (Land/Stadt)
+                switch (ags) {
+                    case "09772":
+                        name = "Augsburg (Land)";
+                        break;
+                    case "09162":
+                        name = "München (Stadt)";
+                        break;
+                }
+
+                const incidences = data.data[ags].history.map(h => h.weekIncidence).slice(-7);
+                const has = incidences.some(i => i >= 100);
+                const max = Math.max.apply(Math, incidences);
                 return {
                     name: name,
                     hasCurfew: has,
