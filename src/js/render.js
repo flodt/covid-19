@@ -80,8 +80,8 @@ function shortState(state) {
     }
 }
 
-function truncate(str, n){
-    return (str.length > n) ? str.substr(0, n-1) + '...' : str;
+function truncate(str, n) {
+    return (str.length > n) ? str.substr(0, n - 1) + '...' : str;
 }
 
 function showErrorBox(vm, agss, rki, zeit, vacc) {
@@ -134,7 +134,7 @@ export function renderHotspots(vm, agss, rki, zeit, vacc) {
             }
         });
 
-    vm.hotspots = hotspots.slice(0,5);
+    vm.hotspots = hotspots.slice(0, 5);
     vm.coldspots = hotspots.slice(-5).reverse().map((d, idx) => {
         d.index = idx + 1;
         return d;
@@ -524,3 +524,100 @@ export function renderData(vm, agss, rki, zeit, vacc) {
     }
 }
 
+export function renderHistorical(vm, rki, zeit) {
+    //show last updated date
+    let agss = ["09778", "09162", "09179", "09762", "09777", "09188", "09178", "09175", "09772"];
+    vm.state.zeit = new Date(zeit.lastUpdate).toLocaleString("de-de");
+    vm.state.rki = rki.features.filter(f => f.attributes.AGS === agss[0])[0].attributes.last_update;
+
+    vm.districts = agss.map(ags => {
+        let name = rki.features.filter(f => f.attributes.AGS === ags)[0].attributes.GEN;
+        const chartId = `chart_historical_${ags}`;
+
+        //unfortunately: special cases for München (Land/Stadt) and Augsburg (Land/Stadt)
+        switch (ags) {
+            case "09772":
+                name = "Augsburg (Land)";
+                break;
+            case "09162":
+                name = "München (Stadt)";
+                break;
+        }
+
+        //render the graphs
+        setTimeout(function () {
+            const population = rki.features.filter(f => f.attributes.AGS === ags)[0].attributes.EWZ;
+            const history = zeit
+                .kreise
+                .items
+                .filter(k => k.ags === ags.replace(/^0+/, ''))[0]
+                .historicalStats
+                .count;
+
+            //const everySnd = (_, idx) => idx % 2 === 0;
+
+            //show chart labels
+            const labels = [...Array(history.length).keys()]
+                .map(i => new Date(Date.now() - i * 24 * 60 * 60 * 1000))
+                .map(d => {
+                    const str = d.toLocaleString("de-de");
+                    return str.slice(0, str.lastIndexOf(".") + 1);
+                })
+                .reverse();
+
+            //gather incidence data
+            const weekIncidences = history.map((h, idx, arr) => {
+                //get delta between today and 7 days ago, normalized to the population
+                const today = h;
+                const preWeek = arr[idx - 7];
+                return +((today - preWeek) * 100000 / population).toFixed(1);
+            });
+
+            const chartColor = colorsForIncidences(weekIncidences[weekIncidences.length - 1]).chartColor;
+
+            //render charts
+            const ctx = document.getElementById(chartId).getContext('2d');
+            const chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'line',
+
+                // The data for our dataset
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '7-Tage-Inzidenz',
+                        backgroundColor: chartColor,
+                        borderColor: chartColor,
+                        data: weekIncidences,
+                        fill: false
+                    }
+                    ]
+                },
+
+                // Configuration options go here
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                                //suggestedMin: 0,
+                                //suggestedMax: 32500
+                            }
+                        }]
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    tooltips: {
+                        mode: 'nearest',
+                        intersect: false
+                    }
+                }
+            });
+        }, 0);
+
+        return {
+            name: name,
+            chartId: chartId
+        };
+    });
+}

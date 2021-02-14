@@ -34,7 +34,7 @@
                 <div class="row" v-if="state.ready">
                     <h5 class="center"><b>Ausgangssperren</b></h5>
 
-                    <div class="col s12 m12 l4" v-for="card in districts">
+                    <div class="col s12 m6 l4" v-for="card in districts">
                         <div class="card"
                              :class="(card.hasCurfew) ? 'red darken-2' : 'green darken-2'">
                             <div class="card-content white-text">

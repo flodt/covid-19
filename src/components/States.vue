@@ -95,20 +95,7 @@ export default {
                 error: false,
                 loading: true
             },
-            states: [
-                {
-                    name: "Bayern",
-                    cardColor: "red darken-2",
-                    incidence: 123.7,
-                    deathsPerWeek: 12
-                },
-                {
-                    name: "Thüringen",
-                    cardColor: "red darken-2",
-                    incidence: 86.2,
-                    deathsPerWeek: 8
-                }
-            ],
+            states: [],
             heatmap: {
                 avail: true,
                 url: ""

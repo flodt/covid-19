@@ -33,14 +33,26 @@
 
                 <div class="row" v-if="state.ready">
                     <h5 class="center"><b>Historisch</b></h5>
-                    <p class="center">Dies ist ein Test.</p>
+
+
+                    <div class="col s12 m12 l6" v-for="card in districts">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">{{ card.name }}</span>
+                                <div style="width: inherit; height: inherit; position: relative;">
+                                    <canvas :id="card.chartId"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <footer>
-            <div class="grey-text text-darken-2" style="text-align: center;">Stand (RKI): <span
-                id="state_rki">{{ state.rki }}</span>
+            <div class="grey-text text-darken-2" style="text-align: center;">Stand (RKI): <span id="state_rki">{{ state.rki }}</span>
+            </div>
+            <div class="grey-text text-darken-2" style="text-align: center;">Stand (ZEIT Online): <span id="state_zeit">{{ state.zeit }}</span>
             </div>
             <div class="grey-text text-darken-2" style="text-align: center;">Landkreise zeigen 7-Tage-Inzidenzen pro
                 100.000 Einwohner.
@@ -58,28 +70,28 @@
 import navigation from "@/components/NavBar.vue";
 import firebase from "firebase";
 import M from 'materialize-css';
+import {requestSingle} from "@/js/api.js";
+import {renderHistorical} from "@/js/render.js";
+import {requestHistorical} from "../js/api";
 
 export default {
     data() {
         return {
             state: {
-                zeit: "Inzidenzen werden geladen...",
                 rki: "Inzidenzen werden geladen...",
-                vaccine: "Inzidenzen werden geladen...",
-                zeitAvail: false,
-                rkiAvail: false,
-                vaccAvail: false,
+                zeit: "Inzidenzen werden geladen...",
                 ready: false,
                 error: false,
                 loading: true
-            }
+            },
+            districts: []
         };
     },
     components: {
         navigation
     },
     mounted() {
-        //call the APIs?
+        requestHistorical(this, renderHistorical);
     },
     created() {
 

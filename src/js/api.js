@@ -86,26 +86,41 @@ export function requestSingle(vm, url, callback) {
     });
 }
 
-export function requestStates(vm, callback) {
-    const URL = "https://api.corona-zahlen.org/states";
+export function requestHistorical(vm, callback) {
+    const URL_RKI = "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?where=1%3D1&outFields=RS,AGS,GEN,EWZ,death_rate,cases,deaths,cases_per_100k,cases_per_population,BL,county,last_update,cases7_per_100k,recovered,cases7_bl,death7_bl,cases7_lk,death7_lk,cases7_per_100k_txt&returnGeometry=false&outSR=4326&f=json";
+    const URL_ZEIT = "https://interactive.zeit.de/cronjobs/2020/corona/germany.json";
 
     //show loading indicator
     vm.state.loading = true;
-    fetch(URL).then(response => {
-        if (response.ok) {
-            return response.json();
+
+    //do API calls and handle data when present
+    let rkiData, zeitData;
+    fetch(URL_RKI).then(rkiResponse => {
+        if (rkiResponse.ok) {
+            return rkiResponse.json();
         } else {
-            M.toast({html: 'Laden der Daten fehlgeschlagen...'});
+            M.toast({html: 'Laden der RKI-Daten fehlgeschlagen...'});
             vm.state.error = true;
             return Promise.resolve(null);
         }
-    }).then(json => {
+    }).then(rkiJson => {
+        rkiData = rkiJson;
+        return fetch(URL_ZEIT);
+    }).then(zeitResponse => {
+        if (zeitResponse.ok) {
+            return zeitResponse.json();
+        } else {
+            M.toast({html: 'Laden der ZEIT-Daten fehlgeschlagen...'});
+            vm.state.error = true;
+            return Promise.resolve(null);
+        }
+    }).then(zeitJson => {
         //render data
         vm.state.loading = false;
-        if (json !== null) {
+        if (zeitData !== null && rkiData !== null) {
             vm.state.error = false;
         }
         vm.state.ready = true;
-        callback(vm, json);
+        callback(vm, rkiData, zeitJson);
     });
 }

@@ -10,7 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="update text and fix NavBar.vue">
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="add state monitor and heatmap">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Curfew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Curfew.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Historical.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Historical.vue" afterDir="false" />
@@ -126,7 +126,7 @@
       <workItem from="1612959187736" duration="48000" />
       <workItem from="1612979607853" duration="4841000" />
       <workItem from="1612992541195" duration="646000" />
-      <workItem from="1613327460090" duration="5265000" />
+      <workItem from="1613327460090" duration="7842000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609877935878</created>
@@ -415,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613333489512</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="add state monitor and heatmap">
+      <created>1613337672151</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1613337672151</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,7 +441,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add vaccination data" />
     <MESSAGE value="remove fill from graphs and fix hover issue" />
     <MESSAGE value="expand country-wide graph to 5 weeks" />
     <MESSAGE value="only show headers when data is present" />
@@ -459,7 +465,8 @@
     <MESSAGE value="add coldspots" />
     <MESSAGE value="add curfew monitor" />
     <MESSAGE value="update text and fix NavBar.vue" />
-    <option name="LAST_COMMIT_MESSAGE" value="update text and fix NavBar.vue" />
+    <MESSAGE value="add state monitor and heatmap" />
+    <option name="LAST_COMMIT_MESSAGE" value="add state monitor and heatmap" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="192" width="1076" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611869222722">
@@ -498,10 +505,10 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="273" y="165" width="505" height="770" key="RollbackChangesDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1611869749867" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1613337359767">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1613339247867">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1613337359767" />
+    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1613339247867" />
     <state x="590" y="236" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1612993169069">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
@@ -515,10 +522,10 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="310" y="467" width="431" height="186" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/64.27.1856.1053@64.27.1856.1053" timestamp="1612124852511" />
-    <state x="681" y="274" width="621" height="554" key="find.popup" timestamp="1613333261034">
+    <state x="681" y="274" width="621" height="554" key="find.popup" timestamp="1613339245068">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state x="681" y="274" width="621" height="554" key="find.popup/64.27.1856.1053@64.27.1856.1053" timestamp="1613333261034" />
+    <state x="681" y="274" width="621" height="554" key="find.popup/64.27.1856.1053@64.27.1856.1053" timestamp="1613339245068" />
     <state x="667" y="264" key="run.anything.popup" timestamp="1612816347864">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
