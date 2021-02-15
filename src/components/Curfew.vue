@@ -35,17 +35,20 @@
                     <h5 class="center"><b>Ausgangssperren</b></h5>
 
                     <div class="col s12 m6 l4" v-for="card in districts">
-                        <div class="card"
-                             :class="(card.hasCurfew) ? 'red darken-2' : 'green darken-2'">
+                        <div class="card" :class="card.color">
                             <div class="card-content white-text">
                                 <span class="card-title">{{ card.name }}</span>
                                 <div class="center" v-if="card.hasCurfew">
                                     <h4>Ausgangssperre</h4>
                                     <b>von 22-5 Uhr (7-Tage-Inzidenz war {{ card.maxIncidence.toFixed(1) }}).</b>
                                 </div>
-                                <div class="center" v-if="!card.hasCurfew">
+                                <div class="center" v-if="!card.hasCurfew && !card.isClose">
                                     <h4>unbeschränkt</h4>
                                     <b>7-Tage-Inzidenz unter 100</b>
+                                </div>
+                                <div class="center" v-if="!card.hasCurfew && card.isClose">
+                                    <h4>Achtung</h4>
+                                    <b>hohe 7-Tage-Inzidenz (aktuell {{ card.lastIncidence.toFixed(1) }})</b>
                                 </div>
                             </div>
                         </div>
@@ -113,10 +116,26 @@ export default {
                 const incidences = data.data[ags].history.map(h => h.weekIncidence).slice(-7);
                 const has = incidences.some(i => i >= 100);
                 const max = Math.max.apply(Math, incidences);
+
+                let color, isClose;
+                if (has) {
+                    color = "red darken-2";
+                    isClose = false;
+                } else if (incidences[incidences.length - 1] > 85) {
+                    color = "orange darken-2";
+                    isClose = true;
+                } else {
+                    color = "green darken-2";
+                    isClose = false;
+                }
+
                 return {
                     name: name,
                     hasCurfew: has,
-                    maxIncidence: max
+                    maxIncidence: max,
+                    color: color,
+                    isClose: isClose,
+                    lastIncidence: incidences[incidences.length - 1]
                 };
             });
 
