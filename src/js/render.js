@@ -571,7 +571,7 @@ export function renderHistorical(vm, rki, zeit) {
                 const today = h;
                 const preWeek = arr[idx - 7];
                 return +((today - preWeek) * 100000 / population).toFixed(1);
-            });
+            }).map(i => (i < 0) ? 0 : i);
 
             const chartColor = colorsForIncidences(weekIncidences[weekIncidences.length - 1]).chartColor;
 

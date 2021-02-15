@@ -34,7 +34,7 @@
                 <div class="row" v-if="state.ready">
                     <h5 class="center"><b>Bundesländer</b></h5>
 
-                    <div class="col s12 m12 l4" v-for="card in states">
+                    <div class="col s6 m6 l3" v-for="card in states">
                         <div class="card" :class="card.cardColor">
                             <div class="card-content white-text">
                                 <span class="card-title truncate">{{ card.name }}</span>
@@ -42,10 +42,6 @@
                                     <div class="col">
                                         <h3>{{ card.incidence.toFixed(1) }}</h3>
                                         <b>7-Tage-Inzidenz</b>
-                                    </div>
-                                    <div class="col">
-                                        <h3>{{ card.deathsPerWeek }}</h3>
-                                        <b>Tote pro Woche</b>
                                     </div>
                                 </div>
                             </div>
@@ -116,8 +112,7 @@ export default {
                 states.push({
                     name: state.name,
                     cardColor: colorsForIncidences(state.weekIncidence).color,
-                    incidence: state.weekIncidence,
-                    deathsPerWeek: state.deathsPerWeek
+                    incidence: state.weekIncidence
                 });
             }
 
