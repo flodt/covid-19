@@ -573,7 +573,7 @@ export function renderHistorical(vm, rki, zeit) {
                 return +((today - preWeek) * 100000 / population).toFixed(1);
             }).map(i => (i < 0) ? 0 : i);
 
-            const chartColor = colorsForIncidences(weekIncidences[weekIncidences.length - 1]).chartColor;
+            const chartColor = colorsForIncidences(weekIncidences[weekIncidences.length - 2]).chartColor;
 
             //render charts
             const ctx = document.getElementById(chartId).getContext('2d');

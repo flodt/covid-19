@@ -10,10 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="fix chart display and update state display">
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="add amber high incidence warning">
       <change beforePath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Curfew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Curfew.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/render.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +125,8 @@
       <workItem from="1612992541195" duration="646000" />
       <workItem from="1613327460090" duration="8475000" />
       <workItem from="1613415891395" duration="602000" />
-      <workItem from="1613423285097" duration="737000" />
+      <workItem from="1613423285097" duration="888000" />
+      <workItem from="1613493052498" duration="96000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1609877935878</created>
@@ -442,7 +443,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613416395160</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="add amber high incidence warning">
+      <created>1613424057366</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1613424057366</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,7 +469,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix off-by-one error in graph indexing" />
     <MESSAGE value="update the vaccination URL to the new ZEIT source" />
     <MESSAGE value="update with Vue" />
     <MESSAGE value="add clarifying VueJs comment" />
@@ -486,7 +493,8 @@
     <MESSAGE value="add statistical whole-pandemic view" />
     <MESSAGE value="fix several issues" />
     <MESSAGE value="fix chart display and update state display" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix chart display and update state display" />
+    <MESSAGE value="add amber high incidence warning" />
+    <option name="LAST_COMMIT_MESSAGE" value="add amber high incidence warning" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="192" width="1076" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611869222722">
@@ -501,26 +509,26 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="64" y="122" width="1484" height="884" key="DiffContextDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609951627105" />
-    <state width="1833" height="265" key="GridCell.Tab.0.bottom" timestamp="1613416500424">
+    <state width="1833" height="265" key="GridCell.Tab.0.bottom" timestamp="1613424180929">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.bottom/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330657" />
-    <state width="1833" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1613416500424" />
-    <state width="1833" height="265" key="GridCell.Tab.0.center" timestamp="1613416500421">
+    <state width="1833" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1613424180929" />
+    <state width="1833" height="265" key="GridCell.Tab.0.center" timestamp="1613424180927">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.center/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1613416500421" />
-    <state width="1833" height="265" key="GridCell.Tab.0.left" timestamp="1613416500419">
+    <state width="1833" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1613424180927" />
+    <state width="1833" height="265" key="GridCell.Tab.0.left" timestamp="1613424180926">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.left/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1613416500419" />
-    <state width="1833" height="265" key="GridCell.Tab.0.right" timestamp="1613416500423">
+    <state width="1833" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1613424180926" />
+    <state width="1833" height="265" key="GridCell.Tab.0.right" timestamp="1613424180928">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.right/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1613416500423" />
+    <state width="1833" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1613424180928" />
     <state x="273" y="165" width="505" height="770" key="RollbackChangesDialog" timestamp="1611869749867">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
