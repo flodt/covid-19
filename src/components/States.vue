@@ -53,7 +53,15 @@
                     <h5 class="center"><b>Heatmap</b></h5>
 
                     <div class="card-panel center">
-                        <img class="responsive-img" style="max-width: 60%" src="https://api.corona-zahlen.org/map/districts" alt="Logo">
+                        <img class="responsive-img" style="max-width: 60%"
+                             src="https://api.corona-zahlen.org/map/districts" alt="Logo">
+                        <div class="row" style="margin-top: 20px">
+                            <div class="col s6 m4 l2" v-for="range in heatmap.legend">
+                                <div class="card-small" :class="getContrastYIQ(range.color)" :style="{'background-color': range.color}">
+                                    {{ range.min }} - {{ range.max }}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -94,7 +102,8 @@ export default {
             states: [],
             heatmap: {
                 avail: true,
-                url: ""
+                url: "",
+                legend: []
             }
         };
     },
@@ -103,6 +112,8 @@ export default {
     },
     mounted() {
         const URL = "https://api.corona-zahlen.org/states";
+        const LEGEND = "https://api.corona-zahlen.org/map/districts/legend";
+
         requestSingle(this, URL, (vm, data) => {
             const states = [];
 
@@ -119,10 +130,26 @@ export default {
             vm.states = states.sort((a, b) => a.name > b.name ? 1 : -1);
             vm.state.rki = new Date(data.meta.lastUpdate).toLocaleString("de-de");
         });
+
+        requestSingle(this, LEGEND, (vm, data) => {
+           vm.heatmap.legend = data.incidentRanges;
+        });
     },
     created() {
 
     },
-    methods: {}
+    methods: {
+        /**
+         * source: https://stackoverflow.com/a/11868398/4231365
+         */
+        getContrastYIQ(hex){
+            hex = hex.replace("#", "");
+            const r = parseInt(hex.substr(0, 2), 16);
+            const g = parseInt(hex.substr(2, 2), 16);
+            const b = parseInt(hex.substr(4, 2), 16);
+            const yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+            return (yiq >= 128) ? '' : 'white-text';
+        }
+    }
 };
 </script>
