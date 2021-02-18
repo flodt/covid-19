@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="row" v-if="state.ready">
-                    <h5 class="center"><b>Historisch</b></h5>
+                    <h5 class="center"><b>Landkreise</b></h5>
 
 
                     <div class="col s12 m12 l6" v-for="card in districts">
@@ -41,6 +41,22 @@
                                 <span class="card-title">{{ card.name }}</span>
                                 <div style="width: inherit; height: inherit; position: relative;">
                                     <canvas :id="card.chartId"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" v-if="state.ready">
+                    <h5 class="center"><b>Impfzahlen</b></h5>
+
+
+                    <div class="col s12 m12 l12">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">Impffortschritt</span>
+                                <div style="width: inherit; height: inherit; position: relative;">
+                                    <canvas id="chart_historical_vaccinations"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -71,7 +87,7 @@ import navigation from "@/components/NavBar.vue";
 import firebase from "firebase";
 import M from 'materialize-css';
 import {requestSingle} from "@/js/api.js";
-import {renderHistorical} from "@/js/render.js";
+import {renderHistorical, renderVaccHistorical} from "@/js/render.js";
 import {requestHistorical} from "../js/api";
 
 export default {
@@ -92,6 +108,9 @@ export default {
     },
     mounted() {
         requestHistorical(this, renderHistorical);
+
+        const VACCINATIONS = "https://interactive.zeit.de/cronjobs/2020/corona/impfzahlenAutomatisch.json";
+        requestSingle(this, VACCINATIONS, renderVaccHistorical);
     },
     created() {
 

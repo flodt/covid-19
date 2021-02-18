@@ -64,20 +64,20 @@
                     <div class="col l6 m12 s12">
                         <h5 class="center"><b>Hotspots</b></h5>
                         <div class="card-panel white-text" v-for="card in hotspots" :class="card.color">
-                            <h6><big><b>{{ card.index }}. {{ card.name }}</b> ({{ card.state }})<span
-                                style="float: right;">{{ card.incidence.toFixed(1) }}</span></big></h6>
+                            <h6><b>{{ card.index }}. {{ card.name }}</b> ({{ card.state }})<span
+                                style="float: right;">{{ card.incidence.toFixed(1) }}</span></h6>
                         </div>
                     </div>
                     <div class="col l6 m12 s12">
                         <h5 class="center"><b>Coldspots</b></h5>
                         <div class="card-panel white-text" v-for="card in coldspots" :class="card.color">
-                            <h6><big><b>{{ card.index }}. {{ card.name }}</b> ({{ card.state }})<span
-                                style="float: right;">{{ card.incidence.toFixed(1) }}</span></big></h6>
+                            <h6><b>{{ card.index }}. {{ card.name }}</b> ({{ card.state }})<span
+                                style="float: right;">{{ card.incidence.toFixed(1) }}</span></h6>
                         </div>
                     </div>
                 </div>
 
-                <div class="row" v-if="state.ready">
+                <div class="row center" v-if="state.ready">
                     <h5 class="center"><b>Übersicht</b></h5>
                     <div class="col s12 m12 l12">
                         <table class="striped">
@@ -87,16 +87,14 @@
                                 <th>Landkreis</th>
                                 <th>7-Tage-Inzidenz</th>
                                 <th>Fälle (gesamt)</th>
-                                <th>Tote (gesamt)</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr v-for="dist in overview">
                                 <td>{{ dist.index }}</td>
                                 <td><b>{{ dist.name }}</b></td>
-                                <td>{{ dist.incidence.toFixed(1) }}</td>
+                                <td :style="{'color': dist.color}"><b>{{ dist.incidence.toFixed(1) }}</b></td>
                                 <td>{{ dist.casesTotal }}</td>
-                                <td>{{ dist.deathsTotal }}</td>
                             </tr>
                             </tbody>
                         </table>

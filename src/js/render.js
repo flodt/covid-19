@@ -154,14 +154,76 @@ export function renderHotspots(vm, agss, rki, zeit, vacc) {
             return {
                 name: d.GEN + " (" + shortState(d.BL) + ")",
                 incidence: d.cases7_per_100k,
-                color: colorsForIncidences(d.cases7_per_100k).color,
+                color: colorsForIncidences(d.cases7_per_100k).chartColor,
                 index: idx + 1,
-                casesTotal: d.cases,
-                deathsTotal: d.deaths
+                casesTotal: d.cases
             }
         });
 
     vm.overview = overview;
+}
+
+
+export function renderVaccHistorical(vm, data) {
+    setTimeout(function () {
+        //prepare chart labels (for the last 5 weeks)
+        const labels = data.germany.historical
+            .map(i => new Date(i.date))
+            .map(d => {
+                const str = d.toLocaleString("de-de");
+                return str.slice(0, str.lastIndexOf(".") + 1);
+            })
+            .reverse();
+
+        //gather ZEIT data for the last 5 weeks
+        const vaccinated = data.germany.historical.map(i => i.peopleVaccinated).reverse();
+        const fullyVaccinated = data.germany.historical.map(i => i.peopleFullyVaccinated).reverse();
+
+        //render charts
+        const ctx = document.getElementById("chart_historical_vaccinations").getContext('2d');
+        const chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+            // The data for our dataset
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Erstimpfung',
+                    backgroundColor: "rgb(76, 175, 80)",
+                    borderColor: "rgb(76, 175, 80)",
+                    data: vaccinated,
+                    fill: false
+                },
+                    {
+                        label: 'voller Impfschutz',
+                        backgroundColor: "rgb(33, 150, 243)",
+                        borderColor: "rgb(33, 150, 243)",
+                        data: fullyVaccinated,
+                        fill: false
+                    }]
+            },
+
+            // Configuration options go here
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                            //suggestedMin: 0,
+                            //suggestedMax: 32500
+                        }
+                    }]
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                tooltips: {
+                    mode: 'nearest',
+                    intersect: false
+                }
+            }
+        });
+    }, 0);
 }
 
 

@@ -56,7 +56,7 @@
                         <img class="responsive-img" style="max-width: 60%"
                              src="https://api.corona-zahlen.org/map/districts" alt="Logo">
                         <div class="row" style="margin-top: 20px">
-                            <div class="col s6 m4 l2" v-for="range in heatmap.legend">
+                            <div class="col s6 m4 l2" style="margin-top: 10px" v-for="range in heatmap.legend">
                                 <div class="card-small" :class="getContrastYIQ(range.color)" :style="{'background-color': range.color}">
                                     {{ range.min }} - {{ range.max }}
                                 </div>
