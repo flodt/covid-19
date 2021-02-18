@@ -193,14 +193,16 @@ export function renderVaccHistorical(vm, data) {
                     backgroundColor: "rgb(76, 175, 80)",
                     borderColor: "rgb(76, 175, 80)",
                     data: vaccinated,
-                    fill: false
+                    fill: false,
+                    pointRadius: 0
                 },
                     {
                         label: 'voller Impfschutz',
                         backgroundColor: "rgb(33, 150, 243)",
                         borderColor: "rgb(33, 150, 243)",
                         data: fullyVaccinated,
-                        fill: false
+                        fill: false,
+                        pointRadius: 0
                     }]
             },
 
