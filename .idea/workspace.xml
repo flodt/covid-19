@@ -10,8 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="fix several issues">
-      <change beforePath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" afterDir="false" />
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="remove points from vaccination chart">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/render.js" afterDir="false" />
     </list>
@@ -128,14 +127,8 @@
       <workItem from="1613423285097" duration="888000" />
       <workItem from="1613493052498" duration="259000" />
       <workItem from="1613589183673" duration="1063000" />
-      <workItem from="1613672048714" duration="1831000" />
-    </task>
-    <task id="LOCAL-00001" summary="initial commit">
-      <created>1609877935878</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1609877935879</updated>
+      <workItem from="1613672048714" duration="1963000" />
+      <workItem from="1613848424488" duration="205000" />
     </task>
     <task id="LOCAL-00002" summary="update template card with columns for data sources">
       <created>1609930715449</created>
@@ -473,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613673567607</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="remove points from vaccination chart">
+      <created>1613673976389</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1613673976390</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +492,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add clarifying VueJs comment" />
     <MESSAGE value="remove redundant newline below navbar" />
     <MESSAGE value="update colors and add sources" />
     <MESSAGE value="add timer to herd immunity" />
@@ -517,7 +516,8 @@
     <MESSAGE value="fix wrong history chart color" />
     <MESSAGE value="add legend to heatmap" />
     <MESSAGE value="fix several issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix several issues" />
+    <MESSAGE value="remove points from vaccination chart" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove points from vaccination chart" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="192" width="1076" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611869222722">
@@ -532,26 +532,26 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="64" y="122" width="1484" height="884" key="DiffContextDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609951627105" />
-    <state width="1833" height="265" key="GridCell.Tab.0.bottom" timestamp="1613673727119">
+    <state width="1833" height="265" key="GridCell.Tab.0.bottom" timestamp="1613674030429">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.bottom/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330657" />
-    <state width="1833" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1613673727119" />
-    <state width="1833" height="265" key="GridCell.Tab.0.center" timestamp="1613673727118">
+    <state width="1833" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1613674030429" />
+    <state width="1833" height="265" key="GridCell.Tab.0.center" timestamp="1613674030426">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.center/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1613673727118" />
-    <state width="1833" height="265" key="GridCell.Tab.0.left" timestamp="1613673727117">
+    <state width="1833" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1613674030426" />
+    <state width="1833" height="265" key="GridCell.Tab.0.left" timestamp="1613674030424">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.left/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1613673727117" />
-    <state width="1833" height="265" key="GridCell.Tab.0.right" timestamp="1613673727118">
+    <state width="1833" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1613674030424" />
+    <state width="1833" height="265" key="GridCell.Tab.0.right" timestamp="1613674030427">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.right/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1613673727118" />
+    <state width="1833" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1613674030427" />
     <state x="273" y="165" width="505" height="770" key="RollbackChangesDialog" timestamp="1611869749867">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
@@ -560,11 +560,11 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1613673138215" />
-    <state x="590" y="221" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1613493309169">
+    <state x="590" y="216" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1613673979454">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="2464" y="256" key="Vcs.Push.Dialog.v2/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031322887" />
-    <state x="590" y="221" width="800" height="548" key="Vcs.Push.Dialog.v2/64.27.1856.1053@64.27.1856.1053" timestamp="1613493309169" />
+    <state x="590" y="216" width="800" height="548" key="Vcs.Push.Dialog.v2/64.27.1856.1053@64.27.1856.1053" timestamp="1613673979454" />
     <state x="698" y="209" width="584" height="702" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1609933808023">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>

@@ -1,4 +1,6 @@
 function formatInterval(daysToHerdImmunity) {
+    if (daysToHerdImmunity === 0) return "Ziel erreicht!";
+
     const years = Math.floor(daysToHerdImmunity / 365);
     const months = Math.ceil((daysToHerdImmunity - (years * 365)) / 30);
 
@@ -450,7 +452,7 @@ export function renderData(vm, agss, rki, zeit, vacc) {
          * affecting the overall average), and extrapolate to compute the time to herd immunity.
          * Do with that figure what you want.
          */
-        const herdImmunity = 0.70 * POPULATION_GERMANY;
+        const herdImmunity = 0.70 * POPULATION_GERMANY - fully;
         const threeWeeks = vacc.germany.historical[21].peopleFullyVaccinated;
         const daysToHerdImmunity = herdImmunity / ((fully - threeWeeks) / 21.0);
         vm.germany.herdImmunityTimer = formatInterval(daysToHerdImmunity);
