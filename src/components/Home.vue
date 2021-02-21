@@ -36,7 +36,8 @@
                     <div class="col s12 m12 l6">
                         <div class="card pink darken-3" style="height: 210px">
                             <div class="card-content white-text">
-                                <span class="card-title">Deutschland</span>
+                                 <span class="card-title activator">Deutschland<i
+                                     class="material-icons right">info_outline</i></span>
                                 <div class="row">
                                     <div class="col">
                                         <h3 id="infected_yesterday">{{ germany.yesterday.toLocaleString("de-de") }}</h3>
@@ -49,6 +50,13 @@
                                         <b><a class="oncard"
                                               href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">7-Tage-Inzidenz</a></b>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title">Deutschland<i class="material-icons right">close</i></span>
+                                <div style="text-align: center;">
+                                    <h3>{{ germany.rValue }}</h3>
+                                    <b>7-Tage-R-Wert</b> ({{ new Date(state.rValue).toLocaleDateString("de-de") }})
                                 </div>
                             </div>
                         </div>
@@ -281,7 +289,8 @@ export default {
                 fullyVaccinated: "0.00 %",
                 herdImmunityTimer: "Unbekannt",
                 deaths: 0,
-                clinicPatients: 0
+                clinicPatients: 0,
+                rValue: 1.234
             },
             bavaria: {
                 vaccinated: "0.00 %",

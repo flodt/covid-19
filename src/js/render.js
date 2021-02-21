@@ -231,7 +231,7 @@ export function renderVaccHistorical(vm, data) {
 }
 
 
-export function renderData(vm, agss, rki, zeit, vacc) {
+export function renderData(vm, agss, rki, zeit, vacc, rval) {
     console.log("Rendering data...");
     const POPULATION_GERMANY = 83190556;
     const POPULATION_BAVARIA = 13124737;
@@ -240,6 +240,12 @@ export function renderData(vm, agss, rki, zeit, vacc) {
     const rkiAvail = rki !== null && rki.features !== undefined;
     const zeitAvail = zeit !== null;
     const vaccAvail = vacc !== null;
+
+    //show the r value
+    if (rval !== null) {
+        vm.germany.rValue = rval.r.value;
+        vm.state.rValue = rval.r.date;
+    }
 
     //show the country-wide stats and draw that graph
     if (zeitAvail) {
