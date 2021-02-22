@@ -244,7 +244,7 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
     //show the r value
     if (rval !== null) {
         vm.germany.rValue = rval.r.value;
-        vm.state.rValue = rval.r.date;
+        vm.state.rValue = new Date(rval.r.date).toLocaleDateString("de-de");
     }
 
     //show the country-wide stats and draw that graph

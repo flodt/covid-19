@@ -56,7 +56,7 @@
                                 <span class="card-title">Deutschland<i class="material-icons right">close</i></span>
                                 <div style="text-align: center;">
                                     <h3>{{ germany.rValue }}</h3>
-                                    <b>7-Tage-R-Wert</b> ({{ new Date(state.rValue).toLocaleDateString("de-de") }})
+                                    <b>7-Tage-R-Wert</b> ({{ state.rValue }})
                                 </div>
                             </div>
                         </div>
@@ -290,7 +290,7 @@ export default {
                 herdImmunityTimer: "Unbekannt",
                 deaths: 0,
                 clinicPatients: 0,
-                rValue: 1.234
+                rValue: "Laden..."
             },
             bavaria: {
                 vaccinated: "0.00 %",
@@ -300,6 +300,7 @@ export default {
                 zeit: "Inzidenzen werden geladen...",
                 rki: "Inzidenzen werden geladen...",
                 vaccine: "Inzidenzen werden geladen...",
+                rValue: "Laden...",
                 zeitAvail: false,
                 rkiAvail: false,
                 vaccAvail: false,
