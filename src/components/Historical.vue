@@ -32,6 +32,19 @@
                 </div>
 
                 <div class="row" v-if="state.ready">
+                    <div class="col s12 m12 l12">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">Deutschland</span>
+                                <div style="width: inherit; height: inherit; position: relative;">
+                                    <canvas id="chart_historical_germany"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" v-if="state.ready">
                     <h5 class="center"><b>Landkreise</b></h5>
 
 

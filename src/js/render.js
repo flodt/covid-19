@@ -643,7 +643,7 @@ export function renderHistorical(vm, rki, zeit) {
                 const today = h;
                 const preWeek = arr[idx - 7];
                 return +((today - preWeek) * 100000 / population).toFixed(1);
-            }).map(i => (i < 0) ? 0 : i);
+            }).map(i => (i < 0 || isNaN(i)) ? 0 : i);
 
             const chartColor = colorsForIncidences(weekIncidences[weekIncidences.length - 2]).chartColor;
 
@@ -692,4 +692,71 @@ export function renderHistorical(vm, rki, zeit) {
             chartId: chartId
         };
     });
+
+    //sum up for country-wide statistics graph
+    const POPULATION_GERMANY = 83190556;
+    const sum = (r, a) => r.map((b, i) => a[i] + b);
+
+    const weekIncidences = zeit
+        .kreise
+        .items
+        .map(k => k.historicalStats.count)
+        .reduce(sum)
+        .map((h, idx, arr) => {
+            //get delta between today and 7 days ago, normalized to the population
+            const today = h;
+            const preWeek = arr[idx - 7];
+            return +((today - preWeek) * 100000 / POPULATION_GERMANY).toFixed(1);
+        })
+        .map(i => (i < 0 || isNaN(i)) ? 0 : i);
+
+    //show chart labels
+    const labels = [...Array(weekIncidences.length).keys()]
+        .map(i => new Date(Date.now() - i * 24 * 60 * 60 * 1000))
+        .map(d => {
+            const str = d.toLocaleString("de-de");
+            return str.slice(0, str.lastIndexOf(".") + 1);
+        })
+        .reverse();
+
+    setTimeout(function () {
+        //render charts
+        const ctx = document.getElementById("chart_historical_germany").getContext('2d');
+        const chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'bar',
+
+            // The data for our dataset
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: '7-Tage-Inzidenz',
+                    backgroundColor: "rgb(173, 20, 87)",
+                    borderColor: "rgb(173, 20, 87)",
+                    data: weekIncidences,
+                    fill: false
+                }
+                ]
+            },
+
+            // Configuration options go here
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                            //suggestedMin: 0,
+                            //suggestedMax: 32500
+                        }
+                    }]
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                tooltips: {
+                    mode: 'nearest',
+                    intersect: false
+                }
+            }
+        });
+    }, 0);
 }
