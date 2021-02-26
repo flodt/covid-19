@@ -1,8 +1,18 @@
 function formatInterval(daysToHerdImmunity) {
     if (daysToHerdImmunity === 0) return "Ziel erreicht!";
 
-    const years = Math.floor(daysToHerdImmunity / 365);
-    const months = Math.ceil((daysToHerdImmunity - (years * 365)) / 30);
+    let years = Math.floor(daysToHerdImmunity / 365);
+    let months = Math.ceil((daysToHerdImmunity - (years * 365)) / 30);
+
+    /*
+        Fix for that 2 years 12 months bug.
+        We ceil the months remainder, and when that comes to 11.n months, it gets rounded up to 12,
+        but never propagated to the years.
+     */
+    if (months === 12) {
+        months = 0;
+        years++;
+    }
 
     let str = "";
     if (years > 0) str += `${years} Jahr${years > 1 ? "e" : ""}` + ((months > 0) ? ", " : "");

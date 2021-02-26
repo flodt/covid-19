@@ -10,9 +10,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="fix R value issue">
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="add entire country chart">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Historical.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Historical.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/render.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,14 +130,8 @@
       <workItem from="1613672048714" duration="1963000" />
       <workItem from="1613848424488" duration="269000" />
       <workItem from="1613946223675" duration="1770000" />
-      <workItem from="1614021084745" duration="2204000" />
-    </task>
-    <task id="LOCAL-00005" summary="show error message on failure and switch to Ostallgäu">
-      <created>1609952677111</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1609952677111</updated>
+      <workItem from="1614021084745" duration="2300000" />
+      <workItem from="1614372596462" duration="473000" />
     </task>
     <task id="LOCAL-00006" summary="show current data state in footer">
       <created>1610112576757</created>
@@ -476,7 +469,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614021365740</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="add entire country chart">
+      <created>1614023305055</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1614023305055</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +495,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add manifest.json for PWA access" />
     <MESSAGE value="update favicons for PWA use on iOS" />
     <MESSAGE value="update coloring scheme and add average new infections" />
     <MESSAGE value="fix wrong plural in timer" />
@@ -520,7 +519,8 @@
     <MESSAGE value="fix herd immunity timer" />
     <MESSAGE value="add 7-day-R-value" />
     <MESSAGE value="fix R value issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix R value issue" />
+    <MESSAGE value="add entire country chart" />
+    <option name="LAST_COMMIT_MESSAGE" value="add entire country chart" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="192" width="1076" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611869222722">
@@ -535,26 +535,26 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="64" y="122" width="1484" height="884" key="DiffContextDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609951627105" />
-    <state width="1833" height="265" key="GridCell.Tab.0.bottom" timestamp="1614023226768">
+    <state width="1833" height="265" key="GridCell.Tab.0.bottom" timestamp="1614023393845">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.bottom/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330657" />
-    <state width="1833" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1614023226768" />
-    <state width="1833" height="265" key="GridCell.Tab.0.center" timestamp="1614023226767">
+    <state width="1833" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1614023393845" />
+    <state width="1833" height="265" key="GridCell.Tab.0.center" timestamp="1614023393842">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.center/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1614023226767" />
-    <state width="1833" height="265" key="GridCell.Tab.0.left" timestamp="1614023226767">
+    <state width="1833" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1614023393842" />
+    <state width="1833" height="265" key="GridCell.Tab.0.left" timestamp="1614023393841">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.left/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1614023226767" />
-    <state width="1833" height="265" key="GridCell.Tab.0.right" timestamp="1614023226768">
+    <state width="1833" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1614023393841" />
+    <state width="1833" height="265" key="GridCell.Tab.0.right" timestamp="1614023393844">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.right/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1614023226768" />
+    <state width="1833" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1614023393844" />
     <state x="273" y="145" width="505" height="770" key="RollbackChangesDialog" timestamp="1613947158090">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
