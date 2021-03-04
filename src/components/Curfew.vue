@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="center" v-if="!card.hasCurfew && card.isClose">
                                     <h4>Achtung</h4>
-                                    <b>hohe 7-Tage-Inzidenz (aktuell {{ card.lastIncidence.toFixed(1) }})</b>
+                                    <b>hohe 7-Tage-Inzidenz (ist {{ card.lastIncidence.toFixed(1) }})</b>
                                 </div>
                             </div>
                         </div>

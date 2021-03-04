@@ -173,6 +173,53 @@ export function renderHotspots(vm, agss, rki, zeit, vacc) {
         });
 
     vm.overview = overview;
+
+    //draw chart
+    setTimeout(function () {
+        const districtColors = [10,40,75,150,300].map(i => colorsForIncidences(i).chartColor);
+
+        //render charts
+        const ctx = document.getElementById("chart_district_count").getContext('2d');
+        const chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'bar',
+
+            // The data for our dataset
+            data: {
+                labels: ["0-35","35-50","50-100","100-200","200+"],
+                datasets: [{
+                    label: 'Landkreise',
+                    backgroundColor: districtColors,
+                    borderColor: districtColors,
+                    data: [vm.stat.below35, vm.stat.at3550, vm.stat.at50100, vm.stat.at100200, vm.stat.above200],
+                    fill: false
+                }
+                ]
+            },
+
+            // Configuration options go here
+            options: {
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                            //suggestedMin: 0,
+                            //suggestedMax: 32500
+                        }
+                    }]
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                tooltips: {
+                    mode: 'nearest',
+                    intersect: false
+                }
+            }
+        });
+    }, 0);
 }
 
 

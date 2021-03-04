@@ -79,6 +79,7 @@
         </div>
 
         <footer>
+            <div class="grey-text text-darken-2" style="text-align: center;">Daten stammen von ZEIT Online.</div>
             <div class="grey-text text-darken-2" style="text-align: center;">Stand (RKI): <span id="state_rki">{{ state.rki }}</span>
             </div>
             <div class="grey-text text-darken-2" style="text-align: center;">Stand (ZEIT Online): <span id="state_zeit">{{ state.zeit }}</span>

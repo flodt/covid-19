@@ -10,8 +10,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="add entire country chart">
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="fix timer month rounding issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Curfew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Curfew.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Historical.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Historical.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Hotspots.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Hotspots.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/render.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +58,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -131,14 +134,8 @@
       <workItem from="1613848424488" duration="269000" />
       <workItem from="1613946223675" duration="1770000" />
       <workItem from="1614021084745" duration="2300000" />
-      <workItem from="1614372596462" duration="473000" />
-    </task>
-    <task id="LOCAL-00006" summary="show current data state in footer">
-      <created>1610112576757</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1610112576757</updated>
+      <workItem from="1614372596462" duration="708000" />
+      <workItem from="1614894844405" duration="1949000" />
     </task>
     <task id="LOCAL-00007" summary="fix ZEIT online data">
       <created>1610272045542</created>
@@ -476,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614023305055</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="fix timer month rounding issue">
+      <created>1614373134171</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1614373134172</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +499,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update favicons for PWA use on iOS" />
     <MESSAGE value="update coloring scheme and add average new infections" />
     <MESSAGE value="fix wrong plural in timer" />
     <MESSAGE value="add vaccination data for Bavaria" />
@@ -520,7 +523,8 @@
     <MESSAGE value="add 7-day-R-value" />
     <MESSAGE value="fix R value issue" />
     <MESSAGE value="add entire country chart" />
-    <option name="LAST_COMMIT_MESSAGE" value="add entire country chart" />
+    <MESSAGE value="fix timer month rounding issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix timer month rounding issue" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="192" width="1076" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611869222722">
@@ -531,43 +535,43 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="243" y="303" width="524" height="514" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609931940707" />
-    <state x="64" y="122" width="1484" height="884" key="DiffContextDialog" timestamp="1609951627105">
+    <state x="64" y="117" width="1484" height="884" key="DiffContextDialog" timestamp="1614373169787">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state x="64" y="122" width="1484" height="884" key="DiffContextDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1609951627105" />
-    <state width="1833" height="265" key="GridCell.Tab.0.bottom" timestamp="1614023393845">
+    <state x="64" y="117" width="1484" height="884" key="DiffContextDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1614373169787" />
+    <state width="1833" height="265" key="GridCell.Tab.0.bottom" timestamp="1614373308196">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.bottom/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330657" />
-    <state width="1833" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1614023393845" />
-    <state width="1833" height="265" key="GridCell.Tab.0.center" timestamp="1614023393842">
+    <state width="1833" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1614373308196" />
+    <state width="1833" height="265" key="GridCell.Tab.0.center" timestamp="1614373308193">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.center/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1614023393842" />
-    <state width="1833" height="265" key="GridCell.Tab.0.left" timestamp="1614023393841">
+    <state width="1833" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1614373308193" />
+    <state width="1833" height="265" key="GridCell.Tab.0.left" timestamp="1614373308192">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.left/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1614023393841" />
-    <state width="1833" height="265" key="GridCell.Tab.0.right" timestamp="1614023393844">
+    <state width="1833" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1614373308192" />
+    <state width="1833" height="265" key="GridCell.Tab.0.right" timestamp="1614373308194">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.right/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1614023393844" />
-    <state x="273" y="145" width="505" height="770" key="RollbackChangesDialog" timestamp="1613947158090">
+    <state width="1833" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1614373308194" />
+    <state x="273" y="135" width="505" height="770" key="RollbackChangesDialog" timestamp="1614895341253">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state x="273" y="145" width="505" height="770" key="RollbackChangesDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1613947158090" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1614022900928">
+    <state x="273" y="135" width="505" height="770" key="RollbackChangesDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1614895341253" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1614895919882">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1614022900928" />
-    <state x="590" y="211" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1613848657470">
+    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1614895919882" />
+    <state x="590" y="201" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1614373298773">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="2464" y="256" key="Vcs.Push.Dialog.v2/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031322887" />
-    <state x="590" y="211" width="800" height="548" key="Vcs.Push.Dialog.v2/64.27.1856.1053@64.27.1856.1053" timestamp="1613848657470" />
+    <state x="590" y="201" width="800" height="548" key="Vcs.Push.Dialog.v2/64.27.1856.1053@64.27.1856.1053" timestamp="1614373298773" />
     <state x="698" y="209" width="584" height="702" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1609933808023">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>

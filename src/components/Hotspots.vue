@@ -33,7 +33,8 @@
 
                 <div class="row" v-if="state.ready">
                     <h5 class="center"><b>Statistiken</b></h5>
-                    <div class="col s12 m8 l8 offset-l2 offset-m2 center-align">
+                    <!--
+                    <div class="col s12 m8 l6 offset-m2">
                         <div class="card-panel">
                             <table class="centered">
                                 <thead>
@@ -56,6 +57,14 @@
                                 </tr>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                    -->
+                    <div class="col s12 m8 l6 offset-m2 offset-l3">
+                        <div class="card-panel">
+                            <div style="width: inherit; height: inherit; position: relative;">
+                                <canvas id="chart_district_count"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -104,6 +113,7 @@
         </div>
 
         <footer>
+            <div class="grey-text text-darken-2" style="text-align: center;">Hotspots zeigen Daten des RKI.</div>
             <div class="grey-text text-darken-2" style="text-align: center;">Stand (RKI): <span
                 id="state_rki">{{ state.rki }}</span>
             </div>
