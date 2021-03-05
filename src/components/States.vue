@@ -32,6 +32,26 @@
                 </div>
 
                 <div class="row" v-if="state.ready">
+                    <h5 class="center"><b>Heatmap</b></h5>
+
+                    <div class="card-panel center">
+                        <div class="preloader-wrapper active" v-if="state.heatmapLoading">
+                            <div class="spinner-layer spinner-red-only">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div><div class="gap-patch">
+                                <div class="circle"></div>
+                            </div><div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div id="heatmap" style="height: 570px; background: white"></div>
+                    </div>
+                </div>
+
+                <div class="row" v-if="state.ready">
                     <h5 class="center"><b>Bundesländer</b></h5>
 
                     <div class="col s6 m6 l3" v-for="card in states">
@@ -43,22 +63,6 @@
                                         <h3>{{ card.incidence.toFixed(1) }}</h3>
                                         <b>7-Tage-Inzidenz</b>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row" v-if="state.ready && heatmap.avail">
-                    <h5 class="center"><b>Heatmap</b></h5>
-
-                    <div class="card-panel center">
-                        <img class="responsive-img" style="max-width: 60%"
-                             src="https://api.corona-zahlen.org/map/districts" alt="Logo">
-                        <div class="row" style="margin-top: 20px">
-                            <div class="col s6 m4 l2" style="margin-top: 10px" v-for="range in heatmap.legend">
-                                <div class="card-small" :class="getContrastYIQ(range.color)" :style="{'background-color': range.color}">
-                                    {{ range.min }} - {{ range.max }}
                                 </div>
                             </div>
                         </div>
@@ -89,6 +93,7 @@ import firebase from "firebase";
 import M from 'materialize-css';
 import {requestSingle} from "@/js/api.js";
 import {colorsForIncidences} from "@/js/render.js";
+import {renderHeatmap} from "@/js/map";
 
 export default {
     data() {
@@ -97,14 +102,10 @@ export default {
                 rki: "Inzidenzen werden geladen...",
                 ready: false,
                 error: false,
-                loading: true
+                loading: true,
+                heatmapLoading: true
             },
-            states: [],
-            heatmap: {
-                avail: true,
-                url: "",
-                legend: []
-            }
+            states: []
         };
     },
     components: {
@@ -112,7 +113,7 @@ export default {
     },
     mounted() {
         const URL = "https://api.corona-zahlen.org/states";
-        const LEGEND = "https://api.corona-zahlen.org/map/districts/legend";
+        const GEODATA = "https://opendata.arcgis.com/datasets/917fc37a709542548cc3be077a786c17_0.geojson";
 
         requestSingle(this, URL, (vm, data) => {
             const states = [];
@@ -131,25 +132,14 @@ export default {
             vm.state.rki = new Date(data.meta.lastUpdate).toLocaleString("de-de");
         });
 
-        requestSingle(this, LEGEND, (vm, data) => {
-           vm.heatmap.legend = data.incidentRanges;
-        });
+        //request and show heatmap
+        requestSingle(this, GEODATA, renderHeatmap);
     },
     created() {
 
     },
     methods: {
-        /**
-         * source: https://stackoverflow.com/a/11868398/4231365
-         */
-        getContrastYIQ(hex){
-            hex = hex.replace("#", "");
-            const r = parseInt(hex.substr(0, 2), 16);
-            const g = parseInt(hex.substr(2, 2), 16);
-            const b = parseInt(hex.substr(4, 2), 16);
-            const yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
-            return (yiq >= 128) ? '' : 'white-text';
-        }
+
     }
 };
 </script>

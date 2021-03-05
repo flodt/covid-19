@@ -23,7 +23,7 @@
                 <li>
                     <router-link to="/states">
                         <i class="material-icons left">map</i>
-                        Bundesländer
+                        Heatmap
                     </router-link>
                 </li>
                 <li>
@@ -55,7 +55,7 @@
                     </router-link>
                     <router-link to="/states" class="sidenav-close">
                         <i class="material-icons left">map</i>
-                        Bundesländer
+                        Heatmap
                     </router-link>
                 </li>
                 <li>
