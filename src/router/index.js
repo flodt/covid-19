@@ -5,6 +5,7 @@ import Hotspots from '@/components/Hotspots'
 import Curfew from '@/components/Curfew'
 import States from '@/components/States'
 import Historical from '@/components/Historical'
+import Worldwide from "@/components/Worldwide";
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
             path: '/historical',
             name: 'Verlauf',
             component: Historical
+        },
+        {
+            path: '/worldwide',
+            name: 'Weltweit',
+            component: Worldwide
         }
     ]
 })

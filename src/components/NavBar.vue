@@ -15,15 +15,21 @@
                     </router-link>
                 </li>
                 <li>
-                    <router-link to="/curfew">
-                        <i class="material-icons left">lock</i>
-                        Ausgangssperren
-                    </router-link>
-                </li>
-                <li>
                     <router-link to="/states">
                         <i class="material-icons left">map</i>
                         Heatmap
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/worldwide">
+                        <i class="material-icons left">language</i>
+                        Weltweit
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/curfew">
+                        <i class="material-icons left">lock</i>
+                        Ausgangssperren
                     </router-link>
                 </li>
                 <li>
@@ -49,13 +55,13 @@
                         <i class="material-icons left">home</i>
                         Startseite
                     </router-link>
-                    <router-link to="/curfew" class="sidenav-close">
-                        <i class="material-icons left">lock</i>
-                        Ausgangssperren
-                    </router-link>
                     <router-link to="/states" class="sidenav-close">
                         <i class="material-icons left">map</i>
                         Heatmap
+                    </router-link>
+                    <router-link to="/curfew" class="sidenav-close">
+                        <i class="material-icons left">lock</i>
+                        Ausgangssperren
                     </router-link>
                 </li>
                 <li>
@@ -65,6 +71,10 @@
                     <router-link to="/hotspots" class="sidenav-close">
                         <i class="material-icons left">trending_up</i>
                         Hotspots
+                    </router-link>
+                    <router-link to="/worldwide" class="sidenav-close">
+                        <i class="material-icons left">language</i>
+                        Weltweit
                     </router-link>
                     <router-link to="/historical" class="sidenav-close">
                         <i class="material-icons left">history</i>

@@ -1,3 +1,5 @@
+import {getCountryCode} from "../js/countryCodes.js";
+
 function formatInterval(daysToHerdImmunity) {
     if (daysToHerdImmunity === 0) return "Ziel erreicht!";
 
@@ -128,6 +130,55 @@ function showErrorBox(vm, agss, rki, zeit, vacc) {
 }
 
 
+function renderHistogram(vm, id, name) {
+    //draw chart
+    setTimeout(function () {
+        const districtColors = [10, 40, 75, 150, 300].map(i => colorsForIncidences(i).chartColor);
+
+        //render charts
+        const ctx = document.getElementById(id).getContext('2d');
+        const chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'bar',
+
+            // The data for our dataset
+            data: {
+                labels: ["0-35", "35-50", "50-100", "100-200", "200+"],
+                datasets: [{
+                    label: name,
+                    backgroundColor: districtColors,
+                    borderColor: districtColors,
+                    data: [vm.stat.below35, vm.stat.at3550, vm.stat.at50100, vm.stat.at100200, vm.stat.above200],
+                    fill: false
+                }
+                ]
+            },
+
+            // Configuration options go here
+            options: {
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                            //suggestedMin: 0,
+                            //suggestedMax: 32500
+                        }
+                    }]
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                tooltips: {
+                    mode: 'nearest',
+                    intersect: false
+                }
+            }
+        });
+    }, 0);
+}
+
 export function renderHotspots(vm, agss, rki, zeit, vacc) {
     showErrorBox(vm, agss, rki, zeit, vacc);
 
@@ -173,53 +224,7 @@ export function renderHotspots(vm, agss, rki, zeit, vacc) {
         });
 
     vm.overview = overview;
-
-    //draw chart
-    setTimeout(function () {
-        const districtColors = [10,40,75,150,300].map(i => colorsForIncidences(i).chartColor);
-
-        //render charts
-        const ctx = document.getElementById("chart_district_count").getContext('2d');
-        const chart = new Chart(ctx, {
-            // The type of chart we want to create
-            type: 'bar',
-
-            // The data for our dataset
-            data: {
-                labels: ["0-35","35-50","50-100","100-200","200+"],
-                datasets: [{
-                    label: 'Landkreise',
-                    backgroundColor: districtColors,
-                    borderColor: districtColors,
-                    data: [vm.stat.below35, vm.stat.at3550, vm.stat.at50100, vm.stat.at100200, vm.stat.above200],
-                    fill: false
-                }
-                ]
-            },
-
-            // Configuration options go here
-            options: {
-                legend: {
-                    display: false
-                },
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                            //suggestedMin: 0,
-                            //suggestedMax: 32500
-                        }
-                    }]
-                },
-                responsive: true,
-                maintainAspectRatio: false,
-                tooltips: {
-                    mode: 'nearest',
-                    intersect: false
-                }
-            }
-        });
-    }, 0);
+    renderHistogram(vm, "chart_district_count", "Landkreise");
 }
 
 
@@ -816,4 +821,39 @@ export function renderHistorical(vm, rki, zeit) {
             }
         });
     }, 0);
+}
+
+export function renderWorldwide(vm, data) {
+    vm.state.owid = new Date(data.DEU.last_updated_date).toLocaleDateString("de-de");
+
+    //add countries to the list
+    let table = [];
+
+    for (const c in data) {
+        const ctry = data[c];
+        if (c === "OWID_INT") continue;
+
+        const incidence = ctry.new_cases_smoothed * 7 * 100000 / ctry.population;
+        if (incidence < 0) continue;
+
+        table.push({
+            name: ctry.location,
+            code: getCountryCode(c),
+            hasFlag: getCountryCode(c) !== undefined,
+            incidence: incidence,
+            hasVaccData: ctry.people_vaccinated !== null,
+            vaccinated: ctry.people_vaccinated * 100 / ctry.population,
+            fullyVaccinated: ctry.people_fully_vaccinated * 100 / ctry.population,
+            color: colorsForIncidences(incidence).chartColor
+        });
+    }
+
+    vm.countries = table.sort((a, b) => (a.incidence < b.incidence) ? 1 : -1);
+    vm.stat.below35 = table.filter(h => h.incidence < 35).length;
+    vm.stat.at3550 = table.filter(h => h.incidence >= 35 && h.incidence < 50).length;
+    vm.stat.at50100 = table.filter(h => h.incidence >= 50 && h.incidence < 100).length;
+    vm.stat.at100200 = table.filter(h => h.incidence >= 100 && h.incidence < 200).length;
+    vm.stat.above200 = table.filter(h => h.incidence > 200).length;
+
+    renderHistogram(vm, "chart_country_count", "Länder");
 }

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -10,15 +13,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="add chart for hotspots and data sources">
-      <change afterPath="$PROJECT_DIR$/src/js/map.js" afterDir="false" />
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="update to leaflet heatmap">
+      <change afterPath="$PROJECT_DIR$/src/components/Worldwide.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/countryCodes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.ZGlzdA.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/corona.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/corona.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/States.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/States.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/render.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,14 +144,9 @@
       <workItem from="1614021084745" duration="2300000" />
       <workItem from="1614372596462" duration="708000" />
       <workItem from="1614894844405" duration="2158000" />
-      <workItem from="1614940965484" duration="4400000" />
-    </task>
-    <task id="LOCAL-00008" summary="build in resilience to API issues">
-      <created>1610662054521</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1610662054521</updated>
+      <workItem from="1614940965484" duration="4709000" />
+      <workItem from="1614945941164" duration="133000" />
+      <workItem from="1615028877182" duration="4123000" />
     </task>
     <task id="LOCAL-00009" summary="update to pull directly from RKI">
       <created>1610724632623</created>
@@ -484,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614896860878</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="update to leaflet heatmap">
+      <created>1614945527133</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1614945527134</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +510,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix wrong plural in timer" />
     <MESSAGE value="add vaccination data for Bavaria" />
     <MESSAGE value="add clinic statistics" />
     <MESSAGE value="add info about herd immunity timer" />
@@ -528,7 +534,8 @@
     <MESSAGE value="add entire country chart" />
     <MESSAGE value="fix timer month rounding issue" />
     <MESSAGE value="add chart for hotspots and data sources" />
-    <option name="LAST_COMMIT_MESSAGE" value="add chart for hotspots and data sources" />
+    <MESSAGE value="update to leaflet heatmap" />
+    <option name="LAST_COMMIT_MESSAGE" value="update to leaflet heatmap" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="192" width="1076" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611869222722">
@@ -543,39 +550,39 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="64" y="117" width="1484" height="884" key="DiffContextDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1614373169787" />
-    <state width="788" height="265" key="GridCell.Tab.0.bottom" timestamp="1614943548047">
+    <state width="905" height="265" key="GridCell.Tab.0.bottom" timestamp="1615033330029">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.bottom/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330657" />
-    <state width="788" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1614943548047" />
-    <state width="788" height="265" key="GridCell.Tab.0.center" timestamp="1614943548047">
+    <state width="905" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1615033330029" />
+    <state width="905" height="265" key="GridCell.Tab.0.center" timestamp="1615033330028">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.center/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="788" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1614943548047" />
-    <state width="788" height="265" key="GridCell.Tab.0.left" timestamp="1614943548047">
+    <state width="905" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1615033330028" />
+    <state width="905" height="265" key="GridCell.Tab.0.left" timestamp="1615033330028">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.left/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="788" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1614943548047" />
-    <state width="788" height="265" key="GridCell.Tab.0.right" timestamp="1614943548047">
+    <state width="905" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1615033330028" />
+    <state width="905" height="265" key="GridCell.Tab.0.right" timestamp="1615033330029">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.right/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="788" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1614943548047" />
+    <state width="905" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1615033330029" />
     <state x="273" y="135" width="505" height="770" key="RollbackChangesDialog" timestamp="1614895341253">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="273" y="135" width="505" height="770" key="RollbackChangesDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1614895341253" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1614945361074">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1615033696440">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1614945361074" />
-    <state x="590" y="196" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1614896952409">
+    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1615033696440" />
+    <state x="590" y="191" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1614945541927">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="2464" y="256" key="Vcs.Push.Dialog.v2/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031322887" />
-    <state x="590" y="196" width="800" height="548" key="Vcs.Push.Dialog.v2/64.27.1856.1053@64.27.1856.1053" timestamp="1614896952409" />
+    <state x="590" y="191" width="800" height="548" key="Vcs.Push.Dialog.v2/64.27.1856.1053@64.27.1856.1053" timestamp="1614945541927" />
     <state x="698" y="209" width="584" height="702" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1609933808023">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
@@ -593,10 +600,10 @@
     </state>
     <state x="2544" y="243" key="run.anything.popup/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1610909436945" />
     <state x="667" y="264" key="run.anything.popup/64.27.1856.1053@64.27.1856.1053" timestamp="1612816347864" />
-    <state x="191" y="255" width="672" height="678" key="search.everywhere.popup" timestamp="1614022999141">
+    <state x="191" y="255" width="672" height="678" key="search.everywhere.popup" timestamp="1615031594196">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="2051" y="234" width="696" height="696" key="search.everywhere.popup/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612030646010" />
-    <state x="191" y="255" width="672" height="678" key="search.everywhere.popup/64.27.1856.1053@64.27.1856.1053" timestamp="1614022999141" />
+    <state x="191" y="255" width="672" height="678" key="search.everywhere.popup/64.27.1856.1053@64.27.1856.1053" timestamp="1615031594196" />
   </component>
 </project>
