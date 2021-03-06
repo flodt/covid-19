@@ -42,6 +42,19 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col s12 m12 l6">
+                        <div class="card-panel center">
+                            <div id="world_incidence_map" style="height: 570px; background: white"></div>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l6">
+                        <div class="card-panel center">
+                            <div id="world_vacc_map" style="height: 570px; background: white"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row center" v-if="state.ready">
                     <h5 class="center"><b>Übersicht</b></h5>
                     <div class="col s12 m12 l12">

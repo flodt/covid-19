@@ -1,4 +1,5 @@
 import {getCountryCode} from "../js/countryCodes.js";
+import {renderWorldwideIncidenceMap, renderWorldwideVaccMap} from "../js/map.js";
 
 function formatInterval(daysToHerdImmunity) {
     if (daysToHerdImmunity === 0) return "Ziel erreicht!";
@@ -839,6 +840,7 @@ export function renderWorldwide(vm, data) {
         table.push({
             name: ctry.location,
             code: getCountryCode(c),
+            codeAlpha3: c,
             hasFlag: getCountryCode(c) !== undefined,
             incidence: incidence,
             hasVaccData: ctry.people_vaccinated !== null,
@@ -849,11 +851,14 @@ export function renderWorldwide(vm, data) {
     }
 
     vm.countries = table.sort((a, b) => (a.incidence < b.incidence) ? 1 : -1);
+
     vm.stat.below35 = table.filter(h => h.incidence < 35).length;
     vm.stat.at3550 = table.filter(h => h.incidence >= 35 && h.incidence < 50).length;
     vm.stat.at50100 = table.filter(h => h.incidence >= 50 && h.incidence < 100).length;
     vm.stat.at100200 = table.filter(h => h.incidence >= 100 && h.incidence < 200).length;
     vm.stat.above200 = table.filter(h => h.incidence > 200).length;
-
     renderHistogram(vm, "chart_country_count", "Länder");
+
+    renderWorldwideIncidenceMap(vm);
+    renderWorldwideVaccMap(vm);
 }
