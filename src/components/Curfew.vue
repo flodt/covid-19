@@ -58,17 +58,23 @@
         </div>
 
         <footer>
-            <div class="grey-text text-darken-2" style="text-align: center;">Stand (RKI): <span
-                id="state_rki">{{ state.rki }}</span>
+            <div class="container">
+                <div class="grey-text text-darken-2" style="text-align: center;">Stand (RKI): <span
+                    id="state_rki">{{ state.rki }}</span>
+                </div>
+                <div class="grey-text text-darken-2" style="text-align: center;">Landkreise zeigen 7-Tage-Inzidenzen pro
+                    100.000 Einwohner und richten sich nach den Werten des RKI.
+                    <br/>
+                    Eine Ausgangssperre besteht, wenn die 7-Tage-Inzidenz in den letzten 7 Tagen mindestens ein Mal die
+                    100 überschritten hat.
+                </div>
+                <br/>
+                <div class="grey-text text-darken-2" style="text-align: center;">Icons made by Freepik from
+                    flaticon.com.
+                </div>
+                <br/>
+                <br/>
             </div>
-            <div class="grey-text text-darken-2" style="text-align: center;">Landkreise zeigen 7-Tage-Inzidenzen pro
-                100.000 Einwohner.
-            </div>
-            <br/>
-            <div class="grey-text text-darken-2" style="text-align: center;">Icons made by Freepik from flaticon.com.
-            </div>
-            <br/>
-            <br/>
         </footer>
     </section>
 </template>
