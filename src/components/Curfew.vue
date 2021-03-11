@@ -40,7 +40,7 @@
                                 <span class="card-title">{{ card.name }}</span>
                                 <div class="center" v-if="card.hasCurfew">
                                     <h4>Ausgangssperre</h4>
-                                    <b>von 22-5 Uhr (7-Tage-Inzidenz war {{ card.maxIncidence.toFixed(1) }}).</b>
+                                    <b>von 22-5 Uhr (Inzidenz war {{ card.maxIncidence.toFixed(1) }})</b>
                                 </div>
                                 <div class="center" v-if="!card.hasCurfew && !card.isClose">
                                     <h4>unbeschränkt</h4>
