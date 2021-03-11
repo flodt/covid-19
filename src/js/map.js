@@ -4,7 +4,13 @@ const world = require("../../static/world.json");
 export function renderHeatmap(vm, data) {
     vm.state.heatmapLoading = false;
 
-    const map = L.map("heatmap").setView([51.464676981989506, 10.267364018964292], 5.5);
+    const bounds = new L.LatLngBounds(new L.LatLng(59.27585442576808, 1.4037055536285483), new L.LatLng(43.808344036871276, 19.555926093968022));
+    const map = L.map("heatmap", {
+        center: bounds.getCenter(),
+        zoom: 5.5,
+        maxBounds: bounds,
+        maxBoundsViscosity: 0.75
+    });
     let geoJson;
     const info = L.control();
 
@@ -117,7 +123,14 @@ function getContrastYIQ(hex){
 }
 
 export function renderWorldwideIncidenceMap(vm) {
-    const map = L.map("world_incidence_map").setView([51.464676981989506, 10.267364018964292], 1.0);
+    const bounds = new L.LatLngBounds(new L.LatLng(84.84443124832553, -177.23421452876624), new L.LatLng(-70.79876307395632, 175.0314110667352));
+    const map = L.map("world_incidence_map", {
+        center: bounds.getCenter(),
+        zoom: 1.40,
+        maxBounds: bounds,
+        maxBoundsViscosity: 0.75
+    });
+
     let geoJson;
     const info = L.control();
 
@@ -225,14 +238,20 @@ export function renderWorldwideIncidenceMap(vm) {
 }
 
 export function renderWorldwideVaccMap(vm) {
-    const map = L.map("world_vacc_map").setView([51.464676981989506, 10.267364018964292], 1.0);
+    const bounds = new L.LatLngBounds(new L.LatLng(84.84443124832553, -177.23421452876624), new L.LatLng(-70.79876307395632, 175.0314110667352));
+    const map = L.map("world_vacc_map", {
+        center: bounds.getCenter(),
+        zoom: 1.40,
+        maxBounds: bounds,
+        maxBoundsViscosity: 0.75
+    });
     let geoJson;
     const info = L.control();
 
     //color source: https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung
     function colorScale(vaccinated, max) {
         const colors = ['#edf8e9','#c7e9c0','#a1d99b','#74c476','#31a354','#006d2c'];
-        return colors[Math.min(Math.floor(vaccinated * 6 / 7.0), 5)];
+        return colors[Math.min(Math.floor(vaccinated * 6 / 8.0), 5)];
     }
 
     //define map style depending on incidence
