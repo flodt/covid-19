@@ -6,6 +6,25 @@
                 <div class="row">
                     <h5 class="center"><b>Einstellungen</b></h5>
 
+                    <div class="col s12 m8 l6 offset-l3 offset-m2">
+                        <ul class="collection">
+                            <li v-for="chk in checkedDistricts"
+                                class="collection-item"><b>{{ getDetails(chk).name }}</b> ({{ getDetails(chk).stateShort }})</li>
+                        </ul>
+
+                        <div class="row">
+                            <div class="col">
+                                <a class="waves-effect waves-light btn" @click="save"><i class="material-icons left">save</i>Speichern</a>
+                            </div>
+                            <div class="col">
+                                <a class="waves-effect waves-light btn" @click="reset"><i class="material-icons left">delete</i>Verwerfen</a>
+                            </div>
+                            <div class="col">
+                                <a class="waves-effect waves-light btn" @click="toDefault"><i class="material-icons left">undo</i>Zurücksetzen</a>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="col s12 m12 l12">
                         <table class="striped">
                             <thead>
@@ -13,6 +32,7 @@
                                 <th></th>
                                 <th>Landkreis</th>
                                 <th>Bundesland</th>
+                                <th>Art</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -27,11 +47,10 @@
                                 </td>
                                 <td><b>{{ dist.name }}</b></td>
                                 <td>{{ dist.state }}</td>
+                                <td>{{ dist.type }}</td>
                             </tr>
                             </tbody>
                         </table>
-
-                        Checked districts: {{checkedDistricts}}
                     </div>
                 </div>
             </div>
@@ -56,48 +75,45 @@ import firebase from "firebase";
 import M from 'materialize-css';
 import {requestSingle} from "@/js/api.js";
 import {requestData} from "../js/api";
+const staticDistricts = require("../../static/districts.json");
 
 export default {
     data() {
         return {
             checkedDistricts: [],
-            allDistricts: [{
-                "name": "Flensburg",
-                "prefix": "SK",
-                "ags": "01001",
-                "state": "Schleswig-Holstein",
-                "stateShort": "SH",
-                "population": 90164
-            },
-                {
-                    "name": "Kiel",
-                    "prefix": "SK",
-                    "ags": "01002",
-                    "state": "Schleswig-Holstein",
-                    "stateShort": "SH",
-                    "population": 246794
-                },
-                {
-                    "name": "Lübeck",
-                    "prefix": "SK",
-                    "ags": "01003",
-                    "state": "Schleswig-Holstein",
-                    "stateShort": "SH",
-                    "population": 216530
-                },]
+            allDistricts: []
         };
     },
     components: {
         navigation
     },
     mounted() {
-
+        this.allDistricts = staticDistricts.map(d => {
+            if (d.prefix === "SK") d.type = "Stadt";
+            else if (d.prefix === "LK") d.type = "LK";
+            return d;
+        }).sort((a, b) => a.name > b.name ? 1 : -1);
     },
     created() {
 
     },
     methods: {
-
+        getDetails: function(ags) {
+            return staticDistricts.filter(d => d.ags === ags)[0];
+        },
+        save() {
+            localStorage.setItem("selectedDistricts", JSON.stringify(this.checkedDistricts));
+            M.toast({html: 'Einstellungen wurden gespeichert.'});
+        },
+        reset() {
+            M.toast({html: 'Auswahl wurde zurückgesetzt.'});
+        },
+        toDefault() {
+            localStorage.setItem("selectedDistricts", JSON.stringify(
+                ["09778", "09162", "09179", "09762", "09777", "09188", "09178", "09175", "09772"]
+            ));
+            M.toast({html: 'Standardlandkreise wurden ausgewählt.'});
+        }
     }
 };
 </script>

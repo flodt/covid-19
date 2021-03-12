@@ -107,7 +107,7 @@ export default {
     mounted() {
         this.state.ready = true;
 
-        let agss = ["09778", "09162", "09179", "09762", "09777", "09188", "09178", "09175", "09772"];
+        let agss = JSON.parse(localStorage.getItem("selectedDistricts"));
         const URL = "https://api.corona-zahlen.org/districts/history/incidence";
         requestSingle(this, URL, (vm, data) => {
             vm.districts = agss.map(ags => {

@@ -38,6 +38,11 @@
                         Verlauf
                     </router-link>
                 </li>
+                <li>
+                    <router-link to="/settings">
+                        <i class="material-icons">settings</i>
+                    </router-link>
+                </li>
             </ul>
             <a href="#" data-target="sidenav_mobile" class="sidenav-trigger right hide-on-med-and-up"><i class="material-icons">menu</i></a>
 
@@ -79,6 +84,15 @@
                     <router-link to="/historical" class="sidenav-close">
                         <i class="material-icons left">history</i>
                         Verlauf
+                    </router-link>
+                </li>
+                <li>
+                    <a class="subheader">Personalisierung</a>
+                </li>
+                <li>
+                    <router-link to="/settings" class="sidenav-close">
+                        <i class="material-icons left">settings</i>
+                        Einstellungen
                     </router-link>
                 </li>
             </ul>

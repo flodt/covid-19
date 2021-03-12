@@ -667,7 +667,7 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
 
 export function renderHistorical(vm, rki, zeit) {
     //show last updated date
-    let agss = ["09778", "09162", "09179", "09762", "09777", "09188", "09178", "09175", "09772"];
+    let agss = JSON.parse(localStorage.getItem("selectedDistricts"));
     vm.state.zeit = new Date(zeit.lastUpdate).toLocaleString("de-de");
     vm.state.rki = rki.features.filter(f => f.attributes.AGS === agss[0])[0].attributes.last_update;
 
