@@ -6,6 +6,7 @@ import Curfew from '@/components/Curfew'
 import States from '@/components/States'
 import Historical from '@/components/Historical'
 import Worldwide from "@/components/Worldwide";
+import Settings from "@/components/Settings";
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
             path: '/worldwide',
             name: 'Weltweit',
             component: Worldwide
+        },
+        {
+            path: '/settings',
+            name: 'Einstellungen',
+            component: Settings
         }
     ]
 })

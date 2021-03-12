@@ -1,0 +1,3298 @@
+[
+  {
+    "name": "Flensburg",
+    "prefix": "SK",
+    "ags": "01001",
+    "state": "Schleswig-Holstein",
+    "stateShort": "SH",
+    "population": 90164
+  },
+  {
+    "name": "Kiel",
+    "prefix": "SK",
+    "ags": "01002",
+    "state": "Schleswig-Holstein",
+    "stateShort": "SH",
+    "population": 246794
+  },
+  {
+    "name": "Lübeck",
+    "prefix": "SK",
+    "ags": "01003",
+    "state": "Schleswig-Holstein",
+    "stateShort": "SH",
+    "population": 216530
+  },
+  {
+    "name": "Neumünster",
+    "prefix": "SK",
+    "ags": "01004",
+    "state": "Schleswig-Holstein",
+    "stateShort": "SH",
+    "population": 80196
+  },
+  {
+    "name": "Dithmarschen",
+    "prefix": "LK",
+    "ags": "01051",
+    "state": "Schleswig-Holstein",
+    "stateShort": "SH",
+    "population": 133193
+  },
+  {
+    "name": "Herzogtum Lauenburg",
+    "prefix": "LK",
+    "ags": "01053",
+    "state": "Schleswig-Holstein",
+    "stateShort": "SH",
+    "population": 198019
+  },
+  {
+    "name": "Nordfriesland",
+    "prefix": "LK",
+    "ags": "01054",
+    "state": "Schleswig-Holstein",
+    "stateShort": "SH",
+    "population": 165951
+  },
+  {
+    "name": "Ostholstein",
+    "prefix": "LK",
+    "ags": "01055",
+    "state": "Schleswig-Holstein",
+    "stateShort": "SH",
+    "population": 200539
+  },
+  {
+    "name": "Pinneberg",
+    "prefix": "LK",
+    "ags": "01056",
+    "state": "Schleswig-Holstein",
+    "stateShort": "SH",
+    "population": 316103
+  },
+  {
+    "name": "Plön",
+    "prefix": "LK",
+    "ags": "01057",
+    "state": "Schleswig-Holstein",
+    "stateShort": "SH",
+    "population": 128686
+  },
+  {
+    "name": "Rendsburg-Eckernförde",
+    "prefix": "LK",
+    "ags": "01058",
+    "state": "Schleswig-Holstein",
+    "stateShort": "SH",
+    "population": 274098
+  },
+  {
+    "name": "Schleswig-Flensburg",
+    "prefix": "LK",
+    "ags": "01059",
+    "state": "Schleswig-Holstein",
+    "stateShort": "SH",
+    "population": 201156
+  },
+  {
+    "name": "Segeberg",
+    "prefix": "LK",
+    "ags": "01060",
+    "state": "Schleswig-Holstein",
+    "stateShort": "SH",
+    "population": 277175
+  },
+  {
+    "name": "Steinburg",
+    "prefix": "LK",
+    "ags": "01061",
+    "state": "Schleswig-Holstein",
+    "stateShort": "SH",
+    "population": 131013
+  },
+  {
+    "name": "Stormarn",
+    "prefix": "LK",
+    "ags": "01062",
+    "state": "Schleswig-Holstein",
+    "stateShort": "SH",
+    "population": 244156
+  },
+  {
+    "name": "Hamburg",
+    "prefix": "SK",
+    "ags": "02000",
+    "state": "Hamburg",
+    "stateShort": "HH",
+    "population": 1847253
+  },
+  {
+    "name": "Braunschweig",
+    "prefix": "SK",
+    "ags": "03101",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 249406
+  },
+  {
+    "name": "Salzgitter",
+    "prefix": "SK",
+    "ags": "03102",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 104291
+  },
+  {
+    "name": "Wolfsburg",
+    "prefix": "SK",
+    "ags": "03103",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 124371
+  },
+  {
+    "name": "Gifhorn",
+    "prefix": "LK",
+    "ags": "03151",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 176523
+  },
+  {
+    "name": "Goslar",
+    "prefix": "LK",
+    "ags": "03153",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 136292
+  },
+  {
+    "name": "Helmstedt",
+    "prefix": "LK",
+    "ags": "03154",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 91297
+  },
+  {
+    "name": "Northeim",
+    "prefix": "LK",
+    "ags": "03155",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 132285
+  },
+  {
+    "name": "Peine",
+    "prefix": "LK",
+    "ags": "03157",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 134801
+  },
+  {
+    "name": "Wolfenbüttel",
+    "prefix": "LK",
+    "ags": "03158",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 119622
+  },
+  {
+    "name": "Göttingen",
+    "prefix": "LK",
+    "ags": "03159",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 326041
+  },
+  {
+    "name": "Region Hannover",
+    "prefix": "Region",
+    "ags": "03241",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 1157115
+  },
+  {
+    "name": "Diepholz",
+    "prefix": "LK",
+    "ags": "03251",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 217089
+  },
+  {
+    "name": "Hameln-Pyrmont",
+    "prefix": "LK",
+    "ags": "03252",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 148549
+  },
+  {
+    "name": "Hildesheim",
+    "prefix": "LK",
+    "ags": "03254",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 275817
+  },
+  {
+    "name": "Holzminden",
+    "prefix": "LK",
+    "ags": "03255",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 70458
+  },
+  {
+    "name": "Nienburg (Weser)",
+    "prefix": "LK",
+    "ags": "03256",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 121390
+  },
+  {
+    "name": "Schaumburg",
+    "prefix": "LK",
+    "ags": "03257",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 157820
+  },
+  {
+    "name": "Celle",
+    "prefix": "LK",
+    "ags": "03351",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 179011
+  },
+  {
+    "name": "Cuxhaven",
+    "prefix": "LK",
+    "ags": "03352",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 198038
+  },
+  {
+    "name": "Harburg",
+    "prefix": "LK",
+    "ags": "03353",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 254431
+  },
+  {
+    "name": "Lüchow-Dannenberg",
+    "prefix": "LK",
+    "ags": "03354",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 48412
+  },
+  {
+    "name": "Lüneburg",
+    "prefix": "LK",
+    "ags": "03355",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 184139
+  },
+  {
+    "name": "Osterholz",
+    "prefix": "LK",
+    "ags": "03356",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 113928
+  },
+  {
+    "name": "Rotenburg (Wümme)",
+    "prefix": "LK",
+    "ags": "03357",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 163782
+  },
+  {
+    "name": "Heidekreis",
+    "prefix": "LK",
+    "ags": "03358",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 140673
+  },
+  {
+    "name": "Stade",
+    "prefix": "LK",
+    "ags": "03359",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 204512
+  },
+  {
+    "name": "Uelzen",
+    "prefix": "LK",
+    "ags": "03360",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 92389
+  },
+  {
+    "name": "Verden",
+    "prefix": "LK",
+    "ags": "03361",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 137133
+  },
+  {
+    "name": "Delmenhorst",
+    "prefix": "SK",
+    "ags": "03401",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 77559
+  },
+  {
+    "name": "Emden",
+    "prefix": "SK",
+    "ags": "03402",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 49913
+  },
+  {
+    "name": "Oldenburg (Oldb)",
+    "prefix": "SK",
+    "ags": "03403",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 169077
+  },
+  {
+    "name": "Osnabrück",
+    "prefix": "SK",
+    "ags": "03404",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 165251
+  },
+  {
+    "name": "Wilhelmshaven",
+    "prefix": "SK",
+    "ags": "03405",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 76089
+  },
+  {
+    "name": "Ammerland",
+    "prefix": "LK",
+    "ags": "03451",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 124859
+  },
+  {
+    "name": "Aurich",
+    "prefix": "LK",
+    "ags": "03452",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 189694
+  },
+  {
+    "name": "Cloppenburg",
+    "prefix": "LK",
+    "ags": "03453",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 170682
+  },
+  {
+    "name": "Emsland",
+    "prefix": "LK",
+    "ags": "03454",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 326954
+  },
+  {
+    "name": "Friesland",
+    "prefix": "LK",
+    "ags": "03455",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 98704
+  },
+  {
+    "name": "Grafschaft Bentheim",
+    "prefix": "LK",
+    "ags": "03456",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 137162
+  },
+  {
+    "name": "Leer",
+    "prefix": "LK",
+    "ags": "03457",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 170756
+  },
+  {
+    "name": "Oldenburg",
+    "prefix": "LK",
+    "ags": "03458",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 130890
+  },
+  {
+    "name": "Osnabrück",
+    "prefix": "LK",
+    "ags": "03459",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 358080
+  },
+  {
+    "name": "Vechta",
+    "prefix": "LK",
+    "ags": "03460",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 142814
+  },
+  {
+    "name": "Wesermarsch",
+    "prefix": "LK",
+    "ags": "03461",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 88583
+  },
+  {
+    "name": "Wittmund",
+    "prefix": "LK",
+    "ags": "03462",
+    "state": "Niedersachsen",
+    "stateShort": "NI",
+    "population": 56926
+  },
+  {
+    "name": "Bremen",
+    "prefix": "SK",
+    "ags": "04011",
+    "state": "Bremen",
+    "stateShort": "HB",
+    "population": 567559
+  },
+  {
+    "name": "Bremerhaven",
+    "prefix": "SK",
+    "ags": "04012",
+    "state": "Bremen",
+    "stateShort": "HB",
+    "population": 113643
+  },
+  {
+    "name": "Düsseldorf",
+    "prefix": "SK",
+    "ags": "05111",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 621877
+  },
+  {
+    "name": "Duisburg",
+    "prefix": "SK",
+    "ags": "05112",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 498686
+  },
+  {
+    "name": "Essen",
+    "prefix": "SK",
+    "ags": "05113",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 582760
+  },
+  {
+    "name": "Krefeld",
+    "prefix": "SK",
+    "ags": "05114",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 227417
+  },
+  {
+    "name": "Mönchengladbach",
+    "prefix": "SK",
+    "ags": "05116",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 261034
+  },
+  {
+    "name": "Mülheim an der Ruhr",
+    "prefix": "SK",
+    "ags": "05117",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 170632
+  },
+  {
+    "name": "Oberhausen",
+    "prefix": "SK",
+    "ags": "05119",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 210764
+  },
+  {
+    "name": "Remscheid",
+    "prefix": "SK",
+    "ags": "05120",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 111338
+  },
+  {
+    "name": "Solingen",
+    "prefix": "SK",
+    "ags": "05122",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 159245
+  },
+  {
+    "name": "Wuppertal",
+    "prefix": "SK",
+    "ags": "05124",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 355100
+  },
+  {
+    "name": "Kleve",
+    "prefix": "LK",
+    "ags": "05154",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 312465
+  },
+  {
+    "name": "Mettmann",
+    "prefix": "LK",
+    "ags": "05158",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 485570
+  },
+  {
+    "name": "Rhein-Kreis Neuss",
+    "prefix": "LK",
+    "ags": "05162",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 451730
+  },
+  {
+    "name": "Viersen",
+    "prefix": "LK",
+    "ags": "05166",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 298863
+  },
+  {
+    "name": "Wesel",
+    "prefix": "LK",
+    "ags": "05170",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 459976
+  },
+  {
+    "name": "Bonn",
+    "prefix": "SK",
+    "ags": "05314",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 329673
+  },
+  {
+    "name": "Köln",
+    "prefix": "SK",
+    "ags": "05315",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 1087863
+  },
+  {
+    "name": "Leverkusen",
+    "prefix": "SK",
+    "ags": "05316",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 163729
+  },
+  {
+    "name": "Städteregion Aachen",
+    "prefix": "StadtRegion",
+    "ags": "05334",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 557026
+  },
+  {
+    "name": "Düren",
+    "prefix": "LK",
+    "ags": "05358",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 264638
+  },
+  {
+    "name": "Rhein-Erft-Kreis",
+    "prefix": "LK",
+    "ags": "05362",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 470615
+  },
+  {
+    "name": "Euskirchen",
+    "prefix": "LK",
+    "ags": "05366",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 193656
+  },
+  {
+    "name": "Heinsberg",
+    "prefix": "LK",
+    "ags": "05370",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 255555
+  },
+  {
+    "name": "Oberbergischer Kreis",
+    "prefix": "LK",
+    "ags": "05374",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 272057
+  },
+  {
+    "name": "Rheinisch-Bergischer Kreis",
+    "prefix": "LK",
+    "ags": "05378",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 283271
+  },
+  {
+    "name": "Rhein-Sieg-Kreis",
+    "prefix": "LK",
+    "ags": "05382",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 600764
+  },
+  {
+    "name": "Bottrop",
+    "prefix": "SK",
+    "ags": "05512",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 117565
+  },
+  {
+    "name": "Gelsenkirchen",
+    "prefix": "SK",
+    "ags": "05513",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 259645
+  },
+  {
+    "name": "Münster",
+    "prefix": "SK",
+    "ags": "05515",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 315293
+  },
+  {
+    "name": "Borken",
+    "prefix": "LK",
+    "ags": "05554",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 371339
+  },
+  {
+    "name": "Coesfeld",
+    "prefix": "LK",
+    "ags": "05558",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 220586
+  },
+  {
+    "name": "Recklinghausen",
+    "prefix": "LK",
+    "ags": "05562",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 614137
+  },
+  {
+    "name": "Steinfurt",
+    "prefix": "LK",
+    "ags": "05566",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 448220
+  },
+  {
+    "name": "Warendorf",
+    "prefix": "LK",
+    "ags": "05570",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 277840
+  },
+  {
+    "name": "Bielefeld",
+    "prefix": "SK",
+    "ags": "05711",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 334195
+  },
+  {
+    "name": "Gütersloh",
+    "prefix": "LK",
+    "ags": "05754",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 364938
+  },
+  {
+    "name": "Herford",
+    "prefix": "LK",
+    "ags": "05758",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 250578
+  },
+  {
+    "name": "Höxter",
+    "prefix": "LK",
+    "ags": "05762",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 140251
+  },
+  {
+    "name": "Lippe",
+    "prefix": "LK",
+    "ags": "05766",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 347514
+  },
+  {
+    "name": "Minden-Lübbecke",
+    "prefix": "LK",
+    "ags": "05770",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 310409
+  },
+  {
+    "name": "Paderborn",
+    "prefix": "LK",
+    "ags": "05774",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 307839
+  },
+  {
+    "name": "Bochum",
+    "prefix": "SK",
+    "ags": "05911",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 365587
+  },
+  {
+    "name": "Dortmund",
+    "prefix": "SK",
+    "ags": "05913",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 588250
+  },
+  {
+    "name": "Hagen",
+    "prefix": "SK",
+    "ags": "05914",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 188686
+  },
+  {
+    "name": "Hamm",
+    "prefix": "SK",
+    "ags": "05915",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 179916
+  },
+  {
+    "name": "Herne",
+    "prefix": "SK",
+    "ags": "05916",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 156449
+  },
+  {
+    "name": "Ennepe-Ruhr-Kreis",
+    "prefix": "LK",
+    "ags": "05954",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 324106
+  },
+  {
+    "name": "Hochsauerlandkreis",
+    "prefix": "LK",
+    "ags": "05958",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 259777
+  },
+  {
+    "name": "Märkischer Kreis",
+    "prefix": "LK",
+    "ags": "05962",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 410222
+  },
+  {
+    "name": "Olpe",
+    "prefix": "LK",
+    "ags": "05966",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 133955
+  },
+  {
+    "name": "Siegen-Wittgenstein",
+    "prefix": "LK",
+    "ags": "05970",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 276944
+  },
+  {
+    "name": "Soest",
+    "prefix": "LK",
+    "ags": "05974",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 301785
+  },
+  {
+    "name": "Unna",
+    "prefix": "LK",
+    "ags": "05978",
+    "state": "Nordrhein-Westfalen",
+    "stateShort": "NW",
+    "population": 394891
+  },
+  {
+    "name": "Darmstadt",
+    "prefix": "SK",
+    "ags": "06411",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 159878
+  },
+  {
+    "name": "Frankfurt am Main",
+    "prefix": "SK",
+    "ags": "06412",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 763380
+  },
+  {
+    "name": "Offenbach am Main",
+    "prefix": "SK",
+    "ags": "06413",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 130280
+  },
+  {
+    "name": "Wiesbaden",
+    "prefix": "SK",
+    "ags": "06414",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 278474
+  },
+  {
+    "name": "Bergstraße",
+    "prefix": "LK",
+    "ags": "06431",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 270340
+  },
+  {
+    "name": "Darmstadt-Dieburg",
+    "prefix": "LK",
+    "ags": "06432",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 297844
+  },
+  {
+    "name": "Groß-Gerau",
+    "prefix": "LK",
+    "ags": "06433",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 275726
+  },
+  {
+    "name": "Hochtaunuskreis",
+    "prefix": "LK",
+    "ags": "06434",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 236914
+  },
+  {
+    "name": "Main-Kinzig-Kreis",
+    "prefix": "LK",
+    "ags": "06435",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 420552
+  },
+  {
+    "name": "Main-Taunus-Kreis",
+    "prefix": "LK",
+    "ags": "06436",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 238558
+  },
+  {
+    "name": "Odenwaldkreis",
+    "prefix": "LK",
+    "ags": "06437",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 96703
+  },
+  {
+    "name": "Offenbach",
+    "prefix": "LK",
+    "ags": "06438",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 355813
+  },
+  {
+    "name": "Rheingau-Taunus-Kreis",
+    "prefix": "LK",
+    "ags": "06439",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 187160
+  },
+  {
+    "name": "Wetteraukreis",
+    "prefix": "LK",
+    "ags": "06440",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 308339
+  },
+  {
+    "name": "Gießen",
+    "prefix": "LK",
+    "ags": "06531",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 270688
+  },
+  {
+    "name": "Lahn-Dill-Kreis",
+    "prefix": "LK",
+    "ags": "06532",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 253319
+  },
+  {
+    "name": "Limburg-Weilburg",
+    "prefix": "LK",
+    "ags": "06533",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 171912
+  },
+  {
+    "name": "Marburg-Biedenkopf",
+    "prefix": "LK",
+    "ags": "06534",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 247084
+  },
+  {
+    "name": "Vogelsbergkreis",
+    "prefix": "LK",
+    "ags": "06535",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 105643
+  },
+  {
+    "name": "Kassel",
+    "prefix": "SK",
+    "ags": "06611",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 202137
+  },
+  {
+    "name": "Fulda",
+    "prefix": "LK",
+    "ags": "06631",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 223145
+  },
+  {
+    "name": "Hersfeld-Rotenburg",
+    "prefix": "LK",
+    "ags": "06632",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 120719
+  },
+  {
+    "name": "Kassel",
+    "prefix": "LK",
+    "ags": "06633",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 236764
+  },
+  {
+    "name": "Schwalm-Eder-Kreis",
+    "prefix": "LK",
+    "ags": "06634",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 179673
+  },
+  {
+    "name": "Waldeck-Frankenberg",
+    "prefix": "LK",
+    "ags": "06635",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 156406
+  },
+  {
+    "name": "Werra-Meißner-Kreis",
+    "prefix": "LK",
+    "ags": "06636",
+    "state": "Hessen",
+    "stateShort": "HE",
+    "population": 100629
+  },
+  {
+    "name": "Koblenz",
+    "prefix": "SK",
+    "ags": "07111",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 114052
+  },
+  {
+    "name": "Ahrweiler",
+    "prefix": "LK",
+    "ags": "07131",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 130086
+  },
+  {
+    "name": "Altenkirchen (Westerwald)",
+    "prefix": "LK",
+    "ags": "07132",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 128805
+  },
+  {
+    "name": "Bad Kreuznach",
+    "prefix": "LK",
+    "ags": "07133",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 158345
+  },
+  {
+    "name": "Birkenfeld",
+    "prefix": "LK",
+    "ags": "07134",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 80951
+  },
+  {
+    "name": "Cochem-Zell",
+    "prefix": "LK",
+    "ags": "07135",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 61375
+  },
+  {
+    "name": "Mayen-Koblenz",
+    "prefix": "LK",
+    "ags": "07137",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 214434
+  },
+  {
+    "name": "Neuwied",
+    "prefix": "LK",
+    "ags": "07138",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 182811
+  },
+  {
+    "name": "Rhein-Hunsrück-Kreis",
+    "prefix": "LK",
+    "ags": "07140",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 103163
+  },
+  {
+    "name": "Rhein-Lahn-Kreis",
+    "prefix": "LK",
+    "ags": "07141",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 122297
+  },
+  {
+    "name": "Westerwaldkreis",
+    "prefix": "LK",
+    "ags": "07143",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 201904
+  },
+  {
+    "name": "Trier",
+    "prefix": "SK",
+    "ags": "07211",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 111528
+  },
+  {
+    "name": "Bernkastel-Wittlich",
+    "prefix": "LK",
+    "ags": "07231",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 112483
+  },
+  {
+    "name": "Eifelkreis Bitburg-Prüm",
+    "prefix": "LK",
+    "ags": "07232",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 99058
+  },
+  {
+    "name": "Vulkaneifel",
+    "prefix": "LK",
+    "ags": "07233",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 60646
+  },
+  {
+    "name": "Trier-Saarburg",
+    "prefix": "LK",
+    "ags": "07235",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 149398
+  },
+  {
+    "name": "Frankenthal (Pfalz)",
+    "prefix": "SK",
+    "ags": "07311",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 48762
+  },
+  {
+    "name": "Kaiserslautern",
+    "prefix": "SK",
+    "ags": "07312",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 100030
+  },
+  {
+    "name": "Landau in der Pfalz",
+    "prefix": "SK",
+    "ags": "07313",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 46881
+  },
+  {
+    "name": "Ludwigshafen am Rhein",
+    "prefix": "SK",
+    "ags": "07314",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 172253
+  },
+  {
+    "name": "Mainz",
+    "prefix": "SK",
+    "ags": "07315",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 218578
+  },
+  {
+    "name": "Neustadt an der Weinstraße",
+    "prefix": "SK",
+    "ags": "07316",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 53264
+  },
+  {
+    "name": "Pirmasens",
+    "prefix": "SK",
+    "ags": "07317",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 40231
+  },
+  {
+    "name": "Speyer",
+    "prefix": "SK",
+    "ags": "07318",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 50561
+  },
+  {
+    "name": "Worms",
+    "prefix": "SK",
+    "ags": "07319",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 83542
+  },
+  {
+    "name": "Zweibrücken",
+    "prefix": "SK",
+    "ags": "07320",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 34193
+  },
+  {
+    "name": "Alzey-Worms",
+    "prefix": "LK",
+    "ags": "07331",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 129687
+  },
+  {
+    "name": "Bad Dürkheim",
+    "prefix": "LK",
+    "ags": "07332",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 132671
+  },
+  {
+    "name": "Donnersbergkreis",
+    "prefix": "LK",
+    "ags": "07333",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 75325
+  },
+  {
+    "name": "Germersheim",
+    "prefix": "LK",
+    "ags": "07334",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 129013
+  },
+  {
+    "name": "Kaiserslautern",
+    "prefix": "LK",
+    "ags": "07335",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 105979
+  },
+  {
+    "name": "Kusel",
+    "prefix": "LK",
+    "ags": "07336",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 70219
+  },
+  {
+    "name": "Südliche Weinstraße",
+    "prefix": "LK",
+    "ags": "07337",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 110521
+  },
+  {
+    "name": "Rhein-Pfalz-Kreis",
+    "prefix": "LK",
+    "ags": "07338",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 154609
+  },
+  {
+    "name": "Mainz-Bingen",
+    "prefix": "LK",
+    "ags": "07339",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 211417
+  },
+  {
+    "name": "Südwestpfalz",
+    "prefix": "LK",
+    "ags": "07340",
+    "state": "Rheinland-Pfalz",
+    "stateShort": "RP",
+    "population": 94831
+  },
+  {
+    "name": "Stuttgart",
+    "prefix": "SK",
+    "ags": "08111",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 635911
+  },
+  {
+    "name": "Böblingen",
+    "prefix": "LK",
+    "ags": "08115",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 392807
+  },
+  {
+    "name": "Esslingen",
+    "prefix": "LK",
+    "ags": "08116",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 535024
+  },
+  {
+    "name": "Göppingen",
+    "prefix": "LK",
+    "ags": "08117",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 258145
+  },
+  {
+    "name": "Ludwigsburg",
+    "prefix": "LK",
+    "ags": "08118",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 545423
+  },
+  {
+    "name": "Rems-Murr-Kreis",
+    "prefix": "LK",
+    "ags": "08119",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 427248
+  },
+  {
+    "name": "Heilbronn",
+    "prefix": "SK",
+    "ags": "08121",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 126592
+  },
+  {
+    "name": "Heilbronn",
+    "prefix": "LK",
+    "ags": "08125",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 344456
+  },
+  {
+    "name": "Hohenlohekreis",
+    "prefix": "LK",
+    "ags": "08126",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 112655
+  },
+  {
+    "name": "Schwäbisch Hall",
+    "prefix": "LK",
+    "ags": "08127",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 196761
+  },
+  {
+    "name": "Main-Tauber-Kreis",
+    "prefix": "LK",
+    "ags": "08128",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 132399
+  },
+  {
+    "name": "Heidenheim",
+    "prefix": "LK",
+    "ags": "08135",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 132777
+  },
+  {
+    "name": "Ostalbkreis",
+    "prefix": "LK",
+    "ags": "08136",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 314025
+  },
+  {
+    "name": "Baden-Baden",
+    "prefix": "SK",
+    "ags": "08211",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 55185
+  },
+  {
+    "name": "Karlsruhe",
+    "prefix": "SK",
+    "ags": "08212",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 312060
+  },
+  {
+    "name": "Karlsruhe",
+    "prefix": "LK",
+    "ags": "08215",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 445101
+  },
+  {
+    "name": "Rastatt",
+    "prefix": "LK",
+    "ags": "08216",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 231420
+  },
+  {
+    "name": "Heidelberg",
+    "prefix": "SK",
+    "ags": "08221",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 161485
+  },
+  {
+    "name": "Mannheim",
+    "prefix": "SK",
+    "ags": "08222",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 310658
+  },
+  {
+    "name": "Neckar-Odenwald-Kreis",
+    "prefix": "LK",
+    "ags": "08225",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 143633
+  },
+  {
+    "name": "Rhein-Neckar-Kreis",
+    "prefix": "LK",
+    "ags": "08226",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 548355
+  },
+  {
+    "name": "Pforzheim",
+    "prefix": "SK",
+    "ags": "08231",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 125957
+  },
+  {
+    "name": "Calw",
+    "prefix": "LK",
+    "ags": "08235",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 159201
+  },
+  {
+    "name": "Enzkreis",
+    "prefix": "LK",
+    "ags": "08236",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 199556
+  },
+  {
+    "name": "Freudenstadt",
+    "prefix": "LK",
+    "ags": "08237",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 118243
+  },
+  {
+    "name": "Freiburg im Breisgau",
+    "prefix": "SK",
+    "ags": "08311",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 231195
+  },
+  {
+    "name": "Breisgau-Hochschwarzwald",
+    "prefix": "LK",
+    "ags": "08315",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 263601
+  },
+  {
+    "name": "Emmendingen",
+    "prefix": "LK",
+    "ags": "08316",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 166408
+  },
+  {
+    "name": "Ortenaukreis",
+    "prefix": "LK",
+    "ags": "08317",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 430953
+  },
+  {
+    "name": "Rottweil",
+    "prefix": "LK",
+    "ags": "08325",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 139878
+  },
+  {
+    "name": "Schwarzwald-Baar-Kreis",
+    "prefix": "LK",
+    "ags": "08326",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 212506
+  },
+  {
+    "name": "Tuttlingen",
+    "prefix": "LK",
+    "ags": "08327",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 140766
+  },
+  {
+    "name": "Konstanz",
+    "prefix": "LK",
+    "ags": "08335",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 286305
+  },
+  {
+    "name": "Lörrach",
+    "prefix": "LK",
+    "ags": "08336",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 228736
+  },
+  {
+    "name": "Waldshut",
+    "prefix": "LK",
+    "ags": "08337",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 171003
+  },
+  {
+    "name": "Reutlingen",
+    "prefix": "LK",
+    "ags": "08415",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 287034
+  },
+  {
+    "name": "Tübingen",
+    "prefix": "LK",
+    "ags": "08416",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 228678
+  },
+  {
+    "name": "Zollernalbkreis",
+    "prefix": "LK",
+    "ags": "08417",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 189363
+  },
+  {
+    "name": "Ulm",
+    "prefix": "SK",
+    "ags": "08421",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 126790
+  },
+  {
+    "name": "Alb-Donau-Kreis",
+    "prefix": "LK",
+    "ags": "08425",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 197076
+  },
+  {
+    "name": "Biberach",
+    "prefix": "LK",
+    "ags": "08426",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 201282
+  },
+  {
+    "name": "Bodenseekreis",
+    "prefix": "LK",
+    "ags": "08435",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 217470
+  },
+  {
+    "name": "Ravensburg",
+    "prefix": "LK",
+    "ags": "08436",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 285424
+  },
+  {
+    "name": "Sigmaringen",
+    "prefix": "LK",
+    "ags": "08437",
+    "state": "Baden-Württemberg",
+    "stateShort": "BW",
+    "population": 130849
+  },
+  {
+    "name": "Ingolstadt",
+    "prefix": "SK",
+    "ags": "09161",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 137392
+  },
+  {
+    "name": "München",
+    "prefix": "SK",
+    "ags": "09162",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 1484226
+  },
+  {
+    "name": "Rosenheim",
+    "prefix": "SK",
+    "ags": "09163",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 63551
+  },
+  {
+    "name": "Altötting",
+    "prefix": "LK",
+    "ags": "09171",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 111516
+  },
+  {
+    "name": "Berchtesgadener Land",
+    "prefix": "LK",
+    "ags": "09172",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 105929
+  },
+  {
+    "name": "Bad Tölz-Wolfratshausen",
+    "prefix": "LK",
+    "ags": "09173",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 127917
+  },
+  {
+    "name": "Dachau",
+    "prefix": "LK",
+    "ags": "09174",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 154899
+  },
+  {
+    "name": "Ebersberg",
+    "prefix": "LK",
+    "ags": "09175",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 143649
+  },
+  {
+    "name": "Eichstätt",
+    "prefix": "LK",
+    "ags": "09176",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 132881
+  },
+  {
+    "name": "Erding",
+    "prefix": "LK",
+    "ags": "09177",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 138182
+  },
+  {
+    "name": "Freising",
+    "prefix": "LK",
+    "ags": "09178",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 180007
+  },
+  {
+    "name": "Fürstenfeldbruck",
+    "prefix": "LK",
+    "ags": "09179",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 219311
+  },
+  {
+    "name": "Garmisch-Partenkirchen",
+    "prefix": "LK",
+    "ags": "09180",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 88424
+  },
+  {
+    "name": "Landsberg am Lech",
+    "prefix": "LK",
+    "ags": "09181",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 120302
+  },
+  {
+    "name": "Miesbach",
+    "prefix": "LK",
+    "ags": "09182",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 100010
+  },
+  {
+    "name": "Mühldorf a. Inn",
+    "prefix": "LK",
+    "ags": "09183",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 115872
+  },
+  {
+    "name": "München",
+    "prefix": "LK",
+    "ags": "09184",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 350473
+  },
+  {
+    "name": "Neuburg-Schrobenhausen",
+    "prefix": "LK",
+    "ags": "09185",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 97303
+  },
+  {
+    "name": "Pfaffenhofen a.d. Ilm",
+    "prefix": "LK",
+    "ags": "09186",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 128227
+  },
+  {
+    "name": "Rosenheim",
+    "prefix": "LK",
+    "ags": "09187",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 261330
+  },
+  {
+    "name": "Starnberg",
+    "prefix": "LK",
+    "ags": "09188",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 136667
+  },
+  {
+    "name": "Traunstein",
+    "prefix": "LK",
+    "ags": "09189",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 177319
+  },
+  {
+    "name": "Weilheim-Schongau",
+    "prefix": "LK",
+    "ags": "09190",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 135478
+  },
+  {
+    "name": "Landshut",
+    "prefix": "SK",
+    "ags": "09261",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 73411
+  },
+  {
+    "name": "Passau",
+    "prefix": "SK",
+    "ags": "09262",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 52803
+  },
+  {
+    "name": "Straubing",
+    "prefix": "SK",
+    "ags": "09263",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 47791
+  },
+  {
+    "name": "Deggendorf",
+    "prefix": "LK",
+    "ags": "09271",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 119478
+  },
+  {
+    "name": "Freyung-Grafenau",
+    "prefix": "LK",
+    "ags": "09272",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 78362
+  },
+  {
+    "name": "Kelheim",
+    "prefix": "LK",
+    "ags": "09273",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 123058
+  },
+  {
+    "name": "Landshut",
+    "prefix": "LK",
+    "ags": "09274",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 159895
+  },
+  {
+    "name": "Passau",
+    "prefix": "LK",
+    "ags": "09275",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 192656
+  },
+  {
+    "name": "Regen",
+    "prefix": "LK",
+    "ags": "09276",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 77410
+  },
+  {
+    "name": "Rottal-Inn",
+    "prefix": "LK",
+    "ags": "09277",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 121502
+  },
+  {
+    "name": "Straubing-Bogen",
+    "prefix": "LK",
+    "ags": "09278",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 101120
+  },
+  {
+    "name": "Dingolfing-Landau",
+    "prefix": "LK",
+    "ags": "09279",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 96683
+  },
+  {
+    "name": "Amberg",
+    "prefix": "SK",
+    "ags": "09361",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 42207
+  },
+  {
+    "name": "Regensburg",
+    "prefix": "SK",
+    "ags": "09362",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 153094
+  },
+  {
+    "name": "Weiden i.d. OPf.",
+    "prefix": "SK",
+    "ags": "09363",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 42743
+  },
+  {
+    "name": "Amberg-Sulzbach",
+    "prefix": "LK",
+    "ags": "09371",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 103049
+  },
+  {
+    "name": "Cham",
+    "prefix": "LK",
+    "ags": "09372",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 127998
+  },
+  {
+    "name": "Neumarkt i.d. OPf.",
+    "prefix": "LK",
+    "ags": "09373",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 134573
+  },
+  {
+    "name": "Neustadt a.d. Waldnaab",
+    "prefix": "LK",
+    "ags": "09374",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 94450
+  },
+  {
+    "name": "Regensburg",
+    "prefix": "LK",
+    "ags": "09375",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 194070
+  },
+  {
+    "name": "Schwandorf",
+    "prefix": "LK",
+    "ags": "09376",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 147872
+  },
+  {
+    "name": "Tirschenreuth",
+    "prefix": "LK",
+    "ags": "09377",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 72046
+  },
+  {
+    "name": "Bamberg",
+    "prefix": "SK",
+    "ags": "09461",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 77373
+  },
+  {
+    "name": "Bayreuth",
+    "prefix": "SK",
+    "ags": "09462",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 74783
+  },
+  {
+    "name": "Coburg",
+    "prefix": "SK",
+    "ags": "09463",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 41072
+  },
+  {
+    "name": "Hof",
+    "prefix": "SK",
+    "ags": "09464",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 45825
+  },
+  {
+    "name": "Bamberg",
+    "prefix": "LK",
+    "ags": "09471",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 147163
+  },
+  {
+    "name": "Bayreuth",
+    "prefix": "LK",
+    "ags": "09472",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 103664
+  },
+  {
+    "name": "Coburg",
+    "prefix": "LK",
+    "ags": "09473",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 86747
+  },
+  {
+    "name": "Forchheim",
+    "prefix": "LK",
+    "ags": "09474",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 116203
+  },
+  {
+    "name": "Hof",
+    "prefix": "LK",
+    "ags": "09475",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 94801
+  },
+  {
+    "name": "Kronach",
+    "prefix": "LK",
+    "ags": "09476",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 66743
+  },
+  {
+    "name": "Kulmbach",
+    "prefix": "LK",
+    "ags": "09477",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 71566
+  },
+  {
+    "name": "Lichtenfels",
+    "prefix": "LK",
+    "ags": "09478",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 66776
+  },
+  {
+    "name": "Wunsiedel i. Fichtelgebirge",
+    "prefix": "LK",
+    "ags": "09479",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 72655
+  },
+  {
+    "name": "Ansbach",
+    "prefix": "SK",
+    "ags": "09561",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 41798
+  },
+  {
+    "name": "Erlangen",
+    "prefix": "SK",
+    "ags": "09562",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 112528
+  },
+  {
+    "name": "Fürth",
+    "prefix": "SK",
+    "ags": "09563",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 128497
+  },
+  {
+    "name": "Nürnberg",
+    "prefix": "SK",
+    "ags": "09564",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 518370
+  },
+  {
+    "name": "Schwabach",
+    "prefix": "SK",
+    "ags": "09565",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 40981
+  },
+  {
+    "name": "Ansbach",
+    "prefix": "LK",
+    "ags": "09571",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 184591
+  },
+  {
+    "name": "Erlangen-Höchstadt",
+    "prefix": "LK",
+    "ags": "09572",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 137262
+  },
+  {
+    "name": "Fürth",
+    "prefix": "LK",
+    "ags": "09573",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 117853
+  },
+  {
+    "name": "Nürnberger Land",
+    "prefix": "LK",
+    "ags": "09574",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 170792
+  },
+  {
+    "name": "Neustadt a.d. Aisch-Bad Windsheim",
+    "prefix": "LK",
+    "ags": "09575",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 101014
+  },
+  {
+    "name": "Roth",
+    "prefix": "LK",
+    "ags": "09576",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 126749
+  },
+  {
+    "name": "Weißenburg-Gunzenhausen",
+    "prefix": "LK",
+    "ags": "09577",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 94734
+  },
+  {
+    "name": "Aschaffenburg",
+    "prefix": "SK",
+    "ags": "09661",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 71002
+  },
+  {
+    "name": "Schweinfurt",
+    "prefix": "SK",
+    "ags": "09662",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 53426
+  },
+  {
+    "name": "Würzburg",
+    "prefix": "SK",
+    "ags": "09663",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 127934
+  },
+  {
+    "name": "Aschaffenburg",
+    "prefix": "LK",
+    "ags": "09671",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 174200
+  },
+  {
+    "name": "Bad Kissingen",
+    "prefix": "LK",
+    "ags": "09672",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 103235
+  },
+  {
+    "name": "Rhön-Grabfeld",
+    "prefix": "LK",
+    "ags": "09673",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 79635
+  },
+  {
+    "name": "Haßberge",
+    "prefix": "LK",
+    "ags": "09674",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 84384
+  },
+  {
+    "name": "Kitzingen",
+    "prefix": "LK",
+    "ags": "09675",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 91155
+  },
+  {
+    "name": "Miltenberg",
+    "prefix": "LK",
+    "ags": "09676",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 128743
+  },
+  {
+    "name": "Main-Spessart",
+    "prefix": "LK",
+    "ags": "09677",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 126158
+  },
+  {
+    "name": "Schweinfurt",
+    "prefix": "LK",
+    "ags": "09678",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 115445
+  },
+  {
+    "name": "Würzburg",
+    "prefix": "LK",
+    "ags": "09679",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 162302
+  },
+  {
+    "name": "Augsburg",
+    "prefix": "SK",
+    "ags": "09761",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 296582
+  },
+  {
+    "name": "Kaufbeuren",
+    "prefix": "SK",
+    "ags": "09762",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 44398
+  },
+  {
+    "name": "Kempten (Allgäu)",
+    "prefix": "SK",
+    "ags": "09763",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 69151
+  },
+  {
+    "name": "Memmingen",
+    "prefix": "SK",
+    "ags": "09764",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 44100
+  },
+  {
+    "name": "Aichach-Friedberg",
+    "prefix": "LK",
+    "ags": "09771",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 134655
+  },
+  {
+    "name": "Augsburg",
+    "prefix": "LK",
+    "ags": "09772",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 253468
+  },
+  {
+    "name": "Dillingen a.d. Donau",
+    "prefix": "LK",
+    "ags": "09773",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 96562
+  },
+  {
+    "name": "Günzburg",
+    "prefix": "LK",
+    "ags": "09774",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 127027
+  },
+  {
+    "name": "Neu-Ulm",
+    "prefix": "LK",
+    "ags": "09775",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 175204
+  },
+  {
+    "name": "Lindau (Bodensee)",
+    "prefix": "LK",
+    "ags": "09776",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 81981
+  },
+  {
+    "name": "Ostallgäu",
+    "prefix": "LK",
+    "ags": "09777",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 141182
+  },
+  {
+    "name": "Unterallgäu",
+    "prefix": "LK",
+    "ags": "09778",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 145341
+  },
+  {
+    "name": "Donau-Ries",
+    "prefix": "LK",
+    "ags": "09779",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 133783
+  },
+  {
+    "name": "Oberallgäu",
+    "prefix": "LK",
+    "ags": "09780",
+    "state": "Bayern",
+    "stateShort": "BY",
+    "population": 156008
+  },
+  {
+    "name": "Regionalverband Saarbrücken",
+    "prefix": "LK",
+    "ags": "10041",
+    "state": "Saarland",
+    "stateShort": "SL",
+    "population": 328714
+  },
+  {
+    "name": "Merzig-Wadern",
+    "prefix": "LK",
+    "ags": "10042",
+    "state": "Saarland",
+    "stateShort": "SL",
+    "population": 103243
+  },
+  {
+    "name": "Neunkirchen",
+    "prefix": "LK",
+    "ags": "10043",
+    "state": "Saarland",
+    "stateShort": "SL",
+    "population": 131408
+  },
+  {
+    "name": "Saarlouis",
+    "prefix": "LK",
+    "ags": "10044",
+    "state": "Saarland",
+    "stateShort": "SL",
+    "population": 194319
+  },
+  {
+    "name": "Saarpfalz-Kreis",
+    "prefix": "LK",
+    "ags": "10045",
+    "state": "Saarland",
+    "stateShort": "SL",
+    "population": 142196
+  },
+  {
+    "name": "St. Wendel",
+    "prefix": "LK",
+    "ags": "10046",
+    "state": "Saarland",
+    "stateShort": "SL",
+    "population": 87007
+  },
+  {
+    "name": "Brandenburg an der Havel",
+    "prefix": "SK",
+    "ags": "12051",
+    "state": "Brandenburg",
+    "stateShort": "BB",
+    "population": 72184
+  },
+  {
+    "name": "Cottbus",
+    "prefix": "SK",
+    "ags": "12052",
+    "state": "Brandenburg",
+    "stateShort": "BB",
+    "population": 99678
+  },
+  {
+    "name": "Frankfurt (Oder)",
+    "prefix": "SK",
+    "ags": "12053",
+    "state": "Brandenburg",
+    "stateShort": "BB",
+    "population": 57751
+  },
+  {
+    "name": "Potsdam",
+    "prefix": "SK",
+    "ags": "12054",
+    "state": "Brandenburg",
+    "stateShort": "BB",
+    "population": 180334
+  },
+  {
+    "name": "Barnim",
+    "prefix": "LK",
+    "ags": "12060",
+    "state": "Brandenburg",
+    "stateShort": "BB",
+    "population": 185244
+  },
+  {
+    "name": "Dahme-Spreewald",
+    "prefix": "LK",
+    "ags": "12061",
+    "state": "Brandenburg",
+    "stateShort": "BB",
+    "population": 170791
+  },
+  {
+    "name": "Elbe-Elster",
+    "prefix": "LK",
+    "ags": "12062",
+    "state": "Brandenburg",
+    "stateShort": "BB",
+    "population": 101827
+  },
+  {
+    "name": "Havelland",
+    "prefix": "LK",
+    "ags": "12063",
+    "state": "Brandenburg",
+    "stateShort": "BB",
+    "population": 162996
+  },
+  {
+    "name": "Märkisch-Oderland",
+    "prefix": "LK",
+    "ags": "12064",
+    "state": "Brandenburg",
+    "stateShort": "BB",
+    "population": 195751
+  },
+  {
+    "name": "Oberhavel",
+    "prefix": "LK",
+    "ags": "12065",
+    "state": "Brandenburg",
+    "stateShort": "BB",
+    "population": 212914
+  },
+  {
+    "name": "Oberspreewald-Lausitz",
+    "prefix": "LK",
+    "ags": "12066",
+    "state": "Brandenburg",
+    "stateShort": "BB",
+    "population": 109371
+  },
+  {
+    "name": "Oder-Spree",
+    "prefix": "LK",
+    "ags": "12067",
+    "state": "Brandenburg",
+    "stateShort": "BB",
+    "population": 178803
+  },
+  {
+    "name": "Ostprignitz-Ruppin",
+    "prefix": "LK",
+    "ags": "12068",
+    "state": "Brandenburg",
+    "stateShort": "BB",
+    "population": 98861
+  },
+  {
+    "name": "Potsdam-Mittelmark",
+    "prefix": "LK",
+    "ags": "12069",
+    "state": "Brandenburg",
+    "stateShort": "BB",
+    "population": 216566
+  },
+  {
+    "name": "Prignitz",
+    "prefix": "LK",
+    "ags": "12070",
+    "state": "Brandenburg",
+    "stateShort": "BB",
+    "population": 76158
+  },
+  {
+    "name": "Spree-Neiße",
+    "prefix": "LK",
+    "ags": "12071",
+    "state": "Brandenburg",
+    "stateShort": "BB",
+    "population": 113720
+  },
+  {
+    "name": "Teltow-Fläming",
+    "prefix": "LK",
+    "ags": "12072",
+    "state": "Brandenburg",
+    "stateShort": "BB",
+    "population": 169997
+  },
+  {
+    "name": "Uckermark",
+    "prefix": "LK",
+    "ags": "12073",
+    "state": "Brandenburg",
+    "stateShort": "BB",
+    "population": 118947
+  },
+  {
+    "name": "Rostock",
+    "prefix": "SK",
+    "ags": "13003",
+    "state": "Mecklenburg-Vorpommern",
+    "stateShort": "MV",
+    "population": 209191
+  },
+  {
+    "name": "Schwerin",
+    "prefix": "SK",
+    "ags": "13004",
+    "state": "Mecklenburg-Vorpommern",
+    "stateShort": "MV",
+    "population": 95653
+  },
+  {
+    "name": "Mecklenburgische Seenplatte",
+    "prefix": "LK",
+    "ags": "13071",
+    "state": "Mecklenburg-Vorpommern",
+    "stateShort": "MV",
+    "population": 258074
+  },
+  {
+    "name": "Rostock",
+    "prefix": "LK",
+    "ags": "13072",
+    "state": "Mecklenburg-Vorpommern",
+    "stateShort": "MV",
+    "population": 215794
+  },
+  {
+    "name": "Vorpommern-Rügen",
+    "prefix": "LK",
+    "ags": "13073",
+    "state": "Mecklenburg-Vorpommern",
+    "stateShort": "MV",
+    "population": 224702
+  },
+  {
+    "name": "Nordwestmecklenburg",
+    "prefix": "LK",
+    "ags": "13074",
+    "state": "Mecklenburg-Vorpommern",
+    "stateShort": "MV",
+    "population": 157322
+  },
+  {
+    "name": "Vorpommern-Greifswald",
+    "prefix": "LK",
+    "ags": "13075",
+    "state": "Mecklenburg-Vorpommern",
+    "stateShort": "MV",
+    "population": 235623
+  },
+  {
+    "name": "Ludwigslust-Parchim",
+    "prefix": "LK",
+    "ags": "13076",
+    "state": "Mecklenburg-Vorpommern",
+    "stateShort": "MV",
+    "population": 211779
+  },
+  {
+    "name": "Chemnitz",
+    "prefix": "SK",
+    "ags": "14511",
+    "state": "Sachsen",
+    "stateShort": "SN",
+    "population": 246334
+  },
+  {
+    "name": "Erzgebirgskreis",
+    "prefix": "LK",
+    "ags": "14521",
+    "state": "Sachsen",
+    "stateShort": "SN",
+    "population": 334948
+  },
+  {
+    "name": "Mittelsachsen",
+    "prefix": "LK",
+    "ags": "14522",
+    "state": "Sachsen",
+    "stateShort": "SN",
+    "population": 304099
+  },
+  {
+    "name": "Vogtlandkreis",
+    "prefix": "LK",
+    "ags": "14523",
+    "state": "Sachsen",
+    "stateShort": "SN",
+    "population": 225997
+  },
+  {
+    "name": "Zwickau",
+    "prefix": "LK",
+    "ags": "14524",
+    "state": "Sachsen",
+    "stateShort": "SN",
+    "population": 315002
+  },
+  {
+    "name": "Dresden",
+    "prefix": "SK",
+    "ags": "14612",
+    "state": "Sachsen",
+    "stateShort": "SN",
+    "population": 556780
+  },
+  {
+    "name": "Bautzen",
+    "prefix": "LK",
+    "ags": "14625",
+    "state": "Sachsen",
+    "stateShort": "SN",
+    "population": 299758
+  },
+  {
+    "name": "Görlitz",
+    "prefix": "LK",
+    "ags": "14626",
+    "state": "Sachsen",
+    "stateShort": "SN",
+    "population": 252725
+  },
+  {
+    "name": "Meißen",
+    "prefix": "LK",
+    "ags": "14627",
+    "state": "Sachsen",
+    "stateShort": "SN",
+    "population": 241717
+  },
+  {
+    "name": "Sächsische Schweiz-Osterzgebirge",
+    "prefix": "LK",
+    "ags": "14628",
+    "state": "Sachsen",
+    "stateShort": "SN",
+    "population": 245586
+  },
+  {
+    "name": "Leipzig",
+    "prefix": "SK",
+    "ags": "14713",
+    "state": "Sachsen",
+    "stateShort": "SN",
+    "population": 593145
+  },
+  {
+    "name": "Leipzig",
+    "prefix": "LK",
+    "ags": "14729",
+    "state": "Sachsen",
+    "stateShort": "SN",
+    "population": 258139
+  },
+  {
+    "name": "Nordsachsen",
+    "prefix": "LK",
+    "ags": "14730",
+    "state": "Sachsen",
+    "stateShort": "SN",
+    "population": 197741
+  },
+  {
+    "name": "Dessau-Roßlau",
+    "prefix": "SK",
+    "ags": "15001",
+    "state": "Sachsen-Anhalt",
+    "stateShort": "ST",
+    "population": 80103
+  },
+  {
+    "name": "Halle (Saale)",
+    "prefix": "SK",
+    "ags": "15002",
+    "state": "Sachsen-Anhalt",
+    "stateShort": "ST",
+    "population": 238762
+  },
+  {
+    "name": "Magdeburg",
+    "prefix": "SK",
+    "ags": "15003",
+    "state": "Sachsen-Anhalt",
+    "stateShort": "ST",
+    "population": 237565
+  },
+  {
+    "name": "Altmarkkreis Salzwedel",
+    "prefix": "LK",
+    "ags": "15081",
+    "state": "Sachsen-Anhalt",
+    "stateShort": "ST",
+    "population": 83173
+  },
+  {
+    "name": "Anhalt-Bitterfeld",
+    "prefix": "LK",
+    "ags": "15082",
+    "state": "Sachsen-Anhalt",
+    "stateShort": "ST",
+    "population": 158486
+  },
+  {
+    "name": "Börde",
+    "prefix": "LK",
+    "ags": "15083",
+    "state": "Sachsen-Anhalt",
+    "stateShort": "ST",
+    "population": 170923
+  },
+  {
+    "name": "Burgenlandkreis",
+    "prefix": "LK",
+    "ags": "15084",
+    "state": "Sachsen-Anhalt",
+    "stateShort": "ST",
+    "population": 178846
+  },
+  {
+    "name": "Harz",
+    "prefix": "LK",
+    "ags": "15085",
+    "state": "Sachsen-Anhalt",
+    "stateShort": "ST",
+    "population": 213310
+  },
+  {
+    "name": "Jerichower Land",
+    "prefix": "LK",
+    "ags": "15086",
+    "state": "Sachsen-Anhalt",
+    "stateShort": "ST",
+    "population": 89589
+  },
+  {
+    "name": "Mansfeld-Südharz",
+    "prefix": "LK",
+    "ags": "15087",
+    "state": "Sachsen-Anhalt",
+    "stateShort": "ST",
+    "population": 134942
+  },
+  {
+    "name": "Saalekreis",
+    "prefix": "LK",
+    "ags": "15088",
+    "state": "Sachsen-Anhalt",
+    "stateShort": "ST",
+    "population": 183815
+  },
+  {
+    "name": "Salzlandkreis",
+    "prefix": "LK",
+    "ags": "15089",
+    "state": "Sachsen-Anhalt",
+    "stateShort": "ST",
+    "population": 189125
+  },
+  {
+    "name": "Stendal",
+    "prefix": "LK",
+    "ags": "15090",
+    "state": "Sachsen-Anhalt",
+    "stateShort": "ST",
+    "population": 111190
+  },
+  {
+    "name": "Wittenberg",
+    "prefix": "LK",
+    "ags": "15091",
+    "state": "Sachsen-Anhalt",
+    "stateShort": "ST",
+    "population": 124953
+  },
+  {
+    "name": "Erfurt",
+    "prefix": "SK",
+    "ags": "16051",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 213981
+  },
+  {
+    "name": "Gera",
+    "prefix": "SK",
+    "ags": "16052",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 93125
+  },
+  {
+    "name": "Jena",
+    "prefix": "SK",
+    "ags": "16053",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 111343
+  },
+  {
+    "name": "Suhl",
+    "prefix": "SK",
+    "ags": "16054",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 36789
+  },
+  {
+    "name": "Weimar",
+    "prefix": "SK",
+    "ags": "16055",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 65228
+  },
+  {
+    "name": "Eisenach",
+    "prefix": "SK",
+    "ags": "16056",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 42250
+  },
+  {
+    "name": "Eichsfeld",
+    "prefix": "LK",
+    "ags": "16061",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 100006
+  },
+  {
+    "name": "Nordhausen",
+    "prefix": "LK",
+    "ags": "16062",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 83416
+  },
+  {
+    "name": "Wartburgkreis",
+    "prefix": "LK",
+    "ags": "16063",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 118974
+  },
+  {
+    "name": "Unstrut-Hainich-Kreis",
+    "prefix": "LK",
+    "ags": "16064",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 102232
+  },
+  {
+    "name": "Kyffhäuserkreis",
+    "prefix": "LK",
+    "ags": "16065",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 74212
+  },
+  {
+    "name": "Schmalkalden-Meiningen",
+    "prefix": "LK",
+    "ags": "16066",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 124916
+  },
+  {
+    "name": "Gotha",
+    "prefix": "LK",
+    "ags": "16067",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 134908
+  },
+  {
+    "name": "Sömmerda",
+    "prefix": "LK",
+    "ags": "16068",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 69427
+  },
+  {
+    "name": "Hildburghausen",
+    "prefix": "LK",
+    "ags": "16069",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 63197
+  },
+  {
+    "name": "Ilm-Kreis",
+    "prefix": "LK",
+    "ags": "16070",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 106249
+  },
+  {
+    "name": "Weimarer Land",
+    "prefix": "LK",
+    "ags": "16071",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 82156
+  },
+  {
+    "name": "Sonneberg",
+    "prefix": "LK",
+    "ags": "16072",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 57717
+  },
+  {
+    "name": "Saalfeld-Rudolstadt",
+    "prefix": "LK",
+    "ags": "16073",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 103199
+  },
+  {
+    "name": "Saale-Holzland-Kreis",
+    "prefix": "LK",
+    "ags": "16074",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 82950
+  },
+  {
+    "name": "Saale-Orla-Kreis",
+    "prefix": "LK",
+    "ags": "16075",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 80312
+  },
+  {
+    "name": "Greiz",
+    "prefix": "LK",
+    "ags": "16076",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 97398
+  },
+  {
+    "name": "Altenburger Land",
+    "prefix": "LK",
+    "ags": "16077",
+    "state": "Thüringen",
+    "stateShort": "TH",
+    "population": 89393
+  },
+  {
+    "name": "Berlin Reinickendorf",
+    "prefix": "SK",
+    "ags": null,
+    "state": "Berlin",
+    "stateShort": "BE",
+    "population": 259689
+  },
+  {
+    "name": "Berlin Charlottenburg-Wilmersdorf",
+    "prefix": "SK",
+    "ags": null,
+    "state": "Berlin",
+    "stateShort": "BE",
+    "population": 334401
+  },
+  {
+    "name": "Berlin Treptow-Köpenick",
+    "prefix": "SK",
+    "ags": null,
+    "state": "Berlin",
+    "stateShort": "BE",
+    "population": 266488
+  },
+  {
+    "name": "Berlin Pankow",
+    "prefix": "SK",
+    "ags": null,
+    "state": "Berlin",
+    "stateShort": "BE",
+    "population": 398036
+  },
+  {
+    "name": "Berlin Neukölln",
+    "prefix": "SK",
+    "ags": null,
+    "state": "Berlin",
+    "stateShort": "BE",
+    "population": 321123
+  },
+  {
+    "name": "Berlin Lichtenberg",
+    "prefix": "SK",
+    "ags": null,
+    "state": "Berlin",
+    "stateShort": "BE",
+    "population": 286522
+  },
+  {
+    "name": "Berlin Marzahn-Hellersdorf",
+    "prefix": "SK",
+    "ags": null,
+    "state": "Berlin",
+    "stateShort": "BE",
+    "population": 262967
+  },
+  {
+    "name": "Berlin Spandau",
+    "prefix": "SK",
+    "ags": null,
+    "state": "Berlin",
+    "stateShort": "BE",
+    "population": 239019
+  },
+  {
+    "name": "Berlin Steglitz-Zehlendorf",
+    "prefix": "SK",
+    "ags": null,
+    "state": "Berlin",
+    "stateShort": "BE",
+    "population": 302177
+  },
+  {
+    "name": "Berlin Mitte",
+    "prefix": "SK",
+    "ags": null,
+    "state": "Berlin",
+    "stateShort": "BE",
+    "population": 375238
+  },
+  {
+    "name": "Berlin Friedrichshain-Kreuzberg",
+    "prefix": "SK",
+    "ags": null,
+    "state": "Berlin",
+    "stateShort": "BE",
+    "population": 282059
+  },
+  {
+    "name": "Berlin Tempelhof-Schöneberg",
+    "prefix": "SK",
+    "ags": null,
+    "state": "Berlin",
+    "stateShort": "BE",
+    "population": 341772
+  }
+]
