@@ -25,7 +25,7 @@
                             <p>
                                 Es stehen leider nicht alle Daten zur Verfügung.
                                 <br/>
-                                Wir bitten, diese Unannehmlichkeiten zu Entschuldigen.
+                                Wir bitten, diese Unannehmlichkeiten zu entschuldigen.
                             </p>
                         </div>
                     </div>
