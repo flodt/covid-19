@@ -202,7 +202,7 @@ export function renderHotspots(vm, agss, rki, zeit, vacc) {
         .sort((a, b) => a.cases7_per_100k > b.cases7_per_100k ? -1 : 1)
         .map((d, idx) => {
             return {
-                name: d.GEN,
+                name: getAnnotatedName(d.AGS, d.GEN),
                 incidence: d.cases7_per_100k,
                 state: shortState(d.BL),
                 color: colorsForIncidences(d.cases7_per_100k).color,
@@ -228,7 +228,7 @@ export function renderHotspots(vm, agss, rki, zeit, vacc) {
         .sort((a, b) => a.cases7_per_100k > b.cases7_per_100k ? -1 : 1)
         .map((d, idx) => {
             return {
-                name: d.GEN + " (" + shortState(d.BL) + ")",
+                name: getAnnotatedName(d.AGS, d.GEN) + " (" + shortState(d.BL) + ")",
                 incidence: d.cases7_per_100k,
                 color: colorsForIncidences(d.cases7_per_100k).chartColor,
                 index: idx + 1,
