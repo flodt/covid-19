@@ -15,28 +15,26 @@
                         </ul>
 
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn" @click="clear">
+                            <a class="waves-effect waves-light btn" @click="clear" style="margin-top: 10px">
                                 <i class="material-icons left">delete</i>
                                 Löschen
                             </a>
-                            <a class="waves-effect waves-light btn" @click="toDefault">
+                            <a class="waves-effect waves-light btn" @click="toDefault" style="margin-top: 10px">
                                 <i class="material-icons left">undo</i>
                                 Standard auswählen
                             </a>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <form class="col s12" @submit="ignore">
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">search</i>
-                                    <input id="icon_prefix" type="text" class="validate" v-model="filterText">
-                                    <label for="icon_prefix">Suchen...</label>
-                                </div>
+                    <form class="col s12" @submit="ignore">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">search</i>
+                                <input id="icon_prefix" type="text" class="validate" v-model="filterText">
+                                <label for="icon_prefix">Suchen...</label>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
 
                     <div class="col s12 m12 l12">
                         <table class="striped">
