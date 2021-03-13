@@ -67,6 +67,10 @@
                     <br/>
                     Eine Ausgangssperre besteht, wenn die 7-Tage-Inzidenz in den letzten 7 Tagen mindestens ein Mal die
                     100 überschritten hat.
+                    <br/>
+                    Die offizielle und rechtsverbindliche Liste der Regionen mit Ausgangssperre befindet sich <a
+                        href="https://www.corona-katastrophenschutz.bayern.de/hotspotregionen/index.php">hier</a>, die
+                    Angaben hier beziehen sich lediglich auf die berechneten Inzidenzen.
                 </div>
                 <br/>
                 <div class="grey-text text-darken-2" style="text-align: center;">Icons made by Freepik from
