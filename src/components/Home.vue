@@ -19,14 +19,13 @@
                 <div class="row" id="error_container" v-if="state.error">
                     <div class="col s12 m12 l12">
                         <div class="card-panel red darken-3 white-text">
-                            <div><i class="material-icons">warning</i></div>
-                            <b>Beim Laden der Inzidenzen ist ein Fehler aufgetreten.</b>
-                            <br/>
-                            <b>Es stehen nicht alle Daten zur Verfügung.</b>
-                            <br/>
+                            <span class="card-title"><i class="material-icons left">warning</i>
+                                <b>Beim Laden der Corona-Zahlen ist ein Fehler aufgetreten.</b>
+                            </span>
                             <p>
-                                Ohne RKI können nur <b>absolute</b> Fallzahlen angezeigt werden.
-                                Landkreisdaten (Name/Bevölkerung) zur Normierung stehen nicht zur Verfügung.
+                                Es stehen leider nicht alle Daten zur Verfügung.
+                                <br/>
+                                Wir bitten, diese Unannehmlichkeiten zu Entschuldigen.
                             </p>
                         </div>
                     </div>

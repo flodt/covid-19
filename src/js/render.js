@@ -303,11 +303,17 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
     const rkiAvail = rki !== null && rki.features !== undefined;
     const zeitAvail = zeit !== null;
     const vaccAvail = vacc !== null;
+    const rValAvail = rval !== null && rval.error === undefined;
 
     //show the r value
-    if (rval !== null) {
+    if (rValAvail) {
         vm.germany.rValue = rval.r.value;
         vm.state.rValue = new Date(rval.r.date).toLocaleDateString("de-de");
+    } else {
+        //special case handling for broken rValue data
+        vm.germany.rValue = "Fehler";
+        vm.state.rValue = "Nicht verfügbar!";
+        vm.state.error = true;
     }
 
     //show the country-wide stats and draw that graph
