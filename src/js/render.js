@@ -95,8 +95,20 @@ function shortState(state) {
     }
 }
 
-function truncate(str, n) {
-    return (str.length > n) ? str.substr(0, n - 1) + '...' : str;
+export function getAnnotatedName(ags, name) {
+    //these are the AGSs of the districts that have both a city and a county with the same name
+    const CITY = ['09661', '14713', '09261', '13003', '08212', '09563', '08121', '09362', '03404', '09662', '07312', '09561', '09464', '06611', '09761', '09462', '09663', '09461', '09163', '09463', '09262', '09162'];
+    const COUNTY = ['09375', '09187', '09471', '08215', '09274', '13072', '09571', '09671', '09679', '14729', '06633', '08125', '07335', '09184', '03459', '09772', '09573', '09473', '09475', '09275', '09472', '09678'];
+
+    //lookup in either the city our county list
+    if (CITY.includes(ags)) {
+        return `${name} (Stadt)`;
+    } else if (COUNTY.includes(ags)) {
+        return `${name} (Land)`;
+    } else {
+        return name;
+    }
+
 }
 
 function showErrorBox(vm, agss, rki, zeit, vacc) {
@@ -395,18 +407,9 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
         let name = rkiAvail
             ? rki.features.filter(f => f.attributes.AGS === ags)[0].attributes.GEN
             : "Nicht verfügbar";
+        name = getAnnotatedName(ags, name);
 
         const canvasId = `chart_${ags}`;
-
-        //unfortunately: special cases for München (Land/Stadt) and Augsburg (Land/Stadt)
-        switch (ags) {
-            case "09772":
-                name = "Augsburg (Land)";
-                break;
-            case "09162":
-                name = "München (Stadt)";
-                break;
-        }
 
         const population = rkiAvail
             ? rki.features.filter(f => f.attributes.AGS === ags)[0].attributes.EWZ
@@ -673,17 +676,9 @@ export function renderHistorical(vm, rki, zeit) {
 
     vm.districts = agss.map(ags => {
         let name = rki.features.filter(f => f.attributes.AGS === ags)[0].attributes.GEN;
-        const chartId = `chart_historical_${ags}`;
+        name = getAnnotatedName(ags, name);
 
-        //unfortunately: special cases for München (Land/Stadt) and Augsburg (Land/Stadt)
-        switch (ags) {
-            case "09772":
-                name = "Augsburg (Land)";
-                break;
-            case "09162":
-                name = "München (Stadt)";
-                break;
-        }
+        const chartId = `chart_historical_${ags}`;
 
         //render the graphs
         setTimeout(function () {

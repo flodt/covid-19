@@ -88,6 +88,7 @@ import navigation from "@/components/NavBar.vue";
 import firebase from "firebase";
 import M from 'materialize-css';
 import {requestSingle} from "@/js/api.js";
+import {getAnnotatedName} from "../js/render";
 
 export default {
     data() {
@@ -112,16 +113,7 @@ export default {
         requestSingle(this, URL, (vm, data) => {
             vm.districts = agss.map(ags => {
                 let name = data.data[ags].name;
-
-                //unfortunately: special cases for München (Land/Stadt) and Augsburg (Land/Stadt)
-                switch (ags) {
-                    case "09772":
-                        name = "Augsburg (Land)";
-                        break;
-                    case "09162":
-                        name = "München (Stadt)";
-                        break;
-                }
+                name = getAnnotatedName(ags, name);
 
                 const incidences = data.data[ags].history.map(h => h.weekIncidence).slice(-7);
                 const has = incidences.some(i => i >= 100);
