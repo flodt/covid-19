@@ -98,6 +98,14 @@ export default {
 
     },
     methods: {
+        /*
+        * todo:
+        *  - update the saved settings every time a tick is changed
+        *  - implement special handling for the districts with AGS collisions
+        *  - implement special name handling for the districts with name collisions (build an AGS list)
+        *  - fix checklist so that selected items are checked on load
+        *  - fix loading of non-existant list in storage
+        */
         getDetails: function(ags) {
             return staticDistricts.filter(d => d.ags === ags)[0];
         },
