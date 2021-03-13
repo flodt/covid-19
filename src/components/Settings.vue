@@ -110,17 +110,14 @@ export default {
 
     },
     methods: {
-        /*
-        * todo:
-        *  - update the saved settings every time a tick is changed
-        */
         getDetails: function (ags) {
             return staticDistricts.filter(d => d.ags === ags)[0];
         },
         update() {
-            saveToStorage(this.checkedDistricts);
-            console.log(this.checkedDistricts);
-            M.toast({html: `Auswahl gespeichert: ${this.checkedDistricts.length} Kreis(e)`});
+            setTimeout(() => {
+                saveToStorage(this.checkedDistricts);
+                M.toast({html: `Auswahl gespeichert: ${this.checkedDistricts.length} Kreis(e)`});
+            }, 0);
         },
         toDefault() {
             this.checkedDistricts = DEFAULT_DISTRICTS;
