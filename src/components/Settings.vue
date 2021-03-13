@@ -26,27 +26,37 @@
                         </div>
                     </div>
 
+                    <div class="row">
+                        <form class="col s12" @submit="ignore">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">search</i>
+                                    <input id="icon_prefix" type="text" class="validate" v-model="filterText">
+                                    <label for="icon_prefix">Suchen...</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
                     <div class="col s12 m12 l12">
                         <table class="striped">
                             <thead>
                             <tr>
-                                <th></th>
                                 <th>Landkreis</th>
                                 <th>Bundesland</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr v-for="dist in allDistricts">
+                            <tr v-for="dist in filteredDistricts">
                                 <td>
                                     <label>
                                         <input type="checkbox" :value="dist.ags" :id="dist.ags"
                                                v-model="checkedDistricts"
                                                class="filled-in"
                                                @click="update">
-                                        <span>&nbsp;</span>
+                                        <span class="black-text"><b>{{ getAnnotatedName(dist.ags, dist.name) }}</b></span>
                                     </label>
                                 </td>
-                                <td><b>{{ getAnnotatedName(dist.ags, dist.name) }}</b></td>
                                 <td>{{ dist.state }}</td>
                             </tr>
                             </tbody>
@@ -95,8 +105,16 @@ export default {
     data() {
         return {
             checkedDistricts: [],
-            allDistricts: []
+            allDistricts: [],
+            filterText: ""
         };
+    },
+    computed: {
+        filteredDistricts() {
+            return this.allDistricts.filter(item => {
+                return item.name.toLowerCase().indexOf(this.filterText.toLowerCase()) > -1
+            })
+        }
     },
     components: {
         navigation
@@ -129,6 +147,7 @@ export default {
             saveToStorage([]);
             M.toast({html: 'Landkreisauswahl gelöscht.'});
         },
+        ignore() {},
         getAnnotatedName: getAnnotatedName
     }
 };
