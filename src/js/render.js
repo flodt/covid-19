@@ -1,5 +1,6 @@
 import {getCountryCode} from "../js/countryCodes.js";
 import {renderWorldwideIncidenceMap, renderWorldwideVaccMap} from "../js/map.js";
+import {getFromStorage} from "./store";
 
 function formatInterval(daysToHerdImmunity) {
     if (daysToHerdImmunity === 0) return "Ziel erreicht!";
@@ -306,7 +307,6 @@ export function renderVaccHistorical(vm, data) {
 
 
 export function renderData(vm, agss, rki, zeit, vacc, rval) {
-    console.log("Rendering data...");
     const POPULATION_GERMANY = 83190556;
     const POPULATION_BAVARIA = 13124737;
 
@@ -669,7 +669,7 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
 
 export function renderHistorical(vm, rki, zeit) {
     //show last updated date
-    let agss = JSON.parse(localStorage.getItem("selectedDistricts"));
+    let agss = getFromStorage();
     vm.state.zeit = new Date(zeit.lastUpdate).toLocaleString("de-de");
     vm.state.rki = rki.features[0].attributes.last_update;
 

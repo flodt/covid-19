@@ -13,13 +13,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="implement selection restoring">
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="implement model synchronisation and storage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Curfew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Curfew.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Historical.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Historical.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Settings.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Settings.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/render.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,13 +147,6 @@
       <workItem from="1615569776440" duration="1512000" />
       <workItem from="1615571616109" duration="1528000" />
       <workItem from="1615578593254" duration="212000" />
-    </task>
-    <task id="LOCAL-00019" summary="expand country-wide graph to 5 weeks">
-      <created>1611083232636</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1611083232636</updated>
     </task>
     <task id="LOCAL-00020" summary="only show headers when data is present">
       <created>1611083431409</created>
@@ -492,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615641989796</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="implement model synchronisation and storage">
+      <created>1615642934623</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1615642934623</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +510,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add state monitor and heatmap" />
     <MESSAGE value="add statistical whole-pandemic view" />
     <MESSAGE value="fix chart display and update state display" />
     <MESSAGE value="add amber high incidence warning" />
@@ -536,7 +534,8 @@
     <MESSAGE value="minimal implementation of district choosing" />
     <MESSAGE value="clean up district data and handle naming collisions" />
     <MESSAGE value="implement selection restoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement selection restoring" />
+    <MESSAGE value="implement model synchronisation and storage" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement model synchronisation and storage" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="192" width="1076" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611869222722">
@@ -555,39 +554,43 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="64" y="117" width="1484" height="884" key="DiffContextDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1614373169787" />
-    <state width="1833" height="265" key="GridCell.Tab.0.bottom" timestamp="1615640513454">
+    <state width="1833" height="265" key="GridCell.Tab.0.bottom" timestamp="1615643049716">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.bottom/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330657" />
-    <state width="1833" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1615640513454" />
-    <state width="1833" height="265" key="GridCell.Tab.0.center" timestamp="1615640513454">
+    <state width="1833" height="265" key="GridCell.Tab.0.bottom/64.27.1856.1053@64.27.1856.1053" timestamp="1615643049716" />
+    <state width="1833" height="265" key="GridCell.Tab.0.center" timestamp="1615643049715">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.center/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1615640513454" />
-    <state width="1833" height="265" key="GridCell.Tab.0.left" timestamp="1615640513453">
+    <state width="1833" height="265" key="GridCell.Tab.0.center/64.27.1856.1053@64.27.1856.1053" timestamp="1615643049715" />
+    <state width="1833" height="265" key="GridCell.Tab.0.left" timestamp="1615643049715">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.left/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1615640513453" />
-    <state width="1833" height="265" key="GridCell.Tab.0.right" timestamp="1615640513454">
+    <state width="1833" height="265" key="GridCell.Tab.0.left/64.27.1856.1053@64.27.1856.1053" timestamp="1615643049715" />
+    <state width="1833" height="265" key="GridCell.Tab.0.right" timestamp="1615643049716">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state width="1897" height="274" key="GridCell.Tab.0.right/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031330656" />
-    <state width="1833" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1615640513454" />
+    <state width="1833" height="265" key="GridCell.Tab.0.right/64.27.1856.1053@64.27.1856.1053" timestamp="1615643049716" />
+    <state x="626" y="309" width="728" height="502" key="MultipleFileMergeDialog" timestamp="1615642953634">
+      <screen x="64" y="27" width="1856" height="1053" />
+    </state>
+    <state x="626" y="309" width="728" height="502" key="MultipleFileMergeDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1615642953634" />
     <state x="273" y="135" width="505" height="770" key="RollbackChangesDialog" timestamp="1614895341253">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="273" y="135" width="505" height="770" key="RollbackChangesDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1614895341253" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1615642751053">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1615643247578">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1615642751053" />
-    <state x="590" y="176" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1615637764418">
+    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1615643247578" />
+    <state x="590" y="171" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1615643042728">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="2464" y="256" key="Vcs.Push.Dialog.v2/64.27.1856.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612031322887" />
-    <state x="590" y="176" width="800" height="548" key="Vcs.Push.Dialog.v2/64.27.1856.1053@64.27.1856.1053" timestamp="1615637764418" />
+    <state x="590" y="171" width="800" height="548" key="Vcs.Push.Dialog.v2/64.27.1856.1053@64.27.1856.1053" timestamp="1615643042728" />
     <state x="698" y="209" width="584" height="702" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1609933808023">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
@@ -596,10 +599,14 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="310" y="467" width="431" height="186" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/64.27.1856.1053@64.27.1856.1053" timestamp="1612124852511" />
-    <state x="681" y="274" width="621" height="580" key="find.popup" timestamp="1615640578603">
+    <state x="681" y="274" width="621" height="580" key="find.popup" timestamp="1615643261432">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state x="681" y="274" width="621" height="580" key="find.popup/64.27.1856.1053@64.27.1856.1053" timestamp="1615640578603" />
+    <state x="681" y="274" width="621" height="580" key="find.popup/64.27.1856.1053@64.27.1856.1053" timestamp="1615643261432" />
+    <state x="774" y="458" width="431" height="204" key="git4idea.rebase.GitUnstructuredEditor" timestamp="1615642959749">
+      <screen x="64" y="27" width="1856" height="1053" />
+    </state>
+    <state x="774" y="458" width="431" height="204" key="git4idea.rebase.GitUnstructuredEditor/64.27.1856.1053@64.27.1856.1053" timestamp="1615642959749" />
     <state x="667" y="264" key="run.anything.popup" timestamp="1612816347864">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>

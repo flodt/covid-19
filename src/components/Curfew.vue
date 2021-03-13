@@ -108,6 +108,7 @@ import firebase from "firebase";
 import M from 'materialize-css';
 import {requestSingle} from "@/js/api.js";
 import {getAnnotatedName} from "../js/render";
+import {getFromStorage} from "../js/store";
 
 export default {
     data() {
@@ -125,7 +126,7 @@ export default {
         navigation
     },
     mounted() {
-        let agss = JSON.parse(localStorage.getItem("selectedDistricts"));
+        let agss = getFromStorage();
         const URL = "https://api.corona-zahlen.org/districts/history/incidence";
         requestSingle(this, URL, (vm, data) => {
             vm.districts = agss.map(ags => {

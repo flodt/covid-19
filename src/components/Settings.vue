@@ -113,8 +113,6 @@ export default {
         /*
         * todo:
         *  - update the saved settings every time a tick is changed
-        *  - fix checklist so that selected items are checked on load
-        *  - fix loading of non-existant list in storage
         */
         getDetails: function (ags) {
             return staticDistricts.filter(d => d.ags === ags)[0];
