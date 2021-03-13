@@ -9,19 +9,16 @@
                     <div class="col s12 m8 l6 offset-l3 offset-m2">
                         <ul class="collection">
                             <li v-for="chk in checkedDistricts"
-                                class="collection-item"><b>{{ getAnnotatedName(chk, getDetails(chk).name) }}</b> ({{ getDetails(chk).stateShort }})</li>
+                                class="collection-item"><b>{{ getAnnotatedName(chk, getDetails(chk).name) }}</b>
+                                ({{ getDetails(chk).stateShort }})
+                            </li>
                         </ul>
 
-                        <div class="row">
-                            <div class="col">
-                                <a class="waves-effect waves-light btn" @click="save"><i class="material-icons left">save</i>Speichern</a>
-                            </div>
-                            <div class="col">
-                                <a class="waves-effect waves-light btn" @click="reset"><i class="material-icons left">delete</i>Verwerfen</a>
-                            </div>
-                            <div class="col">
-                                <a class="waves-effect waves-light btn" @click="toDefault"><i class="material-icons left">undo</i>Zurücksetzen</a>
-                            </div>
+                        <div class="center-align">
+                            <a class="waves-effect waves-light btn" @click="toDefault">
+                                <i class="material-icons left">undo</i>
+                                Standard auswählen
+                            </a>
                         </div>
                     </div>
 
@@ -40,7 +37,8 @@
                                     <label>
                                         <input type="checkbox" :value="dist.ags" :id="dist.ags"
                                                v-model="checkedDistricts"
-                                               class="filled-in">
+                                               class="filled-in"
+                                               @click="update">
                                         <span>&nbsp;</span>
                                     </label>
                                 </td>
@@ -71,9 +69,8 @@
 import navigation from "@/components/NavBar.vue";
 import firebase from "firebase";
 import M from 'materialize-css';
-import {requestSingle} from "@/js/api.js";
-import {requestData} from "../js/api";
 import {getAnnotatedName} from "../js/render";
+import {DEFAULT_DISTRICTS, getFromStorage, saveToStorage} from "../js/store";
 
 /**
  * This is the data source for all the districts in germany, complete with their AGSs the lookup is based on.
@@ -101,6 +98,9 @@ export default {
         navigation
     },
     mounted() {
+        //update the model with the selected districts
+        this.checkedDistricts = getFromStorage();
+
         this.allDistricts = staticDistricts.map(d => {
             if (d.prefix === "SK") d.type = "Stadt";
             else if (d.prefix === "LK") d.type = "LK";
@@ -117,20 +117,17 @@ export default {
         *  - fix checklist so that selected items are checked on load
         *  - fix loading of non-existant list in storage
         */
-        getDetails: function(ags) {
+        getDetails: function (ags) {
             return staticDistricts.filter(d => d.ags === ags)[0];
         },
-        save() {
-            localStorage.setItem("selectedDistricts", JSON.stringify(this.checkedDistricts));
-            M.toast({html: 'Einstellungen wurden gespeichert.'});
-        },
-        reset() {
-            M.toast({html: 'Auswahl wurde zurückgesetzt.'});
+        update() {
+            saveToStorage(this.checkedDistricts);
+            console.log(this.checkedDistricts);
+            M.toast({html: `Gespeichert: ${this.checkedDistricts.length} Kreise`});
         },
         toDefault() {
-            localStorage.setItem("selectedDistricts", JSON.stringify(
-                ["09778", "09162", "09179", "09762", "09777", "09188", "09178", "09175", "09772"]
-            ));
+            this.checkedDistricts = DEFAULT_DISTRICTS;
+            saveToStorage(DEFAULT_DISTRICTS);
             M.toast({html: 'Standardlandkreise wurden ausgewählt.'});
         },
         getAnnotatedName: getAnnotatedName

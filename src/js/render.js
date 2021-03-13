@@ -121,8 +121,7 @@ function showErrorBox(vm, agss, rki, zeit, vacc) {
 
     //update the state fields
     if (rkiAvail) {
-        vm.state.rki = rki
-            .features.filter(f => f.attributes.AGS === agss[0])[0].attributes.last_update;
+        vm.state.rki = rki.features[0].attributes.last_update;
     } else {
         vm.state.rki = "Nicht verfügbar";
     }

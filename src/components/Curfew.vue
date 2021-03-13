@@ -34,6 +34,17 @@
                 <div class="row" v-if="state.ready">
                     <h5 class="center"><b>Ausgangssperren</b></h5>
 
+                    <div class="row" v-if="state.ready && districts.length === 0">
+                        <div class="col s12 m12 l12">
+                            <div class="card-panel pink darken-3 white-text">
+                                <div><i class="material-icons">info</i></div>
+                                <b>Es wurden noch keine Landkreise ausgewählt.</b>
+                                <br/>
+                                In den Einstellungen können die Landkreise ausgewählt werden, die hier angezeigt werden.
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="col s12 m6 l4" v-for="card in districts">
                         <div class="card" :class="card.color">
                             <div class="card-content white-text">
@@ -106,8 +117,6 @@ export default {
         navigation
     },
     mounted() {
-        this.state.ready = true;
-
         let agss = JSON.parse(localStorage.getItem("selectedDistricts"));
         const URL = "https://api.corona-zahlen.org/districts/history/incidence";
         requestSingle(this, URL, (vm, data) => {

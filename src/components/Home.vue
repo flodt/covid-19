@@ -72,7 +72,7 @@
                     </div>
                 </div>
 
-                <div class="center" id="header_counties" v-if="state.ready">
+                <div class="center" id="header_counties" v-if="state.ready && districts.length > 0">
                     <h5><b>Landkreise</b></h5>
                 </div>
 
