@@ -38,7 +38,7 @@
                         <div class="col s12 m12 l12">
                             <div class="card-panel pink darken-3 white-text">
                                 <div><i class="material-icons">info</i></div>
-                                <b>Es wurden noch keine Landkreise ausgewählt.</b>
+                                <b>Es wurden keine Landkreise in Bayern ausgewählt.</b>
                                 <br/>
                                 In den Einstellungen können die Landkreise ausgewählt werden, die hier angezeigt werden.
                                 <br/>
@@ -81,7 +81,10 @@
                 <div class="grey-text text-darken-2" style="text-align: center;">Stand (RKI): <span
                     id="state_rki">{{ state.rki }}</span>
                 </div>
-                <div class="grey-text text-darken-2" style="text-align: center;">Landkreise zeigen 7-Tage-Inzidenzen pro
+                <div class="grey-text text-darken-2" style="text-align: center;">
+                    Angaben gelten <b>nur für Bayern</b>.
+                    <br/>
+                    Landkreise zeigen 7-Tage-Inzidenzen pro
                     100.000 Einwohner und richten sich nach den Werten des RKI.
                     <br/>
                     Eine Ausgangssperre besteht, wenn die 7-Tage-Inzidenz in den letzten 7 Tagen mindestens ein Mal die
@@ -110,6 +113,8 @@ import {requestSingle} from "@/js/api.js";
 import {getAnnotatedName} from "../js/render";
 import {getFromStorage} from "../js/store";
 
+const BAVARIA_DISTRICTS = ['09161', '09162', '09163', '09171', '09172', '09173', '09174', '09175', '09176', '09177', '09178', '09179', '09180', '09181', '09182', '09183', '09184', '09185', '09186', '09187', '09188', '09189', '09190', '09261', '09262', '09263', '09271', '09272', '09273', '09274', '09275', '09276', '09277', '09278', '09279', '09361', '09362', '09363', '09371', '09372', '09373', '09374', '09375', '09376', '09377', '09461', '09462', '09463', '09464', '09471', '09472', '09473', '09474', '09475', '09476', '09477', '09478', '09479', '09561', '09562', '09563', '09564', '09565', '09571', '09572', '09573', '09574', '09575', '09576', '09577', '09661', '09662', '09663', '09671', '09672', '09673', '09674', '09675', '09676', '09677', '09678', '09679', '09761', '09762', '09763', '09764', '09771', '09772', '09773', '09774', '09775', '09776', '09777', '09778', '09779', '09780'];
+
 export default {
     data() {
         return {
@@ -129,7 +134,9 @@ export default {
         let agss = getFromStorage();
         const URL = "https://api.corona-zahlen.org/districts/history/incidence";
         requestSingle(this, URL, (vm, data) => {
-            vm.districts = agss.map(ags => {
+            vm.districts = agss
+                .filter(ags => BAVARIA_DISTRICTS.includes(ags))
+                .map(ags => {
                 let name = data.data[ags].name;
                 name = getAnnotatedName(ags, name);
 

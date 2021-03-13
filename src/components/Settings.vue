@@ -23,6 +23,10 @@
                                 <i class="material-icons left">undo</i>
                                 Standard auswählen
                             </a>
+                            <a class="waves-effect waves-light btn" @click="all" style="margin-top: 10px">
+                                <i class="material-icons left">all_inclusive</i>
+                                Alle auswählen
+                            </a>
                         </div>
                     </div>
 
@@ -110,7 +114,9 @@ export default {
     computed: {
         filteredDistricts() {
             return this.allDistricts.filter(item => {
-                return item.name.toLowerCase().indexOf(this.filterText.toLowerCase()) > -1
+                const districtMatch = item.name.toLowerCase().indexOf(this.filterText.toLowerCase()) > -1;
+                const stateMatch = item.state.toLowerCase().indexOf(this.filterText.toLowerCase()) > -1;
+                return districtMatch || stateMatch;
             })
         }
     },
@@ -132,7 +138,6 @@ export default {
         update() {
             setTimeout(() => {
                 saveToStorage(this.checkedDistricts);
-                M.toast({html: `Auswahl gespeichert: ${this.checkedDistricts.length} Kreis(e)`});
             }, 0);
         },
         toDefault() {
@@ -144,6 +149,12 @@ export default {
             this.checkedDistricts = [];
             saveToStorage([]);
             M.toast({html: 'Landkreisauswahl gelöscht.'});
+        },
+        all() {
+            const allFromFilter = this.filteredDistricts.map(d => d.ags);
+            this.checkedDistricts = allFromFilter;
+            saveToStorage(allFromFilter);
+            M.toast({html: 'Alle ausgewählt.'});
         },
         ignore() {},
         getAnnotatedName: getAnnotatedName
