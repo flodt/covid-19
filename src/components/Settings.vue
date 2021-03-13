@@ -7,7 +7,7 @@
                     <h5 class="center"><b>Einstellungen</b></h5>
 
                     <div class="col s12 m8 l6 offset-l3 offset-m2">
-                        <ul class="collection">
+                        <ul class="collection" v-if="checkedDistricts.length > 0">
                             <li v-for="chk in checkedDistricts"
                                 class="collection-item"><b>{{ getAnnotatedName(chk, getDetails(chk).name) }}</b>
                                 ({{ getDetails(chk).stateShort }})
@@ -15,6 +15,10 @@
                         </ul>
 
                         <div class="center-align">
+                            <a class="waves-effect waves-light btn" @click="clear">
+                                <i class="material-icons left">delete</i>
+                                Löschen
+                            </a>
                             <a class="waves-effect waves-light btn" @click="toDefault">
                                 <i class="material-icons left">undo</i>
                                 Standard auswählen
@@ -100,12 +104,7 @@ export default {
     mounted() {
         //update the model with the selected districts
         this.checkedDistricts = getFromStorage();
-
-        this.allDistricts = staticDistricts.map(d => {
-            if (d.prefix === "SK") d.type = "Stadt";
-            else if (d.prefix === "LK") d.type = "LK";
-            return d;
-        }).sort((a, b) => a.name > b.name ? 1 : -1);
+        this.allDistricts = staticDistricts.sort((a, b) => a.name > b.name ? 1 : -1);
     },
     created() {
 
@@ -123,12 +122,17 @@ export default {
         update() {
             saveToStorage(this.checkedDistricts);
             console.log(this.checkedDistricts);
-            M.toast({html: `Gespeichert: ${this.checkedDistricts.length} Kreise`});
+            M.toast({html: `Auswahl gespeichert: ${this.checkedDistricts.length} Kreis(e)`});
         },
         toDefault() {
             this.checkedDistricts = DEFAULT_DISTRICTS;
             saveToStorage(DEFAULT_DISTRICTS);
             M.toast({html: 'Standardlandkreise wurden ausgewählt.'});
+        },
+        clear() {
+            this.checkedDistricts = [];
+            saveToStorage([]);
+            M.toast({html: 'Landkreisauswahl gelöscht.'});
         },
         getAnnotatedName: getAnnotatedName
     }

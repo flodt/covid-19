@@ -13,13 +13,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="clean up district data and handle naming collisions">
-      <change afterPath="$PROJECT_DIR$/src/js/store.js" afterDir="false" />
+    <list default="true" id="510a570d-0821-45a8-a248-2c3931d6644e" name="Default Changelist" comment="implement selection restoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Curfew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Curfew.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Historical.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Historical.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Settings.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Settings.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/render.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,13 +148,6 @@
       <workItem from="1615569776440" duration="1512000" />
       <workItem from="1615571616109" duration="1528000" />
       <workItem from="1615578593254" duration="212000" />
-    </task>
-    <task id="LOCAL-00018" summary="remove fill from graphs and fix hover issue">
-      <created>1611082647110</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1611082647110</updated>
     </task>
     <task id="LOCAL-00019" summary="expand country-wide graph to 5 weeks">
       <created>1611083232636</created>
@@ -492,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615637754503</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="implement selection restoring">
+      <created>1615641989796</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1615641989796</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +511,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update text and fix NavBar.vue" />
     <MESSAGE value="add state monitor and heatmap" />
     <MESSAGE value="add statistical whole-pandemic view" />
     <MESSAGE value="fix chart display and update state display" />
@@ -536,7 +535,8 @@
     <MESSAGE value="add settings component" />
     <MESSAGE value="minimal implementation of district choosing" />
     <MESSAGE value="clean up district data and handle naming collisions" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean up district data and handle naming collisions" />
+    <MESSAGE value="implement selection restoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement selection restoring" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="192" width="1076" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611869222722">
@@ -579,10 +579,10 @@
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
     <state x="273" y="135" width="505" height="770" key="RollbackChangesDialog/64.27.1856.1053@64.27.1856.1053" timestamp="1614895341253" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1615641531493">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1615642751053">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1615641531493" />
+    <state width="498" height="446" key="SwitcherDM/64.27.1856.1053@64.27.1856.1053" timestamp="1615642751053" />
     <state x="590" y="176" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1615637764418">
       <screen x="64" y="27" width="1856" height="1053" />
     </state>

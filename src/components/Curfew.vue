@@ -41,6 +41,14 @@
                                 <b>Es wurden noch keine Landkreise ausgewählt.</b>
                                 <br/>
                                 In den Einstellungen können die Landkreise ausgewählt werden, die hier angezeigt werden.
+                                <br/>
+                                <br/>
+                                <router-link to="/settings">
+                                    <a class="waves-effect btn white black-text">
+                                        <i class="material-icons left">settings</i>
+                                        Zu den Einstellungen
+                                    </a>
+                                </router-link>
                             </div>
                         </div>
                     </div>

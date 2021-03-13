@@ -671,7 +671,7 @@ export function renderHistorical(vm, rki, zeit) {
     //show last updated date
     let agss = JSON.parse(localStorage.getItem("selectedDistricts"));
     vm.state.zeit = new Date(zeit.lastUpdate).toLocaleString("de-de");
-    vm.state.rki = rki.features.filter(f => f.attributes.AGS === agss[0])[0].attributes.last_update;
+    vm.state.rki = rki.features[0].attributes.last_update;
 
     vm.districts = agss.map(ags => {
         let name = rki.features.filter(f => f.attributes.AGS === ags)[0].attributes.GEN;

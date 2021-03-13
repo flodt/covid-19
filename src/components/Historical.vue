@@ -44,7 +44,7 @@
                     </div>
                 </div>
 
-                <div class="row" v-if="state.ready">
+                <div class="row" v-if="state.ready && districts.length > 0">
                     <h5 class="center"><b>Landkreise</b></h5>
 
 
