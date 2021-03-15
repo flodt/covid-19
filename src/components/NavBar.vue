@@ -29,7 +29,7 @@
                 <li>
                     <router-link to="/curfew">
                         <i class="material-icons left">lock</i>
-                        Ausgangssperren
+                        Sperren
                     </router-link>
                 </li>
                 <li>
@@ -41,6 +41,11 @@
                 <li>
                     <router-link to="/settings">
                         <i class="material-icons">settings</i>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/about">
+                        <i class="material-icons">help</i>
                     </router-link>
                 </li>
             </ul>
@@ -93,6 +98,10 @@
                     <router-link to="/settings" class="sidenav-close">
                         <i class="material-icons left">settings</i>
                         Einstellungen
+                    </router-link>
+                    <router-link to="/about" class="sidenav-close">
+                        <i class="material-icons left">help</i>
+                        Über diese Seite
                     </router-link>
                 </li>
             </ul>

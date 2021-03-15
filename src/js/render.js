@@ -862,3 +862,53 @@ export function renderWorldwide(vm, data) {
     renderWorldwideIncidenceMap(vm);
     renderWorldwideVaccMap(vm);
 }
+
+export function renderDemo(vm) {
+    setTimeout(function () {
+        //prepare chart labels (for the last 7 days)
+        const labels = [0, 1, 2, 3, 4, 5, 6, 7]
+            .map(i => new Date(Date.now() - i * 24 * 60 * 60 * 1000).getDay())
+            .map(d => ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"][d])
+            .reverse();
+
+        const bars = [78.0,80.0,75.0,40.0,30.0,40.0,60.0,56.7];
+
+        //render charts
+        const ctx = document.getElementById("chart_demo_atlantis").getContext('2d');
+        const chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+            // The data for our dataset
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: '7-Tage-Inzidenz',
+                    backgroundColor: "rgb(245, 124, 0)",
+                    borderColor: "rgb(245, 124, 0)",
+                    data: bars,
+                    fill: false
+                }]
+            },
+
+            // Configuration options go here
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            suggestedMin: 0,
+                            suggestedMax: 300
+                        }
+                    }]
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                tooltips: {
+                    mode: 'nearest',
+                    intersect: false
+                }
+            }
+        });
+    }, 0);
+}

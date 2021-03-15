@@ -7,6 +7,7 @@ import States from '@/components/States'
 import Historical from '@/components/Historical'
 import Worldwide from "@/components/Worldwide";
 import Settings from "@/components/Settings";
+import About from "@/components/About";
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
             path: '/settings',
             name: 'Einstellungen',
             component: Settings
+        },
+        {
+            path: '/about',
+            name: 'Über diese Seite',
+            component: About
         }
     ]
 })
