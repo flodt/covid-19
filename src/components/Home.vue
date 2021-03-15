@@ -206,9 +206,12 @@
                                 <div class="row">
                                     <div class="col">
                                         <h3 id="deaths">{{ germany.deaths.toLocaleString("de-de") }}</h3>
-                                        <!--todo: make this show deaths yesterday-->
-                                        <b><a class="oncard"
+                                        <b v-if="state.rValAvail"><a class="oncard"
                                               href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                            Tote gestern
+                                        </a></b>
+                                        <b v-else><a class="oncard"
+                                                                     href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
                                             Tote seit Beginn
                                         </a></b>
                                     </div>
@@ -309,6 +312,7 @@ export default {
                 zeitAvail: false,
                 rkiAvail: false,
                 vaccAvail: false,
+                rValAvail: false,
                 ready: false,
                 error: false,
                 loading: true
