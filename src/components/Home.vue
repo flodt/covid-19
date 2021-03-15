@@ -40,8 +40,11 @@
                                 <div class="row">
                                     <div class="col">
                                         <h3 id="infected_yesterday">{{ germany.yesterday.toLocaleString("de-de") }}</h3>
-                                        <b><a class="oncard"
+                                        <b class="hide-on-med-and-down"><a class="oncard"
                                               href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">Neuinfektionen
+                                            gestern</a></b>
+                                        <b class="hide-on-large-only"><a class="oncard"
+                                                                           href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">Neuinf.
                                             gestern</a></b>
                                     </div>
                                     <div class="col">
@@ -203,7 +206,7 @@
                                         <h3 id="deaths">{{ germany.deaths.toLocaleString("de-de") }}</h3>
                                         <b><a class="oncard"
                                               href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
-                                            Tode seit Pandemiebeginn
+                                            Tote seit Beginn
                                         </a></b>
                                     </div>
                                     <div class="col">
