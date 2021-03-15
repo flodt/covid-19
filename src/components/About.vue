@@ -234,6 +234,9 @@
                     Zuletzt werden (auch nach Daten von ZEIT Online) noch die Klinikauslastung in Form der <b>belegten
                     Intensivbetten</b> sowie der <b>Toten seit Pandemiebeginn</b> in Zahlen sowie graphisch dargestellt.
                 </p>
+
+                <!--todo: elaborate on vaccination timer-->
+                <!--todo: elaborate on remaining components-->
             </div>
         </div>
 

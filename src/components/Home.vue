@@ -192,6 +192,8 @@
                     </div>
                 </div>
 
+                <!--todo: add vaccination graphs for vaccine and indication-->
+
                 <div class="center" id="header_hospital" v-if="state.zeitAvail">
                     <h5><b>Todeszahlen</b></h5>
                 </div>
@@ -204,6 +206,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <h3 id="deaths">{{ germany.deaths.toLocaleString("de-de") }}</h3>
+                                        <!--todo: make this show deaths yesterday-->
                                         <b><a class="oncard"
                                               href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
                                             Tote seit Beginn

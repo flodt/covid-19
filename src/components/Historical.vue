@@ -47,7 +47,7 @@
                 <div class="row" v-if="state.ready && districts.length > 0">
                     <h5 class="center"><b>Landkreise</b></h5>
 
-
+                    <!--todo: add info about new infections yesterday-->
                     <div class="col s12 m12 l6" v-for="card in districts">
                         <div class="card">
                             <div class="card-content">
@@ -63,7 +63,7 @@
                 <div class="row" v-if="state.ready">
                     <h5 class="center"><b>Impfzahlen</b></h5>
 
-
+                    <!--todo: add vaccination speed graph-->
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">
@@ -75,6 +75,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!--todo: add graph for historical deaths-->
             </div>
         </div>
 
