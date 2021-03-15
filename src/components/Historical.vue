@@ -42,6 +42,17 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col s12 m12 l12">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">Todeszahlen</span>
+                                <div style="width: inherit; height: inherit; position: relative;">
+                                    <canvas id="chart_historical_deaths_germany"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="row" v-if="state.ready && districts.length > 0">
@@ -88,8 +99,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!--todo: add graph for historical deaths-->
             </div>
         </div>
 

@@ -789,6 +789,14 @@ export function renderHistorical(vm, rki, zeit) {
         })
         .map(i => (i < 0 || isNaN(i)) ? 0 : i);
 
+    const countryDeaths = zeit
+        .kreise
+        .items
+        .map(k => k.historicalStats.dead)
+        .reduce(sum)
+        .map((d, idx, arr) => d - arr[idx - 1])
+        .map(i => (i < 0 || isNaN(i)) ? 0 : i);
+
     //show chart labels
     const labels = [...Array(weekIncidences.length).keys()]
         .map(i => new Date(Date.now() - i * 24 * 60 * 60 * 1000))
@@ -813,6 +821,47 @@ export function renderHistorical(vm, rki, zeit) {
                     backgroundColor: "rgb(173, 20, 87)",
                     borderColor: "rgb(173, 20, 87)",
                     data: weekIncidences,
+                    fill: false
+                }
+                ]
+            },
+
+            // Configuration options go here
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                            //suggestedMin: 0,
+                            //suggestedMax: 32500
+                        }
+                    }]
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                tooltips: {
+                    mode: 'nearest',
+                    intersect: false
+                }
+            }
+        });
+    }, 0);
+
+    setTimeout(function () {
+        //render charts
+        const ctx = document.getElementById("chart_historical_deaths_germany").getContext('2d');
+        const chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'bar',
+
+            // The data for our dataset
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Tote',
+                    backgroundColor: "rgb(0, 0, 0)",
+                    borderColor: "rgb(0, 0, 0)",
+                    data: countryDeaths,
                     fill: false
                 }
                 ]
