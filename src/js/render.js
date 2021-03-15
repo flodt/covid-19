@@ -686,18 +686,23 @@ export function renderHistorical(vm, rki, zeit) {
 
         const chartId = `chart_historical_${ags}`;
 
+        const population = rki.features.filter(f => f.attributes.AGS === ags)[0].attributes.EWZ;
+        const history = zeit
+            .kreise
+            .items
+            .filter(k => k.ags === ags.replace(/^0+/, ''))[0]
+            .historicalStats
+            .count;
+
+        const deaths = zeit
+            .kreise
+            .items
+            .filter(k => k.ags === ags.replace(/^0+/, ''))[0]
+            .historicalStats
+            .dead;
+
         //render the graphs
         setTimeout(function () {
-            const population = rki.features.filter(f => f.attributes.AGS === ags)[0].attributes.EWZ;
-            const history = zeit
-                .kreise
-                .items
-                .filter(k => k.ags === ags.replace(/^0+/, ''))[0]
-                .historicalStats
-                .count;
-
-            //const everySnd = (_, idx) => idx % 2 === 0;
-
             //show chart labels
             const labels = [...Array(history.length).keys()]
                 .map(i => new Date(Date.now() - i * 24 * 60 * 60 * 1000))
@@ -759,7 +764,11 @@ export function renderHistorical(vm, rki, zeit) {
 
         return {
             name: name,
-            chartId: chartId
+            chartId: chartId,
+            yesterday: history[history.length - 1] - history[history.length - 2],
+            total: history[history.length - 1],
+            week: history[history.length - 1] - history[history.length - 8],
+            deaths: deaths[deaths.length - 1]
         };
     });
 

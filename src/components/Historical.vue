@@ -47,11 +47,24 @@
                 <div class="row" v-if="state.ready && districts.length > 0">
                     <h5 class="center"><b>Landkreise</b></h5>
 
-                    <!--todo: add info about new infections yesterday-->
                     <div class="col s12 m12 l6" v-for="card in districts">
                         <div class="card">
                             <div class="card-content">
                                 <span class="card-title">{{ card.name }}</span>
+                                <div class="row">
+                                    <div class="col s6">
+                                        <b>Fälle:</b> {{ card.total }}
+                                    </div>
+                                    <div class="col s6">
+                                        <b>Tote:</b> {{ card.deaths }} ({{ (card.deaths / card.total * 100).toFixed(1) }} %)
+                                    </div>
+                                    <div class="col s6">
+                                        <b>Neuinf. gestern:</b> {{ card.yesterday }}
+                                    </div>
+                                    <div class="col s6">
+                                        <b>... akt. Woche:</b> {{ card.week }}
+                                    </div>
+                                </div>
                                 <div style="width: inherit; height: inherit; position: relative;">
                                     <canvas :id="card.chartId"></canvas>
                                 </div>
