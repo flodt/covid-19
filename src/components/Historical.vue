@@ -87,13 +87,23 @@
                 <div class="row" v-if="state.ready">
                     <h5 class="center"><b>Impfzahlen</b></h5>
 
-                    <!--todo: add vaccination speed graph-->
-                    <div class="col s12 m12 l12">
+                    <div class="col s12 m12 l6">
                         <div class="card">
                             <div class="card-content">
                                 <span class="card-title">Impffortschritt</span>
                                 <div style="width: inherit; height: inherit; position: relative;">
                                     <canvas id="chart_historical_vaccinations"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m12 l6">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">Impfgeschwindigkeit</span>
+                                <div style="width: inherit; height: inherit; position: relative;">
+                                    <canvas id="chart_historical_vaccination_speed"></canvas>
                                 </div>
                             </div>
                         </div>

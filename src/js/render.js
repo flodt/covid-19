@@ -242,20 +242,24 @@ export function renderHotspots(vm, agss, rki, zeit, vacc) {
 
 
 export function renderVaccHistorical(vm, data) {
+    //prepare chart labels (for the last 5 weeks)
+    const labels = data.germany.historical
+        .map(i => new Date(i.date))
+        .map(d => {
+            const str = d.toLocaleString("de-de");
+            return str.slice(0, str.lastIndexOf(".") + 1);
+        })
+        .reverse();
+
+    //gather historical vaccination data and sum up for speed
+    const vaccinated = data.germany.historical.map(i => i.peopleVaccinated).reverse();
+    const fullyVaccinated = data.germany.historical.map(i => i.peopleFullyVaccinated).reverse();
+    const dailyVaccinations = vaccinated
+        .map((v, idx) => v + fullyVaccinated[idx])
+        .map((v, idx, arr) => v - arr[idx - 1]);
+    dailyVaccinations[0] = 0;
+
     setTimeout(function () {
-        //prepare chart labels (for the last 5 weeks)
-        const labels = data.germany.historical
-            .map(i => new Date(i.date))
-            .map(d => {
-                const str = d.toLocaleString("de-de");
-                return str.slice(0, str.lastIndexOf(".") + 1);
-            })
-            .reverse();
-
-        //gather ZEIT data for the last 5 weeks
-        const vaccinated = data.germany.historical.map(i => i.peopleVaccinated).reverse();
-        const fullyVaccinated = data.germany.historical.map(i => i.peopleFullyVaccinated).reverse();
-
         //render charts
         const ctx = document.getElementById("chart_historical_vaccinations").getContext('2d');
         const chart = new Chart(ctx, {
@@ -281,6 +285,47 @@ export function renderVaccHistorical(vm, data) {
                         fill: false,
                         pointRadius: 0
                     }]
+            },
+
+            // Configuration options go here
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                            //suggestedMin: 0,
+                            //suggestedMax: 32500
+                        }
+                    }]
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                tooltips: {
+                    mode: 'nearest',
+                    intersect: false
+                }
+            }
+        });
+    }, 0);
+
+    setTimeout(function () {
+        //render charts
+        const ctx = document.getElementById("chart_historical_vaccination_speed").getContext('2d');
+        const chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+            // The data for our dataset
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'tägliche Impfungen',
+                    backgroundColor: "#26a69a",
+                    borderColor: "#26a69a",
+                    data: dailyVaccinations,
+                    fill: false,
+                    pointRadius: 0
+                }]
             },
 
             // Configuration options go here
