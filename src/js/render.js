@@ -762,13 +762,17 @@ export function renderHistorical(vm, rki, zeit) {
             });
         }, 0);
 
+        //in the morning when there has not yet been any data reported, the last entry is null...
+        const offset = (history[history.length - 1] === null) ? 1 : 0;
+        const offsetDeaths = (deaths[deaths.length - 1] === null) ? 1 : 0;
+
         return {
             name: name,
             chartId: chartId,
-            yesterday: history[history.length - 1] - history[history.length - 2],
-            total: history[history.length - 1],
-            week: history[history.length - 1] - history[history.length - 8],
-            deaths: deaths[deaths.length - 1]
+            yesterday: history[history.length - 1 - offset] - history[history.length - 2 - offset],
+            total: history[history.length - 1 - offset],
+            week: history[history.length - 1 - offset] - history[history.length - 8 - offset],
+            deaths: deaths[deaths.length - 1 - offsetDeaths]
         };
     });
 
