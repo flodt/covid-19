@@ -6,6 +6,10 @@
                 <div class="row">
                     <h5 class="center"><b>Einstellungen</b></h5>
 
+                    <!--
+                        todo: make this reorderable
+                        https://github.com/SortableJS/Vue.Draggable
+                    -->
                     <div class="col s12 m8 l6 offset-l3 offset-m2">
                         <ul class="collection" v-if="checkedDistricts.length > 0">
                             <li v-for="chk in checkedDistricts"
