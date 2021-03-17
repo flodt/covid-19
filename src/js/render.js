@@ -655,7 +655,6 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
 
     //show the clinic data
     if (zeitAvail) {
-        vm.germany.deaths = zeit.currentStats.dead;
         vm.germany.clinicPatients = zeit.clinicStats.covid19;
 
         //draw the hospital graph
