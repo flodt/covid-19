@@ -837,13 +837,12 @@ export function renderHistorical(vm, rki, zeit) {
         })
         .map(i => (i < 0 || isNaN(i)) ? 0 : i);
 
-    //todo: make this a 7-day moving average
     const countryDeaths = zeit
         .kreise
         .items
         .map(k => k.historicalStats.dead)
         .reduce(sum)
-        .map((d, idx, arr) => d - arr[idx - 1])
+        .map((d, idx, arr) => +((d - arr[idx - 7]) / 7).toFixed(1))
         .map(i => (i < 0 || isNaN(i)) ? 0 : i);
 
     //show chart labels
@@ -907,7 +906,7 @@ export function renderHistorical(vm, rki, zeit) {
             data: {
                 labels: labels,
                 datasets: [{
-                    label: 'Tote',
+                    label: 'Tote (7-Tage-Schnitt)',
                     backgroundColor: "rgb(0, 0, 0)",
                     borderColor: "rgb(0, 0, 0)",
                     data: countryDeaths,
