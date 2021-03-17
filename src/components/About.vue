@@ -82,7 +82,7 @@
                                 <span class="card-title">Deutschland<i class="material-icons right">close</i></span>
                                 <div style="text-align: center;">
                                     <h3>1.00</h3>
-                                    <b>7-Tage-R-Wert</b> (fiktiver Wert!)
+                                    <b>4-Tage-R-Wert</b> (fiktiver Wert!)
                                 </div>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                     Die landesweiten Angaben zu den <b>Neuinfektionen</b> (sowie der Historie für den Graph der
                     Neuinfektionen) und der <b>7-Tage-Inzidenz</b> werden von ZEIT
                     Online bezogen,
-                    die Angaben zum aktuellen <b>7-Tage-R-Wert</b> stammen vom Robert-Koch-Institut.
+                    die Angaben zum aktuellen <b>4-Tage-R-Wert</b> stammen vom Robert-Koch-Institut.
                 </p>
 
                 <p>
