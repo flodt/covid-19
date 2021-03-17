@@ -60,6 +60,7 @@
 
                     <div class="col s12 m12 l6" v-for="card in districts">
                         <div class="card">
+                            <!--todo: add tabs for the different graphs-->
                             <div class="card-content">
                                 <span class="card-title">{{ card.name }}</span>
                                 <div class="row">

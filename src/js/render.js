@@ -838,6 +838,7 @@ export function renderHistorical(vm, rki, zeit) {
         })
         .map(i => (i < 0 || isNaN(i)) ? 0 : i);
 
+    //todo: make this a 7-day moving average
     const countryDeaths = zeit
         .kreise
         .items
