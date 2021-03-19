@@ -14,7 +14,8 @@
     "material-design-icons": "^3.0.1",
     "materialize-css": "^1.0.0-rc.2",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuedraggable": "^2.24.3"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

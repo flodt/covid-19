@@ -6,16 +6,27 @@
                 <div class="row">
                     <h5 class="center"><b>Einstellungen</b></h5>
 
-                    <!--
-                        todo: make this reorderable
-                        https://github.com/SortableJS/Vue.Draggable
-                    -->
+                    <p class="center">
+                        Landkreise auswählen, die auf der Seite angezeigt werden.
+                        <br/>
+                        Zum Umordnen der Landkreise Drag-And-Drop verwenden!
+                    </p>
+
                     <div class="col s12 m8 l6 offset-l3 offset-m2">
                         <ul class="collection" v-if="checkedDistricts.length > 0">
+                            <draggable v-model="checkedDistricts" @start="drag=true" @end="drag=false; update()">
                             <li v-for="chk in checkedDistricts"
-                                class="collection-item"><b>{{ getAnnotatedName(chk, getDetails(chk).name) }}</b>
-                                ({{ getDetails(chk).stateShort }})
+                                :key="chk.ags"
+                                class="collection-item">
+                                <div>
+                                    <b>{{ getAnnotatedName(chk, getDetails(chk).name) }}</b>
+                                    ({{ getDetails(chk).stateShort }})
+                                    <span class="secondary-content grey-text text-darken-2">
+                                        <i class="material-icons">reorder</i>
+                                    </span>
+                                </div>
                             </li>
+                            </draggable>
                         </ul>
 
                         <div class="center-align">
@@ -91,6 +102,7 @@ import firebase from "firebase";
 import M from 'materialize-css';
 import {getAnnotatedName} from "../js/render";
 import {DEFAULT_DISTRICTS, getFromStorage, saveToStorage} from "../js/store";
+import draggable from 'vuedraggable';
 
 /**
  * This is the data source for all the districts in germany, complete with their AGSs the lookup is based on.
@@ -125,7 +137,8 @@ export default {
         }
     },
     components: {
-        navigation
+        navigation,
+        draggable
     },
     mounted() {
         //update the model with the selected districts
