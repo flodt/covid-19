@@ -50,7 +50,17 @@
                     </div>
                     <div class="col s12 m12 l6">
                         <div class="card-panel center">
+                            <div id="world_death_map" style="height: 570px; background: white"></div>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l6">
+                        <div class="card-panel center">
                             <div id="world_vacc_map" style="height: 570px; background: white"></div>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l6">
+                        <div class="card-panel center">
+                            <div id="world_second_vacc_map" style="height: 570px; background: white"></div>
                         </div>
                     </div>
                 </div>

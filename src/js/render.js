@@ -1,5 +1,5 @@
 import {getCountryCode} from "../js/countryCodes.js";
-import {renderWorldwideIncidenceMap, renderWorldwideVaccMap} from "../js/map.js";
+import {renderWorldwideIncidenceMap, renderWorldwideVaccMap, renderWorldwideSecondVaccMap, renderWorldwideDeathMap} from "../js/map.js";
 import {getFromStorage} from "./store";
 
 function formatInterval(daysToHerdImmunity) {
@@ -950,12 +950,15 @@ export function renderWorldwide(vm, data) {
         const incidence = ctry.new_cases_smoothed * 7 * 100000 / ctry.population;
         if (incidence < 0) continue;
 
+        const deathsPerPop = ctry.total_deaths * 100000 / ctry.population;
+
         table.push({
             name: ctry.location,
             code: getCountryCode(c),
             codeAlpha3: c,
             hasFlag: getCountryCode(c) !== undefined,
             incidence: incidence,
+            deathIncidence: deathsPerPop,
             hasVaccData: ctry.people_vaccinated !== null,
             vaccinated: ctry.people_vaccinated * 100 / ctry.population,
             fullyVaccinated: ctry.people_fully_vaccinated * 100 / ctry.population,
@@ -974,6 +977,8 @@ export function renderWorldwide(vm, data) {
 
     renderWorldwideIncidenceMap(vm);
     renderWorldwideVaccMap(vm);
+    renderWorldwideSecondVaccMap(vm);
+    renderWorldwideDeathMap(vm);
 }
 
 export function renderDemo(vm) {
