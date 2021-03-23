@@ -53,10 +53,24 @@
                         </div>
                     </div>
 
+                    <div class="center section" v-if="districts.length > 0">
+                        <b>Achtung:</b>
+                        <br/>
+                        Verlassen Sie sich nicht ausschließlich auf die hiesigen Angaben. Diese beziehen sich lediglich
+                        auf die vorliegenden Inzidenzen und gehen von einer exakten Umsetzung des Beschlusses aus.
+                        <br/>
+                        In Einzelfällen kann die Umsetzung der Ausgangssperre je nach Landkreis abweichen.
+                        <br/>
+                        Orientieren Sie sich immer auch über die <a
+                        href="https://www.corona-katastrophenschutz.bayern.de/hotspotregionen/index.php">offizielle und
+                        rechtsverbindliche Liste der Landkreise
+                        mit Ausgangsbeschränkungen</a> sowie über die Angaben Ihres Landratsamts.
+                    </div>
+
                     <div class="col s12 m6 l4" v-for="card in districts">
                         <div class="card" :class="card.color">
                             <div class="card-content white-text">
-                                <span class="card-title">{{ card.name }}</span>
+                                <span class="card-title truncate">{{ card.name }}</span>
                                 <div class="center" v-if="card.hasCurfew">
                                     <h4>Ausgangssperre</h4>
                                     <b>von 22-5 Uhr (Inzidenz war {{ card.maxIncidence.toFixed(1) }})</b>
@@ -85,14 +99,17 @@
                     Angaben gelten <b>nur für Bayern</b>.
                     <br/>
                     Landkreise zeigen 7-Tage-Inzidenzen pro
-                    100.000 Einwohner und richten sich nach den Werten des RKI.
+                    100.000 Einwohner und richten sich nach den offiziellen Werten des RKI.
                     <br/>
-                    Eine Ausgangssperre besteht, wenn die 7-Tage-Inzidenz in den letzten 7 Tagen mindestens ein Mal die
-                    100 überschritten hat.
+                    Eine Ausgangssperre besteht, wenn die 7-Tage-Inzidenz an drei aufeinanderfolgenden Tagen den Wert
+                    von 100 überschritten hat. Zwei Tage nach dem dritten Tag der Überschreitung tritt die Maßnahme ein.
+                    Sie wird aufgehoben, wenn die 7-Tage-Inzidenz an sieben aufeinanderfolgenden Tagen unter 100
+                    gefallen ist.
                     <br/>
                     Die offizielle und rechtsverbindliche Liste der Regionen mit Ausgangssperre befindet sich <a
-                        href="https://www.corona-katastrophenschutz.bayern.de/hotspotregionen/index.php">hier</a>, die
-                    Angaben hier beziehen sich lediglich auf die berechneten Inzidenzen.
+                    href="https://www.corona-katastrophenschutz.bayern.de/hotspotregionen/index.php">hier</a>, die
+                    Angaben hier beziehen sich lediglich auf die berechneten Inzidenzen und kann durch uneindeutige
+                    Handhabung der Vorgaben von den hiesigen Angaben abweichen.
                 </div>
                 <br/>
                 <div class="grey-text text-darken-2" style="text-align: center;">Icons made by Freepik from
@@ -132,39 +149,94 @@ export default {
     },
     mounted() {
         let agss = getFromStorage();
-        const URL = "https://api.corona-zahlen.org/districts/history/incidence";
+        const URL = "https://api.corona-zahlen.org/districts/history/incidence/14";
         requestSingle(this, URL, (vm, data) => {
             vm.districts = agss
                 .filter(ags => BAVARIA_DISTRICTS.includes(ags))
                 .map(ags => {
-                let name = data.data[ags].name;
-                name = getAnnotatedName(ags, name);
+                    let name = data.data[ags].name;
+                    name = getAnnotatedName(ags, name);
 
-                const incidences = data.data[ags].history.map(h => h.weekIncidence).slice(-7);
-                const has = incidences.some(i => i >= 100);
-                const max = Math.max.apply(Math, incidences);
+                    const incidences = data.data[ags].history.map(h => h.weekIncidence);
 
-                let color, isClose;
-                if (has) {
-                    color = "red darken-2";
-                    isClose = false;
-                } else if (incidences[incidences.length - 1] > 85) {
-                    color = "orange darken-2";
-                    isClose = true;
-                } else {
-                    color = "green darken-2";
-                    isClose = false;
-                }
+                    /**
+                     * The district has a curfew if there are 3 consecutive days where the 7-day-incidence is
+                     * over 100. The curfew is in place on the second day after the third consecutive day over 100.
+                     * The curfew is lifted if the 7-day-incidence is stable < 100 for 7 consecutive days.
+                     */
+                    let startingDay = 2;
+                    let evaluated = false;
+                    let has = false;
+                    const max = Math.max.apply(Math, incidences);
 
-                return {
-                    name: name,
-                    hasCurfew: has,
-                    maxIncidence: max,
-                    color: color,
-                    isClose: isClose,
-                    lastIncidence: incidences[incidences.length - 1]
-                };
-            });
+                    //skip evaluation if we had below 100 in the last 7 days
+                    if (!incidences.slice(-7).some(i => i >= 100)) evaluated = true;
+
+                    while (!evaluated) {
+                        let sequence = 0;
+                        for (let i = startingDay - 2; i < 14; i++) {
+                            //check if we have a day > 100, increment the counter accordingly
+                            if (incidences[i] < 100) {
+                                sequence = 0;
+                            } else {
+                                sequence++;
+                            }
+
+                            //if we have a 3-day consecutive sequence, curfew starts the second day after the third
+                            if (sequence >= 3) {
+                                startingDay = i + 2;
+                                break;
+                            }
+                        }
+
+                        //now check if we have 7 consecutive days < 100 after the starting day - if not: curfew
+                        let consecutive = 0;
+                        for (let i = startingDay; i < 14; i++) {
+                            if (incidences[i] < 100) {
+                                consecutive++;
+                            } else {
+                                consecutive = 0;
+                            }
+                        }
+
+                        if (startingDay >= 14) {
+                            //we have overflowed the area of interest - no curfew (yet)
+                            has = false;
+                            evaluated = true;
+                            break;
+                        } else if (sequence >= 3 && consecutive < 7) {
+                            has = true;
+                            evaluated = true;
+                            break;
+                            //has curfew if we had 3 consecutive days over 100 and not 7 days below after two extra
+                        } else {
+                            //we haven't found a curfew, but advance our pattern matching to the next starting day
+                            startingDay++;
+                        }
+                    }
+
+                    let color, isClose;
+                    if (has) {
+                        color = "red darken-2";
+                        isClose = false;
+                    } else if (incidences[incidences.length - 1] > 85) {
+                        color = "orange darken-2";
+                        isClose = true;
+                    } else {
+                        color = "green darken-2";
+                        isClose = false;
+                    }
+
+                    return {
+                        name: name,
+                        ags: ags,
+                        hasCurfew: has,
+                        maxIncidence: max,
+                        color: color,
+                        isClose: isClose,
+                        lastIncidence: incidences[incidences.length - 1]
+                    };
+                });
 
             vm.state.rki = new Date(data.meta.lastUpdate).toLocaleString("de-de");
         });
