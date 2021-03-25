@@ -144,35 +144,35 @@
                     <div class="col s4 m2 l2 offset-l1 offset-m1">
                         <div class="card-panel green darken-2 white-text">
                             <div style="text-align: center; font-weight: bold; font-size: 12pt">
-                                0-35
+                                < 35
                             </div>
                         </div>
                     </div>
                     <div class="col s4 m2 l2">
                         <div class="card-panel amber darken-2 white-text">
                             <div style="text-align: center; font-weight: bold; font-size: 12pt">
-                                35-50
+                                < 50
                             </div>
                         </div>
                     </div>
                     <div class="col s4 m2 l2">
                         <div class="card-panel orange darken-2 white-text">
                             <div style="text-align: center; font-weight: bold; font-size: 12pt">
-                                50-100
+                                < 100
                             </div>
                         </div>
                     </div>
                     <div class="col s4 m2 l2">
                         <div class="card-panel deep-orange darken-2 white-text">
                             <div style="text-align: center; font-weight: bold; font-size: 12pt">
-                                100-200
+                                < 200
                             </div>
                         </div>
                     </div>
                     <div class="col s4 m2 l2">
                         <div class="card-panel red darken-2 white-text">
                             <div style="text-align: center; font-weight: bold; font-size: 12pt">
-                                200+
+                                > 200
                             </div>
                         </div>
                     </div>
