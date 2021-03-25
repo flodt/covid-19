@@ -53,18 +53,26 @@
                         </div>
                     </div>
 
-                    <div class="center section" v-if="districts.length > 0">
-                        <b>Achtung:</b>
-                        <br/>
-                        Verlassen Sie sich nicht ausschließlich auf die hiesigen Angaben. Diese beziehen sich lediglich
-                        auf die vorliegenden Inzidenzen und gehen von einer exakten Umsetzung des Beschlusses aus.
-                        <br/>
-                        In Einzelfällen kann die Umsetzung der Ausgangssperre je nach Landkreis abweichen.
-                        <br/>
-                        Orientieren Sie sich immer auch über die <a
-                        href="https://www.corona-katastrophenschutz.bayern.de/hotspotregionen/index.php">offizielle und
-                        rechtsverbindliche Liste der Landkreise
-                        mit Ausgangsbeschränkungen</a> sowie über die Angaben Ihres Landratsamts.
+                    <div class="section row" v-if="districts.length > 0">
+                        <div class="col l8 m12 s12 offset-l2">
+                            <div class="card-panel pink darken-3 white-text">
+                                <b>Achtung:</b>
+                                <br/>
+                                Verlassen Sie sich nicht ausschließlich auf die hiesigen Angaben. Diese beziehen sich
+                                lediglich
+                                auf die vorliegenden Inzidenzen und gehen von einer exakten Umsetzung des Beschlusses
+                                aus.
+                                <br/>
+                                In Einzelfällen kann die Umsetzung der Ausgangssperre je nach Landkreis abweichen.
+                                <br/>
+                                Orientieren Sie sich immer auch über die <a class="oncard"
+                                                                            style="text-decoration: underline"
+                                                                            href="https://www.corona-katastrophenschutz.bayern.de/hotspotregionen/index.php">offizielle
+                                und
+                                rechtsverbindliche Liste der Landkreise
+                                mit Ausgangsbeschränkungen</a> sowie über die Angaben Ihres Landratsamts.
+                            </div>
+                        </div>
                     </div>
 
                     <div class="col s12 m6 l4" v-for="card in districts">
