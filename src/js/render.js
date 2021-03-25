@@ -112,6 +112,19 @@ export function getAnnotatedName(ags, name) {
 
 }
 
+function roundToSignificantFigures(num, n) {
+    if(num === 0) {
+        return 0;
+    }
+
+    const d = Math.ceil(Math.log10(num < 0 ? -num: num));
+    const power = n - d;
+
+    const magnitude = Math.pow(10, power);
+    const shifted = Math.round(num*magnitude);
+    return shifted/magnitude;
+}
+
 function showErrorBox(vm, agss, rki, zeit, vacc) {
     const rkiAvail = rki !== null && rki.features !== undefined;
     const zeitAvail = zeit !== null;
@@ -745,6 +758,14 @@ export function renderHistorical(vm, rki, zeit) {
             .historicalStats
             .dead;
 
+        //gather incidence data
+        const weekIncidences = history.map((h, idx, arr) => {
+            //get delta between today and 7 days ago, normalized to the population
+            const today = h;
+            const preWeek = arr[idx - 7];
+            return +((today - preWeek) * 100000 / population).toFixed(1);
+        }).map(i => (i < 0 || isNaN(i)) ? 0 : i);
+
         //render the graphs
         setTimeout(function () {
             //show chart labels
@@ -755,14 +776,6 @@ export function renderHistorical(vm, rki, zeit) {
                     return str.slice(0, str.lastIndexOf(".") + 1);
                 })
                 .reverse();
-
-            //gather incidence data
-            const weekIncidences = history.map((h, idx, arr) => {
-                //get delta between today and 7 days ago, normalized to the population
-                const today = h;
-                const preWeek = arr[idx - 7];
-                return +((today - preWeek) * 100000 / population).toFixed(1);
-            }).map(i => (i < 0 || isNaN(i)) ? 0 : i);
 
             const chartColor = colorsForIncidences(weekIncidences[weekIncidences.length - 2]).chartColor;
 
@@ -809,6 +822,7 @@ export function renderHistorical(vm, rki, zeit) {
         //in the morning when there has not yet been any data reported, the last entry is null...
         const offset = (history[history.length - 1] === null) ? 1 : 0;
         const offsetDeaths = (deaths[deaths.length - 1] === null) ? 1 : 0;
+        const offsetIncidence = (weekIncidences[weekIncidences.length - 1] === 0) ? 2 : 1;
 
         return {
             name: name,
@@ -816,7 +830,9 @@ export function renderHistorical(vm, rki, zeit) {
             yesterday: history[history.length - 1 - offset] - history[history.length - 2 - offset],
             total: history[history.length - 1 - offset],
             week: history[history.length - 1 - offset] - history[history.length - 8 - offset],
-            deaths: deaths[deaths.length - 1 - offsetDeaths]
+            deaths: deaths[deaths.length - 1 - offsetDeaths],
+            population: roundToSignificantFigures(population, 3),
+            incidence: weekIncidences[weekIncidences.length - offsetIncidence]
         };
     });
 

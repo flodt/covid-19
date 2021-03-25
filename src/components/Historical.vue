@@ -65,6 +65,12 @@
                                 <span class="card-title">{{ card.name }}</span>
                                 <div class="row">
                                     <div class="col s6">
+                                        <b>Bevölkerung:</b> {{ card.population.toLocaleString("de-de") }}
+                                    </div>
+                                    <div class="col s6">
+                                        <b>Inzidenz:</b> {{ card.incidence }}
+                                    </div>
+                                    <div class="col s6">
                                         <b>Fälle:</b> {{ card.total }}
                                     </div>
                                     <div class="col s6">
