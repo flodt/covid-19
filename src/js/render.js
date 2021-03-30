@@ -964,9 +964,9 @@ export function renderWorldwide(vm, data) {
         if (c === "OWID_INT") continue;
 
         const incidence = ctry.new_cases_smoothed * 7 * 100000 / ctry.population;
-        if (incidence < 0) continue;
-
         const deathsPerPop = ctry.total_deaths * 100000 / ctry.population;
+
+        if (incidence < 0 || isNaN(incidence)) continue;
 
         table.push({
             name: ctry.location,
@@ -975,7 +975,7 @@ export function renderWorldwide(vm, data) {
             hasFlag: getCountryCode(c) !== undefined,
             incidence: incidence,
             deathIncidence: deathsPerPop,
-            hasVaccData: ctry.people_vaccinated !== null,
+            hasVaccData: ctry.people_vaccinated !== null && isFinite(ctry.people_vaccinated),
             vaccinated: ctry.people_vaccinated * 100 / ctry.population,
             fullyVaccinated: ctry.people_fully_vaccinated * 100 / ctry.population,
             color: colorsForIncidences(incidence).chartColor
