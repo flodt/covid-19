@@ -271,6 +271,14 @@ export function renderVaccHistorical(vm, data) {
         .map((v, idx) => v + fullyVaccinated[idx])
         .map((v, idx, arr) => v - arr[idx - 1]);
     dailyVaccinations[0] = 0;
+    const weekAverageVaccinations = vaccinated
+        .map((v, idx) => v + fullyVaccinated[idx])
+        .map((v, idx, arr) => {
+            const period = 21;
+            const ago = (arr[idx - period] === undefined) ? 0 : arr[idx - period];
+            return +((v - ago) / period).toFixed(0);
+        })
+        .map(v => (v < 0) ? 0 : v);
 
     setTimeout(function () {
         //render charts
@@ -338,7 +346,16 @@ export function renderVaccHistorical(vm, data) {
                     data: dailyVaccinations,
                     fill: false,
                     pointRadius: 0
-                }]
+                },
+                    {
+                        label: '21-Tage-Schnitt',
+                        backgroundColor: "rgb(158,158,158)",
+                        borderColor: "rgb(158,158,158)",
+                        borderDash: [5, 5],
+                        pointRadius: 0,
+                        data: weekAverageVaccinations,
+                        fill: false
+                    }]
             },
 
             // Configuration options go here
