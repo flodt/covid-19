@@ -31,6 +31,16 @@
                     </div>
                 </div>
 
+                <div class="section row" v-if="state.ready">
+                    <div class="col l8 m12 s12 offset-l2">
+                        <div class="card-panel blue darken-3 white-text">
+                            Die aktuellen Neuinfektionszahlen und 7-Tage-Inzidenzen sind durch die verringerte Testzahl
+                            an den <b>Osterfeiertagen</b> sowie die Verzögerungen in den Meldeketten bis
+                            ca. Mitte April nicht wirklich aussagekräftig und belastbar.
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row" v-if="state.ready" id="row_country">
                     <div class="col s12 m12 l6">
                         <div class="card pink darken-3" style="height: 210px">
@@ -41,10 +51,10 @@
                                     <div class="col">
                                         <h3 id="infected_yesterday">{{ germany.yesterday.toLocaleString("de-de") }}</h3>
                                         <b class="hide-on-med-and-down"><a class="oncard"
-                                              href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">Neuinfektionen
+                                                                           href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">Neuinfektionen
                                             gestern</a></b>
                                         <b class="hide-on-large-only"><a class="oncard"
-                                                                           href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">Neuinf.
+                                                                         href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">Neuinf.
                                             gestern</a></b>
                                     </div>
                                     <div class="col">
@@ -92,7 +102,8 @@
                                     </div>
                                     <div class="col">
                                         <h3>{{ card.zeit.toFixed(1) }}</h3>
-                                        <b><a class="oncard" href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">ZEIT
+                                        <b><a class="oncard"
+                                              href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">ZEIT
                                             Online</a></b>
                                     </div>
                                 </div>
@@ -207,11 +218,11 @@
                                     <div class="col">
                                         <h3 id="deaths">{{ germany.deaths.toLocaleString("de-de") }}</h3>
                                         <b v-if="state.rValAvail"><a class="oncard"
-                                              href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                                                     href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
                                             Tote gestern
                                         </a></b>
                                         <b v-else><a class="oncard"
-                                                                     href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                                     href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
                                             Tote seit Beginn
                                         </a></b>
                                     </div>
@@ -261,9 +272,12 @@
         </div>
 
         <footer>
-            <div class="grey-text text-darken-2" style="text-align: center;">Stand (RKI): <span id="state_rki">{{ state.rki }}</span>
+            <div class="grey-text text-darken-2" style="text-align: center;">Stand (RKI): <span
+                id="state_rki">{{ state.rki }}</span>
             </div>
-            <div class="grey-text text-darken-2" style="text-align: center;">Stand (ZEIT Online): <span id="state_zeit">{{ state.zeit }}</span>
+            <div class="grey-text text-darken-2" style="text-align: center;">Stand (ZEIT Online): <span id="state_zeit">{{
+                    state.zeit
+                }}</span>
             </div>
             <div class="grey-text text-darken-2" style="text-align: center;">Stand (ZEIT Online Impfstatistik): <span
                 id="state_vaccine">{{ state.vaccine }}</span>
