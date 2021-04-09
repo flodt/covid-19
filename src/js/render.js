@@ -274,7 +274,7 @@ export function renderVaccHistorical(vm, data) {
     const weekAverageVaccinations = vaccinated
         .map((v, idx) => v + fullyVaccinated[idx])
         .map((v, idx, arr) => {
-            const period = 21;
+            const period = 7;
             const ago = (arr[idx - period] === undefined) ? 0 : arr[idx - period];
             return +((v - ago) / period).toFixed(0);
         })
@@ -340,7 +340,7 @@ export function renderVaccHistorical(vm, data) {
             data: {
                 labels: labels,
                 datasets: [{
-                    label: 'tägliche Impfungen',
+                    label: 'tägl. Impfungen',
                     backgroundColor: "#26a69a",
                     borderColor: "#26a69a",
                     data: dailyVaccinations,
@@ -348,7 +348,7 @@ export function renderVaccHistorical(vm, data) {
                     pointRadius: 0
                 },
                     {
-                        label: '21-Tage-Schnitt',
+                        label: 'Schnitt',
                         backgroundColor: "rgb(158,158,158)",
                         borderColor: "rgb(158,158,158)",
                         borderDash: [5, 5],
