@@ -3,7 +3,15 @@
         <navigation></navigation>
         <div class="container">
             <div class="section">
-                <h5 class="center"><b>Datenquellen</b></h5>
+                <h5 class="center"><b>Über diese Seite</b></h5>
+                <p>
+                    Diese Seite wurde von <b>Florian Schmidt</b> (<a href="https://schmidt-allgaeu.de">Website</a>, <a
+                    href="https://github.com/flodt">GitHub</a>), in erster Linie für den privaten Gebrauch erstellt.
+                    Sie nutzt Vue.js, Chart.js sowie MaterializeCSS und läuft auf Google Firebase.
+                </p>
+
+
+                <h5 class="center" style="margin-top: 30px;"><b>Datenquellen</b></h5>
                 <p>
                     Die COVID-19-Infektionsdaten des Dashboards stammen von verschiedenen Quellen,
                     um die aktuelle Infektionslage bestmöglich abzubilden.
