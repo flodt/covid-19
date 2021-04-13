@@ -31,16 +31,6 @@
                     </div>
                 </div>
 
-                <div class="section row" v-if="state.ready">
-                    <div class="col l8 m12 s12 offset-l2">
-                        <div class="card-panel blue darken-3 white-text">
-                            Die aktuellen Neuinfektionszahlen und 7-Tage-Inzidenzen sind durch die verringerte Testzahl
-                            an den <b>Osterfeiertagen</b> sowie die Verzögerungen in den Meldeketten bis
-                            ca. Mitte April nicht wirklich aussagekräftig und belastbar.
-                        </div>
-                    </div>
-                </div>
-
                 <div class="row" v-if="state.ready" id="row_country">
                     <div class="col s12 m12 l6">
                         <div class="card pink darken-3" style="height: 210px">
