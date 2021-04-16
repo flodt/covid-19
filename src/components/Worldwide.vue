@@ -67,6 +67,50 @@
 
                 <div class="row center" v-if="state.ready">
                     <h5 class="center"><b>Übersicht</b></h5>
+
+                    <form class="col s12" @submit="ignore">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">search</i>
+                                <input id="icon_prefix" type="text" class="validate" v-model="input.searchText">
+                                <label for="icon_prefix">Suchen...</label>
+                            </div>
+                        </div>
+                        <b>Sortieren nach...</b>
+                        <div class="row">
+                            <p class="col">
+                                <label>
+                                    <input name="group1" :value="0" type="radio" checked v-model="input.sortBy"/>
+                                    <span>Alphabetisch</span>
+                                </label>
+                            </p>
+                            <p class="col">
+                                <label>
+                                    <input name="group1" :value="1" type="radio" v-model="input.sortBy"/>
+                                    <span>Inzidenz</span>
+                                </label>
+                            </p>
+                            <p class="col">
+                                <label>
+                                    <input name="group1" :value="2" type="radio"  v-model="input.sortBy"/>
+                                    <span>Erstimpfung</span>
+                                </label>
+                            </p>
+                            <p class="col">
+                                <label>
+                                    <input name="group1" :value="3" type="radio" v-model="input.sortBy"/>
+                                    <span>Zweitimpfung</span>
+                                </label>
+                            </p>
+                            <p class="col">
+                                <label>
+                                    <input name="group1" :value="4" type="radio" v-model="input.sortBy"/>
+                                    <span>Tote / 100.000 EW</span>
+                                </label>
+                            </p>
+                        </div>
+                    </form>
+
                     <div class="col s12 m12 l12">
                         <table class="striped">
                             <thead>
@@ -75,10 +119,11 @@
                                 <th>Land</th>
                                 <th>7-Tage-Inzidenz</th>
                                 <th>Geimpfte (1./2.) %</th>
+                                <th>Tote / 100.000 EW</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr v-for="country in countries">
+                            <tr v-for="country in filteredCountries">
                                 <td v-if="country.hasFlag"><img :src="`https://www.countryflags.io/${country.code}/flat/64.png`" style="width: 38px"></td>
                                 <td v-else></td>
                                 <td><b>{{ country.name }}</b></td>
@@ -87,6 +132,7 @@
                                     <b class="green-text text-darken-1">{{ country.vaccinated.toFixed(1) }}</b> / <b class="blue-text text-darken-1">{{ country.fullyVaccinated.toFixed(1) }}</b>
                                 </td>
                                 <td v-else>Keine Daten</td>
+                                <td><b>{{ country.deathIncidence.toFixed(1) }}</b></td>
                             </tr>
                             </tbody>
                         </table>
@@ -126,6 +172,10 @@ export default {
                 error: false,
                 loading: true
             },
+            input: {
+                searchText: "",
+                sortBy: 1
+            },
             countries: [],
             stat: {
                 below35: 0,
@@ -135,6 +185,24 @@ export default {
                 above200: 0
             }
         };
+    },
+    computed: {
+        filteredCountries() {
+            //get the sorting comparator
+            const SORTING = [
+                (a, b) => a.name > b.name ? 1 : -1,
+                (a, b) => a.incidence < b.incidence ? 1 : -1,
+                (a, b) => a.vaccinated < b.vaccinated ? 1 : -1,
+                (a, b) => a.fullyVaccinated < b.fullyVaccinated ? 1 : -1,
+                (a, b) => a.deathIncidence < b.deathIncidence ? 1 : -1,
+            ];
+
+            const FILTERING = country => country.name.toLowerCase().indexOf(this.input.searchText.toLowerCase()) > -1;
+
+            return this.countries
+                .sort(SORTING[this.input.sortBy])
+                .filter(FILTERING);
+        }
     },
     components: {
         navigation
@@ -147,6 +215,8 @@ export default {
     created() {
 
     },
-    methods: {}
+    methods: {
+        ignore() {}
+    }
 };
 </script>
