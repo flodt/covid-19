@@ -630,7 +630,7 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
                         data: [
                             prelim - fully,
                             fully,
-                            POPULATION_GERMANY - (prelim + fully)
+                            POPULATION_GERMANY - prelim
                         ],
                         backgroundColor: [
                             'rgb(221, 0, 0)',
@@ -660,7 +660,7 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
                         data: [
                             prelimBavaria - fullyBavaria,
                             fullyBavaria,
-                            POPULATION_BAVARIA - (prelimBavaria + fullyBavaria)
+                            POPULATION_BAVARIA - prelimBavaria
                         ],
                         backgroundColor: [
                             'rgb(76, 175, 80)',
