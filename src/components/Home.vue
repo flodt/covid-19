@@ -142,7 +142,7 @@
                                 <a class="modal-trigger" href="#modal-herd">(Woher kommt das?)</a>
                                 <div style="text-align: center;">
                                     <h4 id="herd_immunity_timer">{{ germany.herdImmunityTimer }}</h4>
-                                    bei der Geschwindigkeit der letzten 21 Tage.
+                                    zur Durchimpfung <b>nur</b> mit der Erstimpfung.
                                 </div>
                             </div>
                         </div>

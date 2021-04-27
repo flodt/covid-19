@@ -219,7 +219,7 @@
                                 <b>Zeit bis zur Herdenimmunität (70 %):</b>
                                 <div style="text-align: center;">
                                     <h4 id="herd_immunity_timer">2 Jahre, 10 Monate</h4>
-                                    bei der Geschwindigkeit der letzten 21 Tage.
+                                    zur Durchimpfung <b>nur</b> mit der Erstimpfung.
                                 </div>
                             </div>
                         </div>
