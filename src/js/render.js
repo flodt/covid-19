@@ -245,7 +245,8 @@ export function renderHotspots(vm, agss, rki, zeit, vacc) {
                 incidence: d.cases7_per_100k,
                 color: colorsForIncidences(d.cases7_per_100k).chartColor,
                 index: idx + 1,
-                casesTotal: d.cases
+                casesTotal: d.cases,
+                selected: getFromStorage().includes(d.AGS)
             }
         });
 
