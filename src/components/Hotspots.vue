@@ -88,6 +88,17 @@
 
                 <div class="row center" v-if="state.ready">
                     <h5 class="center"><b>Übersicht</b></h5>
+
+                    <form class="col s12" @submit="ignore">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">search</i>
+                                <input id="icon_prefix" type="text" class="validate" v-model="filterText">
+                                <label for="icon_prefix">Suchen...</label>
+                            </div>
+                        </div>
+                    </form>
+
                     <div class="col s12 m12 l12">
                         <table class="striped">
                             <thead>
@@ -99,7 +110,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr v-for="dist in overview">
+                            <tr v-for="dist in filteredDistricts">
                                 <td>{{ dist.index }}</td>
                                 <td><b>{{ dist.name }}</b></td>
                                 <td :style="{'color': dist.color}"><b>{{ dist.incidence.toFixed(1) }}</b></td>
@@ -138,8 +149,6 @@
 
 <script>
 import navigation from "@/components/NavBar.vue";
-import firebase from "firebase";
-import M from 'materialize-css';
 import {requestData} from "@/js/api.js"
 import {renderHotspots} from "../js/render";
 
@@ -166,8 +175,16 @@ export default {
                 at50100: 0,
                 at100200: 0,
                 above200: 0
-            }
+            },
+            filterText: ""
         };
+    },
+    computed: {
+        filteredDistricts() {
+            return this.overview.filter(item => {
+                return item.name.toLowerCase().indexOf(this.filterText.toLowerCase()) > -1;
+            })
+        }
     },
     components: {
         navigation
@@ -179,6 +196,8 @@ export default {
     created() {
 
     },
-    methods: {}
+    methods: {
+        ignore() {}
+    }
 };
 </script>
