@@ -119,16 +119,32 @@
                             <div class="card-content white-text">
                                 <span class="card-title activator">Landesweit<i
                                     class="material-icons right">timer</i></span>
-                                <div class="row">
+                                <div class="row hide-on-large-only" style="margin-top: 16px">
                                     <div class="col">
-                                        <h3 id="vaccinated_preliminary">{{ germany.vaccinated }}</h3>
+                                        <h4>{{ germany.vaccinated }}</h4>
                                         <b><a class="oncard"
                                               href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
                                             Geimpfte
                                         </a></b>
                                     </div>
                                     <div class="col">
-                                        <h3 id="vaccinated_protected">{{ germany.fullyVaccinated }}</h3>
+                                        <h4>{{ germany.fullyVaccinated }}</h4>
+                                        <b><a class="oncard"
+                                              href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                            voller Impfschutz
+                                        </a></b>
+                                    </div>
+                                </div>
+                                <div class="row hide-on-med-and-down">
+                                    <div class="col">
+                                        <h3>{{ germany.vaccinated }}</h3>
+                                        <b><a class="oncard"
+                                              href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                            Geimpfte
+                                        </a></b>
+                                    </div>
+                                    <div class="col">
+                                        <h3>{{ germany.fullyVaccinated }}</h3>
                                         <b><a class="oncard"
                                               href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
                                             voller Impfschutz
@@ -162,16 +178,32 @@
                         <div class="card blue" style="height: 210px">
                             <div class="card-content white-text">
                                 <span class="card-title">Bayern</span>
-                                <div class="row">
+                                <div class="row hide-on-large-only" style="margin-top: 16px">
                                     <div class="col">
-                                        <h3 id="vaccinated_preliminary_bavaria">{{ bavaria.vaccinated }}</h3>
+                                        <h4>{{ bavaria.vaccinated }}</h4>
                                         <b><a class="oncard"
                                               href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
                                             Geimpfte
                                         </a></b>
                                     </div>
                                     <div class="col">
-                                        <h3 id="vaccinated_protected_bavaria">{{ bavaria.fullyVaccinated }}</h3>
+                                        <h4>{{ bavaria.fullyVaccinated }}</h4>
+                                        <b><a class="oncard"
+                                              href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                            voller Impfschutz
+                                        </a></b>
+                                    </div>
+                                </div>
+                                <div class="row hide-on-med-and-down">
+                                    <div class="col">
+                                        <h3>{{ bavaria.vaccinated }}</h3>
+                                        <b><a class="oncard"
+                                              href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                            Geimpfte
+                                        </a></b>
+                                    </div>
+                                    <div class="col">
+                                        <h3>{{ bavaria.fullyVaccinated }}</h3>
                                         <b><a class="oncard"
                                               href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
                                             voller Impfschutz
