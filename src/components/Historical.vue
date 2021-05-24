@@ -116,6 +116,32 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row" v-if="state.ready">
+                    <h5 class="center"><b>Testungen</b></h5>
+
+                    <div class="col s12 m12 l6">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">PCR-Tests</span>
+                                <div style="width: inherit; height: inherit; position: relative;">
+                                    <canvas id="chart_testing_history"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m12 l6">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">Testpositivenrate</span>
+                                <div style="width: inherit; height: inherit; position: relative;">
+                                    <canvas id="chart_testing_positivity"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -142,7 +168,7 @@ import navigation from "@/components/NavBar.vue";
 import firebase from "firebase";
 import M from 'materialize-css';
 import {requestSingle} from "@/js/api.js";
-import {renderHistorical, renderVaccHistorical} from "@/js/render.js";
+import {renderHistorical, renderVaccHistorical, renderTesting} from "@/js/render.js";
 import {requestHistorical} from "../js/api";
 
 export default {
@@ -166,6 +192,9 @@ export default {
 
         const VACCINATIONS = "https://interactive.zeit.de/cronjobs/2020/corona/impfzahlenAutomatisch.json";
         requestSingle(this, VACCINATIONS, renderVaccHistorical);
+
+        const TESTING = "https://api.corona-zahlen.org/testing/history";
+        requestSingle(this, TESTING, renderTesting)
     },
     created() {
 

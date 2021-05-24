@@ -1,5 +1,10 @@
 import {getCountryCode} from "../js/countryCodes.js";
-import {renderWorldwideIncidenceMap, renderWorldwideVaccMap, renderWorldwideSecondVaccMap, renderWorldwideDeathMap} from "../js/map.js";
+import {
+    renderWorldwideIncidenceMap,
+    renderWorldwideVaccMap,
+    renderWorldwideSecondVaccMap,
+    renderWorldwideDeathMap
+} from "../js/map.js";
 import {getFromStorage} from "./store";
 
 function formatInterval(daysToHerdImmunity) {
@@ -113,16 +118,16 @@ export function getAnnotatedName(ags, name) {
 }
 
 function roundToSignificantFigures(num, n) {
-    if(num === 0) {
+    if (num === 0) {
         return 0;
     }
 
-    const d = Math.ceil(Math.log10(num < 0 ? -num: num));
+    const d = Math.ceil(Math.log10(num < 0 ? -num : num));
     const power = n - d;
 
     const magnitude = Math.pow(10, power);
-    const shifted = Math.round(num*magnitude);
-    return shifted/magnitude;
+    const shifted = Math.round(num * magnitude);
+    return shifted / magnitude;
 }
 
 function showErrorBox(vm, agss, rki, zeit, vacc) {
@@ -1023,7 +1028,7 @@ export function renderDemo(vm) {
             .map(d => ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"][d])
             .reverse();
 
-        const bars = [78.0,80.0,75.0,40.0,30.0,40.0,60.0,56.7];
+        const bars = [78.0, 80.0, 75.0, 40.0, 30.0, 40.0, 60.0, 56.7];
 
         //render charts
         const ctx = document.getElementById("chart_demo_atlantis").getContext('2d');
@@ -1059,6 +1064,120 @@ export function renderDemo(vm) {
                 tooltips: {
                     mode: 'nearest',
                     intersect: false
+                }
+            }
+        });
+    }, 0);
+}
+
+export function renderTesting(vm, testing) {
+    const testingAvail = testing !== null && testing.error === undefined;
+
+    const labels = testing.data.history.map(w => {
+        if (w.calendarWeek === "until CW10, 2020") {
+            return "10/2020";
+        } else {
+            return w.calendarWeek;
+        }
+    });
+    const negatives = testing.data.history.map(w => w.performedTests - w.positiveTests);
+    const positives = testing.data.history.map(w => w.positiveTests);
+    const rate = testing.data.history.map(w => w.positivityRate);
+
+    setTimeout(function () {
+        //render charts
+        const ctx = document.getElementById("chart_testing_history").getContext('2d');
+        const chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'bar',
+
+            // The data for our dataset
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'positive PCR-Tests',
+                    backgroundColor: "#c62828",
+                    borderColor: "#c62828",
+                    data: positives,
+                    fill: false
+                },
+                    {
+                        label: 'negative PCR-Tests',
+                        backgroundColor: "#43a047",
+                        borderColor: "#43a047",
+                        data: negatives,
+                        fill: false
+                    }
+                ]
+            },
+
+            // Configuration options go here
+            options: {
+                scales: {
+                    xAxes: [{stacked: true}],
+                    yAxes: [{
+                        stacked: true,
+                        ticks: {
+                            beginAtZero: true
+                            //suggestedMin: 0,
+                            //suggestedMax: 32500
+                        }
+                    }]
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                tooltips: {
+                    mode: 'nearest',
+                    intersect: false
+                }
+            }
+        });
+    }, 0);
+
+    setTimeout(function () {
+        //render charts
+        const ctx = document.getElementById("chart_testing_positivity").getContext('2d');
+        const chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+            // The data for our dataset
+            data: {
+                labels: labels.slice(1),
+                datasets: [{
+                    label: 'Testpositivenrate',
+                    backgroundColor: "#c62828",
+                    borderColor: "#c62828",
+                    data: rate.slice(1),
+                    fill: false,
+                    pointRadius: 0
+                }]
+            },
+
+            // Configuration options go here
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            callback: function (value) {
+                                return (value * 100).toFixed(0) + '%';
+                            }
+                            //suggestedMin: 0,
+                            //suggestedMax: 32500
+                        }
+                    }]
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                tooltips: {
+                    mode: 'nearest',
+                    intersect: false,
+                    callbacks: {
+                        label: function(tooltipItem, data) {
+                            return (tooltipItem.yLabel * 100).toFixed(2) + "%";
+                        }
+                    }
                 }
             }
         });
