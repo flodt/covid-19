@@ -7,6 +7,8 @@ import {
 } from "../js/map.js";
 import {getFromStorage} from "./store";
 
+let colorSequence = 0;
+
 function formatInterval(daysToHerdImmunity) {
     if (daysToHerdImmunity === 0) return "Ziel erreicht!";
 
@@ -33,27 +35,30 @@ export function colorsForIncidences() {
     const max = Math.max(...arguments);
     let color, chartColor, textColor;
 
-    if (max < 35) {
-        color = "green darken-2";
-        chartColor = "rgb(56, 142, 60)";
-        textColor = "white-text";
-    } else if (max >= 35 && max < 50) {
-        color = "amber darken-2";
-        chartColor = "rgb(255, 160, 0)";
-        textColor = "white-text";
-    } else if (max >= 50 && max < 100) {
-        color = "orange darken-2";
-        chartColor = "rgb(245, 124, 0)";
-        textColor = "white-text";
-    } else if (max >= 100 && max < 200) {
-        color = "deep-orange darken-2";
-        chartColor = "rgb(230, 74, 25)";
-        textColor = "white-text";
-    } else {
-        color = "red darken-2";
-        chartColor = "rgb(211, 47, 47)";
-        textColor = "white-text";
-    }
+    const rainbowCard = [
+        "red darken-1",
+        "orange darken-1",
+        "amber darken-1",
+        "light-green darken-1",
+        "blue darken-1",
+        "purple"
+    ];
+
+    const rainbowChart = [
+        "#e53935",
+        "#fb8c00",
+        "#ffb300",
+        "#7cb342",
+        "#1e88e5",
+        "#9c27b0"
+    ];
+
+    color = rainbowCard[colorSequence % rainbowCard.length];
+    chartColor = rainbowChart[colorSequence % rainbowChart.length];
+    colorSequence++;
+    textColor = "white-text";
+
+    console.log(color);
 
     return {
         color: color,
