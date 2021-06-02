@@ -55,7 +55,7 @@
                     <h5 class="center"><b>Bundesländer</b></h5>
 
                     <div class="col s6 m6 l3" v-for="card in states">
-                        <div class="card" :class="card.cardColor">
+                        <div class="card" :style="`background-color: ${card.cardColor}`">
                             <div class="card-content white-text">
                                 <span class="card-title truncate">{{ card.name }}</span>
                                 <div class="row">

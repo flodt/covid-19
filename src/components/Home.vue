@@ -81,7 +81,7 @@
 
                 <div class="row" id="card_space">
                     <div class="col s12 m12 l4" v-for="card in districts">
-                        <div class="card" :class="card.cardColor">
+                        <div class="card" :style="`background-color: ${card.cardColor}`">
                             <div class="card-content" :class="card.textColor">
                         <span class="card-title activator" :class="card.textColor">{{ card.name }}<i
                             class="material-icons right">show_chart</i></span>

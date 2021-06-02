@@ -16,17 +16,7 @@ export function renderHeatmap(vm, data) {
 
     //color source: https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung
     function colorScale(incidence) {
-        if (incidence < 35) {
-            return "#cccccf";
-        } else if (incidence < 50) {
-            return "#e6a345";
-        } else if (incidence < 100) {
-            return "#da4733";
-        } else if (incidence < 200) {
-            return "#bf152a";
-        } else {
-            return "#78121e";
-        }
+        return colorsForIncidences(incidence).mapColor;
     }
 
     //define map style depending on incidence
@@ -136,17 +126,7 @@ export function renderWorldwideIncidenceMap(vm) {
 
     //color source: https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung
     function colorScale(incidence) {
-        if (incidence < 35) {
-            return "#cccccf";
-        } else if (incidence < 50) {
-            return "#e6a345";
-        } else if (incidence < 100) {
-            return "#da4733";
-        } else if (incidence < 200) {
-            return "#bf152a";
-        } else {
-            return "#78121e";
-        }
+        return colorsForIncidences(incidence).mapColor;
     }
 
     //define map style depending on incidence

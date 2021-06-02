@@ -33,18 +33,26 @@ function formatInterval(daysToHerdImmunity) {
 
 export function colorsForIncidences() {
     const max = Math.max(...arguments);
-    let color, chartColor, textColor;
+    let color, chartColor, mapColor, textColor;
 
-    const rainbowCard = [
-        "red darken-1",
-        "orange darken-1",
-        "amber darken-1",
-        "light-green darken-1",
-        "blue darken-1",
-        "purple"
+    /*
+        Define the color sequences we use later.
+     */
+    const classical = [
+        "rgb(56, 142, 60)",
+        "rgb(255, 160, 0)",
+        "rgb(245, 124, 0)",
+        "rgb(230, 74, 25)",
+        "rgb(211, 47, 47)"
     ];
-
-    const rainbowChart = [
+    const zeit = [
+        "#cccccf",
+        "#e6a345",
+        "#da4733",
+        "#bf152a",
+        "#78121e"
+    ];
+    const rainbow = [
         "#e53935",
         "#fb8c00",
         "#ffb300",
@@ -53,16 +61,41 @@ export function colorsForIncidences() {
         "#9c27b0"
     ];
 
-    color = rainbowCard[colorSequence % rainbowCard.length];
-    chartColor = rainbowChart[colorSequence % rainbowChart.length];
-    colorSequence++;
-    textColor = "white-text";
+    //sequence selection logic
+    let sequence = classical;
+    let mapSequence = zeit;
 
-    console.log(color);
+    if (max < 35) {
+        color = sequence[0];
+        chartColor = color;
+        mapColor = mapSequence[0];
+        textColor = "white-text";
+    } else if (max >= 35 && max < 50) {
+        color = sequence[1];
+        chartColor = color;
+        mapColor = mapSequence[1];
+        textColor = "white-text";
+    } else if (max >= 50 && max < 100) {
+        color = sequence[2];
+        chartColor = color;
+        mapColor = mapSequence[2];
+        textColor = "white-text";
+    } else if (max >= 100 && max < 200) {
+        color = sequence[3];
+        chartColor = color;
+        mapColor = mapSequence[3];
+        textColor = "white-text";
+    } else {
+        color = sequence[4];
+        chartColor = color;
+        mapColor = mapSequence[4];
+        textColor = "white-text";
+    }
 
     return {
         color: color,
         chartColor: chartColor,
+        mapColor: mapColor,
         textColor: textColor
     };
 }
@@ -526,7 +559,7 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
             textColor = cfi.textColor;
             chartColor = cfi.chartColor;
         } else {
-            color = "grey";
+            color = "rgb(158, 158, 158)";
             chartColor = "rgb(158, 158, 158)";
             textColor = "white-text";
         }
