@@ -6,6 +6,18 @@
                 <div class="row">
                     <h5 class="center"><b>Einstellungen</b></h5>
 
+                    <h6 class="center"><b>Farbschema</b></h6>
+                    <div class="row">
+                        <select v-model="colorScheme" @change="update"
+                                class="browser-default col s12 m8 l6 offset-l3 offset-m2">
+                            <option value="1">Standard</option>
+                            <option value="2">Pride</option>
+                            <option value="3">Standard (farbige Karten)</option>
+                            <option value="4">ZEIT Online</option>
+                        </select>
+                    </div>
+
+                    <h6 class="center"><b>Landkreise</b></h6>
                     <p class="center">
                         Landkreise auswählen, die auf der Seite angezeigt werden.
                         <br/>
@@ -15,17 +27,17 @@
                     <div class="col s12 m8 l6 offset-l3 offset-m2">
                         <ul class="collection" v-if="checkedDistricts.length > 0">
                             <draggable v-model="checkedDistricts" @start="drag=true" @end="drag=false; update()">
-                            <li v-for="chk in checkedDistricts"
-                                :key="chk.ags"
-                                class="collection-item">
-                                <div>
-                                    <b>{{ getAnnotatedName(chk, getDetails(chk).name) }}</b>
-                                    ({{ getDetails(chk).stateShort }})
-                                    <span class="secondary-content grey-text text-darken-2">
+                                <li v-for="chk in checkedDistricts"
+                                    :key="chk.ags"
+                                    class="collection-item">
+                                    <div>
+                                        <b>{{ getAnnotatedName(chk, getDetails(chk).name) }}</b>
+                                        ({{ getDetails(chk).stateShort }})
+                                        <span class="secondary-content grey-text text-darken-2">
                                         <i class="material-icons">reorder</i>
                                     </span>
-                                </div>
-                            </li>
+                                    </div>
+                                </li>
                             </draggable>
                         </ul>
 
@@ -71,7 +83,9 @@
                                                v-model="checkedDistricts"
                                                class="filled-in"
                                                @click="update">
-                                        <span class="black-text"><b>{{ getAnnotatedName(dist.ags, dist.name) }}</b></span>
+                                        <span class="black-text"><b>{{
+                                                getAnnotatedName(dist.ags, dist.name)
+                                            }}</b></span>
                                     </label>
                                 </td>
                                 <td>{{ dist.state }}</td>
@@ -101,7 +115,7 @@ import navigation from "@/components/NavBar.vue";
 import firebase from "firebase";
 import M from 'materialize-css';
 import {getAnnotatedName} from "../js/render";
-import {DEFAULT_DISTRICTS, getFromStorage, saveToStorage} from "../js/store";
+import {DEFAULT_DISTRICTS, getColorScheme, getFromStorage, saveColorScheme, saveToStorage} from "../js/store";
 import draggable from 'vuedraggable';
 
 /**
@@ -124,7 +138,8 @@ export default {
         return {
             checkedDistricts: [],
             allDistricts: [],
-            filterText: ""
+            filterText: "",
+            colorScheme: "1"
         };
     },
     computed: {
@@ -141,9 +156,13 @@ export default {
         draggable
     },
     mounted() {
+        const selects = document.querySelectorAll('select');
+        const instances = M.FormSelect.init(selects, {});
+
         //update the model with the selected districts
         this.checkedDistricts = getFromStorage();
         this.allDistricts = staticDistricts.sort((a, b) => a.name > b.name ? 1 : -1);
+        this.colorScheme = getColorScheme();
     },
     created() {
 
@@ -155,6 +174,7 @@ export default {
         update() {
             setTimeout(() => {
                 saveToStorage(this.checkedDistricts);
+                saveColorScheme(this.colorScheme);
             }, 0);
         },
         toDefault() {
@@ -173,7 +193,8 @@ export default {
             saveToStorage(allFromFilter);
             M.toast({html: 'Alle ausgewählt.'});
         },
-        ignore() {},
+        ignore() {
+        },
         getAnnotatedName: getAnnotatedName
     }
 };

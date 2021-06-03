@@ -5,7 +5,7 @@ import {
     renderWorldwideSecondVaccMap,
     renderWorldwideDeathMap
 } from "../js/map.js";
-import {getFromStorage} from "./store";
+import {COLOR_COLORFUL_MAP, COLOR_DEFAULT, COLOR_PRIDE, COLOR_ZEIT, getColorScheme, getFromStorage} from "./store";
 
 let colorSequence = 0;
 
@@ -33,17 +33,17 @@ function formatInterval(daysToHerdImmunity) {
 
 export function colorsForIncidences() {
     const max = Math.max(...arguments);
-    let color, chartColor, mapColor, textColor;
+    let color, chartColor, mapColor, textColor, sequence, mapSequence;
 
     /*
         Define the color sequences we use later.
      */
     const classical = [
-        "rgb(56, 142, 60)",
-        "rgb(255, 160, 0)",
-        "rgb(245, 124, 0)",
-        "rgb(230, 74, 25)",
-        "rgb(211, 47, 47)"
+        "#388e3c",
+        "#ffa000",
+        "#f57c00",
+        "#e64a19",
+        "#d32f2f"
     ];
     const zeit = [
         "#cccccf",
@@ -62,34 +62,53 @@ export function colorsForIncidences() {
     ];
 
     //sequence selection logic
-    let sequence = classical;
-    let mapSequence = zeit;
+    const colorScheme = getColorScheme();
+    const pride = colorScheme === COLOR_PRIDE;
 
-    if (max < 35) {
-        color = sequence[0];
-        chartColor = color;
-        mapColor = mapSequence[0];
-        textColor = "white-text";
-    } else if (max >= 35 && max < 50) {
-        color = sequence[1];
-        chartColor = color;
-        mapColor = mapSequence[1];
-        textColor = "white-text";
-    } else if (max >= 50 && max < 100) {
-        color = sequence[2];
-        chartColor = color;
-        mapColor = mapSequence[2];
-        textColor = "white-text";
-    } else if (max >= 100 && max < 200) {
-        color = sequence[3];
-        chartColor = color;
-        mapColor = mapSequence[3];
-        textColor = "white-text";
+    if (colorScheme === COLOR_DEFAULT) {
+        sequence = classical;
+        mapSequence = zeit;
+    } else if (colorScheme === COLOR_ZEIT) {
+        sequence = zeit;
+        mapSequence = zeit;
+    } else if (colorScheme === COLOR_COLORFUL_MAP) {
+        sequence = classical;
+        mapSequence = classical;
+    }
+
+    if (!pride) {
+        if (max < 35) {
+            color = sequence[0];
+            chartColor = color;
+            mapColor = mapSequence[0];
+            textColor = "white-text";
+        } else if (max >= 35 && max < 50) {
+            color = sequence[1];
+            chartColor = color;
+            mapColor = mapSequence[1];
+            textColor = "white-text";
+        } else if (max >= 50 && max < 100) {
+            color = sequence[2];
+            chartColor = color;
+            mapColor = mapSequence[2];
+            textColor = "white-text";
+        } else if (max >= 100 && max < 200) {
+            color = sequence[3];
+            chartColor = color;
+            mapColor = mapSequence[3];
+            textColor = "white-text";
+        } else {
+            color = sequence[4];
+            chartColor = color;
+            mapColor = mapSequence[4];
+            textColor = "white-text";
+        }
     } else {
-        color = sequence[4];
+        color = rainbow[colorSequence % rainbow.length];
         chartColor = color;
-        mapColor = mapSequence[4];
+        mapColor = color;
         textColor = "white-text";
+        colorSequence++;
     }
 
     return {
