@@ -5,6 +5,7 @@ export const COLOR_DEFAULT = "1";
 export const COLOR_PRIDE = "2";
 export const COLOR_COLORFUL_MAP = "3";
 export const COLOR_ZEIT = "4";
+export const COLOR_EARTHY = "5";
 export const DEFAULT_COLOR_SCHEME = COLOR_DEFAULT;
 
 export function getFromStorage() {

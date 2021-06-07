@@ -14,6 +14,7 @@
                             <option value="2">Pride</option>
                             <option value="3">Standard (farbige Karten)</option>
                             <option value="4">ZEIT Online</option>
+                            <option value="5">Erdtöne</option>
                         </select>
                     </div>
 

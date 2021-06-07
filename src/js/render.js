@@ -5,7 +5,15 @@ import {
     renderWorldwideSecondVaccMap,
     renderWorldwideDeathMap
 } from "../js/map.js";
-import {COLOR_COLORFUL_MAP, COLOR_DEFAULT, COLOR_PRIDE, COLOR_ZEIT, getColorScheme, getFromStorage} from "./store";
+import {
+    COLOR_COLORFUL_MAP,
+    COLOR_DEFAULT,
+    COLOR_EARTHY,
+    COLOR_PRIDE,
+    COLOR_ZEIT,
+    getColorScheme,
+    getFromStorage
+} from "./store";
 
 let colorSequence = 0;
 
@@ -52,6 +60,13 @@ export function colorsForIncidences() {
         "#bf152a",
         "#78121e"
     ];
+    const earthy = [
+        "#33691e",
+        "#ffc400",
+        "#e65100",
+        "#b71c1c",
+        "#880e4f"
+    ];
     const rainbow = [
         "#e53935",
         "#fb8c00",
@@ -74,6 +89,9 @@ export function colorsForIncidences() {
     } else if (colorScheme === COLOR_COLORFUL_MAP) {
         sequence = classical;
         mapSequence = classical;
+    } else if (colorScheme === COLOR_EARTHY) {
+        sequence = earthy;
+        mapSequence = earthy;
     }
 
     if (!pride) {
