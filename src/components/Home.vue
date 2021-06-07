@@ -82,18 +82,18 @@
                 <div class="row" id="card_space">
                     <div class="col s12 m12 l4" v-for="card in districts">
                         <div class="card" :style="`background-color: ${card.cardColor}`">
-                            <div class="card-content" :class="card.textColor">
-                        <span class="card-title activator" :class="card.textColor">{{ card.name }}<i
+                            <div class="card-content" :style="`color: ${card.textColor}`">
+                        <span class="card-title activator" :style="`color: ${card.textColor}`">{{ card.name }}<i
                             class="material-icons right">show_chart</i></span>
                                 <div class="row">
                                     <div class="col">
                                         <h3>{{ card.rki.toFixed(1) }}</h3>
-                                        <b><a class="oncard" href="https://corona.rki.de">RKI</a></b>
+                                        <b><a class="oncard" href="https://corona.rki.de" :style="`color: ${card.textColor}`">RKI</a></b>
                                     </div>
                                     <div class="col">
                                         <h3>{{ card.zeit.toFixed(1) }}</h3>
                                         <b><a class="oncard"
-                                              href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">ZEIT
+                                              href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung" :style="`color: ${card.textColor}`">ZEIT
                                             Online</a></b>
                                     </div>
                                 </div>

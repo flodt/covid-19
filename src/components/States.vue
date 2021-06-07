@@ -55,8 +55,8 @@
                     <h5 class="center"><b>Bundesländer</b></h5>
 
                     <div class="col s6 m6 l3" v-for="card in states">
-                        <div class="card" :style="`background-color: ${card.cardColor}`">
-                            <div class="card-content white-text">
+                        <div class="card" :style="`background-color: ${card.cardColor}; color: ${card.textColor}`">
+                            <div class="card-content">
                                 <span class="card-title truncate">{{ card.name }}</span>
                                 <div class="row">
                                     <div class="col">
@@ -124,6 +124,7 @@ export default {
                 states.push({
                     name: state.name,
                     cardColor: colorsForIncidences(state.weekIncidence).color,
+                    textColor: colorsForIncidences(state.weekIncidence).textColor,
                     incidence: state.weekIncidence
                 });
             }

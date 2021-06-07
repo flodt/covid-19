@@ -72,14 +72,14 @@
                 <div class="row" v-if="state.ready">
                     <div class="col l6 m12 s12">
                         <h5 class="center"><b>Hotspots</b></h5>
-                        <div class="card-panel white-text" v-for="card in hotspots" :style="`background-color: ${card.color}`">
+                        <div class="card-panel" v-for="card in hotspots" :style="`background-color: ${card.color}; color: ${card.textColor}`">
                             <h6><b>{{ card.index }}. {{ card.name }}</b> ({{ card.state }})<span
                                 style="float: right;">{{ card.incidence.toFixed(1) }}</span></h6>
                         </div>
                     </div>
                     <div class="col l6 m12 s12">
                         <h5 class="center"><b>Coldspots</b></h5>
-                        <div class="card-panel white-text" v-for="card in coldspots" :style="`background-color: ${card.color}`">
+                        <div class="card-panel" v-for="card in coldspots" :style="`background-color: ${card.color}; color: ${card.textColor}`">
                             <h6><b>{{ card.index }}. {{ card.name }}</b> ({{ card.state }})<span
                                 style="float: right;">{{ card.incidence.toFixed(1) }}</span></h6>
                         </div>

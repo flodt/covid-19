@@ -39,6 +39,15 @@ function formatInterval(daysToHerdImmunity) {
     return str;
 }
 
+function getTextColor(hex){
+    hex = hex.replace("#", "");
+    const r = parseInt(hex.substr(0, 2), 16);
+    const g = parseInt(hex.substr(2, 2), 16);
+    const b = parseInt(hex.substr(4, 2), 16);
+    const yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+    return (yiq >= 180) ? '#212121' : '#ffffff';
+}
+
 export function colorsForIncidences() {
     const max = Math.max(...arguments);
     let color, chartColor, mapColor, textColor, sequence, mapSequence;
@@ -67,7 +76,6 @@ export function colorsForIncidences() {
         "#b71c1c",
         "#880e4f"
     ];
-    //todo: implement black text
     const grayscale = [
         "#eeeeee",
         "#bdbdbd",
@@ -130,33 +138,33 @@ export function colorsForIncidences() {
             color = sequence[0];
             chartColor = color;
             mapColor = mapSequence[0];
-            textColor = "white-text";
+            textColor = getTextColor(color);
         } else if (max >= 35 && max < 50) {
             color = sequence[1];
             chartColor = color;
             mapColor = mapSequence[1];
-            textColor = "white-text";
+            textColor = getTextColor(color);
         } else if (max >= 50 && max < 100) {
             color = sequence[2];
             chartColor = color;
             mapColor = mapSequence[2];
-            textColor = "white-text";
+            textColor = getTextColor(color);
         } else if (max >= 100 && max < 200) {
             color = sequence[3];
             chartColor = color;
             mapColor = mapSequence[3];
-            textColor = "white-text";
+            textColor = getTextColor(color);
         } else {
             color = sequence[4];
             chartColor = color;
             mapColor = mapSequence[4];
-            textColor = "white-text";
+            textColor = getTextColor(color);
         }
     } else {
         color = rainbow[colorSequence % rainbow.length];
         chartColor = color;
         mapColor = color;
-        textColor = "white-text";
+        textColor = "#ffffff";
         colorSequence++;
     }
 
@@ -330,6 +338,7 @@ export function renderHotspots(vm, agss, rki, zeit, vacc) {
                 incidence: d.cases7_per_100k,
                 state: shortState(d.BL),
                 color: colorsForIncidences(d.cases7_per_100k).color,
+                textColor: colorsForIncidences(d.cases7_per_100k).textColor,
                 index: idx + 1
             }
         });
