@@ -8,7 +8,7 @@ import {
 import {
     COLOR_COLORFUL_MAP,
     COLOR_DEFAULT,
-    COLOR_EARTHY,
+    COLOR_EARTHY, COLOR_PINK_UNICORN,
     COLOR_PRIDE,
     COLOR_ZEIT,
     getColorScheme,
@@ -67,6 +67,21 @@ export function colorsForIncidences() {
         "#b71c1c",
         "#880e4f"
     ];
+    //todo: implement black text
+    const grayscale = [
+        "#eeeeee",
+        "#bdbdbd",
+        "#757575",
+        "#616161",
+        "#000000"
+    ];
+    const unicorn = [
+        "#ffbbd0",
+        "#f06292",
+        "#e91e63",
+        "#d500f9",
+        "#8e24aa"
+    ];
     const rainbow = [
         "#e53935",
         "#fb8c00",
@@ -92,6 +107,9 @@ export function colorsForIncidences() {
     } else if (colorScheme === COLOR_EARTHY) {
         sequence = earthy;
         mapSequence = earthy;
+    } else if (colorScheme === COLOR_PINK_UNICORN) {
+        sequence = unicorn;
+        mapSequence = unicorn;
     }
 
     if (!pride) {
