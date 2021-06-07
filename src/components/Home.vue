@@ -31,6 +31,27 @@
                     </div>
                 </div>
 
+                <div class="section row" v-if="state.ready && state.showPrideBanner">
+                    <div class="col l8 m12 s12 offset-l2">
+                        <div class="card-panel blue darken-3 white-text">
+                            <p>Juni ist <b>Pride Month</b>, daher erstrahlen die Landkreise in Regenbogenfarben.</p>
+
+                            <p>Welches Farbschema auf der Seite benutzt wird, kann auch in den Einstellungen verändert werden.</p>
+
+                            <router-link to="/settings">
+                                <a class="waves-effect btn white black-text">
+                                    <i class="material-icons left">settings</i>
+                                    Zu den Einstellungen
+                                </a>
+                            </router-link>
+                            <a class="waves-effect btn white black-text" @click="dismissPride">
+                                <i class="material-icons left">close</i>
+                                Schließen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row" v-if="state.ready" id="row_country">
                     <div class="col s12 m12 l6">
                         <div class="card pink darken-3" style="height: 210px">
@@ -322,6 +343,7 @@ import firebase from "firebase";
 import M from 'materialize-css';
 import {requestData} from "@/js/api.js"
 import {renderData} from "../js/render";
+import {dismissPrideInfoBanner, shouldShowPrideInfoBanner} from "../js/store";
 
 export default {
     data() {
@@ -351,7 +373,8 @@ export default {
                 rValAvail: false,
                 ready: false,
                 error: false,
-                loading: true
+                loading: true,
+                showPrideBanner: false
             },
             districts: []
         };
@@ -360,12 +383,19 @@ export default {
         navigation
     },
     mounted() {
+        //check if we should show the pride banner
+        this.state.showPrideBanner = shouldShowPrideInfoBanner();
+
         //call the APIs
         requestData(this, renderData);
     },
     created() {
 
     },
-    methods: {}
+    methods: {
+        dismissPride() {
+            dismissPrideInfoBanner(this);
+        }
+    }
 };
 </script>

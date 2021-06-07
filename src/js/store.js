@@ -1,3 +1,5 @@
+import M from "materialize-css";
+
 export const DEFAULT_DISTRICTS = ["09778", "09162", "09179", "09762", "09777", "09188", "09178", "09175", "09772"];
 export const COLOR_DEFAULT = "1";
 export const COLOR_PRIDE = "2";
@@ -36,4 +38,22 @@ export function getColorScheme() {
 
 export function saveColorScheme(scheme) {
     localStorage.setItem("colorScheme", scheme);
+}
+
+export function shouldShowPrideInfoBanner() {
+    const hasShownBanner = localStorage.getItem("hasSeenPrideBanner");
+
+    if (hasShownBanner === null || hasShownBanner === "null" || hasShownBanner === undefined || hasShownBanner === false) {
+        //show the banner, set the color scheme to pride
+        localStorage.setItem("colorScheme", COLOR_PRIDE);
+        localStorage.setItem("hasSeenPrideBanner", "true");
+        return true;
+    } else {
+        return false;
+    }
+}
+
+export function dismissPrideInfoBanner(vm) {
+    localStorage.setItem("hasSeenPrideBanner", "true");
+    vm.state.showPrideBanner = false;
 }
