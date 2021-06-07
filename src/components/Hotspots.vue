@@ -113,7 +113,7 @@
                             <tr v-for="dist in filteredDistricts">
                                 <td>{{ dist.index }} <span class="blue-text">{{ dist.selected ? "&#9679;" : "" }}</span></td>
                                 <td><b>{{ dist.name }}</b></td>
-                                <td :style="{'color': dist.color}"><b>{{ dist.incidence.toFixed(1) }}</b></td>
+                                <td><b><span :style="`color: ${dist.color}`">&#9679;</span> {{ dist.incidence.toFixed(1) }}</b></td>
                                 <td>{{ dist.casesTotal }}</td>
                             </tr>
                             </tbody>

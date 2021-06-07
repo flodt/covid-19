@@ -127,7 +127,7 @@
                                 <td v-if="country.hasFlag"><img :src="`https://www.countryflags.io/${country.code}/flat/64.png`" style="width: 38px"></td>
                                 <td v-else></td>
                                 <td><b>{{ country.name }}</b></td>
-                                <td :style="{'color': country.color}"><b>{{ country.incidence.toFixed(1) }}</b></td>
+                                <td><span :style="`color: ${country.color}`">&#9679;</span> <b>{{ country.incidence.toFixed(1) }}</b></td>
                                 <td v-if="country.hasVaccData">
                                     <b class="green-text text-darken-1">{{ country.vaccinated.toFixed(1) }}</b> / <b class="blue-text text-darken-1">{{ country.fullyVaccinated.toFixed(1) }}</b>
                                 </td>
