@@ -8,7 +8,7 @@ import {
 import {
     COLOR_COLORFUL_MAP,
     COLOR_DEFAULT,
-    COLOR_EARTHY, COLOR_PINK_UNICORN,
+    COLOR_EARTHY, COLOR_GRAYSCALE, COLOR_PASTEL, COLOR_PINK_UNICORN,
     COLOR_PRIDE,
     COLOR_ZEIT,
     getColorScheme,
@@ -82,6 +82,13 @@ export function colorsForIncidences() {
         "#d500f9",
         "#8e24aa"
     ];
+    const pastel = [
+        "#ffbbd0",
+        "#fff9c4",
+        "#ccff90",
+        "#bbdeff",
+        "#e1bee7"
+    ];
     const rainbow = [
         "#e53935",
         "#fb8c00",
@@ -110,6 +117,12 @@ export function colorsForIncidences() {
     } else if (colorScheme === COLOR_PINK_UNICORN) {
         sequence = unicorn;
         mapSequence = unicorn;
+    } else if (colorScheme === COLOR_GRAYSCALE) {
+        sequence = grayscale;
+        mapSequence = grayscale;
+    } else if (colorScheme === COLOR_PASTEL) {
+        sequence = pastel;
+        mapSequence = pastel;
     }
 
     if (!pride) {

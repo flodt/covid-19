@@ -7,6 +7,8 @@ export const COLOR_COLORFUL_MAP = "3";
 export const COLOR_ZEIT = "4";
 export const COLOR_EARTHY = "5";
 export const COLOR_PINK_UNICORN = "6";
+export const COLOR_GRAYSCALE = "7";
+export const COLOR_PASTEL = "8";
 export const DEFAULT_COLOR_SCHEME = COLOR_DEFAULT;
 
 export function getFromStorage() {
