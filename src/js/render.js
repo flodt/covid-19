@@ -267,7 +267,7 @@ function showErrorBox(vm, agss, rki, zeit, vacc) {
     }
 
     if (vaccAvail) {
-        const vaccState = new Date(vacc.lastUpdate);
+        const vaccState = new Date(vacc.meta.lastUpdate);
         vm.state.vaccine = vaccState.toLocaleString("de-de");
     } else {
         vm.state.vaccine = "Nicht verfügbar";
@@ -509,7 +509,7 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
     showErrorBox(vm, agss, rki, zeit, vacc);
     const rkiAvail = rki !== null && rki.features !== undefined;
     const zeitAvail = zeit !== null;
-    const vaccAvail = vacc !== null;
+    const vaccAvail = vacc !== null && vacc.error === undefined;
     const rValAvail = rval !== null && rval.error === undefined;
 
     //show the r value and deaths yesterday
@@ -710,32 +710,19 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
 
     //show the vaccine data (compute percentages and update fields)
     if (vaccAvail) {
-        const prelim = vacc.germany.historical[0].peopleVaccinated;
-        const fully = vacc.germany.historical[0].peopleFullyVaccinated;
+        const prelim = vacc.data.vaccinated;
+        const fully = vacc.data.secondVaccination.vaccinated;
         vm.germany.vaccinated =
             (prelim / POPULATION_GERMANY * 100).toFixed(2) + " %";
         vm.germany.fullyVaccinated =
             (fully / POPULATION_GERMANY * 100).toFixed(2) + " %";
 
-        const prelimBavaria = vacc.bundeslaender.filter(b => b.id === "Bayern")[0].historical[0].peopleVaccinated;
-        const fullyBavaria = vacc.bundeslaender.filter(b => b.id === "Bayern")[0].historical[0].peopleFullyVaccinated;
+        const prelimBavaria = vacc.data.states.BY.vaccinated;
+        const fullyBavaria = vacc.data.states.BY.secondVaccination.vaccinated;
         vm.bavaria.vaccinated =
             (prelimBavaria / POPULATION_BAVARIA * 100).toFixed(2) + " %";
         vm.bavaria.fullyVaccinated =
             (fullyBavaria / POPULATION_BAVARIA * 100).toFixed(2) + " %";
-
-        //compute the herd immunity counter (set at 70 %)
-        /**
-         * This is very definitely only meant for entertainment purposes.
-         * There is no hard science behind this - I simply take the average vaccination speed
-         * over the last 21 days (in order to avoid issues with the slow vaccination start
-         * affecting the overall average), and extrapolate to compute the time to herd immunity.
-         * Do with that figure what you want.
-         */
-        const herdImmunity = 0.70 * POPULATION_GERMANY - prelim;
-        const threeWeeks = vacc.germany.historical[21].peopleVaccinated;
-        const daysToHerdImmunity = herdImmunity / ((prelim - threeWeeks) / 21.0);
-        vm.germany.herdImmunityTimer = formatInterval(daysToHerdImmunity);
 
         //display the block
         vm.state.vaccAvail = true;

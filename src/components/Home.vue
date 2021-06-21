@@ -117,8 +117,7 @@
                     <div class="col s12 m12 l6">
                         <div class="card light-green darken-1" style="height: 210px">
                             <div class="card-content white-text">
-                                <span class="card-title activator">Landesweit<i
-                                    class="material-icons right">timer</i></span>
+                                <span class="card-title">Landesweit</span>
                                 <div class="row hide-on-large-only" style="margin-top: 16px">
                                     <div class="col">
                                         <h4>{{ germany.vaccinated }}</h4>
@@ -150,15 +149,6 @@
                                             voller Impfschutz
                                         </a></b>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title">Impfstatistik<i class="material-icons right">close</i></span>
-                                <b>Zeit bis zur Herdenimmunität (70 %):</b>
-                                <a class="modal-trigger" href="#modal-herd">(Woher kommt das?)</a>
-                                <div style="text-align: center;">
-                                    <h4 id="herd_immunity_timer">{{ germany.herdImmunityTimer }}</h4>
-                                    zur Durchimpfung <b>nur</b> mit der Erstimpfung.
                                 </div>
                             </div>
                         </div>
@@ -301,7 +291,7 @@
                     state.zeit
                 }}</span>
             </div>
-            <div class="grey-text text-darken-2" style="text-align: center;">Stand (ZEIT Online Impfstatistik): <span
+            <div class="grey-text text-darken-2" style="text-align: center;">Stand (RKI Impfstatistik): <span
                 id="state_vaccine">{{ state.vaccine }}</span>
             </div>
             <div class="grey-text text-darken-2" style="text-align: center;">Landkreise zeigen 7-Tage-Inzidenzen pro
@@ -331,7 +321,6 @@ export default {
                 sevenDayIncidence: 0,
                 vaccinated: "0.00 %",
                 fullyVaccinated: "0.00 %",
-                herdImmunityTimer: "Unbekannt",
                 deaths: 0,
                 clinicPatients: 0,
                 rValue: "Laden..."
