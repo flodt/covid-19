@@ -27,12 +27,6 @@
                     </router-link>
                 </li>
                 <li>
-                    <router-link to="/curfew">
-                        <i class="material-icons left">lock</i>
-                        Sperren
-                    </router-link>
-                </li>
-                <li>
                     <router-link to="/historical">
                         <i class="material-icons left">history</i>
                         Verlauf
@@ -68,10 +62,6 @@
                     <router-link to="/states" class="sidenav-close">
                         <i class="material-icons left">map</i>
                         Heatmap
-                    </router-link>
-                    <router-link to="/curfew" class="sidenav-close">
-                        <i class="material-icons left">lock</i>
-                        Ausgangssperren
                     </router-link>
                 </li>
                 <li>
