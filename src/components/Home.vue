@@ -237,10 +237,10 @@
                                         </a></b>
                                     </div>
                                     <div class="col">
-                                        <h3 id="beds_occupied">{{ germany.clinicPatients.toLocaleString("de-de") }}</h3>
+                                        <h3 id="beds_occupied">{{ germany.hospitalIncidence.toFixed(2) }}</h3>
                                         <b><a class="oncard"
-                                              href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
-                                            Intensivpatienten
+                                              href="https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Situationsberichte/COVID-19-Trends/COVID-19-Trends.html?__blob=publicationFile#/home">
+                                            Hospitalisierungsinzidenz
                                         </a></b>
                                     </div>
                                 </div>

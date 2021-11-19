@@ -531,6 +531,7 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
         vm.germany.rValue = rval.r.rValue7Days.value.toFixed(2);
         vm.state.rValue = new Date(rval.r.rValue7Days.date).toLocaleDateString("de-de");
         vm.germany.deaths = rval.delta.deaths;
+        vm.germany.hospitalIncidence = rval.hospitalization.incidence7Days;
     } else {
         //special case handling for broken rValue data
         vm.germany.rValue = "Fehler";
@@ -806,8 +807,6 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
 
     //show the clinic data
     if (zeitAvail) {
-        vm.germany.clinicPatients = zeit.clinicStats.covid19;
-
         //draw the hospital graph
         setTimeout(function () {
             //prepare chart labels (for the last 5 weeks)
