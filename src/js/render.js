@@ -60,27 +60,31 @@ export function colorsForIncidences() {
         "#ffa000",
         "#f57c00",
         "#e64a19",
-        "#d32f2f"
+        "#d32f2f",
+        "#5f0d0d"
     ];
     const zeit = [
         "#cccccf",
         "#e6a345",
         "#da4733",
         "#bf152a",
-        "#78121e"
+        "#78121e",
+        "#3d080a"
     ];
     const earthy = [
         "#33691e",
         "#ffc400",
         "#e65100",
         "#b71c1c",
-        "#880e4f"
+        "#880e4f",
+        "#50082c"
     ];
     const grayscale = [
         "#eeeeee",
         "#bdbdbd",
         "#757575",
         "#616161",
+        "#313131",
         "#000000"
     ];
     const unicorn = [
@@ -88,14 +92,16 @@ export function colorsForIncidences() {
         "#f06292",
         "#e91e63",
         "#d500f9",
-        "#8e24aa"
+        "#8e24aa",
+        "#441152"
     ];
     const pastel = [
         "#ffbbd0",
         "#fff9c4",
         "#ccff90",
         "#bbdeff",
-        "#e1bee7"
+        "#e1bee7",
+        "#9b7aa0"
     ];
     const rainbow = [
         "#e53935",
@@ -154,10 +160,15 @@ export function colorsForIncidences() {
             chartColor = color;
             mapColor = mapSequence[3];
             textColor = getTextColor(color);
-        } else {
+        } else if (max >= 200 && max < 1000) {
             color = sequence[4];
             chartColor = color;
             mapColor = mapSequence[4];
+            textColor = getTextColor(color);
+        } else {
+            color = sequence[5];
+            chartColor = color;
+            mapColor = mapSequence[5];
             textColor = getTextColor(color);
         }
     } else {
@@ -278,7 +289,7 @@ function showErrorBox(vm, agss, rki, zeit, vacc) {
 function renderHistogram(vm, id, name) {
     //draw chart
     setTimeout(function () {
-        const districtColors = [10, 40, 75, 150, 300].map(i => colorsForIncidences(i).chartColor);
+        const districtColors = [10, 40, 75, 150, 300, 1100].map(i => colorsForIncidences(i).chartColor);
 
         //render charts
         const ctx = document.getElementById(id).getContext('2d');
@@ -288,12 +299,12 @@ function renderHistogram(vm, id, name) {
 
             // The data for our dataset
             data: {
-                labels: ["0-35", "35-50", "50-100", "100-200", "200+"],
+                labels: ["0-35", "35-50", "50-100", "100-200", "200-1000", "1000+"],
                 datasets: [{
                     label: name,
                     backgroundColor: districtColors,
                     borderColor: districtColors,
-                    data: [vm.stat.below35, vm.stat.at3550, vm.stat.at50100, vm.stat.at100200, vm.stat.above200],
+                    data: [vm.stat.below35, vm.stat.at3550, vm.stat.at50100, vm.stat.at100200, vm.stat.at2001000, vm.stat.above1000],
                     fill: false
                 }
                 ]
@@ -352,7 +363,8 @@ export function renderHotspots(vm, agss, rki, zeit, vacc) {
     vm.stat.at3550 = hotspots.filter(h => h.incidence >= 35 && h.incidence < 50).length;
     vm.stat.at50100 = hotspots.filter(h => h.incidence >= 50 && h.incidence < 100).length;
     vm.stat.at100200 = hotspots.filter(h => h.incidence >= 100 && h.incidence < 200).length;
-    vm.stat.above200 = hotspots.filter(h => h.incidence > 200).length;
+    vm.stat.at2001000 = hotspots.filter(h => h.incidence >= 200 && h.incidence < 1000).length;
+    vm.stat.above1000 = hotspots.filter(h => h.incidence >= 1000).length;
 
     //gather "all" data
     const overview = rki
@@ -1125,7 +1137,8 @@ export function renderWorldwide(vm, data) {
     vm.stat.at3550 = table.filter(h => h.incidence >= 35 && h.incidence < 50).length;
     vm.stat.at50100 = table.filter(h => h.incidence >= 50 && h.incidence < 100).length;
     vm.stat.at100200 = table.filter(h => h.incidence >= 100 && h.incidence < 200).length;
-    vm.stat.above200 = table.filter(h => h.incidence > 200).length;
+    vm.stat.at2001000 = table.filter(h => h.incidence >= 200 && h.incidence < 1000).length;
+    vm.stat.above1000 = table.filter(h => h.incidence >= 1000).length;
     renderHistogram(vm, "chart_country_count", "Länder");
 
     renderWorldwideIncidenceMap(vm);

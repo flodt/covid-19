@@ -80,7 +80,7 @@ export function renderHeatmap(vm, data) {
     legend.onAdd = function (map) {
 
         const div = L.DomUtil.create('div', 'info legend');
-        const grades = [0, 35, 50, 100, 200];
+        const grades = [0, 35, 50, 100, 200, 1000];
 
         // loop through our density intervals and generate a label with a colored square for each interval
         for (let i = 0; i < grades.length; i++) {
@@ -197,7 +197,7 @@ export function renderWorldwideIncidenceMap(vm) {
     legend.onAdd = function (map) {
 
         const div = L.DomUtil.create('div', 'info legend');
-        const grades = [0, 35, 50, 100, 200];
+        const grades = [0, 35, 50, 100, 200, 1000];
 
         // loop through our density intervals and generate a label with a colored square for each interval
         for (let i = 0; i < grades.length; i++) {
