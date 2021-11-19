@@ -515,8 +515,8 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
     //show the r value and deaths yesterday
     vm.state.rValAvail = rValAvail;
     if (rValAvail) {
-        vm.germany.rValue = rval.r.value;
-        vm.state.rValue = new Date(rval.r.date).toLocaleDateString("de-de");
+        vm.germany.rValue = rval.r.rValue7Days.value.toFixed(2);
+        vm.state.rValue = new Date(rval.r.rValue7Days.date).toLocaleDateString("de-de");
         vm.germany.deaths = rval.delta.deaths;
     } else {
         //special case handling for broken rValue data

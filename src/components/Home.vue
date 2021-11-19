@@ -58,7 +58,7 @@
                                 <span class="card-title">Deutschland<i class="material-icons right">close</i></span>
                                 <div style="text-align: center;">
                                     <h3>{{ germany.rValue }}</h3>
-                                    <b>4-Tage-R-Wert</b>
+                                    <b>7-Tage-R-Wert</b> ({{state.rValue}})
                                 </div>
                             </div>
                         </div>
