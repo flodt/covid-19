@@ -146,7 +146,7 @@
         </div>
 
         <footer>
-            <div class="grey-text text-darken-2" style="text-align: center;">Daten stammen von ZEIT Online.</div>
+            <div class="grey-text text-darken-2" style="text-align: center;">Daten stammen von ZEIT Online und RKI.</div>
             <div class="grey-text text-darken-2" style="text-align: center;">Stand (RKI): <span id="state_rki">{{ state.rki }}</span>
             </div>
             <div class="grey-text text-darken-2" style="text-align: center;">Stand (ZEIT Online): <span id="state_zeit">{{ state.zeit }}</span>
@@ -190,7 +190,7 @@ export default {
     mounted() {
         requestHistorical(this, renderHistorical);
 
-        const VACCINATIONS = "https://interactive.zeit.de/cronjobs/2020/corona/impfzahlenAutomatisch.json";
+        const VACCINATIONS = "https://api.corona-zahlen.org/vaccinations/history";
         requestSingle(this, VACCINATIONS, renderVaccHistorical);
 
         const TESTING = "https://api.corona-zahlen.org/testing/history";

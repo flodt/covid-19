@@ -215,8 +215,6 @@
                     </div>
                 </div>
 
-                <!--todo: add vaccination graphs for vaccine and indication-->
-
                 <div class="center" id="header_hospital" v-if="state.zeitAvail">
                     <h5><b>Todeszahlen</b></h5>
                 </div>

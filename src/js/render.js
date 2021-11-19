@@ -376,30 +376,27 @@ export function renderHotspots(vm, agss, rki, zeit, vacc) {
 
 
 export function renderVaccHistorical(vm, data) {
-    //prepare chart labels (for the last 5 weeks)
-    const labels = data.germany.historical
+    //prepare chart labels
+    const labels = data.data.history
         .map(i => new Date(i.date))
         .map(d => {
             const str = d.toLocaleString("de-de");
             return str.slice(0, str.lastIndexOf(".") + 1);
-        })
-        .reverse();
+        });
 
-    //gather historical vaccination data and sum up for speed
-    const vaccinated = data.germany.historical.map(i => i.peopleVaccinated).reverse();
-    const fullyVaccinated = data.germany.historical.map(i => i.peopleFullyVaccinated).reverse();
-    const dailyVaccinations = vaccinated
-        .map((v, idx) => v + fullyVaccinated[idx])
-        .map((v, idx, arr) => v - arr[idx - 1]);
-    dailyVaccinations[0] = 0;
-    const weekAverageVaccinations = vaccinated
-        .map((v, idx) => v + fullyVaccinated[idx])
-        .map((v, idx, arr) => {
-            const period = 7;
-            const ago = (arr[idx - period] === undefined) ? 0 : arr[idx - period];
-            return +((v - ago) / period).toFixed(0);
-        })
-        .map(v => (v < 0) ? 0 : v);
+    //gather the historical data and sum up for speed
+    const dailyFirstVaccination = data.data.history.map(i => i.firstVaccination);
+    const dailySecondVaccination = data.data.history.map(i => i.secondVaccination);
+    const dailyBoosterVaccination = data.data.history.map(i => i.boosterVaccination);
+
+    //https://stackoverflow.com/questions/55258925/how-to-make-a-list-of-partial-sums-using-foreach/55259065#55259065
+    //cumulate the values for our plot below
+    const cumulativeSum1 = (sum => value => sum += value)(0);
+    const cumulativeSum2 = (sum => value => sum += value)(0);
+    const cumulativeSum3 = (sum => value => sum += value)(0);
+    const cumFirstVaccination = dailyFirstVaccination.map((sum => value => sum += value)(0));
+    const cumSecondVaccination = dailySecondVaccination.map((sum => value => sum += value)(0));
+    const cumBoosterVaccination = dailyBoosterVaccination.map((sum => value => sum += value)(0));
 
     setTimeout(function () {
         //render charts
@@ -413,20 +410,29 @@ export function renderVaccHistorical(vm, data) {
                 labels: labels,
                 datasets: [{
                     label: 'Erstimpfung',
-                    backgroundColor: "rgb(76, 175, 80)",
-                    borderColor: "rgb(76, 175, 80)",
-                    data: vaccinated,
+                    backgroundColor: "#4caf50",
+                    borderColor: "#4caf50",
+                    data: cumFirstVaccination,
                     fill: false,
                     pointRadius: 0
                 },
                     {
-                        label: 'voller Impfschutz',
-                        backgroundColor: "rgb(33, 150, 243)",
-                        borderColor: "rgb(33, 150, 243)",
-                        data: fullyVaccinated,
+                        label: 'Zweitimpfung',
+                        backgroundColor: "#2196f3",
+                        borderColor: "#2196f3",
+                        data: cumSecondVaccination,
                         fill: false,
                         pointRadius: 0
-                    }]
+                    },
+                    {
+                        label: 'Booster',
+                        backgroundColor: "#a921f3",
+                        borderColor: "#a921f3",
+                        data: cumBoosterVaccination,
+                        fill: false,
+                        pointRadius: 0
+                    }
+                    ]
             },
 
             // Configuration options go here
@@ -455,34 +461,41 @@ export function renderVaccHistorical(vm, data) {
         const ctx = document.getElementById("chart_historical_vaccination_speed").getContext('2d');
         const chart = new Chart(ctx, {
             // The type of chart we want to create
-            type: 'line',
+            type: 'bar',
 
             // The data for our dataset
             data: {
                 labels: labels,
                 datasets: [{
-                    label: 'tägl. Impfungen',
-                    backgroundColor: "#26a69a",
-                    borderColor: "#26a69a",
-                    data: dailyVaccinations,
-                    fill: false,
-                    pointRadius: 0
+                    label: 'Erstimpfung',
+                    backgroundColor: "#4caf50",
+                    borderColor: "#4caf50",
+                    data: dailyFirstVaccination,
+                    fill: false
                 },
                     {
-                        label: 'Schnitt',
-                        backgroundColor: "rgb(158,158,158)",
-                        borderColor: "rgb(158,158,158)",
-                        borderDash: [5, 5],
-                        pointRadius: 0,
-                        data: weekAverageVaccinations,
+                        label: 'Zweitimpfung',
+                        backgroundColor: "#2196f3",
+                        borderColor: "#2196f3",
+                        data: dailySecondVaccination,
                         fill: false
-                    }]
+                    },
+                    {
+                        label: 'Booster',
+                        backgroundColor: "#a921f3",
+                        borderColor: "#a921f3",
+                        data: dailyBoosterVaccination,
+                        fill: false
+                    }
+                ]
             },
 
             // Configuration options go here
             options: {
                 scales: {
+                    xAxes: [{stacked: true}],
                     yAxes: [{
+                        stacked: true,
                         ticks: {
                             beginAtZero: true
                             //suggestedMin: 0,
