@@ -48,6 +48,34 @@ function getTextColor(hex){
     return (yiq >= 180) ? '#212121' : '#ffffff';
 }
 
+export function colorsForHospital() {
+    const max = Math.max(...arguments);
+    const colors = [
+        "#388e3c",
+        "#ffa000",
+        "#e64a19",
+        "#5f0d0d"
+    ];
+
+    let color, textColor;
+
+    if (max < 3) {
+        color = colors[0];
+    } else if (max >= 3 && max < 6) {
+        color = colors[1];
+    } else if (max >= 6 && max < 9) {
+        color = colors[2];
+    } else {
+        color = colors[3];
+    }
+
+    textColor = getTextColor(color);
+    return {
+        color: color,
+        textColor: textColor
+    };
+}
+
 export function colorsForIncidences() {
     const max = Math.max(...arguments);
     let color, chartColor, mapColor, textColor, sequence, mapSequence;

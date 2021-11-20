@@ -39,11 +39,13 @@
                             <div class="spinner-layer spinner-red-only">
                                 <div class="circle-clipper left">
                                     <div class="circle"></div>
-                                </div><div class="gap-patch">
-                                <div class="circle"></div>
-                            </div><div class="circle-clipper right">
-                                <div class="circle"></div>
-                            </div>
+                                </div>
+                                <div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
                             </div>
                         </div>
 
@@ -54,7 +56,7 @@
                 <div class="row" v-if="state.ready">
                     <h5 class="center"><b>Bundesländer</b></h5>
 
-                    <div class="col s6 m6 l3" v-for="card in states">
+                    <div class="col s12 m12 l3" v-for="card in states">
                         <div class="card" :style="`background-color: ${card.cardColor}; color: ${card.textColor}`">
                             <div class="card-content">
                                 <span class="card-title truncate">{{ card.name }}</span>
@@ -62,6 +64,10 @@
                                     <div class="col">
                                         <h3>{{ card.incidence.toFixed(1) }}</h3>
                                         <b>7-Tage-Inzidenz</b>
+                                    </div>
+                                    <div class="col">
+                                        <h3>{{ card.hospitalIncidence.toFixed(2) }}</h3>
+                                        <b>Hospitalisierungsrate</b>
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +98,7 @@ import navigation from "@/components/NavBar.vue";
 import firebase from "firebase";
 import M from 'materialize-css';
 import {requestSingle} from "@/js/api.js";
-import {colorsForIncidences} from "@/js/render.js";
+import {colorsForIncidences, colorsForHospital} from "@/js/render.js";
 import {renderHeatmap} from "@/js/map";
 
 export default {
@@ -125,7 +131,10 @@ export default {
                     name: state.name,
                     cardColor: colorsForIncidences(state.weekIncidence).color,
                     textColor: colorsForIncidences(state.weekIncidence).textColor,
-                    incidence: state.weekIncidence
+                    hospitalColor: colorsForHospital(state.hospitalization.incidence7Days).color,
+                    hospitalTextColor: colorsForHospital(state.hospitalization.incidence7Days).textColor,
+                    incidence: state.weekIncidence,
+                    hospitalIncidence: state.hospitalization.incidence7Days
                 });
             }
 
@@ -139,8 +148,6 @@ export default {
     created() {
 
     },
-    methods: {
-
-    }
+    methods: {}
 };
 </script>
