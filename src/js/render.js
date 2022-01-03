@@ -766,17 +766,23 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
     if (vaccAvail) {
         const prelim = vacc.data.vaccinated;
         const fully = vacc.data.secondVaccination.vaccinated;
+        const boost = vacc.data.boosterVaccination.vaccinated;
         vm.germany.vaccinated =
             (prelim / POPULATION_GERMANY * 100).toFixed(2) + " %";
         vm.germany.fullyVaccinated =
             (fully / POPULATION_GERMANY * 100).toFixed(2) + " %";
+        vm.germany.boosterVaccinated =
+            (boost / POPULATION_GERMANY * 100).toFixed(2) + " %";
 
         const prelimBavaria = vacc.data.states.BY.vaccinated;
         const fullyBavaria = vacc.data.states.BY.secondVaccination.vaccinated;
+        const boostBavaria = vacc.data.states.BY.boosterVaccination.vaccinated;
         vm.bavaria.vaccinated =
             (prelimBavaria / POPULATION_BAVARIA * 100).toFixed(2) + " %";
         vm.bavaria.fullyVaccinated =
             (fullyBavaria / POPULATION_BAVARIA * 100).toFixed(2) + " %";
+        vm.bavaria.boosterVaccinated =
+            (boostBavaria / POPULATION_BAVARIA * 100).toFixed(2) + " %";
 
         //display the block
         vm.state.vaccAvail = true;
@@ -787,24 +793,27 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
             const countryWide = document.getElementById("chart_vaccine").getContext('2d');
             new Chart(countryWide, {
                 type: 'pie',
-                data: {
+                data: { // DIAGRAM
                     datasets: [{
                         data: [
+                            POPULATION_GERMANY - prelim,
                             prelim - fully,
-                            fully,
-                            POPULATION_GERMANY - prelim
+                            fully - boost,
+                            boost
                         ],
                         backgroundColor: [
-                            'rgb(221, 0, 0)',
-                            'rgb(255, 206, 0)',
-                            'rgb(33, 33, 33)'
+                            '#545454',
+                            '#4caf50',
+                            '#2196f3',
+                            '#a921f3'
                         ],
                         label: 'Impffortschritt (landesweit)'
                     }],
                     labels: [
-                        'Erstimpfung',
-                        'voller Impfschutz',
-                        'Ungeimpft'
+                        'Ungeimpft',
+                        'Erstgeimpft',
+                        'Zweitgeimpft',
+                        'Geboostert'
                     ]
                 },
                 options: {
@@ -820,21 +829,24 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
                 data: {
                     datasets: [{
                         data: [
+                            POPULATION_BAVARIA - prelimBavaria,
                             prelimBavaria - fullyBavaria,
-                            fullyBavaria,
-                            POPULATION_BAVARIA - prelimBavaria
+                            fullyBavaria - boostBavaria,
+                            boostBavaria
                         ],
                         backgroundColor: [
-                            'rgb(76, 175, 80)',
-                            'rgb(33, 150, 243)',
-                            'rgb(189, 189, 189)'
+                            '#545454',
+                            '#4caf50',
+                            '#2196f3',
+                            '#a921f3'
                         ],
                         label: 'Impffortschritt (Bayern)'
                     }],
                     labels: [
-                        'Erstimpfung',
-                        'voller Impfschutz',
-                        'Ungeimpft'
+                        'Ungeimpft',
+                        'Erstgeimpft',
+                        'Zweitgeimpft',
+                        'Geboostert'
                     ]
                 },
                 options: {

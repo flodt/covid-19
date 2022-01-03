@@ -120,33 +120,47 @@
                                 <span class="card-title">Landesweit</span>
                                 <div class="row hide-on-large-only" style="margin-top: 16px">
                                     <div class="col">
-                                        <h4>{{ germany.vaccinated }}</h4>
+                                        <h6>{{ germany.vaccinated }}</h6>
                                         <b><a class="oncard"
                                               href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
-                                            Geimpfte
+                                            Erstgeimpft
                                         </a></b>
                                     </div>
                                     <div class="col">
-                                        <h4>{{ germany.fullyVaccinated }}</h4>
+                                        <h6>{{ germany.fullyVaccinated }}</h6>
                                         <b><a class="oncard"
                                               href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
-                                            voller Impfschutz
+                                            Zweitgeimpft
+                                        </a></b>
+                                    </div>
+                                    <div class="col">
+                                        <h6>{{ germany.boosterVaccinated }}</h6>
+                                        <b><a class="oncard"
+                                              href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                            Geboostert
                                         </a></b>
                                     </div>
                                 </div>
                                 <div class="row hide-on-med-and-down">
                                     <div class="col">
-                                        <h3>{{ germany.vaccinated }}</h3>
+                                        <h5>{{ germany.vaccinated }}</h5>
                                         <b><a class="oncard"
                                               href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
-                                            Geimpfte
+                                            Erstgeimpft
                                         </a></b>
                                     </div>
                                     <div class="col">
-                                        <h3>{{ germany.fullyVaccinated }}</h3>
+                                        <h5>{{ germany.fullyVaccinated }}</h5>
                                         <b><a class="oncard"
                                               href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
-                                            voller Impfschutz
+                                            Zweitgeimpft
+                                        </a></b>
+                                    </div>
+                                    <div class="col">
+                                        <h5>{{ germany.boosterVaccinated }}</h5>
+                                        <b><a class="oncard"
+                                              href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                            Geboostert
                                         </a></b>
                                     </div>
                                 </div>
@@ -170,33 +184,47 @@
                                 <span class="card-title">Bayern</span>
                                 <div class="row hide-on-large-only" style="margin-top: 16px">
                                     <div class="col">
-                                        <h4>{{ bavaria.vaccinated }}</h4>
+                                        <h6>{{ bavaria.vaccinated }}</h6>
                                         <b><a class="oncard"
                                               href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
-                                            Geimpfte
+                                            Erstgeimpft
                                         </a></b>
                                     </div>
                                     <div class="col">
-                                        <h4>{{ bavaria.fullyVaccinated }}</h4>
+                                        <h6>{{ bavaria.fullyVaccinated }}</h6>
                                         <b><a class="oncard"
                                               href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
-                                            voller Impfschutz
+                                            Zweitgeimpft
+                                        </a></b>
+                                    </div>
+                                    <div class="col">
+                                        <h6>{{ bavaria.boosterVaccinated }}</h6>
+                                        <b><a class="oncard"
+                                              href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                            Geboostert
                                         </a></b>
                                     </div>
                                 </div>
                                 <div class="row hide-on-med-and-down">
                                     <div class="col">
-                                        <h3>{{ bavaria.vaccinated }}</h3>
+                                        <h5>{{ bavaria.vaccinated }}</h5>
                                         <b><a class="oncard"
                                               href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
-                                            Geimpfte
+                                            Erstgeimpft
                                         </a></b>
                                     </div>
                                     <div class="col">
-                                        <h3>{{ bavaria.fullyVaccinated }}</h3>
+                                        <h5>{{ bavaria.fullyVaccinated }}</h5>
                                         <b><a class="oncard"
                                               href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
-                                            voller Impfschutz
+                                            Zweitgeimpft
+                                        </a></b>
+                                    </div>
+                                    <div class="col">
+                                        <h5>{{ bavaria.boosterVaccinated }}</h5>
+                                        <b><a class="oncard"
+                                              href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
+                                            Geboostert
                                         </a></b>
                                     </div>
                                 </div>
