@@ -27,12 +27,6 @@
                     </router-link>
                 </li>
                 <li>
-                    <router-link to="/historical">
-                        <i class="material-icons left">history</i>
-                        Verlauf
-                    </router-link>
-                </li>
-                <li>
                     <router-link to="/settings">
                         <i class="material-icons">settings</i>
                     </router-link>
@@ -75,10 +69,6 @@
                     <router-link to="/worldwide" class="sidenav-close">
                         <i class="material-icons left">language</i>
                         Weltweit
-                    </router-link>
-                    <router-link to="/historical" class="sidenav-close">
-                        <i class="material-icons left">history</i>
-                        Verlauf
                     </router-link>
                 </li>
                 <li>
