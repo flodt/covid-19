@@ -555,15 +555,17 @@ export function renderVaccHistorical(vm, data) {
 }
 
 
-export function renderData(vm, agss, rki, zeit, vacc, rval) {
+export function renderData(vm, agss, rki, history, vacc, rval, spark, hospital) {
     const POPULATION_GERMANY = 83190556;
     const POPULATION_BAVARIA = 13124737;
 
-    showErrorBox(vm, agss, rki, zeit, vacc);
+    showErrorBox(vm, agss, rki, history, vacc);
     const rkiAvail = rki !== null && rki.features !== undefined;
-    const zeitAvail = zeit !== null;
+    const historyAvail = history !== null;
     const vaccAvail = vacc !== null && vacc.error === undefined;
     const rValAvail = rval !== null && rval.error === undefined;
+    const sparkAvail = spark !== null && spark.error === undefined;
+    const hospitalAvail = hospital !== null && hospital.error === undefined;
 
     //show the r value and deaths yesterday
     vm.state.rValAvail = rValAvail;
@@ -572,25 +574,20 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
         vm.state.rValue = new Date(rval.r.rValue7Days.date).toLocaleDateString("de-de");
         vm.germany.deaths = rval.delta.deaths;
         vm.germany.hospitalIncidence = rval.hospitalization.incidence7Days;
+        vm.germany.yesterday = rval.delta.cases;
+        vm.germany.sevenDayIncidence = rval.weekIncidence;
     } else {
         //special case handling for broken rValue data
         vm.germany.rValue = "Fehler";
         vm.state.rValue = "Nicht verfügbar!";
         vm.state.error = true;
-
-        //fallback to all deaths
-        if (zeitAvail) {
-            vm.germany.deaths = zeit.currentStats.dead;
-        }
+        vm.germany.deaths = 0;
+        vm.germany.yesterday = 0;
+        vm.germany.sevenDayIncidence = 0;
     }
 
     //show the country-wide stats and draw that graph
-    if (zeitAvail) {
-        vm.germany.yesterday = zeit.yesterdayCount;
-        vm.germany.sevenDayIncidence = zeit
-            .sevenDayStats
-            .count * 100000 / POPULATION_GERMANY;
-
+    if (historyAvail) {
         setTimeout(function () {
             //prepare chart labels (for the last 5 weeks)
             const daysPast = 5 * 7;
@@ -603,11 +600,8 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
                 .reverse();
 
             //gather ZEIT data for the last 5 weeks
-            const newInf = zeit.sixWeeksStats
-                .map(s => s.newInf)
-                .slice(-daysPast);
-
-            const averageNewInf = zeit.sixWeeksStats.map(s => s.avg).slice(-daysPast);
+            const newInf = history.data
+                .map(s => s.cases);
 
             //render charts
             const ctx = document.getElementById("chart_germany").getContext('2d');
@@ -624,16 +618,7 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
                         borderColor: "rgb(173, 20, 87)",
                         data: newInf,
                         fill: false
-                    },
-                        {
-                            label: 'Durchschnitt',
-                            backgroundColor: "rgb(158,158,158)",
-                            borderColor: "rgb(158,158,158)",
-                            borderDash: [5, 5],
-                            pointRadius: 0,
-                            data: averageNewInf,
-                            fill: false
-                        }]
+                    }]
                 },
 
                 // Configuration options go here
@@ -675,17 +660,13 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
             ? rki.features.filter(f => f.attributes.AGS === ags)[0].attributes.cases7_per_100k
             : 0;
 
-        let zeitIncidence = zeitAvail ? (zeit.kreise.items
-            .filter(k => k.ags === ags.replace(/^0+/, ''))[0]
-            .sevenDayStats.count * 100000 / population) : 0;
-
         let color;
         let textColor;
         let chartColor;
 
         //if rki is null, we don't have population information, so we cannot color-code
         if (rkiAvail) {
-            const cfi = colorsForIncidences(rkiIncidence, zeitIncidence);
+            const cfi = colorsForIncidences(rkiIncidence);
             color = cfi.color;
             textColor = cfi.textColor;
             chartColor = cfi.chartColor;
@@ -695,7 +676,7 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
             textColor = "white-text";
         }
 
-        if (zeitAvail) {
+        if (sparkAvail) {
             setTimeout(function () {
                 //prepare chart labels (for the last 7 days)
                 const labels = [0, 1, 2, 3, 4, 5, 6, 7]
@@ -704,12 +685,7 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
                     .reverse();
 
                 //gather ZEIT sparkbars
-                const bars = zeit.kreise.items
-                    .filter(k => k.ags === ags.replace(/^0+/, ''))[0]
-                    .sparkbars
-                    .slice(-8)
-                    .map(i => i * 100000 / population)
-                    .map(i => i.toFixed(1));
+                const bars = spark.data[ags].history.map(i => i.weekIncidence.toFixed(1));
 
                 //render charts
                 const ctx = document.getElementById(canvasId).getContext('2d');
@@ -753,7 +729,6 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
 
         return {
             name: name,
-            zeit: zeitIncidence,
             rki: rkiIncidence,
             chartId: canvasId,
             cardColor: color,
@@ -858,12 +833,11 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
     }
 
     //show the clinic data
-    if (zeitAvail) {
+    if (hospitalAvail) {
         //draw the hospital graph
         setTimeout(function () {
             //prepare chart labels (for the last 5 weeks)
-            const daysPast = 5 * 7;
-            const labels = [...Array(daysPast).keys()]
+            const labels = [...Array(hospital.data.length).keys()]
                 .map(i => new Date(Date.now() - i * 24 * 60 * 60 * 1000))
                 .map(d => {
                     const str = d.toLocaleString("de-de");
@@ -872,21 +846,20 @@ export function renderData(vm, agss, rki, zeit, vacc, rval) {
                 .reverse();
 
             //gather ZEIT data for the last 5 weeks
-            const newInf = zeit.sixWeeksStats
-                .map(s => s.covid19Patients)
-                .slice(-daysPast);
+            const newInf = hospital.data
+                .map(s => s.incidence7Days);
 
             //render charts
             const ctx = document.getElementById("chart_beds").getContext('2d');
             const chart = new Chart(ctx, {
                 // The type of chart we want to create
-                type: 'line',
+                type: 'bar',
 
                 // The data for our dataset
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: 'Intensivbetten',
+                        label: 'Klinikinzidenz',
                         backgroundColor: "rgb(33,33,33)",
                         borderColor: "rgb(33,33,33)",
                         data: newInf,

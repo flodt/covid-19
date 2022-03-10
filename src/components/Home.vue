@@ -40,17 +40,12 @@
                                 <div class="row">
                                     <div class="col">
                                         <h3 id="infected_yesterday">{{ germany.yesterday.toLocaleString("de-de") }}</h3>
-                                        <b class="hide-on-med-and-down"><a class="oncard"
-                                                                           href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">Neuinfektionen
-                                            gestern</a></b>
-                                        <b class="hide-on-large-only"><a class="oncard"
-                                                                         href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">Neuinf.
-                                            gestern</a></b>
+                                        <b class="hide-on-med-and-down">Neuinfektionen gestern</b>
+                                        <b class="hide-on-large-only">Neuinf. gestern</b>
                                     </div>
                                     <div class="col">
                                         <h3 id="infected_7day">{{ germany.sevenDayIncidence.toFixed(1) }}</h3>
-                                        <b><a class="oncard"
-                                              href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung">7-Tage-Inzidenz</a></b>
+                                        <b>7-Tage-Inzidenz</b>
                                     </div>
                                 </div>
                             </div>
@@ -89,12 +84,6 @@
                                     <div class="col">
                                         <h3>{{ card.rki.toFixed(1) }}</h3>
                                         <b><a class="oncard" href="https://corona.rki.de" :style="`color: ${card.textColor}`">RKI</a></b>
-                                    </div>
-                                    <div class="col">
-                                        <h3>{{ card.zeit.toFixed(1) }}</h3>
-                                        <b><a class="oncard"
-                                              href="https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung" :style="`color: ${card.textColor}`">ZEIT
-                                            Online</a></b>
                                     </div>
                                 </div>
                             </div>
@@ -255,13 +244,9 @@
                                 <div class="row">
                                     <div class="col">
                                         <h3 id="deaths">{{ germany.deaths.toLocaleString("de-de") }}</h3>
-                                        <b v-if="state.rValAvail"><a class="oncard"
+                                        <b><a class="oncard"
                                                                      href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
                                             Tote gestern
-                                        </a></b>
-                                        <b v-else><a class="oncard"
-                                                     href="https://www.zeit.de/wissen/gesundheit/2021-01/corona-impfung-deutschland-anzahl-impfquote-aktuelle-zahlen-karte">
-                                            Tote seit Beginn
                                         </a></b>
                                     </div>
                                     <div class="col">
@@ -313,10 +298,6 @@
             <div class="grey-text text-darken-2" style="text-align: center;">Stand (RKI): <span
                 id="state_rki">{{ state.rki }}</span>
             </div>
-            <div class="grey-text text-darken-2" style="text-align: center;">Stand (ZEIT Online): <span id="state_zeit">{{
-                    state.zeit
-                }}</span>
-            </div>
             <div class="grey-text text-darken-2" style="text-align: center;">Stand (RKI Impfstatistik): <span
                 id="state_vaccine">{{ state.vaccine }}</span>
             </div>
@@ -356,11 +337,9 @@ export default {
                 fullyVaccinated: "0.00 %"
             },
             state: {
-                zeit: "Inzidenzen werden geladen...",
                 rki: "Inzidenzen werden geladen...",
                 vaccine: "Inzidenzen werden geladen...",
                 rValue: "Laden...",
-                zeitAvail: false,
                 rkiAvail: false,
                 vaccAvail: false,
                 rValAvail: false,

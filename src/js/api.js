@@ -16,15 +16,17 @@ export function requestData(vm, callback) {
     let agss = getFromStorage();
 
     const URL_RKI = "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?where=1%3D1&outFields=RS,AGS,GEN,EWZ,death_rate,cases,deaths,cases_per_100k,cases_per_population,BL,county,last_update,cases7_per_100k,recovered,cases7_bl,death7_bl,cases7_lk,death7_lk,cases7_per_100k_txt&returnGeometry=false&outSR=4326&f=json";
-    const URL_ZEIT = "https://interactive.zeit.de/cronjobs/2020/corona/germany-dashboard-v2.json";
+    const URL_HISTORY = "https://api.corona-zahlen.org/germany/history/cases/35";
+    const URL_SPARKBARS = "https://api.corona-zahlen.org/districts/history/incidence/8";
     const URL_VACC = "https://api.corona-zahlen.org/vaccinations";
     const URL_RVALUE = "https://api.corona-zahlen.org/germany";
+    const URL_HOSPITAL = "https://api.corona-zahlen.org/germany/history/hospitalization";
 
     //show loading indicator
     vm.state.loading = true;
 
     //do API calls and handle data when present
-    let rkiData, zeitData, vaccData, rvalData;
+    let rkiData, historyData, vaccData, rvalData, sparkData, hospitalData;
     fetch(URL_RKI).then(rkiResponse => {
         if (rkiResponse.ok) {
             return rkiResponse.json();
@@ -35,17 +37,17 @@ export function requestData(vm, callback) {
         }
     }).then(rkiJson => {
         rkiData = rkiJson;
-        return fetch(URL_ZEIT);
-    }).then(zeitResponse => {
-        if (zeitResponse.ok) {
-            return zeitResponse.json();
+        return fetch(URL_HISTORY);
+    }).then(historyResponse => {
+        if (historyResponse.ok) {
+            return historyResponse.json();
         } else {
-            M.toast({html: 'Laden der ZEIT-Daten fehlgeschlagen...'});
+            M.toast({html: 'Laden der Verlaufsdaten fehlgeschlagen...'});
             vm.state.error = true;
             return Promise.resolve(null);
         }
-    }).then(zeitJson => {
-        zeitData = zeitJson;
+    }).then(historyJson => {
+        historyData = historyJson;
         return fetch(URL_VACC);
     }).then(vaccResponse => {
         if (vaccResponse.ok) {
@@ -67,13 +69,35 @@ export function requestData(vm, callback) {
     }).then(rvalJson => {
         rvalData = rvalJson;
 
+        return fetch(URL_SPARKBARS);
+    }).then(sparkResponse => {
+        if (sparkResponse.ok) {
+            return sparkResponse.json();
+        } else {
+            M.toast({html: 'Laden der Sparkbars fehlgeschlagen...'});
+            return Promise.resolve(null);
+        }
+    }).then(sparkJson => {
+        sparkData = sparkJson;
+
+        return fetch(URL_HOSPITAL);
+    }).then(hospitalResponse => {
+        if (hospitalResponse.ok) {
+            return hospitalResponse.json();
+        } else {
+            M.toast({html: 'Laden der Hospitalisierungsdaten fehlgeschlagen...'});
+            return Promise.resolve(null);
+        }
+    }).then(hospitalJson => {
+        hospitalData = hospitalJson;
+
         //render data
         vm.state.loading = false;
-        if (zeitData !== null && rkiData !== null && vaccData !== null && rvalData !== null) {
+        if (historyData !== null && rkiData !== null && vaccData !== null && rvalData !== null && sparkData !== null && hospitalData !== null) {
             vm.state.error = false;
         }
         vm.state.ready = true;
-        callback(vm, agss, rkiData, zeitData, vaccData, rvalData);
+        callback(vm, agss, rkiData, historyData, vaccData, rvalData, sparkData, hospitalData);
     });
 }
 
