@@ -8,6 +8,7 @@ import Historical from '@/components/Historical'
 import Worldwide from "@/components/Worldwide";
 import Settings from "@/components/Settings";
 import About from "@/components/About";
+import Imprint from "@/components/Imprint";
 
 Vue.use(Router)
 
@@ -52,6 +53,11 @@ export default new Router({
             path: '/about',
             name: 'Über diese Seite',
             component: About
+        },
+        {
+            path: '/imprint',
+            name: 'Impressum',
+            component: Imprint
         }
     ]
 })

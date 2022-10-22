@@ -10,6 +10,13 @@
                     Sie nutzt Vue.js, Chart.js sowie MaterializeCSS und läuft auf Google Firebase.
                 </p>
 
+                <router-link to="/imprint">
+                    <h5 class="center" style="margin-top: 30px;"><b>Datenschutzerklärung</b></h5>
+                </router-link>
+                <p>
+                    Zum Abrufen der Infektionszahlen werden Anfragen an die untenstehenden Datenquellen gestellt.
+                </p>
+
 
                 <h5 class="center" style="margin-top: 30px;"><b>Datenquellen</b></h5>
                 <p>
