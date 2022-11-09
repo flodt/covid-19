@@ -11,10 +11,10 @@
                 </p>
 
                 <router-link to="/imprint">
-                    <h5 class="center" style="margin-top: 30px;"><b>Datenschutzerklärung</b></h5>
+                    <h5 class="center" style="margin-top: 30px;"><b>Impressum &amp; Datenschutzerklärung</b></h5>
                 </router-link>
                 <p>
-                    Zum Abrufen der Infektionszahlen werden Anfragen an die untenstehenden Datenquellen gestellt.
+                    Zum Abrufen der Infektionszahlen werden Web-Anfragen an die untenstehenden Datenquellen gestellt.
                 </p>
 
 

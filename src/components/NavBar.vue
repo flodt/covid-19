@@ -27,13 +27,18 @@
                     </router-link>
                 </li>
                 <li>
-                    <router-link to="/settings">
-                        <i class="material-icons">settings</i>
+                    <router-link to="/about">
+                        <i class="material-icons left">help</i>
                     </router-link>
                 </li>
                 <li>
-                    <router-link to="/about">
-                        <i class="material-icons">help</i>
+                    <router-link to="/imprint">
+                        Impressum &amp; Datenschutz
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/settings">
+                        <i class="material-icons">settings</i>
                     </router-link>
                 </li>
             </ul>
@@ -82,6 +87,10 @@
                     <router-link to="/about" class="sidenav-close">
                         <i class="material-icons left">help</i>
                         Über diese Seite
+                    </router-link>
+                    <router-link to="/imprint" class="sidenav-close">
+                        <i class="material-icons left">info</i>
+                        Impressum &amp; Datenschutz
                     </router-link>
                 </li>
             </ul>

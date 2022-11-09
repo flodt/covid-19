@@ -3,6 +3,15 @@
         <navigation></navigation>
         <div class="container">
             <div class="section">
+                <h5 class="center"><b>Impressum</b></h5>
+                <p>Angaben gem. § 5 TMG:</p>
+
+                <p>Florian Schmidt</p>
+                <p>Daitenhausener Str. 5</p>
+                <p>85386 Eching</p>
+
+                <p>E-Mail: site@schmidt-allgaeu.de</p>
+
                 <h5 class="center"><b>Datenschutzerklärung</b></h5>
 
                 <h2 id="m14">Einleitung</h2>
